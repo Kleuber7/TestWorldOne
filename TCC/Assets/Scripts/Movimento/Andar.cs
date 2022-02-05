@@ -33,7 +33,7 @@ public class Andar : MonoBehaviour
         }
         else
         {
-            ControladorMov.enabled = false ;
+            ControladorMov.enabled = false;
             jogadorAnima.ChangeAnimationState(jogadorAnima.Parado());
         }
 

@@ -1526,6 +1526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraDeVida: {fileID: 6256122525899761590}
   scriptDeStatus: {fileID: 4715557178913784675}
+  cam: {fileID: 0}
 --- !u!1 &6450017243758722287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,9 +2315,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9007733204457684648}
-  m_LocalRotation: {x: -0, y: 0.99997264, z: -0, w: -0.007402736}
-  m_LocalPosition: {x: 20.8, y: 2.1, z: -19.06}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.8, y: 3, z: -19.06}
+  m_LocalScale: {x: 3.75, y: 3.75, z: 3.75}
   m_Children:
   - {fileID: 9007733204558589323}
   - {fileID: 9007733204029881437}
@@ -2325,7 +2326,7 @@ Transform:
   - {fileID: 5348823806851111380}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180.848, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9007733204457684649
 MonoBehaviour:
   m_ObjectHideFlags: 0
