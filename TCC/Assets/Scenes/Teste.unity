@@ -169,6 +169,8 @@ GameObject:
   - component: {fileID: 253822865}
   - component: {fileID: 253822866}
   - component: {fileID: 253822867}
+  - component: {fileID: 253822869}
+  - component: {fileID: 253822868}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Untagged
@@ -414,6 +416,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dano: 30
   tagColisor: Player
+--- !u!114 &253822868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253822859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5108e196c1e464b8bcbaec180228cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &253822869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253822859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8a05679fba0904fbcf4e820105d9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &395924607
 GameObject:
   m_ObjectHideFlags: 0
