@@ -21,7 +21,7 @@ public class BloquearSala : MonoBehaviour
    public void DesbloquearSala()
    {
         //Tirar comentario depois
-        if (qInimigos.numeroI <= 0 /*&& GenerateEnemys.liberadoE*/)
+        if (qInimigos.numeroI <= 0 && GenerateEnemys.liberadoE)
         {
            gameObject.SetActive(false);
         }

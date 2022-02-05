@@ -9,13 +9,10 @@ public class DashWall : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (GameManager.gameManager.numeroI <= 0 /*&& GenerateEnemys.liberadoE*/)
+        if (other.gameObject.tag == "Player")
         {
-            if (other.gameObject.tag == "Player")
-            {
-                dashWall = true;
-               
-            }
+            dashWall = true;
+
         }
 
         if (other.gameObject.tag == "Player" && dashWall == true)
@@ -29,7 +26,7 @@ public class DashWall : MonoBehaviour
         if (other.tag == "Player")
         {
             dashWall = false;
-            
+
         }
     }
 
