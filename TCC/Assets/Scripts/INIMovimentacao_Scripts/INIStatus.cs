@@ -8,8 +8,6 @@ public class INIStatus : BASEStatus
     public static float danoUp = 2, vidaUp = 50;
     public float range;
 
-    public bool Efeito_Comromper;
-    public GameObject Forma_Aliado;
     [SerializeField] private bool stunado = false;
     [SerializeField] public bool podeTomardanoSunFire = true;
 
@@ -18,12 +16,7 @@ public class INIStatus : BASEStatus
 
     public override void Morrer()
     {
-        Runa_Comromper();
-        
-
         StartCoroutine(MorrerAnim());
-        
-        //Destroy(this.gameObject);
     }
 
 
@@ -50,15 +43,6 @@ public class INIStatus : BASEStatus
     }
     void Update()
     {
-
-        if(teste)
-        {
-            if(Efeito_Comromper == true)
-            {
-                StartCoroutine(Corompimento());
-            }
-        }
-
         if(vida <= 0)
         {
             Morrer();
@@ -82,21 +66,5 @@ public class INIStatus : BASEStatus
     public void SetStunado(bool _stunado)
     {
         stunado = _stunado;
-    }
-    public void Runa_Comromper()
-    {
-        if(Efeito_Comromper==true && vida<=0)
-        {
-            Instantiate(Forma_Aliado,this.transform.position,this.transform.rotation);
-            Debug.Log("Rodei");
-        }
-    }
-
-    IEnumerator Corompimento()
-    {
-        teste = false;
-        yield return new WaitForSeconds(10);
-        Efeito_Comromper=false; 
-        teste = true;
     }
 }
