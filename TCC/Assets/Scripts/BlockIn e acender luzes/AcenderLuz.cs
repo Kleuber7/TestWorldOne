@@ -23,19 +23,11 @@ public class AcenderLuz : MonoBehaviour
 
     public void MudarLuz()
     {
-        //tirar comentario depois
-        if (qInimigos.numeroI <= 0 /*&& GenerateEnemys.liberadoE*/)
+
+        if (qInimigos.numeroI <= 0 && GenerateEnemys.liberadoE)
         {
 
             myLight.color = corNormal;
-
-            //Piscando
-            // myLight.intensity = Mathf.Lerp(1, 3, Mathf.PingPong(Time.time, 1f));
-            //while (myLight.intensity < 2)
-            //{
-            //    myLight.intensity += 2 * Time.deltaTime;
-            //}
-
         }
         else
         {
@@ -45,5 +37,5 @@ public class AcenderLuz : MonoBehaviour
 
     }
 
-   
+
 }

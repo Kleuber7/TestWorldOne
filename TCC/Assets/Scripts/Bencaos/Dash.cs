@@ -9,7 +9,6 @@ public class Dash : MonoBehaviour
 
     public float dashSpeed, dashTime, currentDashTime, dashSpeedWall;
     public bool canDash;
-    Collider dashWall;
     
     [SerializeField] private ParticleManagerDashTP particleDashTP, particleDashTPFront, particleDashExplosion;
    
@@ -59,20 +58,20 @@ public class Dash : MonoBehaviour
         {
             GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeed);
         }
+        //else if (DashWall.dashWall == true)
+        //{
+        //    dashWall = GameObject.FindGameObjectWithTag("DashWall").GetComponent<Collider>();
+        //    dashWall.enabled = false;
+        //    GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeedWall);
+        //    yield return new WaitForSeconds(0.2f);
+        //    dashWall.enabled = true;
+        //}
         else if (DashWall.dashWall == true)
         {
-            dashWall = GameObject.FindGameObjectWithTag("DashWall").GetComponent<Collider>();
-            dashWall.enabled = false;
-            GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeedWall);
-            yield return new WaitForSeconds(0.2f);
-            dashWall.enabled = true;
+            GetComponent<Andar>().ControladorMov.enabled = false;
+            transform.position = GameObject.FindGameObjectWithTag("DashWall").transform.position;
+            DashWall.dashWall = false;
         }
-
-
-        //if (DashWall.dashWall == true)
-        //{
-        //    transform.position = GameObject.FindGameObjectWithTag("DashWall").transform.position;
-        //}
 
         currentDashTime = 0;
     }
