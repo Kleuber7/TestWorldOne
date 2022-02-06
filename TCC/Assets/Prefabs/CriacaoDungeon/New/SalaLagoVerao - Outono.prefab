@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2883365162600679}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: -180.7219, y: 0.7326626, z: -24.29111}
-  m_LocalScale: {x: 209.54564, y: 209.54562, z: 209.54562}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
   m_RootOrder: 32
@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 7499455974916625383}
   - component: {fileID: 7452308626133484000}
   - component: {fileID: 165075448680180558}
+  - component: {fileID: 3092971480154129746}
   m_Layer: 0
   m_Name: ArbustoOriginal1.001
   m_TagString: Untagged
@@ -582,6 +583,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3092971480154129746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574192130190301382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.06, z: 0.07566788}
+  m_Center: {x: -0.0021334812, y: 0.0027199688, z: 0.03100987}
 --- !u!1 &649537639924713153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1121,7 @@ GameObject:
   - component: {fileID: 4774614452489099466}
   - component: {fileID: 3327424075574929618}
   - component: {fileID: 124453810736828182}
+  - component: {fileID: 4345697425383860559}
   m_Layer: 0
   m_Name: ArbustoOriginalFlor2.001
   m_TagString: Untagged
@@ -1177,6 +1192,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4345697425383860559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160259664278477503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.06, z: 0.07063875}
+  m_Center: {x: -0.0021173563, y: 0.0034280685, z: 0.033494752}
 --- !u!1 &1180924588455117795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1473,7 @@ GameObject:
   - component: {fileID: 1235322633988240700}
   - component: {fileID: 3005431283752724043}
   - component: {fileID: 2107097504032850837}
+  - component: {fileID: 7079087781598518024}
   m_Layer: 0
   m_Name: TroncoHorizontal2.6Texturizado.001
   m_TagString: Untagged
@@ -1515,6 +1544,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7079087781598518024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312761277526637552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0927882, y: 0.03, z: 0.03023009}
+  m_Center: {x: 4.5669932e-10, y: -0.008475728, z: 0.013844051}
 --- !u!1 &1318533620729384361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1655,7 @@ GameObject:
   - component: {fileID: 7408663883904392121}
   - component: {fileID: 5938408866300624112}
   - component: {fileID: 2519789062639522693}
+  - component: {fileID: 5474453609749767528}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.010
   m_TagString: Untagged
@@ -1628,7 +1671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512905672967646013}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -121.277695, y: 13.778962, z: 70.389336}
+  m_LocalPosition: {x: -130.1, y: 11.8, z: 64.2}
   m_LocalScale: {x: 220.58015, y: 220.58012, z: 220.58012}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
@@ -1683,6 +1726,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5474453609749767528
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512905672967646013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &1538685362264123090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1831,7 @@ GameObject:
   - component: {fileID: 6191323330122842088}
   - component: {fileID: 4690071992415334718}
   - component: {fileID: 6055325147812746654}
+  - component: {fileID: 5624610613235269444}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.005
   m_TagString: Untagged
@@ -1845,6 +1902,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5624610613235269444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556889015182213991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &1589060338578742016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,8 +2022,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716057031557516669}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -178.96318, y: 0.7326626, z: -116.921036}
-  m_LocalScale: {x: 209.54564, y: 209.54562, z: 209.54562}
+  m_LocalPosition: {x: -179.14, y: 1.4233, z: -116.93}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
   m_RootOrder: 30
@@ -2676,7 +2746,7 @@ Transform:
   m_GameObject: {fileID: 2516951932435001160}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: -101.78202, y: 0.7326626, z: 117.595406}
-  m_LocalScale: {x: 209.54564, y: 209.54562, z: 209.54562}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
   m_RootOrder: 29
@@ -2741,6 +2811,7 @@ GameObject:
   - component: {fileID: 6181685931921827238}
   - component: {fileID: 4445661908573850561}
   - component: {fileID: 5632231754438992120}
+  - component: {fileID: 2445742483695731813}
   m_Layer: 0
   m_Name: PedrasCachoeira
   m_TagString: Untagged
@@ -2811,6 +2882,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2445742483695731813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2545730083573935840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.97, y: 2.4601917, z: 1.6163269}
+  m_Center: {x: -0.41333798, y: -0.04718001, z: 0.5024078}
 --- !u!1 &2559093587976466146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,6 +3031,7 @@ GameObject:
   - component: {fileID: 8448104630438265778}
   - component: {fileID: 1121444221848112983}
   - component: {fileID: 5062666199863665026}
+  - component: {fileID: 3495591873138731369}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.003
   m_TagString: Untagged
@@ -3017,6 +3102,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3495591873138731369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796275698374504451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &2858327507638656958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,7 +3297,7 @@ Transform:
   m_GameObject: {fileID: 3086710508155627319}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: 135.11517, y: 0.7326626, z: 171.70587}
-  m_LocalScale: {x: 158.38719, y: 158.38716, z: 158.38715}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
   m_RootOrder: 24
@@ -3359,6 +3457,7 @@ GameObject:
   - component: {fileID: 9150900733175864743}
   - component: {fileID: 6654176729159741507}
   - component: {fileID: 5398929228670097389}
+  - component: {fileID: 283850351135757136}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.015
   m_TagString: Untagged
@@ -3429,6 +3528,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &283850351135757136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298302284568824127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &3323293490259907894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3830,7 +3942,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17, y: 2, z: 50.9}
+  m_Size: {x: 17, y: 5, z: 50.9}
   m_Center: {x: 0, y: 0, z: -8.7}
 --- !u!1 &3418166076342899171
 GameObject:
@@ -4242,7 +4354,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17, y: 2, z: 50.9}
+  m_Size: {x: 17, y: 5, z: 50.9}
   m_Center: {x: 0, y: 0, z: -8.7}
 --- !u!1 &3418166077392779461
 GameObject:
@@ -4274,6 +4386,8 @@ Transform:
   - {fileID: 3418166076635383893}
   - {fileID: 3418166076295715975}
   - {fileID: 3418166077335852326}
+  - {fileID: 1570081093681145483}
+  - {fileID: 503668949187810263}
   m_Father: {fileID: 1803568484207843091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4417,7 +4531,7 @@ Transform:
   m_GameObject: {fileID: 3441362388105180059}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: 57.36529, y: 0.7326626, z: 144.86707}
-  m_LocalScale: {x: 209.54564, y: 209.54562, z: 209.54562}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
   m_RootOrder: 92
@@ -4809,6 +4923,101 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3689347066599884687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503668949187810263}
+  - component: {fileID: 769739012098882536}
+  - component: {fileID: 5501357384037296211}
+  - component: {fileID: 5593151187924175295}
+  m_Layer: 0
+  m_Name: BlockLaterais (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &503668949187810263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689347066599884687}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -220.5, y: 9.3, z: -166.5}
+  m_LocalScale: {x: 29.54731, y: 15.206257, z: 0.14444616}
+  m_Children: []
+  m_Father: {fileID: 3418166077392779462}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!33 &769739012098882536
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689347066599884687}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5501357384037296211
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689347066599884687}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5593151187924175295
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689347066599884687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 5, z: 50.9}
+  m_Center: {x: 0, y: 0, z: -8.7}
 --- !u!1 &3810082022001133563
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,6 +5029,7 @@ GameObject:
   - component: {fileID: 1140496833340604807}
   - component: {fileID: 685002924760525775}
   - component: {fileID: 1348484478652059823}
+  - component: {fileID: 2575308638325527880}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.021
   m_TagString: Untagged
@@ -4890,6 +5100,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2575308638325527880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810082022001133563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &3938683938778532741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,6 +5286,7 @@ GameObject:
   - component: {fileID: 3895218073309230229}
   - component: {fileID: 5173316188690784877}
   - component: {fileID: 8389807276501415034}
+  - component: {fileID: 1112937950542938558}
   m_Layer: 0
   m_Name: Maca.005
   m_TagString: Untagged
@@ -5133,6 +5357,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1112937950542938558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053746671722606672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &4159232895316365484
 GameObject:
   m_ObjectHideFlags: 0
@@ -5445,6 +5682,7 @@ GameObject:
   - component: {fileID: 976434231154685530}
   - component: {fileID: 2327316549560267793}
   - component: {fileID: 2467331439375104830}
+  - component: {fileID: 8900660055979972396}
   m_Layer: 0
   m_Name: TroncoHorizontal2.3Texturizado.001
   m_TagString: Untagged
@@ -5515,6 +5753,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8900660055979972396
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4441569389542011550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0927882, y: 0.020108236, z: 0.021950228}
+  m_Center: {x: -9.3131197e-10, y: -0.00017718029, z: 0.010582475}
 --- !u!1 &4528864496262680777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5688,6 +5939,7 @@ GameObject:
   - component: {fileID: 5378609475488990933}
   - component: {fileID: 8359802842669450551}
   - component: {fileID: 5983229696858315269}
+  - component: {fileID: 2530986187855869336}
   m_Layer: 0
   m_Name: TroncoHorizontal2.5Texturizado..001
   m_TagString: Untagged
@@ -5758,6 +6010,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2530986187855869336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664708438929006836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09278819, y: 0.029291041, z: 0.043439295}
+  m_Center: {x: 8.586374e-10, y: -0.0047685867, z: 0.021327006}
 --- !u!1 &4775903225959216750
 GameObject:
   m_ObjectHideFlags: 0
@@ -5850,6 +6115,7 @@ GameObject:
   - component: {fileID: 8064523757641389090}
   - component: {fileID: 1006347213265577209}
   - component: {fileID: 1315421434231392488}
+  - component: {fileID: 2485098621680833143}
   m_Layer: 0
   m_Name: PedraRio1.001
   m_TagString: Untagged
@@ -5920,6 +6186,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2485098621680833143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794804483936219700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1044369, y: 0.09630423, z: 0.041704644}
+  m_Center: {x: -0.0016573909, y: 0.0018153195, z: 0.008333723}
 --- !u!1 &4808616215459496347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,6 +6210,7 @@ GameObject:
   - component: {fileID: 3471866589533411371}
   - component: {fileID: 5262026729638422132}
   - component: {fileID: 7640921404212112456}
+  - component: {fileID: 5539225691830054287}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.008
   m_TagString: Untagged
@@ -6001,6 +6281,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5539225691830054287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808616215459496347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &4816714097853821967
 GameObject:
   m_ObjectHideFlags: 0
@@ -6258,6 +6551,101 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4889869208505292651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1570081093681145483}
+  - component: {fileID: 29002726916221435}
+  - component: {fileID: 6212476592251653496}
+  - component: {fileID: 1191026355083368434}
+  m_Layer: 0
+  m_Name: BlockLaterais (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1570081093681145483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889869208505292651}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -105.4, y: 9.3, z: -219.7}
+  m_LocalScale: {x: 29.54731, y: 15.206257, z: 0.14444616}
+  m_Children: []
+  m_Father: {fileID: 3418166077392779462}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &29002726916221435
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889869208505292651}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6212476592251653496
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889869208505292651}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1191026355083368434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889869208505292651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 5, z: 50.9}
+  m_Center: {x: 0, y: 0, z: -8.7}
 --- !u!1 &4905480209026503891
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,6 +6657,7 @@ GameObject:
   - component: {fileID: 7985352241971347884}
   - component: {fileID: 3425992069290412237}
   - component: {fileID: 9179817769554490516}
+  - component: {fileID: 2700763837516533847}
   m_Layer: 0
   m_Name: Laranja.004
   m_TagString: Untagged
@@ -6339,6 +6728,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2700763837516533847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905480209026503891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &4962264030659920893
 GameObject:
   m_ObjectHideFlags: 0
@@ -6770,6 +7172,7 @@ GameObject:
   - component: {fileID: 6398116377845025709}
   - component: {fileID: 4446686028332020454}
   - component: {fileID: 6463452026898918712}
+  - component: {fileID: 8411684627879370896}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.001
   m_TagString: Untagged
@@ -6840,6 +7243,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8411684627879370896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236751966663248704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &5243343342381800383
 GameObject:
   m_ObjectHideFlags: 0
@@ -6946,6 +7362,7 @@ GameObject:
   - component: {fileID: 4929061466658154198}
   - component: {fileID: 9007637503098798152}
   - component: {fileID: 1963947749180340171}
+  - component: {fileID: 6449277747022931011}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.006
   m_TagString: Untagged
@@ -7016,6 +7433,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6449277747022931011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289803564106559916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &5353405070805403323
 GameObject:
   m_ObjectHideFlags: 0
@@ -7027,6 +7457,7 @@ GameObject:
   - component: {fileID: 2573468303189311720}
   - component: {fileID: 3397255299472872904}
   - component: {fileID: 7170073408052810758}
+  - component: {fileID: 3036089909872431705}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.004
   m_TagString: Untagged
@@ -7042,7 +7473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5353405070805403323}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -4.039707, y: 22.902573, z: 202.15756}
+  m_LocalPosition: {x: -4.039707, y: 11.4, z: 198.2}
   m_LocalScale: {x: 220.58015, y: 220.58012, z: 220.58012}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
@@ -7097,6 +7528,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3036089909872431705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353405070805403323}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.02, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &5439771593025104530
 GameObject:
   m_ObjectHideFlags: 0
@@ -7365,6 +7809,7 @@ GameObject:
   - component: {fileID: 3494252586567575552}
   - component: {fileID: 1406043549405588693}
   - component: {fileID: 3264600145964060790}
+  - component: {fileID: 7782148037957283658}
   m_Layer: 0
   m_Name: PlantaTeste2.002
   m_TagString: Untagged
@@ -7435,6 +7880,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7782148037957283658
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5569529024335723188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.05, z: 0.06731439}
+  m_Center: {x: -0.0036021853, y: 0.00091758487, z: 0.019247081}
 --- !u!1 &5791569861248100622
 GameObject:
   m_ObjectHideFlags: 0
@@ -7932,6 +8390,7 @@ GameObject:
   - component: {fileID: 4585472545032157760}
   - component: {fileID: 226769821428866407}
   - component: {fileID: 7486415582605254516}
+  - component: {fileID: 3939340201349649558}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.002
   m_TagString: Untagged
@@ -8002,6 +8461,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3939340201349649558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439190907666564138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &6439342464111609674
 GameObject:
   m_ObjectHideFlags: 0
@@ -8013,6 +8485,7 @@ GameObject:
   - component: {fileID: 8914743120653186892}
   - component: {fileID: 8703189450724635198}
   - component: {fileID: 4148612669755821232}
+  - component: {fileID: 7000515380743479191}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.011
   m_TagString: Untagged
@@ -8083,6 +8556,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7000515380743479191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439342464111609674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &6483340103249171439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8351,6 +8837,7 @@ GameObject:
   - component: {fileID: 8272463905284375524}
   - component: {fileID: 1096967150288466411}
   - component: {fileID: 5241786981964062537}
+  - component: {fileID: 5376155713208474283}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.007
   m_TagString: Untagged
@@ -8421,6 +8908,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5376155713208474283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113869922318521813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &7146205617501671362
 GameObject:
   m_ObjectHideFlags: 0
@@ -8675,6 +9175,7 @@ GameObject:
   - component: {fileID: 3764758892241336485}
   - component: {fileID: 7006857828411951235}
   - component: {fileID: 2651682831397568820}
+  - component: {fileID: 4159236719412226396}
   m_Layer: 0
   m_Name: PinheiroPrimaveraTexturizado.009
   m_TagString: Untagged
@@ -8745,6 +9246,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4159236719412226396
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328034470932766586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &7426266049982089857
 GameObject:
   m_ObjectHideFlags: 0
@@ -8867,7 +9381,7 @@ Transform:
   m_GameObject: {fileID: 7459077118004915488}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: -35.297848, y: 0.7326626, z: -126.50785}
-  m_LocalScale: {x: 209.54564, y: 209.54562, z: 209.54562}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
   m_RootOrder: 26
@@ -8948,7 +9462,7 @@ Transform:
   m_GameObject: {fileID: 7466199813695683204}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: 163.12782, y: 0.7326626, z: 85.100945}
-  m_LocalScale: {x: 209.54564, y: 209.54562, z: 209.54562}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 759351605810188328}
   m_RootOrder: 28
@@ -9580,6 +10094,7 @@ GameObject:
   - component: {fileID: 8849266403626042247}
   - component: {fileID: 5975065152384047688}
   - component: {fileID: 1534422669103735639}
+  - component: {fileID: 7240038707654699984}
   m_Layer: 0
   m_Name: ArvoreRedonda1.001
   m_TagString: Untagged
@@ -9650,6 +10165,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7240038707654699984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266216094254726235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.13, z: 0.23028165}
+  m_Center: {x: 0.0005519651, y: 0.000013753775, z: 0.061963707}
 --- !u!1 &8284058367643954017
 GameObject:
   m_ObjectHideFlags: 0
@@ -9837,6 +10365,7 @@ GameObject:
   - component: {fileID: 6245284027212897032}
   - component: {fileID: 2357133854082666264}
   - component: {fileID: 1623189673892807947}
+  - component: {fileID: 8291948345495093276}
   m_Layer: 0
   m_Name: Tronco2V2Texturizado.001
   m_TagString: Untagged
@@ -9907,6 +10436,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8291948345495093276
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479123384943646801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04127109, y: 0.04250968, z: 0.052198604}
+  m_Center: {x: -0.0015042666, y: -0.0047310856, z: 0.02480609}
 --- !u!1 &8697743397660951105
 GameObject:
   m_ObjectHideFlags: 0
@@ -10404,6 +10946,7 @@ GameObject:
   - component: {fileID: 1985007700452040896}
   - component: {fileID: 6084717447215818881}
   - component: {fileID: 2120415997365070932}
+  - component: {fileID: 6778011514581784206}
   m_Layer: 0
   m_Name: PlantaTeste2.001
   m_TagString: Untagged
@@ -10474,6 +11017,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6778011514581784206
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008681968006090731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.05, z: 0.06731439}
+  m_Center: {x: -0.0036021853, y: 0.00091758487, z: 0.019247081}
 --- !u!1 &9054631965193291484
 GameObject:
   m_ObjectHideFlags: 0

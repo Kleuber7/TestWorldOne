@@ -41,38 +41,17 @@ public class FSMJogador : MonoBehaviour
         const string player_Iddle = "Parado";
 
         return player_Iddle;
-        //jogadorAnima.SetBool("Andar", false);
-        //jogadorAnima.SetBool("Parado", true);
+       
     }
 
-    public void Bater()
-    {
-        
-        //jogadorAnima.SetBool("Bater 1", true);
-    }
+ 
+    //public string SetHorizontal()
+    //{
+    //    const string player_Horizontal = "Horizontal";
 
-    public void NBater()
-    {
-        jogadorAnima.SetBool("Bater 1", false);
-        jogadorAnima.SetBool("Bater 2", false);
-        jogadorAnima.SetBool("Bater 3", false);
-    }
-
-    public string SetHorizontal()
-    {
-        const string player_Horizontal = "Horizontal";
-
-        return player_Horizontal;
-        // jogadorAnima.SetFloat("Horizontal", valor);
-    }
-
-    public string SetVertical()
-    {
-        const string player_Vertical = "Vertical";
-
-        return player_Vertical;
-        //jogadorAnima.SetFloat("Vertical", valor);
-    }
+    //    return player_Horizontal;
+    //    jogadorAnima.SetFloat("Horizontal", valor);
+    //}
 
     public string Critico()
     {

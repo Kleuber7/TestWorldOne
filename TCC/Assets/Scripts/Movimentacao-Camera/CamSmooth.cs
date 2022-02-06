@@ -9,7 +9,7 @@ public class CamSmooth : MonoBehaviour
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if(player == null)
         {

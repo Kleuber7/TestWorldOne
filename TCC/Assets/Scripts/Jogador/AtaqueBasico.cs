@@ -16,8 +16,6 @@ public class AtaqueBasico : MonoBehaviour
     Andar andar;
 
 
-    float attackDelay;
-
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -81,7 +79,6 @@ public class AtaqueBasico : MonoBehaviour
                     contadorCombo++;
                 }
 
-               
                 
             }
         }

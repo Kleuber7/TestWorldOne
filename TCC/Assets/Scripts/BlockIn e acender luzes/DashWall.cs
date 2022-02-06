@@ -7,6 +7,8 @@ public class DashWall : MonoBehaviour
     public static bool dashWall = false;
     [SerializeField] private GameObject dashImage;
     [SerializeField] private GameObject firstDash, secondDash;
+
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

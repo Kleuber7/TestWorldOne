@@ -70,6 +70,7 @@ public class Dash : MonoBehaviour
         {
             GetComponent<Andar>().ControladorMov.enabled = false;
             transform.position = GameObject.FindGameObjectWithTag("DashWall").transform.position;
+            DashWall.dashWall = false;
         }
 
         currentDashTime = 0;
