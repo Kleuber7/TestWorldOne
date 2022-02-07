@@ -22993,7 +22993,7 @@ PrefabInstance:
       objectReference: {fileID: 919132147892234270}
     - target: {fileID: 1024340518899662168, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: velocidadeDesloca
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1024340518899662168, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: scriptDeAtaqueADistancia
@@ -23179,17 +23179,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2493139183039492616, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: m_Center.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2493139183039492617, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 21acb22ab60bceb459e90c16baeb121a, type: 2}
+    - target: {fileID: 2493139183039492619, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: m_Height
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2493139183039492619, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: m_Radius
+      value: 2.28
+      objectReference: {fileID: 0}
     - target: {fileID: 2493139183039492619, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2493139183039492619, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Center.y
-      value: 0
+      value: 6.67
       objectReference: {fileID: 0}
     - target: {fileID: 2599969310983633184, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
@@ -23622,6 +23634,10 @@ PrefabInstance:
     - target: {fileID: 6722316323666223285, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722316323666223285, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: m_Center.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6722316323666223285, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_IsTrigger
