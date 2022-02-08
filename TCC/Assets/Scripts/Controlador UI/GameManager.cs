@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         SceneChanges();
-        Menu();
+        //Menu();
         ContEnemys();
     }
 
