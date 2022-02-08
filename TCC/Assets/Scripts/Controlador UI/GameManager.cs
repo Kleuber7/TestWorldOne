@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public Tela_De_Load load;
     
-    private void Start() 
+    private void Awake() 
     {
         GameFeatures();
 
@@ -88,10 +88,6 @@ public class GameManager : MonoBehaviour
     }
     void SceneChanges()
     {
-        for (int i = 0; i < SceneManager.sceneCount; i++)
-        {
-            cenas[i] = SceneManager.GetSceneAt(i);
-        }
 
         if(SceneManager.GetSceneAt(0).buildIndex != cenaIndex)
         {
@@ -100,7 +96,12 @@ public class GameManager : MonoBehaviour
             SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetSceneAt(0));
             cenaIndex = SceneManager.GetSceneAt(0).buildIndex;
         }
-        
+
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            cenas[i] = SceneManager.GetSceneAt(i);
+        }
+
     }
     void Menu()
     {

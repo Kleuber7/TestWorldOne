@@ -162,10 +162,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7424684286156523158}
-  - component: {fileID: 6736695498824813932}
-  - component: {fileID: 4500733661150862405}
   m_Layer: 0
-  m_Name: 'ParedeDash '
+  m_Name: DashWallConfigs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,29 +185,62 @@ Transform:
   - {fileID: 2630844772387607296}
   - {fileID: 1150322380358332728}
   - {fileID: 2897760674885854163}
+  - {fileID: 6223537824792523424}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 5.605, z: 0}
---- !u!65 &6736695498824813932
+--- !u!1 &4603010070122575044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6223537824792523424}
+  - component: {fileID: 4236389160343939959}
+  - component: {fileID: 6769866623536086783}
+  m_Layer: 0
+  m_Name: ParedeDash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6223537824792523424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603010070122575044}
+  m_LocalRotation: {x: -0, y: -0.9988041, z: -0, w: -0.04889151}
+  m_LocalPosition: {x: 13.86515, y: -24.290075, z: 75.409836}
+  m_LocalScale: {x: 0.6452468, y: 1, z: 1.4218655}
+  m_Children: []
+  m_Father: {fileID: 7424684286156523158}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4236389160343939959
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446086063999725662}
+  m_GameObject: {fileID: 4603010070122575044}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 27.4, y: 50, z: 50}
   m_Center: {x: 0, y: 0, z: 45.9}
---- !u!114 &4500733661150862405
+--- !u!114 &6769866623536086783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446086063999725662}
+  m_GameObject: {fileID: 4603010070122575044}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb94aae6dbbfdbc4d9737e9b776461da, type: 3}
