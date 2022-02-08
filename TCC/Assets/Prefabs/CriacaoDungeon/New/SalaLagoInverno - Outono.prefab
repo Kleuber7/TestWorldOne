@@ -32268,6 +32268,7 @@ GameObject:
   - component: {fileID: 7558031424179697683}
   - component: {fileID: 3876001239705083324}
   - component: {fileID: 3234564049700617035}
+  - component: {fileID: 6480513132812714998}
   m_Layer: 0
   m_Name: Tronco1V2Texturizado.006
   m_TagString: Untagged
@@ -32283,7 +32284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5182666436395526857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58.325195, y: 0, z: -125.218346}
+  m_LocalPosition: {x: -76.6, y: 0, z: -84.8}
   m_LocalScale: {x: 3.423347, y: 3.423347, z: 3.423347}
   m_Children: []
   m_Father: {fileID: 3706022021063389923}
@@ -32338,6 +32339,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6480513132812714998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5182666436395526857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2.905075, z: 4}
+  m_Center: {x: -0.17582631, y: 0.9136172, z: 0.21556604}
 --- !u!1 &5249480699507493615
 GameObject:
   m_ObjectHideFlags: 0
@@ -42834,7 +42848,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1446086063999725662, guid: 53e8693571112eb489a286fa38bce016, type: 3}
       propertyPath: m_Name
-      value: 'ParedeDash '
+      value: WallDashConfigs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223537824792523424, guid: 53e8693571112eb489a286fa38bce016, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223537824792523424, guid: 53e8693571112eb489a286fa38bce016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 100.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223537824792523424, guid: 53e8693571112eb489a286fa38bce016, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0042020935
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223537824792523424, guid: 53e8693571112eb489a286fa38bce016, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99999124
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223537824792523424, guid: 53e8693571112eb489a286fa38bce016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 179.518
       objectReference: {fileID: 0}
     - target: {fileID: 7424684286156523158, guid: 53e8693571112eb489a286fa38bce016, type: 3}
       propertyPath: m_RootOrder
@@ -42850,7 +42884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7424684286156523158, guid: 53e8693571112eb489a286fa38bce016, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -166.7
+      value: -169.7
       objectReference: {fileID: 0}
     - target: {fileID: 7424684286156523158, guid: 53e8693571112eb489a286fa38bce016, type: 3}
       propertyPath: m_LocalRotation.w

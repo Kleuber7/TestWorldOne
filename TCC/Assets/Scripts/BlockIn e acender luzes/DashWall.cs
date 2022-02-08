@@ -18,9 +18,9 @@ public class DashWall : MonoBehaviour
         }
         if (other.gameObject.tag == "Player" && dashWall == true && gameObject.name == "ParedeDash")
         {
-            StartCoroutine(TimeImageDash());
             firstDash.SetActive(true);
             secondDash.SetActive(false);
+            StartCoroutine(TimeImageDash());
         }
         else if (other.gameObject.tag == "Player" && dashWall == true && gameObject.name == "WallDashBack")
         {
