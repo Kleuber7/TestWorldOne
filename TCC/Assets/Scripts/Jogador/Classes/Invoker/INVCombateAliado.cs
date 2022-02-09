@@ -53,7 +53,7 @@ public class INVCombateAliado : INVAliado
     public void Ataque()
     {
         alvo.GetComponent<INIStatus>().vida -= dano;
-        alvo.GetComponent<FSMInimigos>().ChangeAnimationState(GetComponent<FSMInimigos>().TomarDano());
+        
     }
 
     public IEnumerator IntervaloAtaque()

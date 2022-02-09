@@ -258,7 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dano: 3
+  danoReal: 0
   tagColisor: Player
+  status: {fileID: 2317671470818671314}
 --- !u!114 &7428262037308754456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alvo: {fileID: 0}
   velocidade: 6
-  velocidadeDeAtaque: 0.6
+  velocidadeDeAtaque: 0.54
   velocidadeAtaqueOriginal: 0
   inimigo: {fileID: 8367059294908652799}
   perseguir: 0
@@ -429,6 +431,7 @@ MonoBehaviour:
   dano: 20
   danoReal: 0
   range: 2
+  stunTime: 0.5
   Efeito_Comromper: 0
   Forma_Aliado: {fileID: 0}
   stunado: 0

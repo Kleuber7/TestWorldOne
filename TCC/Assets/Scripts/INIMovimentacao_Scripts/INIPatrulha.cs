@@ -18,6 +18,7 @@ public class INIPatrulha : INIMovimento
     [SerializeField] private float tempoDespertar;
     public bool despertando;
     public bool reinicia = false;
+    
 
     private void Start() 
     {
@@ -40,7 +41,7 @@ public class INIPatrulha : INIMovimento
 
         if(patrulha)
         {
-            if(!scriptPerseguir.GetPerseguir() && !this.gameObject.GetComponent<INIStatus>().GetStunado() && !scriptPerseguir.GetAtacando())
+            if(!scriptPerseguir.GetPerseguir() && !this.gameObject.GetComponent<INIStatus>().GetStunado() && !scriptPerseguir.GetAtacando() && scriptPerseguir.finishAnimation)
             {
                     
                 //inimigo.transform.position = Vector3.MoveTowards(transform.position, direcao, velocidade * Time.deltaTime);
@@ -62,6 +63,7 @@ public class INIPatrulha : INIMovimento
     }
 
 
+    
 
     // IEnumerator Descansar()
     // {

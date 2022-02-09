@@ -75,7 +75,7 @@ public class Jogador_Status : MonoBehaviour
 
 
         AtualizaValoresMaximos();
-        barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
+        
 
 
 

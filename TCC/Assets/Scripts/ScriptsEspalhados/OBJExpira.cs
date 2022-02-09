@@ -6,7 +6,7 @@ public class OBJExpira : MonoBehaviour
 {
     public float duracao;
     public bool iniciou;
-
+    
     void Update()
     {
         if(!iniciou)
