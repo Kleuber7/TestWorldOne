@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dano: 3
+  danoReal: 0
   tagColisor: Player
+  status: {fileID: 6076626950567652435}
 --- !u!114 &1280654155977771355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1289,6 @@ GameObject:
   - component: {fileID: 6076626950567652444}
   - component: {fileID: 6076626950567652435}
   - component: {fileID: 6076626950567652447}
-  - component: {fileID: 6076626950567652446}
   - component: {fileID: 6076626950567652433}
   - component: {fileID: 6076626950567652432}
   - component: {fileID: 8412583957032856624}
@@ -1349,6 +1350,7 @@ MonoBehaviour:
   dano: 50
   danoReal: 0
   range: 3
+  stunTime: 0.5
   Efeito_Comromper: 0
   Forma_Aliado: {fileID: 0}
   stunado: 0
@@ -1367,23 +1369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 7947627790920776051, guid: 9a5fcbaaa7483254eba83e94347a3459, type: 3}
---- !u!114 &6076626950567652446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6076626950567652434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7957abecd2ec9479c703b1ea2d3051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Efeito_Comromper: 0
-  Efeito_Explosao: 0
-  Forma_Aliado: {fileID: 0}
-  Bomba: {fileID: 0}
-  Status: {fileID: 6076626950567652435}
 --- !u!114 &6076626950567652433
 MonoBehaviour:
   m_ObjectHideFlags: 0

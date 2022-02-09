@@ -10,6 +10,7 @@ public class DanoAtaqueBasico : MonoBehaviour
     [SerializeField] private FontedeVida fonteedeVida;
     [SerializeField] private AtaqueBasico ataqueBasico;
     [SerializeField] private Congelar congelar;
+    [SerializeField] private float timeStun = 0.5f;
     private Critico critico;
     public Testing damagePop;
 
@@ -27,7 +28,8 @@ public class DanoAtaqueBasico : MonoBehaviour
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
-           other.GetComponent<FSMInimigos>().ChangeAnimationState("TomarDano");
+            StartCoroutine(other.GetComponent<INIMovimento>().Stunado(timeStun));
+            other.GetComponent<FSMInimigos>().ChangeAnimationState("TomarDano");
             other.GetComponent<INIStatus>().TomarDano(dano);
             //fonteedeVida.CurarP();
         }
@@ -39,9 +41,11 @@ public class DanoAtaqueBasico : MonoBehaviour
             //fonteedeVida.CurarP();
         }
 
-        if(ataqueBasico.contadorCombo == 3)
-        {
-            congelar.CongelarINI(other.gameObject);
-        }
+        //if(ataqueBasico.contadorCombo == 3)
+        //{
+        //    congelar.CongelarINI(other.gameObject);
+        //}
     }
+
+    
 }

@@ -36,17 +36,13 @@ public class AtaqueBasico : MonoBehaviour
         {
             contadorCombo = 0;
         }
-
        
-
         if (Input.GetMouseButtonDown(0))
         {
-
             if (podeAtacar == true)
             {
                 RaycastHit hit;
 
-                
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && Vector3.Distance(transform.position, hit.point) > 5f)
                 {
                     andar.direcaoRotacao = new Vector3(hit.point.x, transform.position.y, hit.point.z);
@@ -60,7 +56,6 @@ public class AtaqueBasico : MonoBehaviour
                 StartCoroutine(expiraCombo());
                 StartCoroutine(CDAtaque());
 
-
                 if (contadorCombo == 0)
                 {
                     StartCoroutine(PlayAnimationOne());
@@ -73,20 +68,15 @@ public class AtaqueBasico : MonoBehaviour
                 {
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
-
                 if (combo)
                 {
                     contadorCombo++;
                 }
-
-                
             }
         }
-
-       
     }
-    
 
+  
     IEnumerator PlayAnimationOne()
     {
         animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());

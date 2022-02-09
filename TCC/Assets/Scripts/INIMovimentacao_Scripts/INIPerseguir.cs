@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class INIPerseguir : MonoBehaviour
@@ -21,7 +22,8 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private INIPatrulha scriptPatrulha;
     [SerializeField] private FSMInimigos iniAnima;
     [SerializeField] private Collider areaDoAtaque;
-
+    [SerializeField] public bool finishAnimation = true;
+    public float timeAnimation;
     private void Start()
     {
         iniAnima = GetComponentInParent<FSMInimigos>();
@@ -42,7 +44,7 @@ public class INIPerseguir : MonoBehaviour
                 inimigo.transform.LookAt(direcaoRotacao);
             }
 
-            if(Vector3.Distance(transform.position, alvo.position) > distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel && !atacando)
+            if(Vector3.Distance(transform.position, alvo.position) > distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel && !atacando && finishAnimation)
             {
                 iniAnima.ChangeAnimationState(iniAnima.Perseguindo());
                 inimigo.position = Vector3.MoveTowards(inimigo.position, new Vector3(alvo.position.x, inimigo.position.y, alvo.position.z), velocidade * Time.deltaTime);
@@ -139,19 +141,36 @@ public class INIPerseguir : MonoBehaviour
 
     IEnumerator DanoInimigo()
     {
+        finishAnimation = false;
         atacando = true;
         iniAnima.ChangeAnimationState(iniAnima.Atacar());
+        timeAnimation = iniAnima.InimigoAnima.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.2f;
+
         yield return new WaitForSecondsRealtime(1/velocidadeDeAtaque);
         if (EsquivaOfensiva.esquivar == true)
         {
             EsquivaOfensiva.Esquivou();
         }
-        else if(alvo.gameObject.tag == "Player")
+        else if(alvo.gameObject.tag == "Player" && !status.GetStunado())
         {
             //GetComponentInParent<FSMInimigos>().Atacar();
             areaDoAtaque.gameObject.SetActive(true);
         }
+        GetAnimationState();
         StartCoroutine(ResetaAtaque());
+    }
+
+    
+    async void GetAnimationState()
+    {
+        await GetAnimationStateAsync();
+        finishAnimation = true;
+    }
+    async Task GetAnimationStateAsync()
+    {
+        int delay = (int)timeAnimation;
+        await Task.Delay(1000 * delay);
+        
     }
 
     public IEnumerator ResetaAtaque()
@@ -162,7 +181,9 @@ public class INIPerseguir : MonoBehaviour
 
     public IEnumerator AtiraProjetil()
     {
+
         atacando = true;
+       
         yield return new WaitForSecondsRealtime(1/velocidadeDeAtaque);
        
         if(alvo != null)
