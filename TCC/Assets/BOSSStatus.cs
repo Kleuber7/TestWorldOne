@@ -2,17 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BOSSStatus : MonoBehaviour
+public class BOSSStatus : BASEStatus
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool enfurecido;
+    public float danoAtaqueBasico;
 }

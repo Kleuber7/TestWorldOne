@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class BOSSGerenciador : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool atirar;
+    public bool atravessar;
+    public bool enfurecido;
+    public GameObject alvo;
+    public BOSSStatus status;
+    public BOSSPath scriptPath;
+    public BOSSTiros scriptTiros;
+
     void Start()
     {
-        
+        alvo = GameManager.gameManager.GetPlayer();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if(status.vida <= (status.vidaMax * .3f))
+        {
+            enfurecido = true;
+        }
+    }
+
+    public IEnumerator AlteraEstado()
+    {
+        yield return new WaitForSeconds(1);
     }
 }
