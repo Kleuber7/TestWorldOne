@@ -109,10 +109,9 @@ Transform:
   m_LocalRotation: {x: -0.49943945, y: 0.50056, z: 0.5005414, w: 0.49945801}
   m_LocalPosition: {x: 133.83568, y: 1.345398, z: -13.939368}
   m_LocalScale: {x: 222.354, y: 222.354, z: 222.35403}
-  m_Children:
-  - {fileID: 8100391112053078923}
+  m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8769292756386041790
 MeshFilter:
@@ -417,7 +416,6 @@ GameObject:
   - component: {fileID: 3754903316306877658}
   - component: {fileID: 3029919605216050431}
   - component: {fileID: 1504180532338240584}
-  - component: {fileID: 1376956177519050237}
   m_Layer: 0
   m_Name: PonteMeio.017
   m_TagString: Untagged
@@ -437,7 +435,7 @@ Transform:
   m_LocalScale: {x: 222.35403, y: 222.35403, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3029919605216050431
 MeshFilter:
@@ -488,19 +486,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1376956177519050237
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395892623728969115}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.114978105, y: 0.10734438, z: 0.14772712}
-  m_Center: {x: 0.00037634466, y: -0.040073697, z: -0.055}
 --- !u!1 &574192130190301382
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +592,6 @@ GameObject:
   - component: {fileID: 3155640523326824118}
   - component: {fileID: 2142422738114147799}
   - component: {fileID: 6202335731582121582}
-  - component: {fileID: 5920993393237114538}
   m_Layer: 0
   m_Name: PonteMeio.002
   m_TagString: Untagged
@@ -627,7 +611,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.35399, z: 222.35405}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2142422738114147799
 MeshFilter:
@@ -678,19 +662,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5920993393237114538
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649537639924713153}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.112455666, y: 0.08922574, z: 0.14772709}
-  m_Center: {x: 0.00000023759952, y: -0.053479444, z: -0.055}
 --- !u!1 &688893337808415255
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +754,6 @@ GameObject:
   - component: {fileID: 6780576344711766926}
   - component: {fileID: 9051482580308178168}
   - component: {fileID: 8533618892526434671}
-  - component: {fileID: 6653589953544859091}
   m_Layer: 0
   m_Name: PonteMeio.005
   m_TagString: Untagged
@@ -803,7 +773,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.35399, z: 222.35405}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9051482580308178168
 MeshFilter:
@@ -854,19 +824,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6653589953544859091
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689994548579909752}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.112455666, y: 0.08916358, z: 0.14772709}
-  m_Center: {x: -8.190834e-10, y: -0.053510524, z: -0.055}
 --- !u!1 &795588707036100586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1254,6 @@ GameObject:
   - component: {fileID: 7568114532686947056}
   - component: {fileID: 3684324968162817747}
   - component: {fileID: 6360840185713771068}
-  - component: {fileID: 8015533370998375676}
   m_Layer: 0
   m_Name: PonteMeio.001
   m_TagString: Untagged
@@ -1317,7 +1273,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.35399, z: 222.35405}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3684324968162817747
 MeshFilter:
@@ -1368,19 +1324,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8015533370998375676
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188087454354577124}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.112455666, y: 0.12048644, z: 0.14772709}
-  m_Center: {x: 0.00000047603265, y: -0.037848618, z: -0.055}
 --- !u!1 &1241161383808470494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,10 +2129,9 @@ Transform:
   m_LocalRotation: {x: -0.49943945, y: 0.50056, z: 0.5005414, w: 0.49945801}
   m_LocalPosition: {x: 116.41276, y: 1.345398, z: 21.792398}
   m_LocalScale: {x: 222.354, y: 222.354, z: 222.35403}
-  m_Children:
-  - {fileID: 1453068504989849541}
+  m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8012020541539633272
 MeshFilter:
@@ -2635,7 +2577,6 @@ GameObject:
   - component: {fileID: 2705988721436077237}
   - component: {fileID: 4226362846956864541}
   - component: {fileID: 4908321025016214630}
-  - component: {fileID: 7279974586121009802}
   m_Layer: 0
   m_Name: PonteMeio.014
   m_TagString: Untagged
@@ -2655,7 +2596,7 @@ Transform:
   m_LocalScale: {x: 222.35411, y: 222.35408, z: 222.35406}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4226362846956864541
 MeshFilter:
@@ -2706,19 +2647,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7279974586121009802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2396767585350714355}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.11245569, y: 0.08916361, z: 0.1477271}
-  m_Center: {x: -0.00000047690025, y: -0.05351031, z: -0.055}
 --- !u!1 &2516951932435001160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,50 +2904,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &2750431308539700638
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8100391112053078923}
-  - component: {fileID: 1095751690062276516}
-  m_Layer: 0
-  m_Name: Rampa
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8100391112053078923
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750431308539700638}
-  m_LocalRotation: {x: 0.11599158, y: 0.0007004438, z: 0.0000010132787, w: 0.99325}
-  m_LocalPosition: {x: 0.00000076928956, y: -0.0089, z: 0.0039}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8334595717429522474}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.322, y: 0.082, z: 0.01}
---- !u!65 &1095751690062276516
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750431308539700638}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07, y: 0.1, z: 0.03}
-  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!1 &2796275698374504451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,50 +3110,6 @@ Transform:
   m_Father: {fileID: 3418166076374886944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3078503691218519737
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1453068504989849541}
-  - component: {fileID: 3280743045280505855}
-  m_Layer: 0
-  m_Name: Rampa
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1453068504989849541
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078503691218519737}
-  m_LocalRotation: {x: 0.11779854, y: 0.0007099509, z: -0.00000035762787, w: 0.9930373}
-  m_LocalPosition: {x: 0, y: -0.0071, z: 0.0046}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 35818565712995417}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.53, y: 0.083, z: 0.01}
---- !u!65 &3280743045280505855
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078503691218519737}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07, y: 0.1, z: 0.03}
-  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!1 &3086710508155627319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3362,7 +3202,6 @@ GameObject:
   - component: {fileID: 7875220477716643307}
   - component: {fileID: 3325447155706552701}
   - component: {fileID: 1718100505942248924}
-  - component: {fileID: 6497969056835698922}
   m_Layer: 0
   m_Name: PonteMeio.009
   m_TagString: Untagged
@@ -3382,7 +3221,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.354, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3325447155706552701
 MeshFilter:
@@ -3433,19 +3272,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6497969056835698922
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3281060845959819985}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.09489045, y: 0.086096965, z: 0.009611134}
-  m_Center: {x: -0.0000009537094, y: -0.053231627, z: -0.055}
 --- !u!1 &3298302284568824127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3552,7 +3378,6 @@ GameObject:
   - component: {fileID: 3649532617767762517}
   - component: {fileID: 1936093941941227281}
   - component: {fileID: 3681179600346496166}
-  - component: {fileID: 6663274923760528440}
   m_Layer: 0
   m_Name: PonteMeio.003
   m_TagString: Untagged
@@ -3572,7 +3397,7 @@ Transform:
   m_LocalScale: {x: 222.35403, y: 222.35403, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1936093941941227281
 MeshFilter:
@@ -3623,19 +3448,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6663274923760528440
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3323293490259907894}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.114978105, y: 0.10734438, z: 0.14772712}
-  m_Center: {x: 0.00037586782, y: -0.040074173, z: -0.055}
 --- !u!1 &3326446515892462126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,6 +3638,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3646738933727328375}
   - {fileID: 7846293972162336653}
   - {fileID: 35818565712995417}
   - {fileID: 6726663222080181539}
@@ -4758,7 +4571,6 @@ GameObject:
   - component: {fileID: 7329699276695676966}
   - component: {fileID: 4106778270600759114}
   - component: {fileID: 9192046472992252187}
-  - component: {fileID: 1815094181406689432}
   m_Layer: 0
   m_Name: PonteMeio.007
   m_TagString: Untagged
@@ -4778,7 +4590,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.354, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4106778270600759114
 MeshFilter:
@@ -4829,19 +4641,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1815094181406689432
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3546289514320469092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1036108, y: 0.08916359, z: 0.1477271}
-  m_Center: {x: -0.0044229124, y: -0.053510297, z: -0.055}
 --- !u!1 &3662787417354992469
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,7 +5180,6 @@ GameObject:
   - component: {fileID: 7628889825739949003}
   - component: {fileID: 5984973285644473368}
   - component: {fileID: 8876689183257771256}
-  - component: {fileID: 5982721234350471313}
   m_Layer: 0
   m_Name: PonteMeio.016
   m_TagString: Untagged
@@ -5401,7 +5199,7 @@ Transform:
   m_LocalScale: {x: 222.35403, y: 222.35403, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5984973285644473368
 MeshFilter:
@@ -5452,19 +5250,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5982721234350471313
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4159232895316365484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1045967, y: 0.1078528, z: 0.14772712}
-  m_Center: {x: -0.004815314, y: -0.044166423, z: -0.055}
 --- !u!1 &4162272339213124651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5627,50 +5412,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4344178660129376104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4085607682693400846}
-  - component: {fileID: 1152510289420262274}
-  m_Layer: 0
-  m_Name: rampa
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4085607682693400846
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344178660129376104}
-  m_LocalRotation: {x: 0.10935359, y: 0.0006592573, z: -0.0000004768372, w: 0.99400276}
-  m_LocalPosition: {x: 0, y: -0.0101, z: 0.0048}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7846293972162336653}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 12.556, y: 0.077, z: 0.008}
---- !u!65 &1152510289420262274
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344178660129376104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07, y: 0.1, z: 0.03}
-  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!1 &4441569389542011550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6386,7 +6127,6 @@ GameObject:
   - component: {fileID: 2072277743263815508}
   - component: {fileID: 6860212395618689086}
   - component: {fileID: 6968179457439588604}
-  - component: {fileID: 4214513797059834527}
   m_Layer: 0
   m_Name: PonteMeio.015
   m_TagString: Untagged
@@ -6406,7 +6146,7 @@ Transform:
   m_LocalScale: {x: 222.35411, y: 222.35408, z: 222.35406}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6860212395618689086
 MeshFilter:
@@ -6457,19 +6197,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4214513797059834527
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840805028284954801}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.100628644, y: 0.09046957, z: 0.1477271}
-  m_Center: {x: -0.005914475, y: -0.052857567, z: -0.055}
 --- !u!1 &4860855686284556708
 GameObject:
   m_ObjectHideFlags: 0
@@ -7012,10 +6739,9 @@ Transform:
   m_LocalRotation: {x: -0.50054663, y: -0.49945274, z: -0.49944443, w: 0.500555}
   m_LocalPosition: {x: 60.00989, y: 1.345398, z: -13.693307}
   m_LocalScale: {x: 222.354, y: 222.35406, z: 222.35403}
-  m_Children:
-  - {fileID: 4085607682693400846}
+  m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8116669598901636091
 MeshFilter:
@@ -7077,7 +6803,6 @@ GameObject:
   - component: {fileID: 1507948053370904566}
   - component: {fileID: 8918350613339639408}
   - component: {fileID: 5500192080344681066}
-  - component: {fileID: 4536609194264710479}
   m_Layer: 0
   m_Name: PonteMeio.013
   m_TagString: Untagged
@@ -7097,7 +6822,7 @@ Transform:
   m_LocalScale: {x: 222.35403, y: 222.35403, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8918350613339639408
 MeshFilter:
@@ -7148,19 +6873,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4536609194264710479
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5137369908037565105}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.10468665, y: 0.112327926, z: 0.14772712}
-  m_Center: {x: -0.00476986, y: -0.041928865, z: -0.055}
 --- !u!1 &5236751966663248704
 GameObject:
   m_ObjectHideFlags: 0
@@ -7267,7 +6979,6 @@ GameObject:
   - component: {fileID: 6641355530752953942}
   - component: {fileID: 504302140725872153}
   - component: {fileID: 7450508100238697058}
-  - component: {fileID: 7124350491057643867}
   m_Layer: 0
   m_Name: PonteMeio.006
   m_TagString: Untagged
@@ -7287,7 +6998,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.35399, z: 222.35405}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &504302140725872153
 MeshFilter:
@@ -7338,19 +7049,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7124350491057643867
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243343342381800383}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1135364, y: 0.109613165, z: 0.14772709}
-  m_Center: {x: 0.00000023760902, y: -0.04328573, z: -0.055}
 --- !u!1 &5289803564106559916
 GameObject:
   m_ObjectHideFlags: 0
@@ -7552,7 +7250,6 @@ GameObject:
   - component: {fileID: 5673899369246903423}
   - component: {fileID: 8563672234465871510}
   - component: {fileID: 2519391430827766385}
-  - component: {fileID: 919676518556403355}
   m_Layer: 0
   m_Name: PonteMeio.011
   m_TagString: Untagged
@@ -7572,7 +7269,7 @@ Transform:
   m_LocalScale: {x: 222.35397, y: 222.354, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8563672234465871510
 MeshFilter:
@@ -7623,19 +7320,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &919676518556403355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5439771593025104530}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.112455726, y: 0.09798946, z: 0.14772713}
-  m_Center: {x: -0.00000022663805, y: -0.049097613, z: -0.055}
 --- !u!1 &5468742613383571832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8661,7 +8345,6 @@ GameObject:
   - component: {fileID: 894137419720507219}
   - component: {fileID: 1151454924790604336}
   - component: {fileID: 5496986742495739156}
-  - component: {fileID: 3228809231815097894}
   m_Layer: 0
   m_Name: PonteMeio.012
   m_TagString: Untagged
@@ -8681,7 +8364,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.354, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1151454924790604336
 MeshFilter:
@@ -8732,19 +8415,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3228809231815097894
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6646888947043094623}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.09476593, y: 0.08847728, z: 0.007141215}
-  m_Center: {x: -0.0000009537116, y: -0.054421786, z: -0.055}
 --- !u!1 &6701807487464852032
 GameObject:
   m_ObjectHideFlags: 0
@@ -9284,7 +8954,6 @@ GameObject:
   - component: {fileID: 163865708077826552}
   - component: {fileID: 480692686614230694}
   - component: {fileID: 5797443778505324492}
-  - component: {fileID: 521678327271681266}
   m_Layer: 0
   m_Name: PonteMeio.010
   m_TagString: Untagged
@@ -9304,7 +8973,7 @@ Transform:
   m_LocalScale: {x: 222.35405, y: 222.35405, z: 222.35403}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &480692686614230694
 MeshFilter:
@@ -9355,19 +9024,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &521678327271681266
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7426266049982089857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.112455696, y: 0.10439226, z: 0.14772706}
-  m_Center: {x: 0.0000002410191, y: -0.04589572, z: -0.055}
 --- !u!1 &7459077118004915488
 GameObject:
   m_ObjectHideFlags: 0
@@ -10284,7 +9940,6 @@ GameObject:
   - component: {fileID: 7912990396696099139}
   - component: {fileID: 8617143069267938467}
   - component: {fileID: 9118201054171462894}
-  - component: {fileID: 2152053818582690560}
   m_Layer: 0
   m_Name: PonteMeio.008
   m_TagString: Untagged
@@ -10304,7 +9959,7 @@ Transform:
   m_LocalScale: {x: 222.354, y: 222.354, z: 222.35402}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8617143069267938467
 MeshFilter:
@@ -10355,19 +10010,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2152053818582690560
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8407924016868736037}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.09476593, y: 0.06749582, z: 0.007691919}
-  m_Center: {x: -0.0000004768633, y: -0.04267641, z: -0.055}
 --- !u!1 &8479123384943646801
 GameObject:
   m_ObjectHideFlags: 0
@@ -10722,7 +10364,7 @@ Transform:
   m_LocalScale: {x: 222.35405, y: 222.35405, z: 222.35403}
   m_Children: []
   m_Father: {fileID: 717251946152073866}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3619362267471274363
 MeshFilter:
@@ -85504,6 +85146,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8920702127843811826, guid: 7887286327dff4248b4f55f4bb3ba342, type: 3}
   m_PrefabInstance: {fileID: 3915796496688984688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4082205971511069376
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 717251946152073866}
+    m_Modifications:
+    - target: {fileID: 422045913587425383, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_Name
+      value: ColisorPonte
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+--- !u!4 &3646738933727328375 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 737808650319573687, guid: ec018bddefa027547b7cdc265cbf9917, type: 3}
+  m_PrefabInstance: {fileID: 4082205971511069376}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5450701824595504219
 PrefabInstance:
