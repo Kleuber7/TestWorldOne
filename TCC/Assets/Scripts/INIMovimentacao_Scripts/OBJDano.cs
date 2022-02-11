@@ -42,6 +42,7 @@ public class OBJDano : MonoBehaviour
             {
                 critico.DoAttack();
             }
+           
             other.GetComponent<Jogador_Status>().TomarDano(dano);
         }
         

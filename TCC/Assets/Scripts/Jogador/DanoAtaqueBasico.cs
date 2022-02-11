@@ -26,10 +26,12 @@ public class DanoAtaqueBasico : MonoBehaviour
 
         if(other.gameObject.tag == tagColisor && tagColisor == "Inimigo")
         {
+            
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
             StartCoroutine(other.GetComponent<INIMovimento>().Stunado(timeStun));
-            other.GetComponent<FSMInimigos>().ChangeAnimationState("TomarDano");
+            other.GetComponent<INIStatus>().NaoDarDano();
+            StartCoroutine(other.GetComponentInChildren<INIPerseguir>().TakingDamage());
             other.GetComponent<INIStatus>().TomarDano(dano);
             //fonteedeVida.CurarP();
         }
@@ -46,6 +48,8 @@ public class DanoAtaqueBasico : MonoBehaviour
         //    congelar.CongelarINI(other.gameObject);
         //}
     }
-
     
+
+
+
 }

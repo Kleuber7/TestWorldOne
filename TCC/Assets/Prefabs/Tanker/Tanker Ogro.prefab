@@ -338,6 +338,8 @@ MonoBehaviour:
   scriptPatrulha: {fileID: 7476396168273771745}
   iniAnima: {fileID: 0}
   areaDoAtaque: {fileID: 1692096555470075256}
+  finishAnimation: 1
+  timeAnimation: 0
 --- !u!136 &525434503571704648
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -450,23 +452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InimigoAnima: {fileID: 2505936547303515673}
---- !u!114 &6542264451565362744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9175544060668626501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7957abecd2ec9479c703b1ea2d3051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Efeito_Comromper: 0
-  Efeito_Explosao: 0
-  Forma_Aliado: {fileID: 0}
-  Bomba: {fileID: 0}
-  Status: {fileID: 0}
 --- !u!114 &6956774364454817375
 MonoBehaviour:
   m_ObjectHideFlags: 0

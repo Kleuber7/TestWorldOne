@@ -23,6 +23,7 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private FSMInimigos iniAnima;
     [SerializeField] private Collider areaDoAtaque;
     [SerializeField] public bool finishAnimation = true;
+    [SerializeField] public bool takingDamage = false;
     public float timeAnimation;
     private void Start()
     {
@@ -143,16 +144,24 @@ public class INIPerseguir : MonoBehaviour
     {
         finishAnimation = false;
         atacando = true;
-        iniAnima.ChangeAnimationState(iniAnima.Atacar());
-        timeAnimation = iniAnima.InimigoAnima.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.2f;
+
+        if (!takingDamage)
+            iniAnima.ChangeAnimationState(iniAnima.Atacar());
+        else
+        {
+            iniAnima.ChangeAnimationState("");
+            iniAnima.ChangeAnimationState(iniAnima.TomarDano());
+        }
 
         yield return new WaitForSecondsRealtime(1/velocidadeDeAtaque);
+        timeAnimation = iniAnima.InimigoAnima.GetCurrentAnimatorStateInfo(0).normalizedTime;
         if (EsquivaOfensiva.esquivar == true)
         {
             EsquivaOfensiva.Esquivou();
         }
         else if(alvo.gameObject.tag == "Player" && !status.GetStunado())
         {
+            
             //GetComponentInParent<FSMInimigos>().Atacar();
             areaDoAtaque.gameObject.SetActive(true);
         }
@@ -160,7 +169,14 @@ public class INIPerseguir : MonoBehaviour
         StartCoroutine(ResetaAtaque());
     }
 
-    
+    public IEnumerator TakingDamage()
+    {
+        takingDamage = true;
+        Debug.Log("Funcionou");
+        yield return new WaitForSeconds(1f);
+        takingDamage = false;
+    }
+
     async void GetAnimationState()
     {
         await GetAnimationStateAsync();
