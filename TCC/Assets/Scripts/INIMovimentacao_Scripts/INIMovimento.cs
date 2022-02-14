@@ -11,8 +11,8 @@ public class INIMovimento : MonoBehaviour
     [SerializeField] private LayerMask layerChao;
     [SerializeField] private float tamanhoDoCheck;
     [SerializeField] private Transform pontoDoCheck;
-    
-    private void Update() 
+
+    private void Update()
     {
         AplicaGravidade();
     }
@@ -21,7 +21,7 @@ public class INIMovimento : MonoBehaviour
     {
         estaNoChao = Physics.CheckSphere(pontoDoCheck.position, tamanhoDoCheck, layerChao);
 
-        if(estaNoChao)
+        if (estaNoChao)
         {
             velocidadeDaGravidade.y = -2f;
         }
@@ -39,11 +39,10 @@ public class INIMovimento : MonoBehaviour
 
     public IEnumerator Stunado(float tempoStun)
     {
-        StopAllCoroutines();
         this.gameObject.GetComponent<INIStatus>().SetStunado(true);
         GetComponent<INIStatus>().NaoDarDano();
         yield return new WaitForSeconds(tempoStun);
         this.gameObject.GetComponent<INIStatus>().SetStunado(false);
-        GetComponent<INIStatus>().DarDano();
+        //GetComponent<INIStatus>().DarDano();
     }
 }
