@@ -21,15 +21,9 @@ public class Dash : MonoBehaviour
 
     private void Dashh()
     {
-       
-
         if (Input.GetKeyDown(KeyCode.Space) && !canDash && !Dialog.dialogoB && GetComponent<Andar>().Direcao != Vector3.zero)
         {
-
-
            StartCoroutine(ParticleDash());
-           
-            
         }
 
         if (currentDashTime < dashTime && canDash)
@@ -40,9 +34,6 @@ public class Dash : MonoBehaviour
         {
             canDash = false;
         }
-
-        
-
     }
 
     IEnumerator ParticleDash()

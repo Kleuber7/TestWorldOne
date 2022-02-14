@@ -23,45 +23,55 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private FSMInimigos iniAnima;
     [SerializeField] private Collider areaDoAtaque;
     [SerializeField] public bool finishAnimation = true;
+    [SerializeField] public bool takingDamage = false;
     public float timeAnimation;
+    public float timeTakeDamage;
+
     private void Start()
     {
         iniAnima = GetComponentInParent<FSMInimigos>();
         esquiva = GameObject.FindGameObjectWithTag("Player").GetComponent<EsquivaOfensiva>();
         velocidadeAtaqueOriginal = velocidadeDeAtaque;
     }
-    
-    private void FixedUpdate() 
+
+    private void Update()
     {
-        
-        if(perseguir)
+        TakeDamage();
+    }
+    private void FixedUpdate()
+    {
+
+        if (perseguir)
         {
             scriptPatrulha.SetPatrulha(false);
 
-            if(!atacando)
+            if (!atacando)
             {
                 Vector3 direcaoRotacao = new Vector3(alvo.position.x, inimigo.position.y, alvo.position.z);
                 inimigo.transform.LookAt(direcaoRotacao);
             }
 
-            if(Vector3.Distance(transform.position, alvo.position) > distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel && !atacando && finishAnimation)
+            if (Vector3.Distance(transform.position, alvo.position) > distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel && !atacando && finishAnimation)
             {
                 iniAnima.ChangeAnimationState(iniAnima.Perseguindo());
                 inimigo.position = Vector3.MoveTowards(inimigo.position, new Vector3(alvo.position.x, inimigo.position.y, alvo.position.z), velocidade * Time.deltaTime);
             }
-            else if(Vector3.Distance(transform.position, alvo.position) <= distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel)
+            else if (Vector3.Distance(transform.position, alvo.position) <= distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel)
             {
-                if (!atacando)
+                if (!atacando && !takingDamage)
                 {
-                    if(distanciaParar < 20)
+                    if (distanciaParar < 20)
                     {
-                        StopAllCoroutines();
+                        StopCoroutine(DanoInimigo());
                         StartCoroutine(DanoInimigo());
                     }
                     else
                     {
-                        StopAllCoroutines();
-                        StartCoroutine(AtiraProjetil());
+                        if(!takingDamage)
+                        {
+                            StopCoroutine(AtiraProjetil());
+                            StartCoroutine(AtiraProjetil());
+                        }
                     }
                 }
                 //else
@@ -77,11 +87,11 @@ public class INIPerseguir : MonoBehaviour
             {
                 NaoPerseguir();
             }
-            
+
         }
         else
         {
-            if(!scriptPatrulha.despertando)
+            if (!scriptPatrulha.despertando)
             {
                 scriptPatrulha.SetPatrulha(true);
             }
@@ -99,9 +109,9 @@ public class INIPerseguir : MonoBehaviour
     // }
 
     //Está utilizando "OnTriggerStay" porque o "OnTriggerEnter" por algum motivo não funciona. - Ian
-    private void OnTriggerStay(Collider other) 
+    private void OnTriggerStay(Collider other)
     {
-        if(alvo == null && other.gameObject.tag == "Player")
+        if (alvo == null && other.gameObject.tag == "Player")
         {
             alvo = other.gameObject.transform;
             Perseguir();
@@ -143,24 +153,52 @@ public class INIPerseguir : MonoBehaviour
     {
         finishAnimation = false;
         atacando = true;
-        iniAnima.ChangeAnimationState(iniAnima.Atacar());
-        timeAnimation = iniAnima.InimigoAnima.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.2f;
 
-        yield return new WaitForSecondsRealtime(1/velocidadeDeAtaque);
-        if (EsquivaOfensiva.esquivar == true)
+        iniAnima.ChangeAnimationState("");
+        iniAnima.ChangeAnimationState(iniAnima.Atacar());
+
+        yield return new WaitForSecondsRealtime(1 / velocidadeDeAtaque);
+        timeAnimation = iniAnima.InimigoAnima.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        if (alvo != null)
         {
-            EsquivaOfensiva.Esquivou();
-        }
-        else if(alvo.gameObject.tag == "Player" && !status.GetStunado())
-        {
-            //GetComponentInParent<FSMInimigos>().Atacar();
-            areaDoAtaque.gameObject.SetActive(true);
+            if (EsquivaOfensiva.esquivar == true)
+            {
+                EsquivaOfensiva.Esquivou();
+            }
+            else if (alvo.gameObject.tag == "Player" && !takingDamage)
+            {
+
+                //GetComponentInParent<FSMInimigos>().Atacar();
+                areaDoAtaque.gameObject.SetActive(true);
+            }
         }
         GetAnimationState();
         StartCoroutine(ResetaAtaque());
     }
 
-    
+
+    void TakeDamage()
+    {
+        if (timeTakeDamage <= 0)
+        {
+            takingDamage = false;
+            timeTakeDamage = 0;
+        }
+        else
+        {
+            timeTakeDamage -= Time.deltaTime;
+        }
+
+    }
+
+    public void ManageDamage()
+    {
+        timeTakeDamage = 2;
+        takingDamage = true;
+        StopCoroutine(DanoInimigo());
+        StopCoroutine(AtiraProjetil());
+    }
+   
     async void GetAnimationState()
     {
         await GetAnimationStateAsync();
@@ -170,7 +208,7 @@ public class INIPerseguir : MonoBehaviour
     {
         int delay = (int)timeAnimation;
         await Task.Delay(1000 * delay);
-        
+
     }
 
     public IEnumerator ResetaAtaque()
@@ -183,10 +221,10 @@ public class INIPerseguir : MonoBehaviour
     {
 
         atacando = true;
-       
-        yield return new WaitForSecondsRealtime(1/velocidadeDeAtaque);
-       
-        if(alvo != null)
+
+        yield return new WaitForSecondsRealtime(1 / velocidadeDeAtaque);
+
+        if (alvo != null)
         {
             tiro = Instantiate(prefabProjetil, pontoDeTiro.position, pontoDeTiro.rotation).GetComponent<INITiro>();
             Vector3 direcaoInimigo = alvo.transform.position - tiro.gameObject.transform.position;
@@ -198,7 +236,7 @@ public class INIPerseguir : MonoBehaviour
         atacando = false;
     }
 
-    private void OnDrawGizmos() 
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, distanciaParar);

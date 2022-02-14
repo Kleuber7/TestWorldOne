@@ -28,17 +28,16 @@ public class DanoAtaqueBasico : MonoBehaviour
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
-            StartCoroutine(other.GetComponent<INIMovimento>().Stunado(timeStun));
-            other.GetComponent<FSMInimigos>().ChangeAnimationState("TomarDano");
+            other.GetComponentInChildren<INIPerseguir>().ManageDamage();
+            other.GetComponent<FSMInimigos>().ChangeAnimationState("");
+            other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
             other.GetComponent<INIStatus>().TomarDano(dano);
-            //fonteedeVida.CurarP();
         }
         else if(other.gameObject.tag == "Boboneco")
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
             other.GetComponent<StatusBoboneco>().TomarDano(dano);
-            //fonteedeVida.CurarP();
         }
 
         //if(ataqueBasico.contadorCombo == 3)
@@ -46,6 +45,8 @@ public class DanoAtaqueBasico : MonoBehaviour
         //    congelar.CongelarINI(other.gameObject);
         //}
     }
-
     
+
+
+
 }
