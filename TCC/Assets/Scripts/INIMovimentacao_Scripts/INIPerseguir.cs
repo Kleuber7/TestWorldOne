@@ -67,8 +67,11 @@ public class INIPerseguir : MonoBehaviour
                     }
                     else
                     {
-                        StopCoroutine(AtiraProjetil());
-                        StartCoroutine(AtiraProjetil());
+                        if(!takingDamage)
+                        {
+                            StopCoroutine(AtiraProjetil());
+                            StartCoroutine(AtiraProjetil());
+                        }
                     }
                 }
                 //else
