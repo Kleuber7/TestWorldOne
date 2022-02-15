@@ -10493,7 +10493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734284191987419609}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -22.111572, y: 48.258587, z: -7.7642994}
+  m_LocalPosition: {x: -22.111572, y: 48.258587, z: -4.3}
   m_LocalScale: {x: 119.044785, y: 119.044785, z: 119.044785}
   m_Children: []
   m_Father: {fileID: 2153382742288153873}
@@ -35415,7 +35415,6 @@ GameObject:
   - component: {fileID: 6599545243454674859}
   - component: {fileID: 4006738301590040359}
   - component: {fileID: 4006738301590040352}
-  - component: {fileID: 4006738301590040353}
   m_Layer: 0
   m_Name: SalaLagoPrimavera - Verao
   m_TagString: sala
@@ -35477,19 +35476,6 @@ MonoBehaviour:
   enemys: {fileID: 4044104562335122823}
   numberOfSpawns: 1
   contSpawns: 0
---- !u!65 &4006738301590040353
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4006738301590040354}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 500, y: 10, z: 500}
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &4046477433697110389
 GameObject:
   m_ObjectHideFlags: 0
@@ -77269,7 +77255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6778750422897671841}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 139.91138, y: 13.778962, z: 103.26051}
+  m_LocalPosition: {x: 136.5, y: 13.778962, z: 85.1}
   m_LocalScale: {x: 220.58015, y: 220.58015, z: 220.58015}
   m_Children: []
   m_Father: {fileID: 2153382742288153873}
@@ -77335,7 +77321,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.13, z: 0.23028155}
+  m_Size: {x: 0.1, y: 0.1, z: 0.23028155}
   m_Center: {x: 0.0005519651, y: 0.000013753769, z: 0.06196368}
 --- !u!1 &6812025605482886825
 GameObject:
@@ -86562,15 +86548,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 150
+      value: 163.6
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 55.399994
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalRotation.w

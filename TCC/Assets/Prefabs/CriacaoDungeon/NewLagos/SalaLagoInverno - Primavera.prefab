@@ -41021,7 +41021,6 @@ GameObject:
   - component: {fileID: 4185511410522166624}
   - component: {fileID: 4773789872515797277}
   - component: {fileID: 4236276392435313475}
-  - component: {fileID: 1746477863096821759}
   m_Layer: 0
   m_Name: SalaLagoInverno - Primavera
   m_TagString: sala
@@ -41081,19 +41080,6 @@ MonoBehaviour:
   enemys: {fileID: 4460498833950512358}
   numberOfSpawns: 1
   contSpawns: 0
---- !u!65 &1746477863096821759
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7242817481422641816}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 500, y: 10, z: 500}
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &7303980182430246508
 GameObject:
   m_ObjectHideFlags: 0
@@ -43363,15 +43349,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -729.61066
+      value: 155.3
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.610294
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -383.7332
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalRotation.w

@@ -49415,7 +49415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6385698748820938817}
   - component: {fileID: 5753766408092067303}
-  - component: {fileID: 1410183762071909257}
   - component: {fileID: 5507212953765448767}
   m_Layer: 0
   m_Name: SalaLagoVerao - Primavera
@@ -49464,19 +49463,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   espacoLiberado: 1
   quantidadeInimigos: 1
---- !u!65 &1410183762071909257
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4444914280708085426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5507212953765448767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67739,7 +67725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7829220230416369287}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 146.4943, y: 13.778962, z: 127.556595}
+  m_LocalPosition: {x: 140.4, y: 13.778962, z: 123.8}
   m_LocalScale: {x: 220.58015, y: 220.58012, z: 220.58012}
   m_Children: []
   m_Father: {fileID: 803915115090918903}
@@ -78627,7 +78613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8669647014714489901}
   m_LocalRotation: {x: 0.23992918, y: 0.6651571, z: 0.66515714, w: -0.23992917}
-  m_LocalPosition: {x: 137.4309, y: 2.3700998, z: 202.23087}
+  m_LocalPosition: {x: 89.7, y: 2.3700998, z: 205.8}
   m_LocalScale: {x: 180.57138, y: 180.57138, z: 180.57138}
   m_Children: []
   m_Father: {fileID: 803915115090918903}
@@ -84867,7 +84853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.z

@@ -7013,7 +7013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957928991273548965}
   m_LocalRotation: {x: 0.23992917, y: 0.6651571, z: 0.66515714, w: -0.23992915}
-  m_LocalPosition: {x: 137.4309, y: 2.3700998, z: 202.23085}
+  m_LocalPosition: {x: 119.3, y: 2.3700998, z: 208.1}
   m_LocalScale: {x: 180.57138, y: 180.57138, z: 180.57138}
   m_Children: []
   m_Father: {fileID: 2587880970505822767}
@@ -23825,7 +23825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3041081063386822822}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 171.19485, y: 0.21625471, z: 161.3128}
+  m_LocalPosition: {x: 161.9, y: 0.21625471, z: 161.3128}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 2587880970505822767}
@@ -63334,7 +63334,6 @@ GameObject:
   - component: {fileID: 9130761500767492421}
   - component: {fileID: 9010268050181609380}
   - component: {fileID: 6306860297113929346}
-  - component: {fileID: 4856347352428237968}
   m_Layer: 0
   m_Name: SalaLagoOutono - Inverno
   m_TagString: sala
@@ -63396,19 +63395,6 @@ MonoBehaviour:
   enemys: {fileID: 5996662379856951188}
   numberOfSpawns: 1
   contSpawns: 0
---- !u!65 &4856347352428237968
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6718456130474509950}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 500, y: 10, z: 500}
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &6736024912336555097
 GameObject:
   m_ObjectHideFlags: 0
@@ -74123,7 +74109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7588011422047597030}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 146.4943, y: 13.778962, z: 127.55658}
+  m_LocalPosition: {x: 133.7, y: 10.4, z: 127.55658}
   m_LocalScale: {x: 220.58015, y: 220.58015, z: 220.58015}
   m_Children: []
   m_Father: {fileID: 2587880970505822767}
@@ -74189,7 +74175,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.14, y: 0.13, z: 0.22887248}
+  m_Size: {x: 0.1, y: 0.1, z: 0.22887248}
   m_Center: {x: 0.0005519651, y: -0.0035861463, z: 0.061037775}
 --- !u!1 &7592493130945188393
 GameObject:
@@ -86693,15 +86679,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 155
+      value: 180.3
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 78.399994
+      value: 162.9
       objectReference: {fileID: 0}
     - target: {fileID: 7747853045124453920, guid: 405ed1d2747ae7d4ea61e9e42ba906eb, type: 3}
       propertyPath: m_LocalRotation.w
