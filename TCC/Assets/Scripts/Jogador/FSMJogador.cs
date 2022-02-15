@@ -44,7 +44,7 @@ public class FSMJogador : MonoBehaviour
        
     }
 
- 
+
     //public string SetHorizontal()
     //{
     //    const string player_Horizontal = "Horizontal";
@@ -53,6 +53,13 @@ public class FSMJogador : MonoBehaviour
     //    jogadorAnima.SetFloat("Horizontal", valor);
     //}
 
+    public string Testaculos()
+    {
+        const string player_Testacles = "Testaculos";
+
+        return player_Testacles;
+
+    }
     public string Critico()
     {
         const string player_Critical = "Critico";
