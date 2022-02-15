@@ -30,9 +30,7 @@ public class INIStatus : BASEStatus
         GetComponentInChildren<INIPerseguir>().enabled = false;
         //GetComponent<INIPatrulha>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
-        NaoDarDano();
         GetComponent<FSMInimigos>().ChangeAnimationState(GetComponent<FSMInimigos>().Morte());
-        GetComponentInChildren<OBJDano>().NoDamage();
         yield return new WaitForSeconds(4f);
 
         this.GetComponent<INIDropar>().Dropar();
