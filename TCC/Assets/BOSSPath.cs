@@ -13,13 +13,20 @@ public class BOSSPath : MonoBehaviour
     public float duracaoPath;
     public bool iniciarPath;
     public OBJDano scriptDano;
+    public BOSSGerenciador gerenciador;
 
     void FixedUpdate()
     {
+        if(gerenciador.atravessar)
+        {
+            iniciarPath = true;
+            gerenciador.atravessar = false;
+        }
+
         if(iniciarPath)
         {
             SetaPontos();
-            transform.DOMove(posicaoInicial.position, 1/velocidade).SetEase(Ease.InCirc).OnComplete(() => transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).OnPlay(() => scriptDano.enabled = true).OnComplete(() => scriptDano.enabled = false));
+            transform.DOMove(posicaoInicial.position, 1/velocidade).SetEase(Ease.InCirc).OnComplete(() => transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).SetLookAt(-1).OnPlay(() => scriptDano.enabled = true).OnComplete(() => {scriptDano.enabled = false; StartCoroutine(gerenciador.DelayTrocaDeEstadoAtravessar());}));
             iniciarPath = false;
         }
     }
@@ -28,7 +35,7 @@ public class BOSSPath : MonoBehaviour
     {
         DOTween.KillAll();
 
-        Transform pontosSorteado = pontosPai.transform.GetChild(Random.Range(0, pontosPai.transform.childCount - 1));
+        Transform pontosSorteado = pontosPai.transform.GetChild(Random.Range(0, pontosPai.transform.childCount));
         
         pontosPath = new Transform[pontosSorteado.childCount];
         for(int i = 0; i < pontosPath.Length; i++)

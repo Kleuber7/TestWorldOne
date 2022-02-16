@@ -16,20 +16,27 @@ public class BOSSTiros : MonoBehaviour
     public Transform pontoDisparo;
     public int contadorDisparos = 0;
     public int numeroDeDisparos;
+    public BOSSGerenciador gerenciador;
 
     void FixedUpdate()
     {
+        if(gerenciador.atirar)
+        {
+            iniciarTiros = true;
+            gerenciador.atirar = false;
+        }
+
         if(iniciarTiros)
         {
             EscolhePontoDeDisparo();
-            transform.DOMove(posicaoInicial.position, 1/velocidade).SetEase(Ease.Flash).OnComplete(() => transform.DORotate(new Vector3(posicaoInicial.rotation.x, posicaoInicial.rotation.y, posicaoInicial.rotation.z), 1/velocidadeRotacao).OnComplete(() => transform.DORotate(rotacaoInicial, 1/velocidadeRotacao).SetEase(Ease.InCirc).OnComplete(() => transform.DORotate(rotacaoFinal, 1/(velocidadeRotacao / 2)).SetDelay(1f).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(Disparos())))));
+            transform.DOMove(posicaoInicial.position, 1/velocidade).SetEase(Ease.Flash).OnComplete(() => transform.DORotate(new Vector3(posicaoInicial.rotation.x, posicaoInicial.rotation.y, posicaoInicial.rotation.z), 1/velocidadeRotacao).OnComplete(() => transform.DORotate(rotacaoInicial, 1/velocidadeRotacao).SetEase(Ease.InCirc).OnComplete(() => transform.DORotate(rotacaoFinal, 1/(velocidadeRotacao / 2)).SetDelay(1f).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(Disparos())).OnComplete(() => StartCoroutine(gerenciador.DelayTrocaDeEstadoAtirar())))));
             iniciarTiros = false;
         }
     }
 
     public void EscolhePontoDeDisparo()
     {
-        posicaoInicial = pontosDeDisparo.transform.GetChild(Random.Range(0, pontosDeDisparo.transform.childCount - 1));
+        posicaoInicial = pontosDeDisparo.transform.GetChild(Random.Range(0, pontosDeDisparo.transform.childCount));
         rotacaoInicial = posicaoInicial.GetComponent<PontoDisparo>().rotacaoInicial;
         rotacaoFinal = posicaoInicial.GetComponent<PontoDisparo>().rotacaoFinal;
     }
