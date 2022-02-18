@@ -1720,7 +1720,6 @@ MonoBehaviour:
   - {fileID: 4127469519124169457, guid: 60bf95d579cb2f44f9ed3d0d3e7bb8b9, type: 3}
   - {fileID: 4006738301590040354, guid: 26810bb854a7d0a4e952e3a3d850a667, type: 3}
   salaBoss: {fileID: 7130072106457308520, guid: 5a4331f9e2deaa84dad676b21d0546a7, type: 3}
-  fecharSala: {fileID: 0}
   salas: []
   tempoEspera: 0
   numerosSalas: 5000
@@ -44540,6 +44539,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 175589238120789630, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: passLevel
+      value: 
+      objectReference: {fileID: 3418166075784543251}
     - target: {fileID: 221823784013076502, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_LocalPosition.z
       value: 106.1
@@ -44844,9 +44847,29 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3418166076342899171, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418166077292340094, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418166077292340094, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418166077292340094, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3418166077335852327, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_Size.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418166077702340090, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3441362388105180059, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_Layer
@@ -45215,6 +45238,10 @@ PrefabInstance:
     - target: {fileID: 7113869922318521813, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145498448138810872, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7146205617501671362, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_Layer
@@ -45813,6 +45840,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.14, z: 0.27116525}
   m_Center: {x: -0.0070370147, y: 0.0023773157, z: 0.12751533}
+--- !u!1 &3418166075784543251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 593281896777079249, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+  m_PrefabInstance: {fileID: 3418166075784543236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &3423862674227371130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47919,10 +47951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7662271cff006d6438f65e462bf8d6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleporteAlvo: {fileID: 5601775833340454742}
-  player: {fileID: 0}
-  spawnCima: {fileID: 508210016388071647}
   TP1: {fileID: 5761569403479340240}
+  passLevel: {fileID: 0}
 --- !u!1 &5601775833630067141
 GameObject:
   m_ObjectHideFlags: 0
@@ -49019,10 +49049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7662271cff006d6438f65e462bf8d6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleporteAlvo: {fileID: 7276160445203170945}
-  player: {fileID: 0}
-  spawnCima: {fileID: 508210016388071647}
   TP1: {fileID: 5761569403479340240}
+  passLevel: {fileID: 0}
 --- !u!54 &6562253229899172444
 Rigidbody:
   m_ObjectHideFlags: 0

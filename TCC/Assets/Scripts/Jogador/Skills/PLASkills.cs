@@ -10,7 +10,7 @@ public class PLASkills : MonoBehaviour
     [SerializeField] private KeyCode teclaSkill1;
     [SerializeField] private float tempoDeCastSkill1;
     [SerializeField] private PLAImpactoAbissal scriptImpactoAbissal;
-
+    [SerializeField] private ParticleManagerSkillQ skillParticle;
     private void Start() 
     {
         podeAtivarSkill1 = true;
@@ -22,6 +22,7 @@ public class PLASkills : MonoBehaviour
         {
             if(podeAtivarSkill1)
             {
+                skillParticle.PlayParticleEffect();
                 StartCoroutine(CastSkill1());
                 StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
             }

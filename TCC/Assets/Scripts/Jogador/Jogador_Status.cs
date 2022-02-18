@@ -76,13 +76,6 @@ public class Jogador_Status : MonoBehaviour
 
         AtualizaValoresMaximos();
         
-
-
-
-        if(Teleporting.AtivaGravidade)
-        {
-            StartCoroutine(Gravidade());
-        }
     }
     #region (Rgeneração de vida e Mana)
     public void RegenerarVida()
@@ -161,18 +154,5 @@ public class Jogador_Status : MonoBehaviour
         Vida -= dano;
 
         barras.SetHealth(Vida);
-    }
-
-
-
-    IEnumerator Gravidade()
-    {
-        yield return new WaitForSeconds(1f);
-
-        GetComponent<Gravidade>().enabled = true;
-
-
-        Teleporting.AtivaGravidade = false;
-
     }
 }

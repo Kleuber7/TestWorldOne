@@ -49,14 +49,6 @@ public class Dash : MonoBehaviour
         {
             GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeed);
         }
-        //else if (DashWall.dashWall == true)
-        //{
-        //    dashWall = GameObject.FindGameObjectWithTag("DashWall").GetComponent<Collider>();
-        //    dashWall.enabled = false;
-        //    GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeedWall);
-        //    yield return new WaitForSeconds(0.2f);
-        //    dashWall.enabled = true;
-        //}
         else if (DashWall.dashWall == true)
         {
             GetComponent<Andar>().ControladorMov.enabled = false;
@@ -66,18 +58,4 @@ public class Dash : MonoBehaviour
 
         currentDashTime = 0;
     }
-
-
-
-
-
-
-    //IEnumerator DashEnum()
-    //{
-    //    while (currentDashTime > dashTime )
-    //    {
-    //        GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeed * Time.deltaTime);
-    //        yield return null;
-    //    }
-    //}
 }
