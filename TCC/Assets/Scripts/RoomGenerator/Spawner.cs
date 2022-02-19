@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
 
 
 
-    private void Update()
+    private void LateUpdate()
     {
         
 
@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
 
             //GetComponent<Transform>().GetChild(templates.salas.Count - 2).gameObject.SetActive(false);
 
-            Destroy(currentSpawn);
+            Destroy(currentSpawn, 0.1f);
 
             await Task.Yield();
 

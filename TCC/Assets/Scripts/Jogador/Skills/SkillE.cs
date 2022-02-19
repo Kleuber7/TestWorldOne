@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SkillE : MonoBehaviour
@@ -11,7 +12,8 @@ public class SkillE : MonoBehaviour
     [SerializeField] private float cooldownTime = 5, nextAttack, contDuracao = 0;
     [SerializeField] private Collider tentaculo;
     [SerializeField] FSMJogador jogadorA;
-    [SerializeField] ParticleManagerAttack attackEffect;
+    [SerializeField] ParticleManagerSkillE skillEffect;
+    [SerializeField] private KeyCode key = KeyCode.E;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,9 +40,9 @@ public class SkillE : MonoBehaviour
     {
         if (Time.time > nextAttack)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(key))
             {
-                StartCoroutine(DuracaoTentaculos());
+                TimeTentacles();
             }
         }
     }
@@ -85,14 +87,20 @@ public class SkillE : MonoBehaviour
 
     }
 
-    IEnumerator DuracaoTentaculos()
+    async void TimeTentacles()
     {
+        await TimeTentaclesAsync();
+        tentaculo.enabled = false;
+        GameManager.gameManager.atacando = false;
+        jogadorA.ChangeAnimationState("");
+    }
+
+    async Task TimeTentaclesAsync()
+    {
+        GameManager.gameManager.atacando = true;
         tentaculo.enabled = true;
         jogadorA.ChangeAnimationState(jogadorA.Testaculos());
-        attackEffect.PlayParticleAttack();
-        float attackDelay = jogadorA.jogadorAnima.GetCurrentAnimatorStateInfo(0).normalizedTime;
-        yield return new WaitForSecondsRealtime(attackDelay);
-        tentaculo.enabled = false;
-        jogadorA.ChangeAnimationState("");
+        skillEffect.PlayParticleEffect();
+        await Task.Delay(3000);
     }
 }

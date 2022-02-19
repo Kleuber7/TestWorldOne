@@ -13,6 +13,7 @@ public class AtaqueBasico : MonoBehaviour
     private bool combo;
     [SerializeField]private bool podeAtacar = true;
     [SerializeField] private FSMJogador animacaoJogador;
+    [SerializeField] private ParticleManagerAttack attackEffect;
     Andar andar;
 
 
@@ -53,19 +54,23 @@ public class AtaqueBasico : MonoBehaviour
                 GameManager.gameManager.atacando = true;
                 areaDeAtaque[contadorCombo].enabled = true;
                 StopAllCoroutines();
+                
                 StartCoroutine(expiraCombo());
                 StartCoroutine(CDAtaque());
 
                 if (contadorCombo == 0)
                 {
+                    StartCoroutine(Effect1());
                     StartCoroutine(PlayAnimationOne());
                 }
                 else if (contadorCombo == 1)
                 {
+                    StartCoroutine(Effect2());
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater2());
                 }
                 else if (contadorCombo == 2)
                 {
+                    StartCoroutine(Effect3());
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
                 if (combo)
@@ -76,7 +81,21 @@ public class AtaqueBasico : MonoBehaviour
         }
     }
 
-  
+    IEnumerator Effect1()
+    {
+        yield return new WaitForSeconds(0.2f);
+        attackEffect.PlayParticleAttack();
+    }
+    IEnumerator Effect2()
+    {
+        yield return new WaitForSeconds(0.4f);
+        attackEffect.PlayParticleAttack();
+    }
+    IEnumerator Effect3()
+    {
+        yield return new WaitForSeconds(0.15f);
+        attackEffect.PlayParticleAttack();
+    }
     IEnumerator PlayAnimationOne()
     {
         animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
@@ -107,7 +126,6 @@ public class AtaqueBasico : MonoBehaviour
     {
 
         podeAtacar = false;
-        
         yield return new WaitForSeconds(duracaoAtaque);
         podeAtacar = true;
         //GetComponent<FSMJogador>().NBater();
