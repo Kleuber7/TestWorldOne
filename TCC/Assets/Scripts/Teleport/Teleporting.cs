@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Teleporting : MonoBehaviour
@@ -28,10 +29,22 @@ public class Teleporting : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         cima = false;
-        //direita = false;
-
     }
 
+    async void SpawnerEnd()
+    {
+        await SpawnerEndAsync();
+        
+    }
+    async Task SpawnerEndAsync()
+    {
+        if (podeExcluirP)
+        {
+            await Task.Delay(100);
+
+            cima = false;
+        }
+    }
 
     public void Spawner()
     {
@@ -43,7 +56,6 @@ public class Teleporting : MonoBehaviour
         if (nameRoom == "Outono")
         {
             cima = true;
-            //direita = true;
             RoomSpawner.outono = true;
             RoomSpawner.verao = false;
             RoomSpawner.primavera = false;
@@ -54,38 +66,32 @@ public class Teleporting : MonoBehaviour
         else if (nameRoom == "Verao")
         {
             cima = true;
-            //direita = true;
             RoomSpawner.outono = false;
             RoomSpawner.verao = true;
             RoomSpawner.primavera = false;
             RoomSpawner.inverno = false;
 
             StartCoroutine(EsperarSpawner());
-
         }
         else if (nameRoom == "Primavera")
         {
             cima = true;
-            // direita = true;
             RoomSpawner.outono = false;
             RoomSpawner.verao = false;
             RoomSpawner.primavera = true;
             RoomSpawner.inverno = false;
 
             StartCoroutine(EsperarSpawner());
-
         }
         else if (nameRoom == "Inverno")
         {
             cima = true;
-            // direita = true;
             RoomSpawner.outono = false;
             RoomSpawner.verao = false;
             RoomSpawner.primavera = false;
             RoomSpawner.inverno = true;
 
             StartCoroutine(EsperarSpawner());
-
         }
     }
 

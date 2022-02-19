@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
@@ -17,10 +18,7 @@ public class RoomSpawner : MonoBehaviour
     private SpawnerBoss objetoPaiBoss;
     public int espacoLiberado = 1;
 
-    public bool cima;
     public static bool verao, outono, primavera, inverno;
-
-
 
     public float waitTime = 0.5f;
 
@@ -45,20 +43,45 @@ public class RoomSpawner : MonoBehaviour
         {
             if (templates.salas.Count < templates.numerosSalas)
             {
-                Debug.Log(templates.salas.Count);
-                Invoke("SpawnCima", 0.1f);
-                Destroy(gameObject, waitTime);
+                if (Teleporting.podeExcluirP)
+                    return;
+
+                WaitTime();
             }
         }
         if (Teleporting.cima == true)
         {
             if (templates.salas.Count == templates.numerosSalas - 1)
             {
-                Invoke("SpawnBoss", 0.1f);
-                Destroy(gameObject, waitTime);
+                if (Teleporting.podeExcluirP)
+                    return;
+                WaitTimeBoss();
             }
         }
-        cima = Teleporting.cima;
+
+    }
+
+    async void WaitTimeBoss()
+    {
+        await WaitTimeBossAsync();
+        Destroy(gameObject, waitTime);
+    }
+    async Task WaitTimeBossAsync()
+    {
+
+        await Task.Delay(100);
+        SpawnBoss();
+    }
+    async void WaitTime()
+    {
+        await WaitTimeAsync();
+        Destroy(gameObject, waitTime);
+    }
+    async Task WaitTimeAsync()
+    {
+
+        await Task.Delay(100);
+        SpawnCima();
     }
 
     void SpawnCima()
