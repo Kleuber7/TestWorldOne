@@ -15,35 +15,53 @@ public class Teleporting : MonoBehaviour
     public static bool cima = false;
 
     [SerializeField] private GameObject passLevel;
-    public string nameRoom;
+    private string nameRoom;
+    private bool canPass = false;
 
+    private void Start()
+    {
+        passLevel.SetActive(false);
+        canPass = false;
+    }
     private void Update()
     {
         if (teleportando)
         {
             teleportando = false;
         }
+
+        if (canPass)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Spawner();
+            }
+        }
     }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            nameRoom = gameObject.name;
+            passLevel.SetActive(true);
+            canPass = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            passLevel.SetActive(false);
+            canPass = false;
+        }
+    }
+
 
     IEnumerator EsperarSpawner()
     {
         yield return new WaitForSeconds(0.1f);
         cima = false;
-    }
-
-    async void SpawnerEnd()
-    {
-        await SpawnerEndAsync();
-        
-    }
-    async Task SpawnerEndAsync()
-    {
-        if (podeExcluirP)
-        {
-            await Task.Delay(100);
-
-            cima = false;
-        }
     }
 
     public void Spawner()
@@ -98,15 +116,6 @@ public class Teleporting : MonoBehaviour
     public void TimeScale()
     {
         Time.timeScale = 1;
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            nameRoom = gameObject.name;
-            passLevel.SetActive(true);
-            Time.timeScale = 0;
-        }
     }
 
     #region OLD DG SCRIPT

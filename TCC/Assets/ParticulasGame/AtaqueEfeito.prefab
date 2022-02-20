@@ -9733,6 +9733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 145133886913434942}
+  - component: {fileID: 8077528923509654720}
   m_Layer: 0
   m_Name: AtaqueEfeito
   m_TagString: Untagged
@@ -9757,6 +9758,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8077528923509654720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145133886913434941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51fcd430d8a19b54e83d4bdd530b5dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesAttack:
+  - {fileID: 145133886213559601}
+  - {fileID: 145133886189293517}
+  - {fileID: 145133887205478537}
 --- !u!1 &145133887205478582
 GameObject:
   m_ObjectHideFlags: 0

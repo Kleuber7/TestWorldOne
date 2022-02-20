@@ -31,6 +31,7 @@ public class DanoAtaqueBasico : MonoBehaviour
             other.GetComponentInChildren<INIPerseguir>().ManageDamage();
             other.GetComponent<FSMInimigos>().ChangeAnimationState("");
             other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
+            other.GetComponent<INIStatus>().TakeDamageEffect();
             other.GetComponent<INIStatus>().TomarDano(dano);
         }
         else if(other.gameObject.tag == "Boboneco")

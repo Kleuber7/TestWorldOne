@@ -12,6 +12,7 @@ public class INIStatus : BASEStatus
     public GameObject Forma_Aliado;
     [SerializeField] private bool stunado = false;
     [SerializeField] public bool podeTomardanoSunFire = true;
+    [SerializeField] private ParticleManagerAttack particleDamage;
 
     public bool teste;
     
@@ -72,5 +73,9 @@ public class INIStatus : BASEStatus
         stunado = _stunado;
     }
    
-   
+    public void TakeDamageEffect()
+    {
+        particleDamage.PlayParticleAttack();
+    }
+
 }
