@@ -8,14 +8,12 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] private Collider[] areaDeAtaque;
     [SerializeField] public int contadorCombo;
     [SerializeField] private float tempoCombo;
-    [SerializeField] private float duracaoAtaque;
     [SerializeField] private AtaqueADistancia scrpitDeAtaqueADistancia;
     private bool combo;
     [SerializeField]private bool podeAtacar = true;
     [SerializeField] private FSMJogador animacaoJogador;
-    [SerializeField] private ParticleManagerAttack attackEffect;
     Andar andar;
-
+    [SerializeField] private List<float> duracaoAtaques;
 
     private void Start()
     {
@@ -60,17 +58,14 @@ public class AtaqueBasico : MonoBehaviour
 
                 if (contadorCombo == 0)
                 {
-                    StartCoroutine(Effect1());
-                    StartCoroutine(PlayAnimationOne());
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
                 }
                 else if (contadorCombo == 1)
                 {
-                    StartCoroutine(Effect2());
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater2());
                 }
                 else if (contadorCombo == 2)
                 {
-                    StartCoroutine(Effect3());
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
                 if (combo)
@@ -81,21 +76,7 @@ public class AtaqueBasico : MonoBehaviour
         }
     }
 
-    IEnumerator Effect1()
-    {
-        yield return new WaitForSeconds(0.2f);
-        attackEffect.PlayParticleAttack();
-    }
-    IEnumerator Effect2()
-    {
-        yield return new WaitForSeconds(0.4f);
-        attackEffect.PlayParticleAttack();
-    }
-    IEnumerator Effect3()
-    {
-        yield return new WaitForSeconds(0.15f);
-        attackEffect.PlayParticleAttack();
-    }
+    
     IEnumerator PlayAnimationOne()
     {
         animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
@@ -117,7 +98,7 @@ public class AtaqueBasico : MonoBehaviour
     IEnumerator expiraCombo()
     {
         combo = true;
-        yield return new WaitForSeconds(tempoCombo);
+        yield return new WaitForSeconds(tempoCombo + duracaoAtaques[contadorCombo]);
         combo = false;
         contadorCombo = 0;
     }
@@ -126,9 +107,8 @@ public class AtaqueBasico : MonoBehaviour
     {
 
         podeAtacar = false;
-        yield return new WaitForSeconds(duracaoAtaque);
+        yield return new WaitForSeconds(duracaoAtaques[contadorCombo]);
         podeAtacar = true;
-        //GetComponent<FSMJogador>().NBater();
         GameManager.gameManager.atacando = false;
     }
 }

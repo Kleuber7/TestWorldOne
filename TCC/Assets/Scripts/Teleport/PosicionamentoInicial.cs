@@ -23,15 +23,7 @@ public class PosicionamentoInicial : MonoBehaviour
         {
             if (GameManager.gameManager.teleportando)
             {
-                posicaoInicial = GameObject.FindGameObjectWithTag("PontoInicialTeleport").transform;
-                if (Vector3.Distance(transform.position, posicaoInicial.position) > .1f)
-                {
-
-                    this.gameObject.transform.position = posicaoInicial.transform.position;
-                    this.gameObject.transform.rotation = posicaoInicial.transform.rotation;
-
-                    
-                }
+                StartCoroutine(WaitTp());
             }
             GameManager.gameManager.teleportando = true;
         }
@@ -40,17 +32,18 @@ public class PosicionamentoInicial : MonoBehaviour
             GameManager.gameManager.teleportando = false;
         }
 
-       
+
     }
 
-    IEnumerator Check()
+    IEnumerator WaitTp()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
 
-        if(Vector3.Distance(transform.position, posicaoInicial.position) > .1f)
+        posicaoInicial = GameObject.FindGameObjectWithTag("PontoInicialTeleport").transform;
+        if (Vector3.Distance(transform.position, posicaoInicial.position) > .1f)
         {
-            this.gameObject.transform.position = posicaoInicial.transform.position;
-            this.gameObject.transform.rotation = posicaoInicial.transform.rotation;
+            gameObject.transform.position = posicaoInicial.transform.position;
+            gameObject.transform.rotation = posicaoInicial.transform.rotation;
         }
     }
 }

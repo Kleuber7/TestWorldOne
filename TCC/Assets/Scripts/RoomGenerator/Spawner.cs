@@ -46,11 +46,6 @@ public class Spawner : MonoBehaviour
 
         if (Teleporting.podeExcluirP == true)
         {
-            //StartCoroutine(Esconder());
-            // Destroy(GetComponent<Transform>().GetChild(templates.salas.Count - 1).gameObject, 0.5f);
-
-            //GetComponent<Transform>().GetChild(templates.salas.Count - 2).gameObject.SetActive(false);
-
             Destroy(currentSpawn, 0.1f);
 
             await Task.Yield();
@@ -58,13 +53,6 @@ public class Spawner : MonoBehaviour
             Teleporting.podeExcluirP = false;
         }
     }
-
-    IEnumerator Esconder()
-    {
-        yield return new WaitForSeconds(0.3f);
-        GetComponent<Transform>().GetChild(templates.salas.Count - 2).gameObject.SetActive(false);
-    }
-
 
     public async void RemoverSalas()
     {
@@ -76,8 +64,4 @@ public class Spawner : MonoBehaviour
         templates.contadorSalas--;
         await Task.Yield();
     }
-        
-
-    
-
 }
