@@ -4253,8 +4253,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8418686746060278724, guid: 079171551c9759941b23b3c2c6941675, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418686746060278724, guid: 079171551c9759941b23b3c2c6941675, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8418686746060278746, guid: 079171551c9759941b23b3c2c6941675, type: 3}
       propertyPath: m_LocalScale.x
@@ -17713,6 +17717,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 981548002207253587, guid: d4d4856a0aaf07541b8c7cf2c1285033, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 981548002207253587, guid: d4d4856a0aaf07541b8c7cf2c1285033, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 981548002474936346, guid: d4d4856a0aaf07541b8c7cf2c1285033, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -17748,6 +17760,14 @@ PrefabInstance:
     - target: {fileID: 981548002740436971, guid: d4d4856a0aaf07541b8c7cf2c1285033, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 981548002740436973, guid: d4d4856a0aaf07541b8c7cf2c1285033, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 981548002740436973, guid: d4d4856a0aaf07541b8c7cf2c1285033, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4d4856a0aaf07541b8c7cf2c1285033, type: 3}
@@ -26843,8 +26863,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8418686746060278724, guid: 079171551c9759941b23b3c2c6941675, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418686746060278724, guid: 079171551c9759941b23b3c2c6941675, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8418686746060278746, guid: 079171551c9759941b23b3c2c6941675, type: 3}
       propertyPath: m_LocalScale.x
