@@ -60,12 +60,18 @@ public class FSMJogador : MonoBehaviour
         return player_Testacles;
 
     }
+    public string Tiro()
+    {
+        const string player_Shoot = "Tiro";
+
+        return player_Shoot;
+
+    }
     public string Critico()
     {
         const string player_Critical = "Critico";
 
         return player_Critical;
-        //jogadorAnima.SetBool("Critico", valor);
     }
 
     public string Bater1()
@@ -73,28 +79,33 @@ public class FSMJogador : MonoBehaviour
         const string player_PunchOne = "Bater 1";
 
         return player_PunchOne;
-        //jogadorAnima.SetBool("Bater 1", valor);
     }
 
-    public string Bater1Prox()
-    {
-        const string player_PunchOneProx = "Bater 1_5";
-
-        return player_PunchOneProx;
-        //jogadorAnima.SetBool("Bater 1", valor);
-    }
     public string Bater2()
     {
         const string player_PunchTwo = "Bater 2";
 
         return player_PunchTwo;
-        //jogadorAnima.SetBool("Bater 2", valor);
     }
 
     public string Bater3()
     {
         const string player_PunchThree = "Bater 3";
         return player_PunchThree;
-        //jogadorAnima.SetBool("Bater 3", valor);
+    }
+    public string Bater4()
+    {
+        const string player_PunchThree = "Bater 4";
+        return player_PunchThree;
+    }
+    public string Bater5()
+    {
+        const string player_PunchThree = "Bater 5";
+        return player_PunchThree;
+    }
+    public string Bater6()
+    {
+        const string player_PunchThree = "Bater 6";
+        return player_PunchThree;
     }
 }

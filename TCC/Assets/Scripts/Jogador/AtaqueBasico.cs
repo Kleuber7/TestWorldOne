@@ -68,6 +68,18 @@ public class AtaqueBasico : MonoBehaviour
                 {
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
+                else if (contadorCombo == 3)
+                {
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater4());
+                }
+                else if (contadorCombo == 4)
+                {
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater5());
+                }
+                else if (contadorCombo == 5)
+                {
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater6());
+                }
                 if (combo)
                 {
                     contadorCombo++;
@@ -76,17 +88,7 @@ public class AtaqueBasico : MonoBehaviour
         }
     }
 
-    
-    IEnumerator PlayAnimationOne()
-    {
-        animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
-        float attackDelay = animacaoJogador.jogadorAnima.GetCurrentAnimatorStateInfo(0).normalizedTime;
-        yield return new WaitForSeconds(attackDelay);
-        animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1Prox());
-
-    }
-
-
+  
     public void DesativarAtaque()
     {
         podeAtacar = false;
