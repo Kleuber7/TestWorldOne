@@ -31687,9 +31687,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 919132147892234270}
     - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
-      propertyPath: duracaoAtaques.Array.size
-      value: 3
+      propertyPath: areaDeAtaque.Array.size
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: duracaoAtaques.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: areaDeAtaque.Array.data[3]
+      value: 
+      objectReference: {fileID: 2493139183562820232}
+    - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: areaDeAtaque.Array.data[4]
+      value: 
+      objectReference: {fileID: 2493139183562820232}
+    - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: areaDeAtaque.Array.data[5]
+      value: 
+      objectReference: {fileID: 2493139183562820232}
     - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: duracaoAtaques.Array.data[0]
       value: 0.5
@@ -31700,7 +31716,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: duracaoAtaques.Array.data[2]
-      value: 1
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: duracaoAtaques.Array.data[3]
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: duracaoAtaques.Array.data[4]
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: duracaoAtaques.Array.data[5]
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 6643482013555331317, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
@@ -31991,6 +32019,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8367297498576643560, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: animacaoJogador
+      value: 
+      objectReference: {fileID: 919132147892234270}
+    - target: {fileID: 8367297498576643560, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: ataqueADistancia
       value: 0
       objectReference: {fileID: 0}
@@ -32188,6 +32220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6f5b06ff21c6c4ba886665b43113e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2493139183562820232 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8588454577472814524, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+  m_PrefabInstance: {fileID: 2493139183562820229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2495523379513264309
 GameObject:
   m_ObjectHideFlags: 0
