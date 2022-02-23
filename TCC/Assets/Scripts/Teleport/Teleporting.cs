@@ -20,6 +20,11 @@ public class Teleporting : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(Disable());
+    }
+    IEnumerator Disable()
+    {
+        yield return new WaitForSeconds(0.1f);
         passLevel.SetActive(false);
         canPass = false;
     }
@@ -35,6 +40,8 @@ public class Teleporting : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Spawner();
+                passLevel.SetActive(false);
+                canPass = false;
             }
         }
     }
