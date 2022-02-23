@@ -15,6 +15,11 @@ public class AtaqueADistancia : MonoBehaviour
     [SerializeField] private FSMJogador animacaoJogador;
     Andar andar;
 
+
+    private void Start()
+    {
+        andar = GetComponent<Andar>();
+    }
     private void Update()
     {
         RangedAttack();
