@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraDeVida: {fileID: 2220158437414141867}
-  scriptDeStatus: {fileID: 0}
+  scriptDeStatus: {fileID: 5913085419521455133}
   cam: {fileID: 0}
 --- !u!1 &3222618025574240532
 GameObject:
@@ -465,7 +465,7 @@ Animator:
   m_GameObject: {fileID: 5679304195956116468}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5996f1a869fb7fb4cb261c90f77d37ae, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea01ab80e78eca94fae31f9779d0c3e4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -474,7 +474,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8400651040807498495
+--- !u!114 &2275530176901648032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -483,34 +483,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5679304195956116468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180f22ec6b576e94f84b77428c544104, type: 3}
+  m_Script: {fileID: 11500000, guid: 366499527c5f5cc4ebc620d35bb21832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drop: {fileID: 7947627790920776051, guid: 9a5fcbaaa7483254eba83e94347a3459, type: 3}
---- !u!114 &5913085419521455133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679304195956116468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ef52ba22438704da05ea1281624670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 100
-  vidaMax: 100
-  dano: 10
-  danoReal: 0
-  range: 6
-  stunTime: 0.5
-  Efeito_Comromper: 0
-  Forma_Aliado: {fileID: 7538789116019623011, guid: b6e2fd54038c4f94d897a986b2130849, type: 3}
-  stunado: 0
-  podeTomardanoSunFire: 1
-  particleDamage: {fileID: 2613182017415405966}
-  teste: 0
+  InimigoAnima: {fileID: 8667671887097399062}
 --- !u!114 &3483095034537629875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,7 +523,7 @@ MonoBehaviour:
   tempoDespertar: 0
   despertando: 0
   reinicia: 0
---- !u!114 &2275530176901648032
+--- !u!114 &5913085419521455133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -556,10 +532,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 5679304195956116468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366499527c5f5cc4ebc620d35bb21832, type: 3}
+  m_Script: {fileID: 11500000, guid: 76ef52ba22438704da05ea1281624670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InimigoAnima: {fileID: 8667671887097399062}
+  vida: 100
+  vidaMax: 100
+  dano: 10
+  danoReal: 0
+  range: 6
+  stunTime: 0.5
+  Efeito_Comromper: 0
+  Forma_Aliado: {fileID: 7538789116019623011, guid: b6e2fd54038c4f94d897a986b2130849, type: 3}
+  stunado: 0
+  podeTomardanoSunFire: 1
+  particleDamage: {fileID: 2613182017415405966}
+  teste: 0
+--- !u!114 &8400651040807498495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679304195956116468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180f22ec6b576e94f84b77428c544104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 7947627790920776051, guid: 9a5fcbaaa7483254eba83e94347a3459, type: 3}
 --- !u!1 &5776436964519967485
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5776436964519967485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.09, z: 3.04}
   m_LocalScale: {x: 9.375, y: 9.375, z: 9.375}
   m_Children: []
   m_Father: {fileID: 5015639718154064206}
@@ -869,15 +869,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88915863bff5cc949babd5ecf360e2ea, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88915863bff5cc949babd5ecf360e2ea, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88915863bff5cc949babd5ecf360e2ea, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 88915863bff5cc949babd5ecf360e2ea, type: 3}
       propertyPath: m_LocalPosition.x
