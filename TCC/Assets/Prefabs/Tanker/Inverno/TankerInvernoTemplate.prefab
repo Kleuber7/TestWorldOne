@@ -236,56 +236,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5895926760941861647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4091930211334103479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ef52ba22438704da05ea1281624670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 300
-  vidaMax: 300
-  dano: 20
-  danoReal: 0
-  range: 2
-  stunTime: 0.5
-  Efeito_Comromper: 0
-  Forma_Aliado: {fileID: 0}
-  stunado: 0
-  podeTomardanoSunFire: 1
-  particleDamage: {fileID: 6004073930327122538}
-  teste: 0
---- !u!114 &2442288245297179938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4091930211334103479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 366499527c5f5cc4ebc620d35bb21832, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InimigoAnima: {fileID: 9531040633378018}
---- !u!114 &7046673538313383882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4091930211334103479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180f22ec6b576e94f84b77428c544104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop: {fileID: 7947627790920776051, guid: 9a5fcbaaa7483254eba83e94347a3459, type: 3}
 --- !u!114 &914964754929554129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +272,56 @@ MonoBehaviour:
   tempoDespertar: 0
   despertando: 0
   reinicia: 0
+--- !u!114 &2442288245297179938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091930211334103479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366499527c5f5cc4ebc620d35bb21832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InimigoAnima: {fileID: 9531040633378018}
+--- !u!114 &5895926760941861647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091930211334103479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ef52ba22438704da05ea1281624670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 300
+  vidaMax: 300
+  dano: 20
+  danoReal: 0
+  range: 2
+  stunTime: 0.5
+  Efeito_Comromper: 0
+  Forma_Aliado: {fileID: 0}
+  stunado: 0
+  podeTomardanoSunFire: 1
+  particleDamage: {fileID: 6004073930327122538}
+  teste: 0
+--- !u!114 &7046673538313383882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091930211334103479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180f22ec6b576e94f84b77428c544104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 7947627790920776051, guid: 9a5fcbaaa7483254eba83e94347a3459, type: 3}
 --- !u!1 &7388266184766885129
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 2597725422272638229, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: scriptDeStatus
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5895926760941861647}
     - target: {fileID: 2699892066479197460, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

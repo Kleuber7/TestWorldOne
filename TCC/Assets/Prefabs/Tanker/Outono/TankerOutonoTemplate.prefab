@@ -106,6 +106,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InimigoAnima: {fileID: 5926268305176208841}
+--- !u!114 &8130529991811958976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666610501389306180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ef52ba22438704da05ea1281624670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 300
+  vidaMax: 300
+  dano: 20
+  danoReal: 0
+  range: 2
+  stunTime: 0.5
+  Efeito_Comromper: 0
+  Forma_Aliado: {fileID: 0}
+  stunado: 0
+  podeTomardanoSunFire: 1
+  particleDamage: {fileID: 4648079765040099597}
+  teste: 0
 --- !u!114 &8726554957415200597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,30 +166,6 @@ MonoBehaviour:
   tempoDespertar: 0
   despertando: 0
   reinicia: 0
---- !u!114 &8130529991811958976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3666610501389306180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ef52ba22438704da05ea1281624670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 300
-  vidaMax: 300
-  dano: 20
-  danoReal: 0
-  range: 2
-  stunTime: 0.5
-  Efeito_Comromper: 0
-  Forma_Aliado: {fileID: 0}
-  stunado: 0
-  podeTomardanoSunFire: 1
-  particleDamage: {fileID: 4648079765040099597}
-  teste: 0
 --- !u!1 &3907952997912847078
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 2597725422272638229, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: scriptDeStatus
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8130529991811958976}
     - target: {fileID: 2699892066479197460, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

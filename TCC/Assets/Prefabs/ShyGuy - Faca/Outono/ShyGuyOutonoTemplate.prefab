@@ -279,6 +279,22 @@ Transform:
   m_Father: {fileID: 5949092663415199321}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1404657673073082845
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468502692515712227}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!136 &3409522476197061128
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -293,6 +309,61 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 3.69, z: 0}
+--- !u!95 &6220640057821564976
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468502692515712227}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc3642d9e49f83b4dacaae29d30e8f8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3304303946148479206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468502692515712227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9cf7823d79b5d4cb824632e64a69cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inimigo: {fileID: 5949092663415199321}
+  estaNoChao: 0
+  layerChao:
+    serializedVersion: 2
+    m_Bits: 256
+  tamanhoDoCheck: 0.2
+  pontoDoCheck: {fileID: 2956988899478747387}
+  patrulha: 1
+  scriptPerseguir: {fileID: 9127449657851188699}
+  direcao: {x: 0, y: 0, z: 0}
+  tempoDescanso: 0
+  tempoPatrulha: 0
+  pontosScript: {fileID: 1524330293877558190}
+  velocidade: 6
+  pontos:
+  - {fileID: 1524330293173164172}
+  - {fileID: 1524330293701478746}
+  - {fileID: 1524330293173164172}
+  - {fileID: 1524330293849255997}
+  - {fileID: 1524330293173164172}
+  iniAnima: {fileID: 0}
+  tempoDespertar: 0
+  despertando: 0
+  reinicia: 0
 --- !u!114 &6068652092471348216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,77 +401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 7947627790920776051, guid: 9a5fcbaaa7483254eba83e94347a3459, type: 3}
---- !u!114 &3304303946148479206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468502692515712227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9cf7823d79b5d4cb824632e64a69cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inimigo: {fileID: 5949092663415199321}
-  estaNoChao: 0
-  layerChao:
-    serializedVersion: 2
-    m_Bits: 256
-  tamanhoDoCheck: 0.2
-  pontoDoCheck: {fileID: 2956988899478747387}
-  patrulha: 1
-  scriptPerseguir: {fileID: 9127449657851188699}
-  direcao: {x: 0, y: 0, z: 0}
-  tempoDescanso: 0
-  tempoPatrulha: 0
-  pontosScript: {fileID: 1524330293877558190}
-  velocidade: 6
-  pontos:
-  - {fileID: 1524330293173164172}
-  - {fileID: 1524330293701478746}
-  - {fileID: 1524330293173164172}
-  - {fileID: 1524330293849255997}
-  - {fileID: 1524330293173164172}
-  iniAnima: {fileID: 0}
-  tempoDespertar: 0
-  despertando: 0
-  reinicia: 0
---- !u!54 &1404657673073082845
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468502692515712227}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!95 &6220640057821564976
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468502692515712227}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc3642d9e49f83b4dacaae29d30e8f8a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8925941148109595681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,7 +987,7 @@ PrefabInstance:
     - target: {fileID: 2597725422272638229, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: scriptDeStatus
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6068652092471348216}
     - target: {fileID: 2699892066479197460, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
