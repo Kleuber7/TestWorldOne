@@ -33,9 +33,11 @@ public class Andar : MonoBehaviour
         }
         else
         {
-            ControladorMov.enabled = false ;
+            ControladorMov.enabled = false;
             jogadorAnima.ChangeAnimationState(jogadorAnima.Parado());
         }
+        
+
 
         //if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(1))
         //{
@@ -45,7 +47,7 @@ public class Andar : MonoBehaviour
         //    {
         //        direcaoRotacao = new Vector3(hit.point.x, transform.position.y, hit.point.z);
         //        transform.LookAt(direcaoRotacao);
-               
+
         //    }
         //}
     }

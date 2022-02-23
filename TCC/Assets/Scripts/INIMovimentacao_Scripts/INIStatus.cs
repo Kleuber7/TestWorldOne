@@ -7,20 +7,19 @@ public class INIStatus : BASEStatus
     public float dano, danoReal;
     public static float danoUp = 2, vidaUp = 50;
     public float range;
-
+    [SerializeField] private float stunTime = 0.5f;
     public bool Efeito_Comromper;
     public GameObject Forma_Aliado;
     [SerializeField] private bool stunado = false;
     [SerializeField] public bool podeTomardanoSunFire = true;
+    [SerializeField] private ParticleManagerAttack particleDamage;
 
     public bool teste;
     
 
     public override void Morrer()
     {
-        Runa_Comromper();
         
-
         StartCoroutine(MorrerAnim());
         
         //Destroy(this.gameObject);
@@ -31,9 +30,8 @@ public class INIStatus : BASEStatus
     {
         GetComponentInChildren<INIPerseguir>().enabled = false;
         //GetComponent<INIPatrulha>().enabled = false;
-        
+        GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<FSMInimigos>().ChangeAnimationState(GetComponent<FSMInimigos>().Morte());
-        dano = 0;
         yield return new WaitForSeconds(4f);
 
         this.GetComponent<INIDropar>().Dropar();
@@ -50,15 +48,6 @@ public class INIStatus : BASEStatus
     }
     void Update()
     {
-
-        if(teste)
-        {
-            if(Efeito_Comromper == true)
-            {
-                StartCoroutine(Corompimento());
-            }
-        }
-
         if(vida <= 0)
         {
             Morrer();
@@ -83,20 +72,10 @@ public class INIStatus : BASEStatus
     {
         stunado = _stunado;
     }
-    public void Runa_Comromper()
+   
+    public void TakeDamageEffect()
     {
-        if(Efeito_Comromper==true && vida<=0)
-        {
-            Instantiate(Forma_Aliado,this.transform.position,this.transform.rotation);
-            Debug.Log("Rodei");
-        }
+        particleDamage.PlayParticleAttack();
     }
 
-    IEnumerator Corompimento()
-    {
-        teste = false;
-        yield return new WaitForSeconds(10);
-        Efeito_Comromper=false; 
-        teste = true;
-    }
 }

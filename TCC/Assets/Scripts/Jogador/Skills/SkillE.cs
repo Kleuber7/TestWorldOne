@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SkillE : MonoBehaviour
@@ -9,8 +10,10 @@ public class SkillE : MonoBehaviour
     [SerializeField] private bool podeTomardano = true, ativacao = false;
     [SerializeField] private float dano = 20;
     [SerializeField] private float cooldownTime = 5, nextAttack, contDuracao = 0;
-    [SerializeField] private GameObject tentaculos;
     [SerializeField] private Collider tentaculo;
+    [SerializeField] FSMJogador jogadorA;
+    [SerializeField] ParticleManagerSkillE skillEffect;
+    [SerializeField] private KeyCode key = KeyCode.E;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -37,10 +40,9 @@ public class SkillE : MonoBehaviour
     {
         if (Time.time > nextAttack)
         {
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {   
-                StartCoroutine(DuracaoTentaculos());
+            if (Input.GetKeyDown(key))
+            {
+                TimeTentacles();
             }
         }
     }
@@ -50,42 +52,29 @@ public class SkillE : MonoBehaviour
     {
         if (other.gameObject.tag == tagColisor)
         {
-           
-               
-                foreach (GameObject inimigos in colliders)
+            foreach (GameObject inimigos in colliders)
+            {
+
+                if (inimigos == null)
                 {
-
-                    if (inimigos == null)
-                    {
-                        colliders.Remove(inimigos);
-                        break;
-                    }
-
-                    if (inimigos != null)
-                    {
-
-                        //  if (Vector3.Distance(inimigos.transform.position, this.gameObject.transform.position) <= 100)
-                        // {
-
-                        //if (inimigos.GetComponent<INIStatus>().podeTomardanoSunFire)
-                        //{
-
-                       
-                            if (podeTomardano)
-                            {
-                                StartCoroutine(Duracao());
-
-                                inimigos.GetComponent<INIStatus>().TomarDano(dano);
-                            }
-                        
-                        contDuracao = 0;
-                        tentaculos.SetActive(false);
-                        ativacao = false;
-                        nextAttack = Time.time + cooldownTime;
-                        //  }
-                    }
+                    colliders.Remove(inimigos);
+                    break;
                 }
-            
+
+                if (inimigos != null)
+                {
+                    if (podeTomardano)
+                    {
+                        StartCoroutine(Duracao());
+
+                        inimigos.GetComponent<INIStatus>().TomarDano(dano);
+                    }
+                    contDuracao = 0;
+                    ativacao = false;
+                    nextAttack = Time.time + cooldownTime;
+                }
+            }
+
         }
     }
 
@@ -95,15 +84,23 @@ public class SkillE : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
         podeTomardano = true;
-      
+
     }
 
-    IEnumerator DuracaoTentaculos()
+    async void TimeTentacles()
     {
-        tentaculo.enabled = true;
-        tentaculos.SetActive(true);
-        yield return new WaitForSecondsRealtime(5f);
+        await TimeTentaclesAsync();
         tentaculo.enabled = false;
-        tentaculos.SetActive(false);
+        GameManager.gameManager.atacando = false;
+        jogadorA.ChangeAnimationState("");
+    }
+
+    async Task TimeTentaclesAsync()
+    {
+        GameManager.gameManager.atacando = true;
+        tentaculo.enabled = true;
+        jogadorA.ChangeAnimationState(jogadorA.Testaculos());
+        skillEffect.PlayParticleEffect();
+        await Task.Delay(3000);
     }
 }

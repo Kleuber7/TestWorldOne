@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: "LavaPo\xE7o"
+  m_Shader: {fileID: -6465566751694194690, guid: 52f73f024e862974f988fc9835c2c5fb, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_ae24e39ddf494deca4f362d285d1c76f:
+        m_Texture: {fileID: 2800000, guid: 4acd2a7eaa9a5c64c87c385037a7832c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3c5c8e492441422db3ed347b5b8da9c3: 24.38
+    - Vector1_a39a3a05805d430494a2ed188db358ac: 0.2
+    - Vector1_c4932802669349779385b2932e6d69a2: 0.2
+    m_Colors:
+    - Color_7b19b84fae8946cfa472b1695a96ef94: {r: 32, g: 0.8376963, b: 0, a: 0}
+    - Vector2_42f8798b9938477cb915dc9ff8d3b585: {r: -1.66, g: 0.58, b: 0, a: 0}
+  m_BuildTextureStacks: []

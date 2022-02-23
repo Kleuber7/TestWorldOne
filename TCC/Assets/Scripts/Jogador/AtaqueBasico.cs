@@ -8,15 +8,12 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] private Collider[] areaDeAtaque;
     [SerializeField] public int contadorCombo;
     [SerializeField] private float tempoCombo;
-    [SerializeField] private float duracaoAtaque;
     [SerializeField] private AtaqueADistancia scrpitDeAtaqueADistancia;
     private bool combo;
     [SerializeField]private bool podeAtacar = true;
     [SerializeField] private FSMJogador animacaoJogador;
     Andar andar;
-
-
-    float attackDelay;
+    [SerializeField] private List<float> duracaoAtaques;
 
     private void Start()
     {
@@ -38,17 +35,13 @@ public class AtaqueBasico : MonoBehaviour
         {
             contadorCombo = 0;
         }
-
        
-
         if (Input.GetMouseButtonDown(0))
         {
-
             if (podeAtacar == true)
             {
                 RaycastHit hit;
 
-                
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && Vector3.Distance(transform.position, hit.point) > 5f)
                 {
                     andar.direcaoRotacao = new Vector3(hit.point.x, transform.position.y, hit.point.z);
@@ -59,13 +52,13 @@ public class AtaqueBasico : MonoBehaviour
                 GameManager.gameManager.atacando = true;
                 areaDeAtaque[contadorCombo].enabled = true;
                 StopAllCoroutines();
+                
                 StartCoroutine(expiraCombo());
                 StartCoroutine(CDAtaque());
 
-
                 if (contadorCombo == 0)
                 {
-                    StartCoroutine(PlayAnimationOne());
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
                 }
                 else if (contadorCombo == 1)
                 {
@@ -75,31 +68,27 @@ public class AtaqueBasico : MonoBehaviour
                 {
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
-
+                else if (contadorCombo == 3)
+                {
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater4());
+                }
+                else if (contadorCombo == 4)
+                {
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater5());
+                }
+                else if (contadorCombo == 5)
+                {
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater6());
+                }
                 if (combo)
                 {
                     contadorCombo++;
                 }
-
-               
-                
             }
         }
-
-       
-    }
-    
-
-    IEnumerator PlayAnimationOne()
-    {
-        animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
-        float attackDelay = animacaoJogador.jogadorAnima.GetCurrentAnimatorStateInfo(0).normalizedTime;
-        yield return new WaitForSeconds(attackDelay);
-        animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1Prox());
-
     }
 
-
+  
     public void DesativarAtaque()
     {
         podeAtacar = false;
@@ -111,7 +100,7 @@ public class AtaqueBasico : MonoBehaviour
     IEnumerator expiraCombo()
     {
         combo = true;
-        yield return new WaitForSeconds(tempoCombo);
+        yield return new WaitForSeconds(tempoCombo + duracaoAtaques[contadorCombo]);
         combo = false;
         contadorCombo = 0;
     }
@@ -120,10 +109,8 @@ public class AtaqueBasico : MonoBehaviour
     {
 
         podeAtacar = false;
-        
-        yield return new WaitForSeconds(duracaoAtaque);
+        yield return new WaitForSeconds(duracaoAtaques[contadorCombo]);
         podeAtacar = true;
-        //GetComponent<FSMJogador>().NBater();
         GameManager.gameManager.atacando = false;
     }
 }

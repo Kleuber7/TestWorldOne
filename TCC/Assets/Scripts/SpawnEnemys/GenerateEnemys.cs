@@ -5,15 +5,11 @@ using UnityEngine;
 public class GenerateEnemys : MonoBehaviour
 {
    
-    public ArcoSpawn arco;
+    [SerializeField] private SpawnEnemys enemys;
     public int numberOfSpawns = 1, contSpawns = 0;
 
     public static bool liberadoE = false;
-    void Start()
-    {
-
-    }
-
+  
     private void Update()
     {
         Spawnar();
@@ -23,7 +19,7 @@ public class GenerateEnemys : MonoBehaviour
     {
         if(GameManager.gameManager.numeroI <= 0 && contSpawns < numberOfSpawns)
         {
-            arco.SpawnBow();
+            enemys.SpawnEnemy();
 
             contSpawns++;
         }

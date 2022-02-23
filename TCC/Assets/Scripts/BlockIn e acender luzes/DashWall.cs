@@ -5,22 +5,27 @@ using UnityEngine;
 public class DashWall : MonoBehaviour
 {
     public static bool dashWall = false;
-    [SerializeField] GameObject dashImage;
+    [SerializeField] private GameObject dashImage;
+    [SerializeField] private GameObject firstDash, secondDash;
+
 
     void OnTriggerEnter(Collider other)
     {
-        if (GameManager.gameManager.numeroI <= 0 /*&& GenerateEnemys.liberadoE*/)
+        if (other.gameObject.tag == "Player")
         {
-            if (other.gameObject.tag == "Player")
-            {
-                dashWall = true;
-               
-            }
-        }
+            dashWall = true;
 
-        if (other.gameObject.tag == "Player" && dashWall == true)
+        }
+        if (other.gameObject.tag == "Player" && dashWall == true && gameObject.name == "ParedeDash")
         {
+            firstDash.SetActive(true);
+            secondDash.SetActive(false);
             StartCoroutine(TimeImageDash());
+        }
+        else if (other.gameObject.tag == "Player" && dashWall == true && gameObject.name == "WallDashBack")
+        {
+            firstDash.SetActive(false);
+            secondDash.SetActive(true);
         }
     }
 
@@ -29,7 +34,7 @@ public class DashWall : MonoBehaviour
         if (other.tag == "Player")
         {
             dashWall = false;
-            
+
         }
     }
 

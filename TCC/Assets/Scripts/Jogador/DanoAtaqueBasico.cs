@@ -10,6 +10,7 @@ public class DanoAtaqueBasico : MonoBehaviour
     [SerializeField] private FontedeVida fonteedeVida;
     [SerializeField] private AtaqueBasico ataqueBasico;
     [SerializeField] private Congelar congelar;
+    [SerializeField] private float timeStun = 0.5f;
     private Critico critico;
     public Testing damagePop;
 
@@ -27,21 +28,26 @@ public class DanoAtaqueBasico : MonoBehaviour
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
-           other.GetComponent<FSMInimigos>().ChangeAnimationState("TomarDano");
+            other.GetComponentInChildren<INIPerseguir>().ManageDamage();
+            other.GetComponent<FSMInimigos>().ChangeAnimationState("");
+            other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
+            other.GetComponent<INIStatus>().TakeDamageEffect();
             other.GetComponent<INIStatus>().TomarDano(dano);
-            //fonteedeVida.CurarP();
         }
         else if(other.gameObject.tag == "Boboneco")
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
             other.GetComponent<StatusBoboneco>().TomarDano(dano);
-            //fonteedeVida.CurarP();
         }
 
-        if(ataqueBasico.contadorCombo == 3)
-        {
-            congelar.CongelarINI(other.gameObject);
-        }
+        //if(ataqueBasico.contadorCombo == 3)
+        //{
+        //    congelar.CongelarINI(other.gameObject);
+        //}
     }
+    
+
+
+
 }

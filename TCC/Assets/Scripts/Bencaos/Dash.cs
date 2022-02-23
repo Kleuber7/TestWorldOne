@@ -9,7 +9,6 @@ public class Dash : MonoBehaviour
 
     public float dashSpeed, dashTime, currentDashTime, dashSpeedWall;
     public bool canDash;
-    Collider dashWall;
     
     [SerializeField] private ParticleManagerDashTP particleDashTP, particleDashTPFront, particleDashExplosion;
    
@@ -22,15 +21,9 @@ public class Dash : MonoBehaviour
 
     private void Dashh()
     {
-       
-
         if (Input.GetKeyDown(KeyCode.Space) && !canDash && !Dialog.dialogoB && GetComponent<Andar>().Direcao != Vector3.zero)
         {
-
-
            StartCoroutine(ParticleDash());
-           
-            
         }
 
         if (currentDashTime < dashTime && canDash)
@@ -41,9 +34,6 @@ public class Dash : MonoBehaviour
         {
             canDash = false;
         }
-
-        
-
     }
 
     IEnumerator ParticleDash()
@@ -61,33 +51,11 @@ public class Dash : MonoBehaviour
         }
         else if (DashWall.dashWall == true)
         {
-            dashWall = GameObject.FindGameObjectWithTag("DashWall").GetComponent<Collider>();
-            dashWall.enabled = false;
-            GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeedWall);
-            yield return new WaitForSeconds(0.2f);
-            dashWall.enabled = true;
+            GetComponent<Andar>().ControladorMov.enabled = false;
+            transform.position = GameObject.FindGameObjectWithTag("DashWall").transform.position;
+            DashWall.dashWall = false;
         }
-
-
-        //if (DashWall.dashWall == true)
-        //{
-        //    transform.position = GameObject.FindGameObjectWithTag("DashWall").transform.position;
-        //}
 
         currentDashTime = 0;
     }
-
-
-
-
-
-
-    //IEnumerator DashEnum()
-    //{
-    //    while (currentDashTime > dashTime )
-    //    {
-    //        GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeed * Time.deltaTime);
-    //        yield return null;
-    //    }
-    //}
 }

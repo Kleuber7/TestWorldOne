@@ -15,21 +15,23 @@ public class InformacoesHUDJogador : MonoBehaviour
 
     private void Start()
     {
+        scriptDeStatus = GameManager.gameManager.GetPlayer().GetComponent<Jogador_Status>();
         StartCoroutine(ChamaRefs());
     }
 
     IEnumerator ChamaRefs()
     {
         yield return new WaitForSeconds(.5f);
-
+        
         dinheiroTxt = GameObject.Find("Valor").GetComponent<Text>();
         sliderVida = GameObject.Find("HealthBar").GetComponent<Slider>();
         sliderMana = GameObject.Find("ManaBar").GetComponent<Slider>();
+
     }
 
-    private void Update() 
+    private void LateUpdate() 
     {
-        scriptDeStatus = GameManager.gameManager.GetPlayer().GetComponent<Jogador_Status>();
+        dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
         sliderVida.value = ((scriptDeStatus.Vida * 100) / scriptDeStatus.Vida_Maxima);
         sliderMana.value = ((scriptDeStatus.Mana * 100) / scriptDeStatus.Mana_Maxima);
     }

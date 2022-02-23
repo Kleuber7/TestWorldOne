@@ -12,6 +12,8 @@ public class AtaqueADistancia : MonoBehaviour
     private PLATiro tiro;
     public bool ataqueADistancia;
     [SerializeField] private bool cdBoolShoot = true;
+    [SerializeField] private FSMJogador animacaoJogador;
+
     private void Update()
     {
         RangedAttack();
@@ -23,20 +25,21 @@ public class AtaqueADistancia : MonoBehaviour
         {
             RaycastHit hit;
             ataqueADistancia = true;
-            //if (Input.GetMouseButtonDown(0))
-            //{
+
             if (cdBoolShoot)
             {
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
                 {
+                    GameManager.gameManager.atacando = true;
                     tiro = Instantiate(prefabProjetil, pontoDisparo.position, Quaternion.identity).GetComponent<PLATiro>();
                     direcaoDisparo = hit.point - tiro.gameObject.transform.position;
                     tiro.direcao = direcaoDisparo;
                     tiro.atirou = true;
                     CDShoot();
+                    CDAnim();
+                    animacaoJogador.ChangeAnimationState(animacaoJogador.Tiro());
                 }
             }
-            //}
         }
         else
         {
@@ -53,5 +56,15 @@ public class AtaqueADistancia : MonoBehaviour
         cdBoolShoot = false;
         await Task.Delay(1000 * (int)cdShoot);
         cdBoolShoot = true;
+    }
+
+    public async void CDAnim()
+    {
+        await CDAnimAsync();
+    }
+    public async Task CDAnimAsync()
+    {
+        await Task.Delay(400);
+        GameManager.gameManager.atacando = false;
     }
 }
