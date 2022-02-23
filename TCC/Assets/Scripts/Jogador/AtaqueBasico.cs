@@ -10,7 +10,7 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] private float tempoCombo;
     [SerializeField] private AtaqueADistancia scrpitDeAtaqueADistancia;
     private bool combo;
-    [SerializeField]private bool podeAtacar = true;
+    [SerializeField] private bool podeAtacar = true;
     [SerializeField] private FSMJogador animacaoJogador;
     Andar andar;
     [SerializeField] private List<float> duracaoAtaques;
@@ -20,7 +20,7 @@ public class AtaqueBasico : MonoBehaviour
         andar = GetComponent<Andar>();
     }
 
-    private void Update() 
+    private void Update()
     {
         //if(scrpitDeAtaqueADistancia.ataqueADistancia)
         //{
@@ -31,11 +31,11 @@ public class AtaqueBasico : MonoBehaviour
         //    podeAtacar = true;
         //}
 
-        if(contadorCombo >= areaDeAtaque.Length)
+        if (contadorCombo >= areaDeAtaque.Length)
         {
             contadorCombo = 0;
         }
-       
+
         if (Input.GetMouseButtonDown(0))
         {
             if (podeAtacar == true)
@@ -52,9 +52,10 @@ public class AtaqueBasico : MonoBehaviour
                 GameManager.gameManager.atacando = true;
                 areaDeAtaque[contadorCombo].enabled = true;
                 StopAllCoroutines();
-                
+
                 StartCoroutine(expiraCombo());
                 StartCoroutine(CDAtaque());
+                StartCoroutine(TempoAtaqueAnim());
 
                 if (contadorCombo == 0)
                 {
@@ -88,7 +89,7 @@ public class AtaqueBasico : MonoBehaviour
         }
     }
 
-  
+
     public void DesativarAtaque()
     {
         podeAtacar = false;
@@ -107,10 +108,15 @@ public class AtaqueBasico : MonoBehaviour
 
     public IEnumerator CDAtaque()
     {
-
         podeAtacar = false;
         yield return new WaitForSeconds(duracaoAtaques[contadorCombo]);
         podeAtacar = true;
+    }
+
+    public IEnumerator TempoAtaqueAnim()
+    {
+        float time = animacaoJogador.jogadorAnima.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        yield return new WaitForSeconds(time);
         GameManager.gameManager.atacando = false;
     }
 }
