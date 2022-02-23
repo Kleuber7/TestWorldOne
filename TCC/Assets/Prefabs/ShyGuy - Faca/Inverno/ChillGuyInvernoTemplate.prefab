@@ -91,7 +91,7 @@ MonoBehaviour:
   dano: 3
   danoReal: 0
   tagColisor: Player
-  status: {fileID: 0}
+  status: {fileID: 9105915996415272965}
 --- !u!114 &2803644991664270718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 5539976450673657303}
   - component: {fileID: 5539976450673657300}
   m_Layer: 2
-  m_Name: ShyGuyInvernoTemplate
+  m_Name: ChillGuyInvernoTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ Animator:
   m_GameObject: {fileID: 7513176642882821509}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc3642d9e49f83b4dacaae29d30e8f8a, type: 2}
+  m_Controller: {fileID: 9100000, guid: e2fa30a0e43afa84dac49f8217d36f90, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -665,15 +665,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21b160175db3ea74dbc1130c72fbb5cd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21b160175db3ea74dbc1130c72fbb5cd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21b160175db3ea74dbc1130c72fbb5cd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21b160175db3ea74dbc1130c72fbb5cd, type: 3}
       propertyPath: m_LocalPosition.x

@@ -319,7 +319,7 @@ Animator:
   m_GameObject: {fileID: 6468502692515712227}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bc3642d9e49f83b4dacaae29d30e8f8a, type: 2}
+  m_Controller: {fileID: 9100000, guid: ee318d6b28f0a814ebbd6c33e21523be, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   dano: 3
   danoReal: 0
   tagColisor: Player
-  status: {fileID: 0}
+  status: {fileID: 6068652092471348216}
 --- !u!114 &9164540650135036676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,15 +659,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
       propertyPath: m_LocalPosition.x
