@@ -79565,7 +79565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1618364075071566038, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: timeStun
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1618364075071566038, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: damagePop
@@ -79811,6 +79811,14 @@ PrefabInstance:
       propertyPath: m_StepOffset
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2586849209051979976, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: damagePop
+      value: 
+      objectReference: {fileID: 1099379763}
+    - target: {fileID: 2586849209051979976, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: ataqueBasico
+      value: 
+      objectReference: {fileID: 2493139183562820231}
     - target: {fileID: 2599969310983633184, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -80489,11 +80497,11 @@ PrefabInstance:
       objectReference: {fileID: 2493139183562820232}
     - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: duracaoAtaques.Array.data[0]
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: duracaoAtaques.Array.data[1]
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 6575121894332390966, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: duracaoAtaques.Array.data[2]
@@ -80519,6 +80527,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6681976448826633793, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: damagePop
+      value: 
+      objectReference: {fileID: 1099379763}
+    - target: {fileID: 6681976448826633793, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: ataqueBasico
+      value: 
+      objectReference: {fileID: 2493139183562820231}
     - target: {fileID: 6688691194115063797, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -80767,6 +80783,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8181307762626022634, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: damagePop
+      value: 
+      objectReference: {fileID: 1099379763}
+    - target: {fileID: 8181307762626022634, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: ataqueBasico
+      value: 
+      objectReference: {fileID: 2493139183562820231}
     - target: {fileID: 8209367847964826890, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -80853,7 +80877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8672021115366500284, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: timeStun
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8672021115366500284, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: damagePop
@@ -80917,7 +80941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8845358985416940269, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: timeStun
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8845358985416940269, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: damagePop
