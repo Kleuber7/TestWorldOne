@@ -13,7 +13,13 @@ public class AtaqueADistancia : MonoBehaviour
     public bool ataqueADistancia;
     [SerializeField] private bool cdBoolShoot = true;
     [SerializeField] private FSMJogador animacaoJogador;
+    Andar andar;
 
+
+    private void Start()
+    {
+        andar = GetComponent<Andar>();
+    }
     private void Update()
     {
         RangedAttack();
@@ -37,6 +43,8 @@ public class AtaqueADistancia : MonoBehaviour
                     tiro.atirou = true;
                     CDShoot();
                     CDAnim();
+                    andar.direcaoRotacao = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                    transform.LookAt(andar.direcaoRotacao);
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Tiro());
                 }
             }

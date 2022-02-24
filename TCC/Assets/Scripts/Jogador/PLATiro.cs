@@ -24,7 +24,7 @@ public class PLATiro : MonoBehaviour
 
     public void Desloca()
     {
-        this.gameObject.transform.Translate(new Vector3(direcao.x, 0, direcao.z) * Time.deltaTime * velocidadeDisparo, Space.World);
+        this.gameObject.transform.Translate(new Vector3(direcao.x, 0, direcao.z).normalized * Time.deltaTime * velocidadeDisparo, Space.World);
     }
 
     private void OnTriggerEnter(Collider other) 
