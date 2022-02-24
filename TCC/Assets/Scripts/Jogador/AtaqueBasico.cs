@@ -14,7 +14,7 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] private FSMJogador animacaoJogador;
     Andar andar;
     [SerializeField] private List<float> duracaoAtaques;
-
+    [SerializeField] private float timeReturnAnimation = 0.15f;
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -108,6 +108,7 @@ public class AtaqueBasico : MonoBehaviour
 
     public IEnumerator CDAtaque()
     {
+
         podeAtacar = false;
         yield return new WaitForSeconds(duracaoAtaques[contadorCombo]);
         podeAtacar = true;
@@ -115,8 +116,7 @@ public class AtaqueBasico : MonoBehaviour
 
     public IEnumerator TempoAtaqueAnim()
     {
-        float time = animacaoJogador.jogadorAnima.GetCurrentAnimatorStateInfo(0).normalizedTime;
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(duracaoAtaques[contadorCombo] + timeReturnAnimation);
         GameManager.gameManager.atacando = false;
     }
 }
