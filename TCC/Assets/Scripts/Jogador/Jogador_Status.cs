@@ -18,6 +18,8 @@ public class Jogador_Status : MonoBehaviour
                     Velocidade,
                     alcance,
                     VidaExtra;
+    
+    public int levelVida, levelMana, levelAtaque, levelDefesa;
 
 
     public GameObject dinheiroS, vidaMaxS, manaMaxS, velocidadeMaxS;
@@ -39,7 +41,10 @@ public class Jogador_Status : MonoBehaviour
         Ataque = Ataque_Maximo;
         Velocidade = Velocidade_Maxima;
 
-        
+        levelVida = 1;
+        levelMana = 1;
+        levelAtaque = 1;
+        levelDefesa = 1;
 
         barras.MaximoVida(Vida_Maxima);
         barras.MaximoMana(Mana_Maxima);

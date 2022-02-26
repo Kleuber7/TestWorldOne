@@ -6,7 +6,5 @@ using UnityEngine.UI;
 
 public class DinheiroFerreiro : MonoBehaviour
 {
-    public static Text dinheiroTxt;
-
-
+    public Text dinheiroTxt;
 }
