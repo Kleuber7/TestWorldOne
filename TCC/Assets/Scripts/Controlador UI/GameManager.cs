@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    [SerializeField] protected GameObject jogador;
-    [SerializeField] public float dinheiroJogador;
+    [SerializeField] public GameObject jogador;
     [SerializeField] public GameObject info;
     [SerializeField] public GameObject loadTela;
     [SerializeField] private Scene[] cenas;
@@ -18,6 +17,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] contI;
     public int numeroI;
     [SerializeField] public GameObject menuOpções;
+
+    public float dinheiroJogador;
+   
 
     public Tela_De_Load load;
     
@@ -89,6 +91,7 @@ public class GameManager : MonoBehaviour
         {
             info = GameObject.FindGameObjectWithTag("Info");
         }
+
     }
     void SceneChanges()
     {
@@ -131,4 +134,5 @@ public class GameManager : MonoBehaviour
         contI = GameObject.FindGameObjectsWithTag("Inimigo");
         numeroI = contI.Length;
     }
+
 }

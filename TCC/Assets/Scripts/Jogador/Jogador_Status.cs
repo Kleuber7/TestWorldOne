@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jogador_Status : MonoBehaviour
 {
     [Header("Status maximo do atributo")]
-    public float    Vida_Maxima,
+    public float Vida_Maxima,
                     Mana_Maxima,
                     Ataque_Maximo,
                     Defesa_Maxima,
@@ -14,12 +14,10 @@ public class Jogador_Status : MonoBehaviour
                     Mana,
                     Ataque,
                     Defesa,
-                   // Dinheiro,
                     Velocidade,
-                    alcance,
                     VidaExtra;
 
-
+    public ScriptablePlayer status;
     public GameObject dinheiroS, vidaMaxS, manaMaxS, velocidadeMaxS;
 
     public InformacoesHUDJogador barras;
@@ -33,40 +31,40 @@ public class Jogador_Status : MonoBehaviour
         barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
 
 
-        Vida = Vida_Maxima;
-        Mana = Mana_Maxima;
-        Defesa = Defesa_Maxima;
-        Ataque = Ataque_Maximo;
-        Velocidade = Velocidade_Maxima;
+        status.health = Vida_Maxima;
+        status.Mana = Mana_Maxima;
+        status.defense = Defesa_Maxima;
+        status.attack = Ataque_Maximo;
+        status.speed = Velocidade_Maxima;
 
-        
+
 
         barras.MaximoVida(Vida_Maxima);
         barras.MaximoMana(Mana_Maxima);
-        
+
     }
     void Update()
     {
 
         //RegenerarVida();
         RegenerarMana();
-         
-        if (Vida <= 0 && VidaExtra <= 0)
+
+        if (status.health <= 0 && VidaExtra <= 0)
         {
             //Ligar novamente quando tiver shader   
             //if (GetComponentInChildren<Dissolver>().dissolverValor > 0)
-                //{
-                //   StartCoroutine(GetComponentInChildren<Dissolver>().DissolverSegundos());
-                //}
-                //GetComponent<Dissolver>().render.material.SetFloat("_DissolverController", GetComponent<Dissolver>().dissolverValor);
-                mortes++;
-                StartCoroutine(MorrerContagem());
-            
+            //{
+            //   StartCoroutine(GetComponentInChildren<Dissolver>().DissolverSegundos());
+            //}
+            //GetComponent<Dissolver>().render.material.SetFloat("_DissolverController", GetComponent<Dissolver>().dissolverValor);
+            mortes++;
+            StartCoroutine(MorrerContagem());
+
         }
         //Ligar novamente quando tiver shader de dissolver
         //else if(Vida <= 0 && VidaExtra >= 1)
         //{
-            
+
         //    StartCoroutine(GetComponentInChildren<Dissolver>().DissolverReviver());
 
 
@@ -75,40 +73,42 @@ public class Jogador_Status : MonoBehaviour
 
 
         AtualizaValoresMaximos();
-        
+
     }
     #region (Rgeneração de vida e Mana)
     public void RegenerarVida()
     {
-        if(Vida<Vida_Maxima)
+        if (Vida < Vida_Maxima)
         {
-            Vida += 0.5f*Time.deltaTime;
-        }else
+            Vida += 0.5f * Time.deltaTime;
+        }
+        else
         {
             Vida = Vida_Maxima;
         }
     }
     public void RegenerarMana()
     {
-        if(Mana<Mana_Maxima)
+        if (Mana < Mana_Maxima)
         {
-            Mana += 0.8f*Time.deltaTime;
-        }else
+            Mana += 0.8f * Time.deltaTime;
+        }
+        else
         {
             Mana = Mana_Maxima;
         }
     }
-#endregion
+    #endregion
 
-   
+
     public void Morrer()
     {
 
         GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
 
-        Vida = Vida_Maxima;
-        barras.SetHealth(Vida);
-        
+        status.health = Vida_Maxima;
+        barras.SetHealth(status.health);
+
         Destroy(this.gameObject);
     }
 
@@ -121,29 +121,29 @@ public class Jogador_Status : MonoBehaviour
 
     public void AtualizaValoresMaximos()
     {
-        if(Vida > Vida_Maxima)
+        if (status.health > Vida_Maxima)
         {
-            Vida = Vida_Maxima;
+            status.health = Vida_Maxima;
             barras.MaximoVida(Vida_Maxima);
         }
-        if(Mana > Mana_Maxima)
+        if (status.Mana > Mana_Maxima)
         {
-            Mana = Mana_Maxima;
+            status.Mana = Mana_Maxima;
             barras.MaximoMana(Mana_Maxima);
         }
-        if (Defesa > Defesa_Maxima)
+        if (status.defense > Defesa_Maxima)
         {
-            Defesa = Defesa_Maxima;
+            status.defense = Defesa_Maxima;
         }
-        if (Ataque > Ataque_Maximo)
+        if (status.attack > Ataque_Maximo)
         {
-            Ataque = Ataque_Maximo;
+            status.attack = Ataque_Maximo;
         }
-        if (Velocidade > Velocidade_Maxima)
+        if (status.speed > Velocidade_Maxima)
         {
-            Velocidade = Velocidade_Maxima;
+            status.speed = Velocidade_Maxima;
         }
-        if(GameManager.gameManager.dinheiroJogador < 0)
+        if (GameManager.gameManager.dinheiroJogador < 0)
         {
             GameManager.gameManager.dinheiroJogador = 0;
         }
@@ -151,8 +151,8 @@ public class Jogador_Status : MonoBehaviour
 
     public void TomarDano(float dano)
     {
-        Vida -= dano;
+        status.health -= dano;
 
-        barras.SetHealth(Vida);
+        barras.SetHealth(status.health);
     }
 }
