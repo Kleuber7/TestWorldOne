@@ -60,6 +60,13 @@ public class FSMJogador : MonoBehaviour
         return player_Testacles;
 
     }
+    public string Snare()
+    {
+        const string player_Snare = "Snare";
+
+        return player_Snare;
+
+    }
     public string Tiro()
     {
         const string player_Shoot = "Tiro";

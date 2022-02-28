@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PLASkills : MonoBehaviour
@@ -22,7 +23,7 @@ public class PLASkills : MonoBehaviour
         {
             if(podeAtivarSkill1)
             {
-                skillParticle.PlayParticleEffect();
+                TimeSnare();
                 StartCoroutine(CastSkill1());
                 StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
             }
@@ -40,5 +41,20 @@ public class PLASkills : MonoBehaviour
     {
         yield return new WaitForSeconds(tempoDeCastSkill1);
         scriptImpactoAbissal.ImpactoAbissal(scriptImpactoAbissal.inimigos);
+    }
+
+    async void TimeSnare()
+    {
+        await TimeSnareAsync();
+        GameManager.gameManager.atacando = false;
+        GetComponent<FSMJogador>().ChangeAnimationState("");
+    }
+
+    async Task TimeSnareAsync()
+    {
+        GameManager.gameManager.atacando = true;
+        GetComponent<FSMJogador>().ChangeAnimationState(GetComponent<FSMJogador>().Snare());
+        skillParticle.PlayParticleEffect();
+        await Task.Delay(1000 * (int)tempoDeCastSkill1);
     }
 }
