@@ -14,12 +14,11 @@ public class Jogador_Status : MonoBehaviour
                     Mana,
                     Ataque,
                     Defesa,
-                   // Dinheiro,
                     Velocidade,
                     alcance,
                     VidaExtra;
 
-
+    public ScriptablePlayer status;
     public GameObject dinheiroS, vidaMaxS, manaMaxS, velocidadeMaxS;
 
     public InformacoesHUDJogador barras;
@@ -33,16 +32,16 @@ public class Jogador_Status : MonoBehaviour
         barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
 
 
-        Vida = Vida_Maxima;
-        Mana = Mana_Maxima;
-        Defesa = Defesa_Maxima;
-        Ataque = Ataque_Maximo;
-        Velocidade = Velocidade_Maxima;
+        status.health = status.maxHealth;
+        status.Mana = status.maxMana;
+        status.defense = status.maxDefense;
+        status.attack = status.maxAttack;
+        status.speed = status.maxSpeed;
 
         
 
-        barras.MaximoVida(Vida_Maxima);
-        barras.MaximoMana(Mana_Maxima);
+        barras.MaximoVida(status.maxHealth);
+        barras.MaximoMana(status.maxMana);
         
     }
     void Update()
@@ -51,7 +50,7 @@ public class Jogador_Status : MonoBehaviour
         //RegenerarVida();
         RegenerarMana();
          
-        if (Vida <= 0 && VidaExtra <= 0)
+        if (status.health <= 0 && VidaExtra <= 0)
         {
             //Ligar novamente quando tiver shader   
             //if (GetComponentInChildren<Dissolver>().dissolverValor > 0)
@@ -106,8 +105,8 @@ public class Jogador_Status : MonoBehaviour
 
         GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
 
-        Vida = Vida_Maxima;
-        barras.SetHealth(Vida);
+        status.health = status.maxHealth;
+        barras.SetHealth(status.health);
         
         Destroy(this.gameObject);
     }
@@ -121,27 +120,27 @@ public class Jogador_Status : MonoBehaviour
 
     public void AtualizaValoresMaximos()
     {
-        if(Vida > Vida_Maxima)
+        if(status.health > status.maxHealth)
         {
-            Vida = Vida_Maxima;
-            barras.MaximoVida(Vida_Maxima);
+            status.health = status.maxHealth;
+            barras.MaximoVida(status.maxHealth);
         }
-        if(Mana > Mana_Maxima)
+        if(status.Mana > status.maxMana)
         {
-            Mana = Mana_Maxima;
-            barras.MaximoMana(Mana_Maxima);
+            status.Mana = status.maxMana;
+            barras.MaximoMana(status.maxMana);
         }
-        if (Defesa > Defesa_Maxima)
+        if (status.defense > status.maxDefense)
         {
-            Defesa = Defesa_Maxima;
+            status.defense = status.maxDefense;
         }
-        if (Ataque > Ataque_Maximo)
+        if (status.attack > status.maxAttack)
         {
-            Ataque = Ataque_Maximo;
+            status.attack = status.maxAttack;
         }
-        if (Velocidade > Velocidade_Maxima)
+        if (status.speed > status.maxSpeed)
         {
-            Velocidade = Velocidade_Maxima;
+            status.speed = status.maxSpeed;
         }
         if(GameManager.gameManager.dinheiroJogador < 0)
         {
@@ -151,8 +150,8 @@ public class Jogador_Status : MonoBehaviour
 
     public void TomarDano(float dano)
     {
-        Vida -= dano;
+        status.health -= dano;
 
-        barras.SetHealth(Vida);
+        barras.SetHealth(status.health);
     }
 }
