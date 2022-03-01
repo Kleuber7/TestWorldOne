@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class FontedeVida : MonoBehaviour
 {
-    float curaPorcentagem = 10;
-    private Jogador_Status jogador;
+    //float curaPorcentagem = 10;
+    //private Jogador_Status jogador;
 
-    private void Start()
-    {
-        jogador = GetComponent<Jogador_Status>();
-    }
-    public void CurarP()
-    {
+    //private void Start()
+    //{
+    //    jogador = GetComponent<Jogador_Status>();
+    //}
+    //public void CurarP()
+    //{
 
-        jogador.Vida += jogador.Ataque * curaPorcentagem / 100;
+    //    jogador.Vida += jogador.Ataque * curaPorcentagem / 100;
 
-    }
+    //}
 }
 
