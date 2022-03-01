@@ -13,6 +13,6 @@ public class ScriptablePlayer : ScriptableObject
     public float speed, maxSpeed;
     public float ExtraLife;
     public int levelVida, levelMana, levelAtaque, levelDefesa;
-
+    public float initialMoney;
 
 }

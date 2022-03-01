@@ -13,9 +13,9 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] private bool podeAtacar = true;
     [SerializeField] private FSMJogador animacaoJogador;
     Andar andar;
-    [SerializeField] private List<float> duracaoAtaques;
+    [SerializeField] public List<float> duracaoAtaques;
     [SerializeField] private float timeReturnAnimation = 0.15f;
-    [SerializeField] private float respectTime;
+    [SerializeField] public float respectTime;
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -60,22 +60,22 @@ public class AtaqueBasico : MonoBehaviour
                 if (contadorCombo == 0)
                 {
 
-                    StartCoroutine(AttackCollision(contadorCombo));
+                    StartCoroutine(AttackCollision(contadorCombo, respectTime));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
                 }
                 else if (contadorCombo == 1)
                 {
-                    StartCoroutine(AttackCollision(contadorCombo));
+                    StartCoroutine(AttackCollision(contadorCombo, respectTime));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater2());
                 }
                 else if (contadorCombo == 2)
                 {
-                    StartCoroutine(AttackCollision(contadorCombo));
+                    StartCoroutine(AttackCollision(contadorCombo, respectTime));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
                 else if (contadorCombo == 3)
                 {
-                    StartCoroutine(AttackCollision(contadorCombo));
+                    StartCoroutine(AttackCollision(contadorCombo, 0.5f));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater4());
                 }
                
@@ -88,7 +88,7 @@ public class AtaqueBasico : MonoBehaviour
         }
     }
 
-    IEnumerator AttackCollision(int cont)
+    IEnumerator AttackCollision(int cont, float respectTime)
     {
         yield return new WaitForSeconds(duracaoAtaques[contadorCombo] - respectTime);
         areaDeAtaque[cont].enabled = true;
