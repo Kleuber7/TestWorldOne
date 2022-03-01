@@ -11471,6 +11471,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.37, y: 1, z: 0.51}
   m_Center: {x: 0, y: 0, z: -0.32}
+--- !u!1001 &450369837
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 453.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900689, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752054182750900692, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+      propertyPath: m_Name
+      value: 'Ferreiro '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
 --- !u!1 &450605643
 GameObject:
   m_ObjectHideFlags: 0
@@ -15712,44 +15769,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604adcec53d98a489d85867de554d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinheiroFerreiro: {fileID: 2219563434454019405}
+  status: {fileID: 0}
   HUDFerreiro: {fileID: 1179999581}
-  vidaInfo: {fileID: 107623301}
-  powerUpVida: 0
-  levelVida: 0
-  textoLevelVida: {fileID: 624987166}
-  precoVida: 0
-  textoPrecoVida: {fileID: 1458374426}
-  manaInfo: {fileID: 34563818}
-  powerUpMana: 0
-  levelMana: 0
-  textoLevelMana: {fileID: 125852641}
-  precoMana: 0
-  textoPrecoMana: {fileID: 1782024086}
-  AtaqueInfo: {fileID: 0}
-  powerUpAtaque: 0
-  levelAtaque: 0
-  textoLevelAtaque: {fileID: 1862670347}
-  precoAtaque: 0
-  textoPrecoAtaque: {fileID: 2021619465}
-  defesaInfo: {fileID: 1316585749}
-  powerUpDefesa: 0
-  levelDefesa: 0
-  textoLevelDefesa: {fileID: 967683619}
-  precoDefesa: 0
-  textoPrecoDefesa: {fileID: 948944852}
-  potionVidaInfo: {fileID: 1357213750}
-  precoPotionVida: 0
-  textoPrecoPotionVida: {fileID: 1580052695}
-  potionManaInfo: {fileID: 287486842}
-  precoPotionMana: 0
-  textoPrecoPotionMana: {fileID: 1139353739}
-  vidaSO: {fileID: 11400000, guid: 8177aecdef43482479484b70bb07960d, type: 2}
-  manaSO: {fileID: 11400000, guid: acce91f72a237b3488e4cf162c218874, type: 2}
-  ataqueSO: {fileID: 11400000, guid: 65915ba92b5e8834a8c491f3c5b1abde, type: 2}
-  defesaSO: {fileID: 11400000, guid: fb571ab85f7031643a326bb1e70c717e, type: 2}
-  potionVidaSO: {fileID: 11400000, guid: 09fd772959e07664b90366be69000d75, type: 2}
-  potionManaSO: {fileID: 11400000, guid: 90a26ee8d5f719c49b0e0117776c4e5b, type: 2}
+  vida1: {fileID: 0}
+  mana1: {fileID: 0}
+  forca1: {fileID: 0}
+  defesa1: {fileID: 0}
+  preco1: 50
+  preco2: 100
+  preco3: 150
+  preco4: 200
 --- !u!136 &626168378
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33822,7 +33851,7 @@ RectTransform:
   - {fileID: 1277061535}
   - {fileID: 1586018189}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -37300,7 +37329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1394118908
 PrefabInstance:
@@ -48257,7 +48286,7 @@ Transform:
   m_Children:
   - {fileID: 1705309256}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1478865157
 MonoBehaviour:
@@ -66045,7 +66074,7 @@ Transform:
   - {fileID: 4603825253263311769}
   - {fileID: 8305478205903810667}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1923964995
 GameObject:
@@ -68945,7 +68974,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128837081
 GameObject:
@@ -71683,10 +71712,10 @@ MonoBehaviour:
   sunfire: {fileID: 783466884}
   congelar: {fileID: 0}
   dash: {fileID: 919132147892234277}
-  status: {fileID: 919132147892234268}
   camuflagem: {fileID: 919132147892234274}
   colisorS: {fileID: 783466882}
   fontedeVida: {fileID: 0}
+  status: {fileID: 0}
 --- !u!114 &919132147892234270 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7235825112790767654, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
@@ -75206,7 +75235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e9a6b22d8f1a54592f44fdbbc6b089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinheiroTxt: {fileID: 203836949}
 --- !u!114 &2219563434454019406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75441,7 +75469,7 @@ Transform:
   - {fileID: 5988136522269005079}
   - {fileID: 2671050574817119779}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &2261773666373262178
 Transform:
