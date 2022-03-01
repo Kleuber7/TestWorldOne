@@ -32,6 +32,7 @@ public class SaveManager : MonoBehaviour
         player.levelMana = data.levelMana;
         player.levelAtaque = data.levelAtaque;
         player.levelDefesa = data.levelDefesa;
+        player.initialMoney = data.initialMoney;
     }
 
     #region

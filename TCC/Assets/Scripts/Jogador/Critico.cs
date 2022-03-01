@@ -36,11 +36,11 @@ public class Critico : MonoBehaviour
     public void DoAttack()
     {
         
-        bool criticalHit = Random.Range(0, 100) < 25;
+        bool criticalHit = Random.Range(0, 100) < 15;
         if (criticalHit)
         {
             Debug.Log("Critou");
-            dano.dano *= 2f;
+            dano.dano *= 1.5f;
             critou = true;
             jogadorAnima.ChangeAnimationState(jogadorAnima.Critico());
 
