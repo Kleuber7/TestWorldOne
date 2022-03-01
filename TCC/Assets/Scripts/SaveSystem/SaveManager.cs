@@ -17,7 +17,7 @@ public class SaveManager : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         player.health = data.health;
-        GameManager.gameManager.dinheiroJogador = data.money;
+        player.money = data.money;
         player.Mana = data.Mana;
         player.defense = data.defense;
         player.attack = data.attack;

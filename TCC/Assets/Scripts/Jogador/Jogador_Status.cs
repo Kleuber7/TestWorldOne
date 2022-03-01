@@ -130,9 +130,9 @@ public class Jogador_Status : MonoBehaviour
         {
             status.speed = status.maxSpeed;
         }
-        if(GameManager.gameManager.dinheiroJogador < 0)
+        if(status.money < 0)
         {
-            GameManager.gameManager.dinheiroJogador = 0;
+            status.money = 0;
         }
     }
 

@@ -18,7 +18,7 @@ public class PlayerData
     public PlayerData(SaveManager player)
     {
         health = player.player.health;
-        money = GameManager.gameManager.dinheiroJogador;
+        money = player.player.money;
         Mana = player.player.Mana;
         defense = player.player.defense;
         attack = player.player.attack;

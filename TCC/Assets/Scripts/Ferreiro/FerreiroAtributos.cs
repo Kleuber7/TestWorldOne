@@ -77,7 +77,7 @@ public class FerreiroAtributos : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 HUDFerreiro.SetActive(true);
-                dinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+                dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
 
                 powerUpVida = vidaSO.powerUp;
                 precoVida = vidaSO.preco;
@@ -114,14 +114,14 @@ public class FerreiroAtributos : MonoBehaviour
 
     public void EvoluirVidaMax()
     {
-        if (GameManager.gameManager.dinheiroJogador >= precoVida)
+        if (status.money >= precoVida)
         {
             status.maxHealth += powerUpVida;
             status.health += powerUpVida;
-            GameManager.gameManager.dinheiroJogador -= precoVida;
+            status.money -= precoVida;
             UpaVida();
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            dinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+            barras.AtualizaDinheiro(status.money);
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
             barras.SetHealth(status.health);
         }
 
@@ -129,61 +129,61 @@ public class FerreiroAtributos : MonoBehaviour
 
     public void EvoluirManaMax()
     {
-        if (GameManager.gameManager.dinheiroJogador >= precoMana)
+        if (status.money >= precoMana)
         {
             status.maxMana += powerUpMana;
             status.Mana += powerUpMana;
             barras.SetHealth(status.Mana);
-            GameManager.gameManager.dinheiroJogador -= precoMana;
+            status.money -= precoMana;
             UpaMana();
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            dinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+            barras.AtualizaDinheiro(status.money);
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
 
     public void EvoluirAtaque()
     {
-        if (GameManager.gameManager.dinheiroJogador >= precoAtaque)
+        if (status.money >= precoAtaque)
         {
             status.maxAttack += powerUpAtaque;
             status.attack += powerUpAtaque;
-            GameManager.gameManager.dinheiroJogador -= precoAtaque;
+            status.money -= precoAtaque;
             UpaAtaque();
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            dinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+            barras.AtualizaDinheiro(status.money);
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
 
     public void EvoluirDefesa()
     {
-        if (GameManager.gameManager.dinheiroJogador >= precoDefesa)
+        if (status.money >= precoDefesa)
         {
             status.maxDefense += powerUpDefesa;
             status.defense += powerUpDefesa;
-            GameManager.gameManager.dinheiroJogador -= precoDefesa;
+            status.money -= precoDefesa;
             UpaDefesa();
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            dinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+            barras.AtualizaDinheiro(status.money);
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
 
     public void ComprarPotionVida()
     {
-        if (GameManager.gameManager.dinheiroJogador >= precoPotionVida)
+        if (status.money >= precoPotionVida)
         {
-            GameManager.gameManager.dinheiroJogador -= precoPotionVida;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            dinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+            status.money -= precoPotionVida;
+            barras.AtualizaDinheiro(status.money);
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
 
     public void ComprarPotionMana()
     {
-        if (GameManager.gameManager.dinheiroJogador >= precoPotionMana)
+        if (status.money >= precoPotionMana)
         {
-            GameManager.gameManager.dinheiroJogador -= precoPotionMana;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            dinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+            status.money -= precoPotionMana;
+            barras.AtualizaDinheiro(status.money);
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
 
