@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] contI;
     public int numeroI;
     [SerializeField] public GameObject menuOpções;
+    [SerializeField] private ScriptablePlayer status;
 
     public Tela_De_Load load;
     
@@ -51,7 +52,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameManager != null)
         {
-            dinheiroJogador = gameManager.dinheiroJogador;
             Destroy(gameManager.gameObject);
             gameManager = this;
         }

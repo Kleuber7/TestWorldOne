@@ -17,7 +17,7 @@ public class SaveManager : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         player.health = data.health;
-        GameManager.gameManager.dinheiroJogador = data.money;
+        player.money = data.money;
         player.Mana = data.Mana;
         player.defense = data.defense;
         player.attack = data.attack;
@@ -27,6 +27,11 @@ public class SaveManager : MonoBehaviour
         player.maxDefense = data.maxDefense;
         player.maxAttack = data.maxAttack;
         player.maxSpeed = data.maxSpeed;
+        player.ExtraLife = data.ExtraLife;
+        player.levelVida = data.levelVida;
+        player.levelMana = data.levelMana;
+        player.levelAtaque = data.levelAtaque;
+        player.levelDefesa = data.levelDefesa;
     }
 
     #region

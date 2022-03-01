@@ -6,6 +6,7 @@ public class INIDrop : MonoBehaviour
 {
     private Transform player;
     [SerializeField] private float forcaMagnetismo;
+    [SerializeField] private ScriptablePlayer status;
 
     private void Start() 
     {
@@ -27,7 +28,7 @@ public class INIDrop : MonoBehaviour
 
     void Pegar(GameObject player)
     {
-        GameManager.gameManager.dinheiroJogador += 50;
+        status.money += 50;
         Destroy(this.gameObject);
     }
 }

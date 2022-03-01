@@ -1276,6 +1276,7 @@ GameObject:
   - component: {fileID: 1246412465}
   - component: {fileID: 1246412464}
   - component: {fileID: 1246412463}
+  - component: {fileID: 1246412466}
   m_Layer: 5
   m_Name: "Bot\xE3o Carregar"
   m_TagString: Untagged
@@ -1346,7 +1347,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1246412464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1246412466}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: LoadPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 736975156}
+        m_TargetAssemblyTypeName: Tela_De_Load, Assembly-CSharp
+        m_MethodName: Carregar_Scena
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1246412464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,6 +1410,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246412461}
   m_CullTransparentMesh: 1
+--- !u!114 &1246412466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246412461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0dced1c8116f044ac90986311a678e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
 --- !u!1 &1389808550
 GameObject:
   m_ObjectHideFlags: 0

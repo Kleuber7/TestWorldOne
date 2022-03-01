@@ -31,7 +31,7 @@ public class InformacoesHUDJogador : MonoBehaviour
 
     private void LateUpdate() 
     {
-        dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
+        dinheiroTxt.text = status.money.ToString();
         sliderVida.value = ((status.health * 100) / status.maxHealth);
         sliderMana.value = ((status.Mana * 100) / status.maxMana);
     }

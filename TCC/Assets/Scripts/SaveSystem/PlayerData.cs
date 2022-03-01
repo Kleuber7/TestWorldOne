@@ -12,11 +12,13 @@ public class PlayerData
     public float defense, maxDefense;
     public float attack, maxAttack;
     public float speed, maxSpeed;
+    public float ExtraLife;
+    public int levelVida, levelMana, levelAtaque, levelDefesa;
 
     public PlayerData(SaveManager player)
     {
         health = player.player.health;
-        money = GameManager.gameManager.dinheiroJogador;
+        money = player.player.money;
         Mana = player.player.Mana;
         defense = player.player.defense;
         attack = player.player.attack;
@@ -26,7 +28,15 @@ public class PlayerData
         maxDefense = player.player.maxDefense;
         maxAttack = player.player.maxAttack;
         maxSpeed = player.player.maxSpeed;
+        ExtraLife = player.player.ExtraLife;
+        levelVida = player.player.levelVida;
+        levelMana = player.player.levelMana;
+        levelAtaque = player.player.levelAtaque;
+        levelDefesa = player.player.levelDefesa;
+
     }
+
+
 
     #region
     //position = new float[3];
