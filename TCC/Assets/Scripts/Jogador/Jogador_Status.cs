@@ -17,14 +17,16 @@ public class Jogador_Status : MonoBehaviour
     {
         barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
 
-
         status.health = status.maxHealth;
         status.Mana = status.maxMana;
         status.defense = status.maxDefense;
         status.attack = status.maxAttack;
         status.speed = status.maxSpeed;
 
-        
+        status.levelVida = 1;
+        status.levelMana = 1;
+        status.levelAtaque = 1;
+        status.levelDefesa = 1;
 
         barras.MaximoVida(status.maxHealth);
         barras.MaximoMana(status.maxMana);

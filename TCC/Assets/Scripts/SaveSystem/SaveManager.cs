@@ -27,6 +27,11 @@ public class SaveManager : MonoBehaviour
         player.maxDefense = data.maxDefense;
         player.maxAttack = data.maxAttack;
         player.maxSpeed = data.maxSpeed;
+        player.ExtraLife = data.ExtraLife;
+        player.levelVida = data.levelVida;
+        player.levelMana = data.levelMana;
+        player.levelAtaque = data.levelAtaque;
+        player.levelDefesa = data.levelDefesa;
     }
 
     #region
