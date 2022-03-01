@@ -15,6 +15,7 @@ public class AtaqueBasico : MonoBehaviour
     Andar andar;
     [SerializeField] private List<float> duracaoAtaques;
     [SerializeField] private float timeReturnAnimation = 0.15f;
+    [SerializeField] private float respectTime;
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -50,37 +51,35 @@ public class AtaqueBasico : MonoBehaviour
                 }
 
                 GameManager.gameManager.atacando = true;
-                areaDeAtaque[contadorCombo].enabled = true;
+                
                 StopAllCoroutines();
-
                 StartCoroutine(expiraCombo());
                 StartCoroutine(CDAtaque());
                 StartCoroutine(TempoAtaqueAnim());
 
                 if (contadorCombo == 0)
                 {
+
+                    StartCoroutine(AttackCollision(contadorCombo));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
                 }
                 else if (contadorCombo == 1)
                 {
+                    StartCoroutine(AttackCollision(contadorCombo));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater2());
                 }
                 else if (contadorCombo == 2)
                 {
+                    StartCoroutine(AttackCollision(contadorCombo));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
                 else if (contadorCombo == 3)
                 {
+                    StartCoroutine(AttackCollision(contadorCombo));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater4());
                 }
-                else if (contadorCombo == 4)
-                {
-                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater5());
-                }
-                else if (contadorCombo == 5)
-                {
-                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater6());
-                }
+               
+               
                 if (combo)
                 {
                     contadorCombo++;
@@ -89,7 +88,11 @@ public class AtaqueBasico : MonoBehaviour
         }
     }
 
-
+    IEnumerator AttackCollision(int cont)
+    {
+        yield return new WaitForSeconds(duracaoAtaques[contadorCombo] - respectTime);
+        areaDeAtaque[cont].enabled = true;
+    }
     public void DesativarAtaque()
     {
         podeAtacar = false;
