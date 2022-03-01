@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class Slider_Jogador_Vida : MonoBehaviour
 {
 
-    private GameObject Player;
+    public ScriptablePlayer Player;
     private Slider Vida_UI;
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Jogador");
         Vida_UI = this.gameObject.GetComponent<Slider>();
     }
 
@@ -24,8 +23,8 @@ public class Slider_Jogador_Vida : MonoBehaviour
     public void Atualizar_Vida()
     {
         //Classe Necromante
-        Vida_UI.maxValue = Player.GetComponent<Jogador_Status>().Vida_Maxima;
-        Vida_UI.value = Player.GetComponent<Jogador_Status>().Vida;
+        Vida_UI.maxValue = Player.maxHealth;
+        Vida_UI.value = Player.health;
 
         //Classe Metamorfo
         //Vida_UI.value = Player.GetComponent<ClasseMetamorfo>().atributos.vida;

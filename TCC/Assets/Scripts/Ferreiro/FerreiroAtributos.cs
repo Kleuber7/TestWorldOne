@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FerreiroAtributos : MonoBehaviour
 {
-    private ScriptablePlayer status;
+    public ScriptablePlayer status;
     private InformacoesHUDJogador barras;
     public GameObject HUDFerreiro;
     public GameObject vida1; /*, vida2, vida3, vida4;*/

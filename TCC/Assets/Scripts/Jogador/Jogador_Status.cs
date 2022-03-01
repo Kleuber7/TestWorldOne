@@ -79,22 +79,22 @@ public class Jogador_Status : MonoBehaviour
     #region (Rgeneração de vida e Mana)
     public void RegenerarVida()
     {
-        if(Vida<Vida_Maxima)
+        if(status.health < status.maxHealth)
         {
-            Vida += 0.5f*Time.deltaTime;
+            status.health += 0.5f*Time.deltaTime;
         }else
         {
-            Vida = Vida_Maxima;
+            status.health = status.maxHealth;
         }
     }
     public void RegenerarMana()
     {
-        if(Mana<Mana_Maxima)
+        if(status.Mana < status.maxMana)
         {
-            Mana += 0.8f*Time.deltaTime;
+            status.Mana += 0.8f*Time.deltaTime;
         }else
         {
-            Mana = Mana_Maxima;
+            status.Mana = status.maxMana;
         }
     }
 #endregion
