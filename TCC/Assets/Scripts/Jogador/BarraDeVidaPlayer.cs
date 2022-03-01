@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class BarraDeVidaPlayer : MonoBehaviour
 {
-    [SerializeField] private Slider barraDeVida;
-    [SerializeField] private ScriptablePlayer scriptDeStatus;
+    //[SerializeField] private Slider barraDeVida;
+    //[SerializeField] private ScriptablePlayer scriptDeStatus;
 
     
-    private void Update() 
-    {
-        barraDeVida.value = ((scriptDeStatus.health * 100) / scriptDeStatus.maxHealth);
-    }
+    //private void Update() 
+    //{
+    //    barraDeVida.value = ((scriptDeStatus.health * 100) / scriptDeStatus.maxHealth);
+    //}
 }
