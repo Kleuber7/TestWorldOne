@@ -6,14 +6,12 @@ using UnityEngine;
 public class PlayerData
 {
 
-    public float health;
+    public float health, maxHealth;
     public float money;
-    public float Mana;
-    public float defense;
-    public float attack;
-    public float speed;
-    public float[] position;
-
+    public float Mana, maxMana;
+    public float defense, maxDefense;
+    public float attack, maxAttack;
+    public float speed, maxSpeed;
 
     public PlayerData(SaveManager player)
     {
@@ -23,7 +21,11 @@ public class PlayerData
         defense = player.player.defense;
         attack = player.player.attack;
         speed = player.player.speed;
-
+        maxHealth = player.player.maxHealth;
+        maxMana = player.player.maxMana;
+        maxDefense = player.player.maxDefense;
+        maxAttack = player.player.maxAttack;
+        maxSpeed = player.player.maxSpeed;
     }
 
     #region

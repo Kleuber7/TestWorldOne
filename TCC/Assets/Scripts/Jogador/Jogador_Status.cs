@@ -4,20 +4,6 @@ using UnityEngine;
 
 public class Jogador_Status : MonoBehaviour
 {
-    [Header("Status maximo do atributo")]
-    public float    Vida_Maxima,
-                    Mana_Maxima,
-                    Ataque_Maximo,
-                    Defesa_Maxima,
-                    Velocidade_Maxima;
-    public float Vida,
-                    Mana,
-                    Ataque,
-                    Defesa,
-                    Velocidade,
-                    alcance,
-                    VidaExtra;
-
     public ScriptablePlayer status;
     public GameObject dinheiroS, vidaMaxS, manaMaxS, velocidadeMaxS;
 
@@ -50,7 +36,7 @@ public class Jogador_Status : MonoBehaviour
         //RegenerarVida();
         RegenerarMana();
          
-        if (status.health <= 0 && VidaExtra <= 0)
+        if (status.health <= 0 && status.ExtraLife <= 0)
         {
             //Ligar novamente quando tiver shader   
             //if (GetComponentInChildren<Dissolver>().dissolverValor > 0)
