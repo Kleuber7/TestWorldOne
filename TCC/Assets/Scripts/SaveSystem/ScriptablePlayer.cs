@@ -11,11 +11,6 @@ public class ScriptablePlayer : ScriptableObject
     public float defense, maxDefense;
     public float attack, maxAttack;
     public float speed, maxSpeed;
-
-
-    public void AttValues()
-    {
-
-    }
+    public float ExtraLife;
 
 }

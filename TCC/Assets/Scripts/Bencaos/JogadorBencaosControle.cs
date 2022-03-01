@@ -8,11 +8,10 @@ public class JogadorBencaosControle : MonoBehaviour
     [SerializeField] private SunFire sunfire;
     [SerializeField] private Congelar congelar;
     [SerializeField] private Dash dash;
-    [SerializeField] private Jogador_Status status;
     [SerializeField] private Camuflagem camuflagem;
     [SerializeField] private ColisorSunFire colisorS;
     [SerializeField] private FontedeVida fontedeVida;
-   
+    [SerializeField] private ScriptablePlayer status;
     public void Congelar()
     {
         congelar.enabled = true;
@@ -29,7 +28,7 @@ public class JogadorBencaosControle : MonoBehaviour
     
     public void Reviver()
     {
-        status.VidaExtra += 1;
+        status.ExtraLife += 1;
         Time.timeScale = 1;
         TooltipSystem.Hide();
     }
