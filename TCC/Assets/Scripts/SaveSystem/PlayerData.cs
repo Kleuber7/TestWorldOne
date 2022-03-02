@@ -7,7 +7,7 @@ public class PlayerData
 {
 
     public float health, maxHealth;
-    public float money;
+    public float money, initialMoney;
     public float Mana, maxMana;
     public float defense, maxDefense;
     public float attack, maxAttack;
@@ -33,7 +33,7 @@ public class PlayerData
         levelMana = player.player.levelMana;
         levelAtaque = player.player.levelAtaque;
         levelDefesa = player.player.levelDefesa;
-
+        initialMoney = player.player.initialMoney;
     }
 
 

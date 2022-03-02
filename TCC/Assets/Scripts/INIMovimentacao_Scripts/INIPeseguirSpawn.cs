@@ -72,11 +72,8 @@ public class INIPeseguirSpawn : MonoBehaviour
     {
         atacando = true;
         yield return new WaitForSecondsRealtime(1/velocidadeDeAtaque);
-        if(alvo.gameObject.tag == "Aliado")
-        {
-            alvo.GetComponent<INVStatus>().TomarDano(status.dano);
-        }
-        else if(alvo.gameObject.tag == "Player")
+       
+        if(alvo.gameObject.tag == "Player")
         {
             alvo.GetComponent<Jogador_Status>().TomarDano(status.dano);
         }

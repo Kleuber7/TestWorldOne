@@ -29,12 +29,7 @@ public class INITiro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.gameObject.tag == "Aliado")
-        {
-            other.GetComponent<INVStatus>().TomarDano(danoDisparo);
-            Destroy(this.gameObject);
-        }
-        else if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
             other.GetComponent<Jogador_Status>().TomarDano(danoDisparo);
             Destroy(this.gameObject);

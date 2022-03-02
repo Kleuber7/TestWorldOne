@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class DanoAtaqueBasico : MonoBehaviour
@@ -7,9 +8,7 @@ public class DanoAtaqueBasico : MonoBehaviour
     [SerializeField] public float dano;
     [SerializeField] public GameObject inimigo;
     [SerializeField] private string tagColisor;
-    [SerializeField] private FontedeVida fonteedeVida;
     [SerializeField] private AtaqueBasico ataqueBasico;
-    [SerializeField] private Congelar congelar;
     [SerializeField] private float timeStun = 0.5f;
     private Critico critico;
     public Testing damagePop;
@@ -17,14 +16,14 @@ public class DanoAtaqueBasico : MonoBehaviour
     private void Start()
     {
         critico = GetComponent<Critico>();
-        
+
     }
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other)
     {
         inimigo = other.gameObject;
 
-        if(other.gameObject.tag == tagColisor && tagColisor == "Inimigo")
+        if (other.gameObject.tag == tagColisor && tagColisor == "Inimigo")
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
@@ -32,9 +31,12 @@ public class DanoAtaqueBasico : MonoBehaviour
             other.GetComponent<FSMInimigos>().ChangeAnimationState("");
             other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
             other.GetComponent<INIStatus>().TakeDamageEffect();
-            other.GetComponent<INIStatus>().TomarDano(dano);
+            if (ataqueBasico.contadorCombo < 3)
+                other.GetComponent<INIStatus>().TomarDano(dano);
+            else if (ataqueBasico.contadorCombo == 3)
+                StartCoroutine(DividedDamage(other.GetComponent<INIStatus>()));
         }
-        else if(other.gameObject.tag == "Boboneco")
+        else if (other.gameObject.tag == "Boboneco")
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
@@ -46,8 +48,14 @@ public class DanoAtaqueBasico : MonoBehaviour
         //    congelar.CongelarINI(other.gameObject);
         //}
     }
-    
 
+
+    IEnumerator DividedDamage(INIStatus inimigo)
+    {
+        inimigo.GetComponent<INIStatus>().TomarDano(dano);
+        yield return new WaitForSeconds(ataqueBasico.duracaoAtaques[ataqueBasico.contadorCombo] - (ataqueBasico.respectTime * 1.5f));
+        inimigo.GetComponent<INIStatus>().TomarDano(dano);
+    }
 
 
 }
