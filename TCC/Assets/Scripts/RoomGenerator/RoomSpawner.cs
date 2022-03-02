@@ -20,11 +20,8 @@ public class RoomSpawner : MonoBehaviour
 
     public static bool verao, outono, primavera, inverno;
 
-    public float waitTime = 0.5f;
-
     public void Start()
     {
-        //Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         objetoPai = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
         objetoPaiBoss = GameObject.FindGameObjectWithTag("SpawnerBoss").GetComponent<SpawnerBoss>();
@@ -47,6 +44,7 @@ public class RoomSpawner : MonoBehaviour
                     return;
 
                 WaitTime();
+                spawned = false;
             }
         }
         if (Teleporting.cima == true)
@@ -56,6 +54,7 @@ public class RoomSpawner : MonoBehaviour
                 if (Teleporting.podeExcluirP)
                     return;
                 WaitTimeBoss();
+                spawned = false;
             }
         }
 
@@ -64,22 +63,18 @@ public class RoomSpawner : MonoBehaviour
     async void WaitTimeBoss()
     {
         await WaitTimeBossAsync();
-        Destroy(gameObject, waitTime);
     }
     async Task WaitTimeBossAsync()
     {
-
         await Task.Delay(100);
         SpawnBoss();
     }
     async void WaitTime()
     {
         await WaitTimeAsync();
-        Destroy(gameObject, waitTime);
     }
     async Task WaitTimeAsync()
     {
-
         await Task.Delay(100);
         SpawnCima();
     }
@@ -91,7 +86,6 @@ public class RoomSpawner : MonoBehaviour
 
         if (spawned == false)
         {
-
             if (verao)
             {
                 aleatorio = Random.Range(0, templates.salasVerao.Length);
@@ -160,28 +154,28 @@ public class RoomSpawner : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    //private void OnTriggerEnter(Collider other)
+    //{
 
-        if (other.CompareTag("SpawnPoint"))
-        {
+    //    if (other.CompareTag("SpawnPoint"))
+    //    {
 
-            espacoLiberado = 0;
+    //        espacoLiberado = 0;
 
 
-        }
-        else
-        {
-            espacoLiberado = 1;
-        }
+    //    }
+    //    else
+    //    {
+    //        espacoLiberado = 1;
+    //    }
 
-        if (espacoLiberado == 0)
-        {
+    //    //if (espacoLiberado == 0)
+    //    //{
 
-            Destroy(other.gameObject);
+    //    //    Destroy(other.gameObject);
 
-        }
-    }
+    //    //}
+    //}
 
 
     #region coments

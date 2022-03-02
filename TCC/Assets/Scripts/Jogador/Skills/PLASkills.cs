@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PLASkills : MonoBehaviour
@@ -11,18 +12,19 @@ public class PLASkills : MonoBehaviour
     [SerializeField] private float tempoDeCastSkill1;
     [SerializeField] private PLAImpactoAbissal scriptImpactoAbissal;
     [SerializeField] private ParticleManagerSkillQ skillParticle;
-    private void Start() 
+    [SerializeField] private float timeParticleActivate = 1.02f;
+    private void Start()
     {
         podeAtivarSkill1 = true;
     }
 
-    private void Update() 
+    private void Update()
     {
-        if(Input.GetKeyDown(teclaSkill1))
+        if (Input.GetKeyDown(teclaSkill1))
         {
-            if(podeAtivarSkill1)
+            if (podeAtivarSkill1)
             {
-                skillParticle.PlayParticleEffect();
+                TimeSnare();
                 StartCoroutine(CastSkill1());
                 StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
             }
@@ -40,5 +42,26 @@ public class PLASkills : MonoBehaviour
     {
         yield return new WaitForSeconds(tempoDeCastSkill1);
         scriptImpactoAbissal.ImpactoAbissal(scriptImpactoAbissal.inimigos);
+    }
+
+    async void TimeSnare()
+    {
+        await TimeSnareAsync();
+        GameManager.gameManager.atacando = false;
+        GetComponent<FSMJogador>().ChangeAnimationState("");
+    }
+
+    async Task TimeSnareAsync()
+    {
+        GameManager.gameManager.atacando = true;
+        GetComponent<FSMJogador>().ChangeAnimationState(GetComponent<FSMJogador>().Snare());
+        StartCoroutine(TimeParticles());
+        await Task.Delay(1000 * (int)tempoDeCastSkill1);
+    }
+
+    IEnumerator TimeParticles()
+    {
+        yield return new WaitForSeconds(timeParticleActivate);
+        skillParticle.PlayParticleEffect();
     }
 }

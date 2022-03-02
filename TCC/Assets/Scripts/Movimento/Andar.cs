@@ -5,7 +5,7 @@ using CodeMonkey.Utils;
 public class Andar : MonoBehaviour
 {
     public CharacterController ControladorMov;
-    public Jogador_Status Jogador;
+    public ScriptablePlayer Jogador;
     public Vector3  Direcao;
     public Vector3 direcaoRotacao;
     [SerializeField] private FSMJogador jogadorAnima;
@@ -60,7 +60,7 @@ public class Andar : MonoBehaviour
         Direcao.x = Input.GetAxisRaw("Horizontal") - Input.GetAxisRaw("Vertical");
         Direcao.z = Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal");
 
-        ControladorMov.Move(new Vector3(Direcao.x, 0, Direcao.z) * Jogador.Velocidade * Time.deltaTime);
+        ControladorMov.Move(new Vector3(Direcao.x, 0, Direcao.z) * Jogador.speed * Time.deltaTime);
         transform.localRotation *= Quaternion.FromToRotation(transform.forward, Direcao);
         transform.rotation = new Quaternion(0, transform.localRotation.y, 0, transform.localRotation.w);
 

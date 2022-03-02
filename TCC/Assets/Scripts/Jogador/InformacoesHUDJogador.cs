@@ -8,14 +8,14 @@ public class InformacoesHUDJogador : MonoBehaviour
     public Slider sliderVida, sliderMana;
     public Text dinheiroTxt;
     public float dinheiroP;
-    public Jogador_Status scriptDeStatus;
+    public ScriptablePlayer status;
 
     //public Gradient gradient;
     //public Image fill;
 
     private void Start()
     {
-        scriptDeStatus = GameManager.gameManager.GetPlayer().GetComponent<Jogador_Status>();
+        
         StartCoroutine(ChamaRefs());
     }
 
@@ -31,9 +31,9 @@ public class InformacoesHUDJogador : MonoBehaviour
 
     private void LateUpdate() 
     {
-        dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-        sliderVida.value = ((scriptDeStatus.Vida * 100) / scriptDeStatus.Vida_Maxima);
-        sliderMana.value = ((scriptDeStatus.Mana * 100) / scriptDeStatus.Mana_Maxima);
+        dinheiroTxt.text = status.money.ToString();
+        sliderVida.value = ((status.health * 100) / status.maxHealth);
+        sliderMana.value = ((status.Mana * 100) / status.maxMana);
     }
 
     //IEnumerator Dinheiro()
