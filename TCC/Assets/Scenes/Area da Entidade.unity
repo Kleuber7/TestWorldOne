@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107431800}
   m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
-  m_LocalPosition: {x: -1.6391144, y: 19.052803, z: 75.82468}
+  m_LocalPosition: {x: -1.6391144, y: 23, z: 75.82468}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -10243,7 +10243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448976810}
   m_LocalRotation: {x: -0.00000009415696, y: 0.7071068, z: 0.7071067, w: 0.00000009415697}
-  m_LocalPosition: {x: -1.6391194, y: 19.052803, z: 75.82467}
+  m_LocalPosition: {x: -1.6391194, y: 23, z: 75.82467}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -15354,7 +15354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733613380}
   m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
-  m_LocalPosition: {x: 0.2962036, y: 19.806702, z: 75.40996}
+  m_LocalPosition: {x: 0.2962036, y: 24, z: 75.40996}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -30902,7 +30902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173030215}
   m_LocalRotation: {x: -0.00000009415696, y: 0.7071068, z: 0.7071067, w: 0.00000009415697}
-  m_LocalPosition: {x: 0.29620427, y: 19.806702, z: -13.317612}
+  m_LocalPosition: {x: 0.29620427, y: 24, z: -13.317612}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -30982,7 +30982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181323894}
   m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
-  m_LocalPosition: {x: 0.2962036, y: 19.806702, z: -13.317627}
+  m_LocalPosition: {x: 0.2962036, y: 24, z: -13.317627}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -32355,7 +32355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287041748}
   m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
-  m_LocalPosition: {x: 0.2962036, y: 19.806702, z: -13.317607}
+  m_LocalPosition: {x: 0.2962036, y: 24, z: -13.317607}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -33395,7 +33395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334781311}
   m_LocalRotation: {x: -0.00000009415696, y: 0.7071068, z: 0.7071067, w: 0.00000009415697}
-  m_LocalPosition: {x: 0.29620427, y: 19.806702, z: -13.317612}
+  m_LocalPosition: {x: 0.29620427, y: 24, z: -13.317612}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -34320,7 +34320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390381248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1, y: 30, z: -5.2}
+  m_LocalPosition: {x: 5.1, y: 32, z: -5.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -45963,7 +45963,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_Text
-      value: 100
+      value: '100
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_Color.b
@@ -45980,6 +45982,10 @@ PrefabInstance:
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -46171,7 +46177,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 144.199
+      value: 216.6008
       objectReference: {fileID: 0}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_SizeDelta.y
@@ -46191,7 +46197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 61
+      value: 83.2
       objectReference: {fileID: 0}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -62060,7 +62066,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915657528}
   m_LocalRotation: {x: -0.00000009415696, y: 0.7071068, z: 0.7071067, w: 0.00000009415697}
-  m_LocalPosition: {x: 0.29619652, y: 19.806702, z: 75.40996}
+  m_LocalPosition: {x: 0.29619652, y: 24, z: 75.40996}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -66866,7 +66872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149571472825}
   m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
-  m_LocalPosition: {x: -0.6, y: 24.1, z: 79.3}
+  m_LocalPosition: {x: -0.6, y: 28.1, z: 79.3}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -72273,6 +72279,10 @@ PrefabInstance:
       propertyPath: skillParticle
       value: 
       objectReference: {fileID: 725292527}
+    - target: {fileID: 1635770887166248394, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: tempoDeCastSkill1
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1635770887166248394, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: skill1TempoDeRecarga
       value: 5

@@ -12,16 +12,17 @@ public class PLASkills : MonoBehaviour
     [SerializeField] private float tempoDeCastSkill1;
     [SerializeField] private PLAImpactoAbissal scriptImpactoAbissal;
     [SerializeField] private ParticleManagerSkillQ skillParticle;
-    private void Start() 
+    [SerializeField] private float timeParticleActivate = 1.02f;
+    private void Start()
     {
         podeAtivarSkill1 = true;
     }
 
-    private void Update() 
+    private void Update()
     {
-        if(Input.GetKeyDown(teclaSkill1))
+        if (Input.GetKeyDown(teclaSkill1))
         {
-            if(podeAtivarSkill1)
+            if (podeAtivarSkill1)
             {
                 TimeSnare();
                 StartCoroutine(CastSkill1());
@@ -54,7 +55,13 @@ public class PLASkills : MonoBehaviour
     {
         GameManager.gameManager.atacando = true;
         GetComponent<FSMJogador>().ChangeAnimationState(GetComponent<FSMJogador>().Snare());
-        skillParticle.PlayParticleEffect();
+        StartCoroutine(TimeParticles());
         await Task.Delay(1000 * (int)tempoDeCastSkill1);
+    }
+
+    IEnumerator TimeParticles()
+    {
+        yield return new WaitForSeconds(timeParticleActivate);
+        skillParticle.PlayParticleEffect();
     }
 }

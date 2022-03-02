@@ -14,26 +14,15 @@ public class Spawner : MonoBehaviour
     {
         spawner = this.gameObject;
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        
-        
     }
-
-
-
-    private void LateUpdate()
+    private void Update()
     {
-        
-
         salas = templates.salas.Count;
-
         while (templates.contadorSalas > templates.numerosSalas)
         {
             RemoverSalas();
         }
-
-       DeleteLastSpawn();
-
-
+        DeleteLastSpawn();
     }
 
     public async void DeleteLastSpawn()
@@ -47,7 +36,6 @@ public class Spawner : MonoBehaviour
         if (Teleporting.podeExcluirP == true)
         {
             Destroy(currentSpawn, 0.1f);
-
             await Task.Yield();
 
             Teleporting.podeExcluirP = false;

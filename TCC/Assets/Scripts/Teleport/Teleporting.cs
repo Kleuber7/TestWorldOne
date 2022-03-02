@@ -67,7 +67,7 @@ public class Teleporting : MonoBehaviour
 
     IEnumerator EsperarSpawner()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
         cima = false;
     }
 
