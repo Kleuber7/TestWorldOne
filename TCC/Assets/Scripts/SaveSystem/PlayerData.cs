@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [System.Serializable]
 public class PlayerData
 {
@@ -14,6 +15,7 @@ public class PlayerData
     public float speed, maxSpeed;
     public float ExtraLife;
     public int levelVida, levelMana, levelAtaque, levelDefesa;
+    public int skin;
 
     public PlayerData(SaveManager player)
     {
@@ -34,6 +36,7 @@ public class PlayerData
         levelAtaque = player.player.levelAtaque;
         levelDefesa = player.player.levelDefesa;
         initialMoney = player.player.initialMoney;
+        skin = (int)player.player.skin;
     }
 
 
