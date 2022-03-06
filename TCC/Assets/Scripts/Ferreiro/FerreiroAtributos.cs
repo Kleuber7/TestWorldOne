@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FerreiroAtributos : MonoBehaviour
 {
-    [Header("Referências")]
+    [Header("ReferÃªncias")]
     public DinheiroFerreiro dinheiroFerreiro;
     public ScriptablePlayer status;
     private InformacoesHUDJogador barras;
@@ -171,6 +171,7 @@ public class FerreiroAtributos : MonoBehaviour
     {
         if (status.money >= precoPotionVida)
         {
+            status.qntdPotionVida++;
             status.money -= precoPotionVida;
             barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
@@ -181,6 +182,7 @@ public class FerreiroAtributos : MonoBehaviour
     {
         if (status.money >= precoPotionMana)
         {
+            status.qntdPotionMana++;
             status.money -= precoPotionMana;
             barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();

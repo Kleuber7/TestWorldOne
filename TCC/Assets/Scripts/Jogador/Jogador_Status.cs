@@ -11,6 +11,7 @@ public class Jogador_Status : MonoBehaviour
     public InformacoesHUDJogador barras;
 
     public static int mortes;
+    public bool morreu;
     public static bool Invisivel;
     public static bool podeDarDano = true;
 
@@ -106,12 +107,14 @@ public class Jogador_Status : MonoBehaviour
 
         status.health = status.maxHealth;
         barras.SetHealth(status.health);
+        morreu = false;
         
         Destroy(this.gameObject);
     }
 
     IEnumerator MorrerContagem()
     {
+        morreu = true;
         GameManager.gameManager.teleportando = true;
         yield return new WaitForSeconds(2.5f);
         Morrer();
