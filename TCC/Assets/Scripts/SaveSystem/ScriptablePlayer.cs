@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Skin {Default, Fire};
 [CreateAssetMenu]
 public class ScriptablePlayer : ScriptableObject
 {
@@ -16,5 +17,5 @@ public class ScriptablePlayer : ScriptableObject
     public float ExtraLife;
     public int levelVida, levelMana, levelAtaque, levelDefesa;
     public float initialMoney;
-
+    public Skin skin;
 }

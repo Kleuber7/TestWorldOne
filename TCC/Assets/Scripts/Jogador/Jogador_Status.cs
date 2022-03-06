@@ -5,6 +5,7 @@ using UnityEngine;
 public class Jogador_Status : MonoBehaviour
 {
     public ScriptablePlayer status;
+    public List<GameObject> skin;
     public GameObject dinheiroS, vidaMaxS, manaMaxS, velocidadeMaxS;
 
     public InformacoesHUDJogador barras;
@@ -16,8 +17,7 @@ public class Jogador_Status : MonoBehaviour
 
     void Start()
     {
-        barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
-
+       
         status.health = status.maxHealth;
         status.Mana = status.maxMana;
         status.defense = status.maxDefense;
@@ -32,6 +32,17 @@ public class Jogador_Status : MonoBehaviour
         barras.MaximoVida(status.maxHealth);
         barras.MaximoMana(status.maxMana);
         
+        if(status.skin == Skin.Default)
+        {
+            skin[(int)Skin.Fire].SetActive(false);
+            skin[((int)status.skin)].SetActive(true);
+        }
+        else if(status.skin == Skin.Fire)
+        {
+            skin[(int)Skin.Default].SetActive(false);
+            skin[((int)status.skin)].SetActive(true);
+        }
+
     }
     void Update()
     {
@@ -111,7 +122,12 @@ public class Jogador_Status : MonoBehaviour
 
     public void AtualizaValoresMaximos()
     {
-        if(status.health > status.maxHealth)
+        if(barras == null)
+        {
+            barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
+        }
+
+        if (status.health > status.maxHealth)
         {
             status.health = status.maxHealth;
             barras.MaximoVida(status.maxHealth);
