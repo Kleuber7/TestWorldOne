@@ -27,6 +27,7 @@ public class PLASkills : MonoBehaviour
         {
             if (podeAtivarSkill1)
             {
+
                 if(status.Mana > custoDeMana)
                 {
                     status.Mana -= custoDeMana;
@@ -34,6 +35,11 @@ public class PLASkills : MonoBehaviour
                     StartCoroutine(CastSkill1());
                     StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
                 }
+
+                StartCoroutine(TimeSnare());
+                StartCoroutine(CastSkill1());
+                StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
+
             }
         }
     }
@@ -51,19 +57,16 @@ public class PLASkills : MonoBehaviour
         scriptImpactoAbissal.ImpactoAbissal(scriptImpactoAbissal.inimigos);
     }
 
-    async void TimeSnare()
-    {
-        await TimeSnareAsync();
-        GameManager.gameManager.atacando = false;
-        GetComponent<FSMJogador>().ChangeAnimationState("");
-    }
+    
 
-    async Task TimeSnareAsync()
+    IEnumerator TimeSnare()
     {
         GameManager.gameManager.atacando = true;
         GetComponent<FSMJogador>().ChangeAnimationState(GetComponent<FSMJogador>().Snare());
         StartCoroutine(TimeParticles());
-        await Task.Delay(1000 * (int)tempoDeCastSkill1);
+        yield return new WaitForSeconds(tempoDeCastSkill1);
+        GameManager.gameManager.atacando = false;
+        GetComponent<FSMJogador>().ChangeAnimationState("");
     }
 
     IEnumerator TimeParticles()
