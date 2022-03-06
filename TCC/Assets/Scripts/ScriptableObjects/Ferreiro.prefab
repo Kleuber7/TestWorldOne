@@ -190,48 +190,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604adcec53d98a489d85867de554d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinheiroFerreiro: {fileID: 0}
-  HUDFerreiro: {fileID: 0}
-  vidaInfo: {fileID: 0}
+  dinheiroFerreiro: {fileID: 8455980103421374113}
+  status: {fileID: 0}
+  HUDFerreiro: {fileID: 7752054184344886961}
+  vidaInfo: {fileID: 7752054183268348009}
   powerUpVida: 0
   levelVida: 0
-  textoLevelVida: {fileID: 0}
+  textoLevelVida: {fileID: 7752054182749720562}
   precoVida: 0
-  textoPrecoVida: {fileID: 0}
-  descricaoVida: {fileID: 0}
-  manaInfo: {fileID: 0}
+  textoPrecoVida: {fileID: 7752054184619099382}
+  descricaoVida: {fileID: 7752054183436674692}
+  manaInfo: {fileID: 7752054183333668102}
   powerUpMana: 0
   levelMana: 0
-  textoLevelMana: {fileID: 0}
+  textoLevelMana: {fileID: 7752054183257184269}
   precoMana: 0
-  textoPrecoMana: {fileID: 0}
-  descricaoMana: {fileID: 0}
-  AtaqueInfo: {fileID: 0}
+  textoPrecoMana: {fileID: 7752054184003224698}
+  descricaoMana: {fileID: 7752054184748586114}
+  AtaqueInfo: {fileID: 7752054183670827033}
   powerUpAtaque: 0
   levelAtaque: 0
-  textoLevelAtaque: {fileID: 0}
+  textoLevelAtaque: {fileID: 7752054183920294887}
   precoAtaque: 0
-  textoPrecoAtaque: {fileID: 0}
-  descricaoAtaque: {fileID: 0}
-  defesaInfo: {fileID: 0}
+  textoPrecoAtaque: {fileID: 7752054184309896421}
+  descricaoAtaque: {fileID: 7752054184503151536}
+  defesaInfo: {fileID: 7752054184477311737}
   powerUpDefesa: 0
   levelDefesa: 0
-  textoLevelDefesa: {fileID: 0}
+  textoLevelDefesa: {fileID: 7752054183222439375}
   precoDefesa: 0
-  textoPrecoDefesa: {fileID: 0}
-  descricaoDefesa: {fileID: 0}
-  potionVidaInfo: {fileID: 0}
+  textoPrecoDefesa: {fileID: 7752054183241448504}
+  descricaoDefesa: {fileID: 7752054183861421411}
+  potionVidaInfo: {fileID: 7752054184719234010}
   precoPotionVida: 0
-  textoPrecoPotionVida: {fileID: 0}
-  potionManaInfo: {fileID: 0}
+  textoPrecoPotionVida: {fileID: 7752054184740778811}
+  potionManaInfo: {fileID: 7752054183615983766}
   precoPotionMana: 0
-  textoPrecoPotionMana: {fileID: 0}
-  vidaSO: {fileID: 0}
-  manaSO: {fileID: 0}
-  ataqueSO: {fileID: 0}
-  defesaSO: {fileID: 0}
-  potionVidaSO: {fileID: 0}
-  potionManaSO: {fileID: 0}
+  textoPrecoPotionMana: {fileID: 7752054184400743271}
+  vidaSO: {fileID: 11400000, guid: 8177aecdef43482479484b70bb07960d, type: 2}
+  manaSO: {fileID: 11400000, guid: acce91f72a237b3488e4cf162c218874, type: 2}
+  ataqueSO: {fileID: 11400000, guid: 65915ba92b5e8834a8c491f3c5b1abde, type: 2}
+  defesaSO: {fileID: 11400000, guid: fb571ab85f7031643a326bb1e70c717e, type: 2}
+  potionVidaSO: {fileID: 11400000, guid: 09fd772959e07664b90366be69000d75, type: 2}
+  potionManaSO: {fileID: 11400000, guid: 90a26ee8d5f719c49b0e0117776c4e5b, type: 2}
 --- !u!136 &7752054182750900691
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -871,7 +872,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7752054183242433405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf290499d3497cf44be9d978ff2f2f89, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f1d2b7b61d81b448f276000f714d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imagemInfo: {fileID: 7752054183333668102}
@@ -1250,7 +1251,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7752054183372055608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf290499d3497cf44be9d978ff2f2f89, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f1d2b7b61d81b448f276000f714d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imagemInfo: {fileID: 7752054183268348009}
@@ -1878,7 +1879,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7752054183647930365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf290499d3497cf44be9d978ff2f2f89, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f1d2b7b61d81b448f276000f714d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imagemInfo: {fileID: 7752054183670827033}
@@ -3410,7 +3411,6 @@ GameObject:
   - component: {fileID: 7752054184505917042}
   - component: {fileID: 7752054184505917041}
   - component: {fileID: 7752054184505917040}
-  - component: {fileID: 7752054184505917047}
   - component: {fileID: 7752054184505917004}
   - component: {fileID: 7752054184505917005}
   m_Layer: 5
@@ -3522,7 +3522,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7752054184505917047}
+      - m_Target: {fileID: 7752054184505917040}
         m_TargetAssemblyTypeName: AtivaInfo, Assembly-CSharp
         m_MethodName: AtivaDesativa
         m_Mode: 1
@@ -3543,19 +3543,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7752054184505917045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b16fbbb1e00864fa72e24828d66a26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7752054184505917047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7752054184505917045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf290499d3497cf44be9d978ff2f2f89, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f1d2b7b61d81b448f276000f714d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imagemInfo: {fileID: 7752054183615983766}
@@ -3787,7 +3775,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7752054184614679594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf290499d3497cf44be9d978ff2f2f89, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f1d2b7b61d81b448f276000f714d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imagemInfo: {fileID: 7752054184477311737}
@@ -4168,7 +4156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7752054184744205941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf290499d3497cf44be9d978ff2f2f89, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f1d2b7b61d81b448f276000f714d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imagemInfo: {fileID: 7752054184719234010}
