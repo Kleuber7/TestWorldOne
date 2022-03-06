@@ -27,7 +27,7 @@ public class PLASkills : MonoBehaviour
         {
             if (podeAtivarSkill1)
             {
-<<<<<<< Updated upstream
+
                 if(status.Mana > custoDeMana)
                 {
                     status.Mana -= custoDeMana;
@@ -35,11 +35,11 @@ public class PLASkills : MonoBehaviour
                     StartCoroutine(CastSkill1());
                     StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
                 }
-=======
+
                 StartCoroutine(TimeSnare());
                 StartCoroutine(CastSkill1());
                 StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
->>>>>>> Stashed changes
+
             }
         }
     }
