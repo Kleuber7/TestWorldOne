@@ -13,6 +13,9 @@ public class PLASkills : MonoBehaviour
     [SerializeField] private PLAImpactoAbissal scriptImpactoAbissal;
     [SerializeField] private ParticleManagerSkillQ skillParticle;
     [SerializeField] private float timeParticleActivate = 1.02f;
+    [SerializeField] private float custoDeMana;
+    [SerializeField] private ScriptablePlayer status;
+    
     private void Start()
     {
         podeAtivarSkill1 = true;
@@ -24,9 +27,13 @@ public class PLASkills : MonoBehaviour
         {
             if (podeAtivarSkill1)
             {
-                TimeSnare();
-                StartCoroutine(CastSkill1());
-                StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
+                if(status.Mana > custoDeMana)
+                {
+                    status.Mana -= custoDeMana;
+                    TimeSnare();
+                    StartCoroutine(CastSkill1());
+                    StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
+                }
             }
         }
     }
