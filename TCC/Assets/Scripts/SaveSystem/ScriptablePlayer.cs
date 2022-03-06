@@ -8,6 +8,8 @@ public class ScriptablePlayer : ScriptableObject
 {
     public float health, maxHealth;
     public float money;
+    public int qntdPotionVida;
+    public int qntdPotionMana;
     public float Mana, maxMana;
     public float defense, maxDefense;
     public float attack, maxAttack;
