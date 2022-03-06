@@ -4379,7 +4379,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 60
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -21041,7 +21041,6 @@ MonoBehaviour:
   abrirDirecao: 0
   spawned: 0
   espacoLiberado: 1
-  waitTime: 4
 --- !u!4 &508210016388071644
 Transform:
   m_ObjectHideFlags: 0
@@ -33565,6 +33564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0017dfa32c7170448e832d896ea02a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  templates: {fileID: 0}
   espacoLiberado: 1
   quantidadeInimigos: 1
 --- !u!1 &508210017089359410
@@ -37532,7 +37532,6 @@ MonoBehaviour:
   abrirDirecao: 0
   spawned: 0
   espacoLiberado: 1
-  waitTime: 4
 --- !u!54 &508210017277877204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46401,7 +46400,6 @@ MonoBehaviour:
   abrirDirecao: 0
   spawned: 0
   espacoLiberado: 1
-  waitTime: 4
 --- !u!1 &3718056534547956927
 GameObject:
   m_ObjectHideFlags: 0
