@@ -15,6 +15,7 @@ public class PLASkills : MonoBehaviour
     [SerializeField] private float timeParticleActivate = 1.02f;
     [SerializeField] private float custoDeMana;
     [SerializeField] private ScriptablePlayer status;
+    [SerializeField] private float timeCorrection = 0.4f;
     
     private void Start()
     {
@@ -53,7 +54,7 @@ public class PLASkills : MonoBehaviour
 
     public IEnumerator CastSkill1()
     {
-        yield return new WaitForSeconds(tempoDeCastSkill1);
+        yield return new WaitForSeconds(tempoDeCastSkill1 - timeCorrection);
         scriptImpactoAbissal.ImpactoAbissal(scriptImpactoAbissal.inimigos);
     }
 
