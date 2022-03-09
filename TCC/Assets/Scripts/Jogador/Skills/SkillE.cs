@@ -95,10 +95,12 @@ public class SkillE : MonoBehaviour
         tentaculo.enabled = false;
         status.speed = status.maxSpeed;
         jogadorA.ChangeAnimationState("");
+        PLASkills.castingSkill = false;
     }
 
     async Task TimeTentaclesAsync()
     {
+        PLASkills.castingSkill = true;
         status.speed = speedReduction;
         tentaculo.enabled = true;
         jogadorA.ChangeAnimationState(jogadorA.Testaculos());

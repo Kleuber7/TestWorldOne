@@ -14,7 +14,7 @@ public class Jogador_Status : MonoBehaviour
     public bool morreu;
     public static bool Invisivel;
     public static bool podeDarDano = true;
-
+    
     void Start()
     {
        
