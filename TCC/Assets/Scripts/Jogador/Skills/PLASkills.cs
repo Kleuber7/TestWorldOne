@@ -16,7 +16,8 @@ public class PLASkills : MonoBehaviour
     [SerializeField] private float custoDeMana;
     [SerializeField] private ScriptablePlayer status;
     [SerializeField] private float timeCorrection = 0.4f;
-    
+    public static bool castingSkill = false;
+
     private void Start()
     {
         podeAtivarSkill1 = true;
@@ -62,12 +63,14 @@ public class PLASkills : MonoBehaviour
 
     IEnumerator TimeSnare()
     {
+        castingSkill = true;
         GameManager.gameManager.atacando = true;
         GetComponent<FSMJogador>().ChangeAnimationState(GetComponent<FSMJogador>().Snare());
         StartCoroutine(TimeParticles());
         yield return new WaitForSeconds(tempoDeCastSkill1);
         GameManager.gameManager.atacando = false;
         GetComponent<FSMJogador>().ChangeAnimationState("");
+        castingSkill = false;
     }
 
     IEnumerator TimeParticles()

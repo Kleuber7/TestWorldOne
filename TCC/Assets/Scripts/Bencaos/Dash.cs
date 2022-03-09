@@ -21,7 +21,7 @@ public class Dash : MonoBehaviour
 
     private void Dashh()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !canDash && !Dialog.dialogoB && GetComponent<Andar>().Direcao != Vector3.zero)
+        if (Input.GetKeyDown(KeyCode.Space) && !canDash && !Dialog.dialogoB && GetComponent<Andar>().Direcao != Vector3.zero && !PLASkills.castingSkill)
         {
            StartCoroutine(ParticleDash());
         }
