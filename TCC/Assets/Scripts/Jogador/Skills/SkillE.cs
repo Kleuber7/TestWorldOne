@@ -14,6 +14,8 @@ public class SkillE : MonoBehaviour
     [SerializeField] FSMJogador jogadorA;
     [SerializeField] ParticleManagerSkillE skillEffect;
     [SerializeField] private KeyCode key = KeyCode.E;
+    [SerializeField] private ScriptablePlayer status;
+    [SerializeField] private float speedReduction = 5f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -91,13 +93,13 @@ public class SkillE : MonoBehaviour
     {
         await TimeTentaclesAsync();
         tentaculo.enabled = false;
-        GameManager.gameManager.atacando = false;
+        status.speed = status.maxSpeed;
         jogadorA.ChangeAnimationState("");
     }
 
     async Task TimeTentaclesAsync()
     {
-        GameManager.gameManager.atacando = true;
+        status.speed = speedReduction;
         tentaculo.enabled = true;
         jogadorA.ChangeAnimationState(jogadorA.Testaculos());
         skillEffect.PlayParticleEffect();

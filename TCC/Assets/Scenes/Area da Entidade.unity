@@ -15768,6 +15768,8 @@ MonoBehaviour:
   jogadorA: {fileID: 919132147892234270}
   skillEffect: {fileID: 1982301106}
   key: 101
+  status: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
+  speedReduction: 5
 --- !u!1 &761364543
 GameObject:
   m_ObjectHideFlags: 0
@@ -25436,7 +25438,7 @@ Transform:
   m_Children:
   - {fileID: 751304246}
   m_Father: {fileID: 2493139183562820230}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1156577923
 GameObject:
@@ -31418,7 +31420,7 @@ RectTransform:
   - {fileID: 1277061535}
   - {fileID: 1586018189}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31853,6 +31855,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237313902}
   m_Mesh: {fileID: 1527778168056058432, guid: 3415b1e3883118d47b566f9fd164fa21, type: 3}
+--- !u!1 &1241429941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 186701637372344810, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+  m_PrefabInstance: {fileID: 2493139183562820229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1242717722
 GameObject:
   m_ObjectHideFlags: 0
@@ -34274,7 +34281,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1394118908
 PrefabInstance:
@@ -45137,7 +45144,7 @@ Transform:
   m_Children:
   - {fileID: 1705309256}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1478865157
 MonoBehaviour:
@@ -45571,7 +45578,7 @@ Transform:
   - {fileID: 1815189819}
   - {fileID: 1394118909}
   m_Father: {fileID: 2493139183562820230}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514921825
 GameObject:
@@ -46190,12 +46197,24 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8358446555617736166, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358446555617736166, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358446555617736166, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6162
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358446555617736166, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400
+      value: 559
       objectReference: {fileID: 0}
     - target: {fileID: 8358446555617736166, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -285
+      value: -314
       objectReference: {fileID: 0}
     - target: {fileID: 8428376802647502207, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchorMax.x
@@ -62465,7 +62484,7 @@ Transform:
   - {fileID: 4603825253263311769}
   - {fileID: 8305478205903810667}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1923964995
 GameObject:
@@ -65116,7 +65135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128837081
 GameObject:
@@ -71575,7 +71594,7 @@ Transform:
   - {fileID: 5988136522269005079}
   - {fileID: 2671050574817119779}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &2261773666373262178
 Transform:
@@ -72403,6 +72422,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099379763}
     - target: {fileID: 1618364075071566038, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: fireAttack
+      value: 
+      objectReference: {fileID: 2493139183562820235}
+    - target: {fileID: 1618364075071566038, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: ataqueBasico
       value: 
       objectReference: {fileID: 2493139183562820231}
@@ -72432,11 +72455,11 @@ PrefabInstance:
       objectReference: {fileID: 725292527}
     - target: {fileID: 1635770887166248394, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: tempoDeCastSkill1
-      value: 1.5
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 1635770887166248394, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: skill1TempoDeRecarga
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1644839568072905983, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
@@ -73244,11 +73267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4849530350060482906, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: areaDoImpacto
-      value: 10
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4849530350060482906, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: danoDoImpacto
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4863978443005109840, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
@@ -73401,7 +73424,7 @@ PrefabInstance:
     - target: {fileID: 5415744866972104659, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: skin.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1241429941}
     - target: {fileID: 5433590720316853501, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -73782,6 +73805,10 @@ PrefabInstance:
       propertyPath: damagePop
       value: 
       objectReference: {fileID: 1099379763}
+    - target: {fileID: 6681976448826633793, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: fireAttack
+      value: 
+      objectReference: {fileID: 2493139183562820235}
     - target: {fileID: 6681976448826633793, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: ataqueBasico
       value: 
@@ -74283,6 +74310,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1099379763}
     - target: {fileID: 8672021115366500284, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: fireAttack
+      value: 
+      objectReference: {fileID: 2493139183562820235}
+    - target: {fileID: 8672021115366500284, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: ataqueBasico
       value: 
       objectReference: {fileID: 2493139183562820231}
@@ -74350,6 +74381,10 @@ PrefabInstance:
       propertyPath: damagePop
       value: 
       objectReference: {fileID: 1099379763}
+    - target: {fileID: 8845358985416940269, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: fireAttack
+      value: 
+      objectReference: {fileID: 2493139183562820235}
     - target: {fileID: 8845358985416940269, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: ataqueBasico
       value: 
@@ -74482,6 +74517,28 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 6167032855943715230, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
   m_PrefabInstance: {fileID: 2493139183562820229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2493139183562820234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3719841140912437249, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+  m_PrefabInstance: {fileID: 2493139183562820229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2493139183562820235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493139183562820234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38b2b1c96da2bd42ba5cec9098c5cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countFire: 3
+  damageFire: 15
+  timeTakeDamage: 0
+  takingDamage: 0
+  inimigoRef: {fileID: 0}
 --- !u!1 &2495523379513264309
 GameObject:
   m_ObjectHideFlags: 0

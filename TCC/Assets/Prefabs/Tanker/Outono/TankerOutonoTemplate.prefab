@@ -173,6 +173,7 @@ MonoBehaviour:
   takingDamage: 0
   timeAnimation: 0
   timeTakeDamage: 0
+  timeTakeDamageIndividual: 0.3
 --- !u!136 &4887981901889993846
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -438,7 +439,7 @@ Transform:
   m_GameObject: {fileID: 8456614914813480268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13.5, y: 1, z: -61.3}
-  m_LocalScale: {x: 2.25, y: 2.25, z: 2.25}
+  m_LocalScale: {x: 4.25, y: 4.25, z: 4.25}
   m_Children:
   - {fileID: 8456614913840651887}
   - {fileID: 8456614914368966585}
@@ -737,6 +738,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -5639971408195615826, guid: f14365579e1caa041accd30ff5c4c787, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a82d8083f6ffd346a84ecf673e2883f, type: 2}
     - target: {fileID: -5384228671574749148, guid: f14365579e1caa041accd30ff5c4c787, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -811,7 +816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f14365579e1caa041accd30ff5c4c787, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f14365579e1caa041accd30ff5c4c787, type: 3}
       propertyPath: m_TagString

@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 1524330293877558191}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: 25.3, y: 1, z: -6.275467}
-  m_LocalScale: {x: 3.75, y: 3.75, z: 3.75}
+  m_LocalScale: {x: 4.75, y: 4.75, z: 4.75}
   m_Children:
   - {fileID: 1524330293173164172}
   - {fileID: 1524330293701478746}
@@ -821,6 +821,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -1467163583932843370, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 161e63d6ef71a274db6a92dc2617e53a, type: 2}
     - target: {fileID: -964896059783386012, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -847,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2862d7d183bc11a439dc3c553b0332c9, type: 3}
       propertyPath: m_TagString
