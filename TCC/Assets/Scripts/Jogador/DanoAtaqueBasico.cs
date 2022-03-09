@@ -12,6 +12,7 @@ public class DanoAtaqueBasico : MonoBehaviour
     [SerializeField] private float timeStun = 0.5f;
     private Critico critico;
     public Testing damagePop;
+    [SerializeField] private FireAttack fireAttack;
 
     private void Start()
     {
@@ -32,9 +33,15 @@ public class DanoAtaqueBasico : MonoBehaviour
             other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
             other.GetComponent<INIStatus>().TakeDamageEffect();
             if (ataqueBasico.contadorCombo < 3)
+            {
+                fireAttack.AttackFire(other.GetComponent<INIStatus>());
                 other.GetComponent<INIStatus>().TomarDano(dano);
+            }
             else if (ataqueBasico.contadorCombo == 3)
+            {
                 StartCoroutine(DividedDamage(other.GetComponent<INIStatus>()));
+                fireAttack.AttackFire(other.GetComponent<INIStatus>());
+            }
         }
         else if (other.gameObject.tag == "Boboneco")
         {

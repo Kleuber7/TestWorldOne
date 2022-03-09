@@ -277,6 +277,7 @@ MonoBehaviour:
   takingDamage: 0
   timeAnimation: 0
   timeTakeDamage: 0
+  timeTakeDamageIndividual: 0.3
 --- !u!136 &5766317412563644177
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -663,7 +664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 643472220190a2645842ad0cd6b9e31e, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 643472220190a2645842ad0cd6b9e31e, type: 3}
       propertyPath: m_TagString

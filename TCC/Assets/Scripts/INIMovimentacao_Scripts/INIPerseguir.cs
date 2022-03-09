@@ -24,8 +24,9 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private Collider areaDoAtaque;
     [SerializeField] public bool finishAnimation = true;
     [SerializeField] public bool takingDamage = false;
-    public float timeAnimation;
-    public float timeTakeDamage;
+    [SerializeField] private float timeAnimation;
+    [SerializeField] private float timeTakeDamage;
+    [SerializeField] private float timeTakeDamageIndividual = 2f;
 
     private void Start()
     {
@@ -193,7 +194,7 @@ public class INIPerseguir : MonoBehaviour
 
     public void ManageDamage()
     {
-        timeTakeDamage = 2;
+        timeTakeDamage = timeTakeDamageIndividual;
         takingDamage = true;
         StopCoroutine(DanoInimigo());
         StopCoroutine(AtiraProjetil());
