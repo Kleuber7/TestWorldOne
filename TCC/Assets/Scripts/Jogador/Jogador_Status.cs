@@ -14,7 +14,7 @@ public class Jogador_Status : MonoBehaviour
     public bool morreu;
     public static bool Invisivel;
     public static bool podeDarDano = true;
-
+    
     void Start()
     {
        
@@ -29,8 +29,8 @@ public class Jogador_Status : MonoBehaviour
         status.levelAtaque = 1;
         status.levelDefesa = 1;
 
-        barras.MaximoVida(status.maxHealth);
-        barras.MaximoMana(status.maxMana);
+        //barras.MaximoVida(status.maxHealth);
+       // barras.MaximoMana(status.maxMana);
         
         if(status.skin == Skin.Default)
         {
@@ -130,12 +130,12 @@ public class Jogador_Status : MonoBehaviour
         if (status.health > status.maxHealth)
         {
             status.health = status.maxHealth;
-            barras.MaximoVida(status.maxHealth);
+            //barras.MaximoVida(status.maxHealth);
         }
         if(status.Mana > status.maxMana)
         {
             status.Mana = status.maxMana;
-            barras.MaximoMana(status.maxMana);
+            //barras.MaximoMana(status.maxMana);
         }
         if (status.defense > status.maxDefense)
         {
