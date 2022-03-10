@@ -36,32 +36,26 @@ public class InformacoesHUDJogador : MonoBehaviour
         sliderMana.value = ((status.Mana * 100) / status.maxMana);
     }
 
-    //IEnumerator Dinheiro()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    AtualizaDinheiro(Controlador.controlador.dinheiroJogador);
-    //}
 
     public void AtualizaDinheiro(float dinheiro)
     {
         dinheiroTxt.text = dinheiro.ToString();
-        //  dinheiroFerreiro.text = dinheiro.ToString();
     }
 
-    public void MaximoVida(float vida)
-    {
-        sliderVida.maxValue = vida;
-        sliderVida.value = vida;
-        //Se quiser gradiante na vida
-       //fill.color =  gradient.Evaluate(slider.normalizedValue);
+    //public void MaximoVida(float vida)
+    //{
+    //    sliderVida.maxValue = vida;
+    //    sliderVida.value = vida;
+    //    //Se quiser gradiante na vida
+    //   //fill.color =  gradient.Evaluate(slider.normalizedValue);
 
-    }
+    //}
 
-    public void MaximoMana(float mana)
-    {
-        sliderMana.maxValue = mana;
-        sliderMana.value = mana;
-    }
+    //public void MaximoMana(float mana)
+    //{
+    //    sliderMana.maxValue = mana;
+    //    sliderMana.value = mana;
+    //}
 
     public void SetMana(float mana)
     {

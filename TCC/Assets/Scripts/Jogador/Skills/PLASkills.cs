@@ -25,7 +25,7 @@ public class PLASkills : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(teclaSkill1))
+        if (Input.GetKeyDown(teclaSkill1) && !castingSkill)
         {
             if (podeAtivarSkill1)
             {

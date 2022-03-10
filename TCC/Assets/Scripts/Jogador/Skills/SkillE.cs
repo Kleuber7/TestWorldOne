@@ -42,7 +42,7 @@ public class SkillE : MonoBehaviour
     {
         if (Time.time > nextAttack)
         {
-            if (Input.GetKeyDown(key))
+            if (Input.GetKeyDown(key) && !PLASkills.castingSkill)
             {
                 TimeTentacles();
             }
