@@ -88,7 +88,7 @@ public class FerreiroAtributos : MonoBehaviour
                 powerUpMana = manaSO.powerUp;
                 precoMana = manaSO.preco;
                 levelMana = status.levelMana;
-                textoLevelMana.text = "Level " + textoLevelMana;
+                textoLevelMana.text = "Level " + levelMana;
                 textoPrecoMana.text = precoMana.ToString();
 
                 powerUpAtaque = ataqueSO.powerUp;

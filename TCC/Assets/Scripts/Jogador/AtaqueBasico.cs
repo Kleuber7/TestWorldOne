@@ -37,7 +37,7 @@ public class AtaqueBasico : MonoBehaviour
             contadorCombo = 0;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PLASkills.castingSkill)
         {
             if (podeAtacar == true)
             {

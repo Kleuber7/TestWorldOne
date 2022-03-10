@@ -42,7 +42,7 @@ public class SkillE : MonoBehaviour
     {
         if (Time.time > nextAttack)
         {
-            if (Input.GetKeyDown(key))
+            if (Input.GetKeyDown(key) && !PLASkills.castingSkill)
             {
                 TimeTentacles();
             }
@@ -95,10 +95,12 @@ public class SkillE : MonoBehaviour
         tentaculo.enabled = false;
         status.speed = status.maxSpeed;
         jogadorA.ChangeAnimationState("");
+        PLASkills.castingSkill = false;
     }
 
     async Task TimeTentaclesAsync()
     {
+        PLASkills.castingSkill = true;
         status.speed = speedReduction;
         tentaculo.enabled = true;
         jogadorA.ChangeAnimationState(jogadorA.Testaculos());
