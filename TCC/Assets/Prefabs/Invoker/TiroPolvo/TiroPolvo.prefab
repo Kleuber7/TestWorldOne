@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3237073369711368427}
   - component: {fileID: 3237073369711368421}
   - component: {fileID: 3237073369711368420}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Projetil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4814,7 +4814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3237073370170739361}
   - component: {fileID: 3237073370170739362}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4953,7 +4953,7 @@ GameObject:
   - component: {fileID: 3237073370245866161}
   - component: {fileID: 3237073370245866163}
   - component: {fileID: 3237073370245866162}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Raio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9755,11 +9755,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3237073370666019369}
-  - component: {fileID: -1364532967837821221}
   - component: {fileID: -5405857092297199012}
   - component: {fileID: -6516477737347272479}
-  m_Layer: 0
-  m_Name: TesteTiroPolvo
+  - component: {fileID: -235164715469934313}
+  m_Layer: 2
+  m_Name: TiroPolvo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9782,22 +9782,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1364532967837821221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3237073370666019368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c70027049a7ec140bdb4b65cb588692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadeDisparo: 30
-  danoDisparo: 5
-  direcao: {x: 0, y: 0, z: 0}
-  atirou: 0
 --- !u!135 &-5405857092297199012
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9827,3 +9811,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-235164715469934313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237073370666019368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318b3283690799e409d226f208d0e542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeDisparo: 150
+  danoDisparo: 40
+  direcao: {x: 0, y: 0, z: 0}
+  atirou: 0
