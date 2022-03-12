@@ -6,7 +6,7 @@ using UnityEngine;
 public class SkillE : MonoBehaviour
 {
     [SerializeField] private string tagColisor;
-    public List<GameObject> colliders = new List<GameObject>();
+    //public List<GameObject> colliders = new List<GameObject>();
     [SerializeField] private bool podeTomardano = true, ativacao = false;
     [SerializeField] private float dano = 20;
     [SerializeField] private float cooldownTime = 5, nextAttack, contDuracao = 0;
@@ -17,19 +17,19 @@ public class SkillE : MonoBehaviour
     [SerializeField] private ScriptablePlayer status;
     [SerializeField] private float speedReduction = 5f;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!colliders.Contains(other.gameObject) && other.gameObject.tag == tagColisor)
-        {
-            colliders.Add(other.gameObject);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (!colliders.Contains(other.gameObject) && other.gameObject.tag == tagColisor)
+    //    {
+    //        colliders.Add(other.gameObject);
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == tagColisor)
-            colliders.Remove(other.gameObject);
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == tagColisor)
+    //        colliders.Remove(other.gameObject);
+    //}
 
 
     private void Update()
@@ -54,29 +54,38 @@ public class SkillE : MonoBehaviour
     {
         if (other.gameObject.tag == tagColisor)
         {
-            foreach (GameObject inimigos in colliders)
+            if (podeTomardano)
             {
-
-                if (inimigos == null)
-                {
-                    colliders.Remove(inimigos);
-                    break;
-                }
-
-                if (inimigos != null)
-                {
-                    if (podeTomardano)
-                    {
-                        StartCoroutine(Duracao());
-
-                        inimigos.GetComponent<INIStatus>().TomarDano(dano);
-                    }
-                    contDuracao = 0;
-                    ativacao = false;
-                    nextAttack = Time.time + cooldownTime;
-                }
+                StartCoroutine(Duracao());
+                other.GetComponent<INIStatus>().TomarDano(dano);
             }
+            contDuracao = 0;
+            ativacao = false;
+            nextAttack = Time.time + cooldownTime;
 
+
+            //foreach (GameObject inimigos in colliders)
+            //{
+
+            //    if (inimigos == null)
+            //    {
+            //        colliders.Remove(inimigos);
+            //        break;
+            //    }
+
+            //    if (inimigos != null)
+            //    {
+            //        if (podeTomardano)
+            //        {
+            //            StartCoroutine(Duracao());
+
+            //            inimigos.GetComponent<INIStatus>().TomarDano(dano);
+            //        }
+            //        contDuracao = 0;
+            //        ativacao = false;
+            //        nextAttack = Time.time + cooldownTime;
+            //    }
+            //}
         }
     }
 
