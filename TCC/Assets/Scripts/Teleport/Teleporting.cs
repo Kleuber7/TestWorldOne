@@ -17,9 +17,12 @@ public class Teleporting : MonoBehaviour
     [SerializeField] private GameObject passLevel;
     private string nameRoom;
     private bool canPass = false;
+   
+    private RoomTemplates templates;
 
     private void Start()
     {
+        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         StartCoroutine(Disable());
     }
     IEnumerator Disable()
@@ -48,8 +51,23 @@ public class Teleporting : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        
         if (other.gameObject.tag == "Player")
         {
+            if(templates == null)
+            {
+                templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+            }
+
+            if (templates.salas.Count < templates.numerosSalas)
+            {
+                RoomSpawner.boss = false;
+            }
+            else if (templates.salas.Count == templates.numerosSalas)
+            {
+                RoomSpawner.boss = true;
+            }
+
             nameRoom = gameObject.name;
             passLevel.SetActive(true);
             canPass = true;
@@ -57,6 +75,7 @@ public class Teleporting : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+
         if (other.gameObject.tag == "Player")
         {
             passLevel.SetActive(false);
@@ -78,44 +97,56 @@ public class Teleporting : MonoBehaviour
 
         teleportando = true;
 
-        if (nameRoom == "Outono")
+        if (!RoomSpawner.boss)
         {
-            cima = true;
-            RoomSpawner.outono = true;
+            if (nameRoom == "Outono")
+            {
+                cima = true;
+                RoomSpawner.outono = true;
+                RoomSpawner.verao = false;
+                RoomSpawner.primavera = false;
+                RoomSpawner.inverno = false;
+                StartCoroutine(EsperarSpawner());
+
+            }
+            else if (nameRoom == "Verao")
+            {
+                cima = true;
+                RoomSpawner.outono = false;
+                RoomSpawner.verao = true;
+                RoomSpawner.primavera = false;
+                RoomSpawner.inverno = false;
+
+                StartCoroutine(EsperarSpawner());
+            }
+            else if (nameRoom == "Primavera")
+            {
+                cima = true;
+                RoomSpawner.outono = false;
+                RoomSpawner.verao = false;
+                RoomSpawner.primavera = true;
+                RoomSpawner.inverno = false;
+
+                StartCoroutine(EsperarSpawner());
+            }
+            else if (nameRoom == "Inverno")
+            {
+                cima = true;
+                RoomSpawner.outono = false;
+                RoomSpawner.verao = false;
+                RoomSpawner.primavera = false;
+                RoomSpawner.inverno = true;
+
+                StartCoroutine(EsperarSpawner());
+            }
+        }
+        else if(RoomSpawner.boss)
+        {
+            RoomSpawner.outono = false;
             RoomSpawner.verao = false;
             RoomSpawner.primavera = false;
             RoomSpawner.inverno = false;
-            StartCoroutine(EsperarSpawner());
-
-        }
-        else if (nameRoom == "Verao")
-        {
             cima = true;
-            RoomSpawner.outono = false;
-            RoomSpawner.verao = true;
-            RoomSpawner.primavera = false;
-            RoomSpawner.inverno = false;
-
-            StartCoroutine(EsperarSpawner());
-        }
-        else if (nameRoom == "Primavera")
-        {
-            cima = true;
-            RoomSpawner.outono = false;
-            RoomSpawner.verao = false;
-            RoomSpawner.primavera = true;
-            RoomSpawner.inverno = false;
-
-            StartCoroutine(EsperarSpawner());
-        }
-        else if (nameRoom == "Inverno")
-        {
-            cima = true;
-            RoomSpawner.outono = false;
-            RoomSpawner.verao = false;
-            RoomSpawner.primavera = false;
-            RoomSpawner.inverno = true;
-
             StartCoroutine(EsperarSpawner());
         }
     }
