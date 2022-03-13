@@ -133,7 +133,7 @@ public class FerreiroAtributos : MonoBehaviour
         {
             status.maxMana += powerUpMana;
             status.Mana += powerUpMana;
-            barras.SetHealth(status.Mana);
+            barras.SetMana(status.Mana);
             status.money -= precoMana;
             UpaMana();
             barras.AtualizaDinheiro(status.money);
