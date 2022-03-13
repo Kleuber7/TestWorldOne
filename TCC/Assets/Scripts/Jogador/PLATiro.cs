@@ -34,6 +34,11 @@ public class PLATiro : MonoBehaviour
             other.GetComponent<INIStatus>().TomarDano(danoDisparo);
             Destroy(this.gameObject);
         }
+        if (other.gameObject.tag == "Boboneco")
+        {
+            other.GetComponent<StatusBoboneco>().TomarDano(danoDisparo);
+            Destroy(this.gameObject);
+        }
     }
 
     public IEnumerator Expira()

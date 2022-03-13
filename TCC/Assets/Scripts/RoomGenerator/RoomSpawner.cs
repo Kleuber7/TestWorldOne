@@ -18,7 +18,7 @@ public class RoomSpawner : MonoBehaviour
     private SpawnerBoss objetoPaiBoss;
     public int espacoLiberado = 1;
 
-    public static bool verao, outono, primavera, inverno;
+    public static bool verao, outono, primavera, inverno, boss;
 
     public void Start()
     {
@@ -36,26 +36,21 @@ public class RoomSpawner : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Teleporting.cima == true)
+        if (Teleporting.cima == true && !boss)
         {
-            if (templates.salas.Count < templates.numerosSalas)
-            {
-                if (Teleporting.podeExcluirP)
-                    return;
+            if (Teleporting.podeExcluirP)
+                return;
 
-                WaitTime();
-                spawned = false;
-            }
+            WaitTime();
+            spawned = false;
         }
-        if (Teleporting.cima == true)
+        else if (Teleporting.cima == true && boss)
         {
-            if (templates.salas.Count == templates.numerosSalas - 1)
-            {
-                if (Teleporting.podeExcluirP)
-                    return;
-                WaitTimeBoss();
-                spawned = false;
-            }
+            if (Teleporting.podeExcluirP)
+                return;
+
+            WaitTimeBoss();
+            spawned = false;
         }
 
     }
