@@ -29,19 +29,13 @@ public class PLASkills : MonoBehaviour
         {
             if (podeAtivarSkill1)
             {
-
-                if(status.Mana > custoDeMana)
+                if(status.Mana >= custoDeMana)
                 {
                     status.Mana -= custoDeMana;
                     TimeSnare();
                     StartCoroutine(CastSkill1());
                     StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
                 }
-
-                StartCoroutine(TimeSnare());
-                StartCoroutine(CastSkill1());
-                StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
-
             }
         }
     }
