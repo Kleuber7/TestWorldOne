@@ -10,21 +10,17 @@ public class DanoAtaqueBasico : MonoBehaviour
     [SerializeField] private string tagColisor;
     [SerializeField] private AtaqueBasico ataqueBasico;
     [SerializeField] private float timeStun = 0.5f;
-    private Critico critico;
+    [SerializeField]private Critico critico;
     public Testing damagePop;
     [SerializeField] private FireAttack fireAttack;
 
-    private void Start()
-    {
-        critico = GetComponent<Critico>();
-
-    }
+   
 
     private void OnTriggerEnter(Collider other)
     {
         inimigo = other.gameObject;
 
-        if (other.gameObject.tag == tagColisor && tagColisor == "Inimigo")
+        if (other.gameObject.tag == "Inimigo")
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
