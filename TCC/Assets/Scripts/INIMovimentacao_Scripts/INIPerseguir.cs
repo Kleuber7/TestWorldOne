@@ -59,9 +59,10 @@ public class INIPerseguir : MonoBehaviour
             }
             else if (Vector3.Distance(transform.position, alvo.position) <= distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel)
             {
+                
                 if (!atacando && !takingDamage)
                 {
-                    if (distanciaParar < 20)
+                    if (distanciaParar < 25)
                     {
                         StopCoroutine(DanoInimigo());
                         StartCoroutine(DanoInimigo());
@@ -152,6 +153,7 @@ public class INIPerseguir : MonoBehaviour
 
     IEnumerator DanoInimigo()
     {
+        Debug.Log("EntrouDano");
         finishAnimation = false;
         atacando = true;
 
@@ -173,6 +175,7 @@ public class INIPerseguir : MonoBehaviour
                 areaDoAtaque.gameObject.SetActive(true);
             }
         }
+        Debug.Log("TerminouDano");
         GetAnimationState();
         StartCoroutine(ResetaAtaque());
     }

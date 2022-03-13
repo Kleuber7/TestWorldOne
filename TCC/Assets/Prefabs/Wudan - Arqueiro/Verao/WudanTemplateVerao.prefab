@@ -381,8 +381,8 @@ MonoBehaviour:
   inimigo: {fileID: 6741155456593191908}
   perseguir: 0
   atacando: 0
-  distanciaParar: 20
-  areaVisao: 30
+  distanciaParar: 50
+  areaVisao: 80
   status: {fileID: 5673885685023515423}
   podeDardano: 1
   esquiva: {fileID: 0}
@@ -396,6 +396,7 @@ MonoBehaviour:
   takingDamage: 0
   timeAnimation: 0
   timeTakeDamage: 0
+  timeTakeDamageIndividual: 2
 --- !u!136 &4305312780472375876
 CapsuleCollider:
   m_ObjectHideFlags: 0
