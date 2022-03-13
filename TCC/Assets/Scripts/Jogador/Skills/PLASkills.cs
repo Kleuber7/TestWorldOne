@@ -32,10 +32,11 @@ public class PLASkills : MonoBehaviour
                 if(status.Mana >= custoDeMana)
                 {
                     status.Mana -= custoDeMana;
-                    TimeSnare();
+                    StartCoroutine(TimeSnare());
                     StartCoroutine(CastSkill1());
                     StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
                 }
+                
             }
         }
     }
