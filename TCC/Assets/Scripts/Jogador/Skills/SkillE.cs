@@ -26,7 +26,7 @@ public class SkillE : MonoBehaviour
 
     public void Ativacao()
     {
-        if (cdSkill)
+        if (cdSkill && status.Mana >= manaCost)
         {
             if (Input.GetKeyDown(key) && !PLASkills.castingSkill)
             {
