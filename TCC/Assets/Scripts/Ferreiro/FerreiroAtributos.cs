@@ -79,24 +79,32 @@ public class FerreiroAtributos : MonoBehaviour
                 HUDFerreiro.SetActive(true);
                 dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
 
+                vidaSO.powerUp = (status.levelVida * 100);
+                vidaSO.preco = (status.levelVida * 100);
                 powerUpVida = vidaSO.powerUp;
                 precoVida = vidaSO.preco;
                 levelVida = status.levelVida;
                 textoLevelVida.text = "Level " + levelVida;
                 textoPrecoVida.text = precoVida.ToString();
 
+                manaSO.powerUp = (status.levelMana * 100);
+                manaSO.preco = (status.levelMana * 100);
                 powerUpMana = manaSO.powerUp;
                 precoMana = manaSO.preco;
                 levelMana = status.levelMana;
                 textoLevelMana.text = "Level " + levelMana;
                 textoPrecoMana.text = precoMana.ToString();
-
+                
+                ataqueSO.powerUp = (status.levelAtaque * 50);
+                ataqueSO.preco = (status.levelAtaque * 50);
                 powerUpAtaque = ataqueSO.powerUp;
                 precoAtaque = ataqueSO.preco;
                 levelAtaque = status.levelAtaque;
                 textoLevelAtaque.text = "Level " + levelAtaque;
                 textoPrecoAtaque.text = precoAtaque.ToString();
 
+                defesaSO.powerUp = (status.levelDefesa * 50);
+                defesaSO.preco = (status.levelDefesa * 50);
                 powerUpDefesa = defesaSO.powerUp;
                 precoDefesa = defesaSO.preco;
                 levelDefesa = status.levelDefesa;
@@ -117,7 +125,7 @@ public class FerreiroAtributos : MonoBehaviour
         if (status.money >= precoVida)
         {
             status.maxHealth += powerUpVida;
-            status.health += powerUpVida;
+            status.health = status.maxHealth;
             status.money -= precoVida;
             UpaVida();
             barras.AtualizaDinheiro(status.money);
@@ -132,7 +140,7 @@ public class FerreiroAtributos : MonoBehaviour
         if (status.money >= precoMana)
         {
             status.maxMana += powerUpMana;
-            status.Mana += powerUpMana;
+            status.Mana = status.maxMana;
             barras.SetMana(status.Mana);
             status.money -= precoMana;
             UpaMana();
@@ -146,7 +154,7 @@ public class FerreiroAtributos : MonoBehaviour
         if (status.money >= precoAtaque)
         {
             status.maxAttack += powerUpAtaque;
-            status.attack += powerUpAtaque;
+            status.attack = status.maxAttack;
             status.money -= precoAtaque;
             UpaAtaque();
             barras.AtualizaDinheiro(status.money);
@@ -159,7 +167,7 @@ public class FerreiroAtributos : MonoBehaviour
         if (status.money >= precoDefesa)
         {
             status.maxDefense += powerUpDefesa;
-            status.defense += powerUpDefesa;
+            status.defense = status.maxDefense;
             status.money -= precoDefesa;
             UpaDefesa();
             barras.AtualizaDinheiro(status.money);
@@ -191,9 +199,9 @@ public class FerreiroAtributos : MonoBehaviour
 
     public void UpaVida()
     {
-        vidaSO.powerUp += 50;
-        vidaSO.preco += 50;
         status.levelVida++;
+        vidaSO.powerUp = (status.levelVida * 100);
+        vidaSO.preco = (status.levelVida * 100);
         powerUpVida = vidaSO.powerUp;
         precoVida = vidaSO.preco;
         levelVida = status.levelVida;
@@ -202,9 +210,9 @@ public class FerreiroAtributos : MonoBehaviour
     }
     public void UpaMana()
     {
-        manaSO.powerUp += 50;
-        manaSO.preco += 50;
         status.levelMana++;
+        manaSO.powerUp = (status.levelMana * 100);
+        manaSO.preco = (status.levelMana * 100);
         powerUpMana = manaSO.powerUp;
         precoMana = manaSO.preco;
         levelMana = status.levelMana;
@@ -213,9 +221,9 @@ public class FerreiroAtributos : MonoBehaviour
     }
     public void UpaAtaque()
     {
-        ataqueSO.powerUp += 50;
-        ataqueSO.preco += 50;
         status.levelAtaque++;
+        ataqueSO.powerUp = (status.levelAtaque * 50);
+        ataqueSO.preco = (status.levelAtaque * 50);
         powerUpAtaque = ataqueSO.powerUp;
         precoAtaque = ataqueSO.preco;
         levelAtaque = status.levelAtaque;
@@ -224,9 +232,9 @@ public class FerreiroAtributos : MonoBehaviour
     }
     public void UpaDefesa()
     {
-        defesaSO.powerUp += 50;
-        defesaSO.preco += 50;
         status.levelDefesa++;
+        defesaSO.powerUp = (status.levelDefesa * 50);
+        defesaSO.preco = (status.levelDefesa * 50);
         powerUpDefesa = defesaSO.powerUp;
         precoDefesa = defesaSO.preco;
         levelDefesa = status.levelDefesa;
