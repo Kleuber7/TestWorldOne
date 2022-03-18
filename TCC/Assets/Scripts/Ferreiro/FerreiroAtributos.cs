@@ -192,7 +192,7 @@ public class FerreiroAtributos : MonoBehaviour
     public void UpaVida()
     {
         vidaSO.powerUp += 50;
-        vidaSO.preco += 50;
+        vidaSO.preco += 50 * status.levelVida;
         status.levelVida++;
         powerUpVida = vidaSO.powerUp;
         precoVida = vidaSO.preco;
@@ -203,7 +203,7 @@ public class FerreiroAtributos : MonoBehaviour
     public void UpaMana()
     {
         manaSO.powerUp += 50;
-        manaSO.preco += 50;
+        manaSO.preco += 50 * status.levelMana;
         status.levelMana++;
         powerUpMana = manaSO.powerUp;
         precoMana = manaSO.preco;
@@ -214,7 +214,7 @@ public class FerreiroAtributos : MonoBehaviour
     public void UpaAtaque()
     {
         ataqueSO.powerUp += 50;
-        ataqueSO.preco += 50;
+        ataqueSO.preco += 50 * status.levelAtaque;
         status.levelAtaque++;
         powerUpAtaque = ataqueSO.powerUp;
         precoAtaque = ataqueSO.preco;
@@ -225,7 +225,7 @@ public class FerreiroAtributos : MonoBehaviour
     public void UpaDefesa()
     {
         defesaSO.powerUp += 50;
-        defesaSO.preco += 50;
+        defesaSO.preco += 50 * status.levelDefesa;
         status.levelDefesa++;
         powerUpDefesa = defesaSO.powerUp;
         precoDefesa = defesaSO.preco;

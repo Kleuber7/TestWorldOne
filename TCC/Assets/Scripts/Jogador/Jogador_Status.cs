@@ -26,10 +26,6 @@ public class Jogador_Status : MonoBehaviour
         status.attack = status.maxAttack;
         status.speed = status.maxSpeed;
 
-        status.levelVida = 1;
-        status.levelMana = 1;
-        status.levelAtaque = 1;
-        status.levelDefesa = 1;
 
         //barras.MaximoVida(status.maxHealth);
        // barras.MaximoMana(status.maxMana);

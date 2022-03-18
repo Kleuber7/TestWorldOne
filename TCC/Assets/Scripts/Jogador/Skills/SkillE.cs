@@ -46,6 +46,7 @@ public class SkillE : MonoBehaviour
             {
                 StartCoroutine(Duracao());
                 other.GetComponent<INIStatus>().TomarDano(dano);
+                other.GetComponentInChildren<INIPerseguir>().ManageDamage();
             }
             ativacao = false;
         }
