@@ -18,4 +18,7 @@ public class ScriptablePlayer : ScriptableObject
     public int levelVida, levelMana, levelAtaque, levelDefesa;
     public float initialMoney;
     public Skin skin;
+    public bool moneyHUD;
+    public int moneyEarn;
+    
 }

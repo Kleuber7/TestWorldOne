@@ -6,7 +6,8 @@ public class Jogador_Status : MonoBehaviour
 {
     public ScriptablePlayer status;
     public List<GameObject> skin;
-    public GameObject dinheiroS, vidaMaxS, manaMaxS, velocidadeMaxS;
+    public GameObject dinheiroS;
+
 
     public InformacoesHUDJogador barras;
 
@@ -14,6 +15,7 @@ public class Jogador_Status : MonoBehaviour
     public bool morreu;
     public static bool Invisivel;
     public static bool podeDarDano = true;
+    [SerializeField] private Transform pointHUD;
     
     void Start()
     {
@@ -24,10 +26,6 @@ public class Jogador_Status : MonoBehaviour
         status.attack = status.maxAttack;
         status.speed = status.maxSpeed;
 
-        status.levelVida = 1;
-        status.levelMana = 1;
-        status.levelAtaque = 1;
-        status.levelDefesa = 1;
 
         //barras.MaximoVida(status.maxHealth);
        // barras.MaximoMana(status.maxMana);
@@ -120,9 +118,19 @@ public class Jogador_Status : MonoBehaviour
         Morrer();
     }
 
+    
+
     public void AtualizaValoresMaximos()
     {
-        if(barras == null)
+        if (status.moneyHUD)
+        {
+            Instantiate(dinheiroS, pointHUD.position, Quaternion.identity);
+            status.moneyHUD = false;
+        }
+        
+
+
+        if (barras == null)
         {
             barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
         }

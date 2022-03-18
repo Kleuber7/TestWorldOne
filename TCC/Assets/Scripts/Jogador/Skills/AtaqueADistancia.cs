@@ -27,7 +27,7 @@ public class AtaqueADistancia : MonoBehaviour
 
     void RangedAttack()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && !PLASkills.castingSkill)
         {
             RaycastHit hit;
             ataqueADistancia = true;
