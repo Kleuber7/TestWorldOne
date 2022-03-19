@@ -79,6 +79,7 @@ public class DialogStylist : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            if(!npcDialog)
             canTalk = true;
         }
     }

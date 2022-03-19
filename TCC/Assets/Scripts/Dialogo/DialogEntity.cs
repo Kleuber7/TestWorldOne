@@ -79,7 +79,10 @@ public class DialogEntity : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            canTalk = true;
+            if (!npcDialog)
+            {
+                canTalk = true;
+            }
         }
     }
 
