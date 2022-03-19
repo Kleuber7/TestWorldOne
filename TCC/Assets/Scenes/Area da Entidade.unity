@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107431800}
   m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
-  m_LocalPosition: {x: -1.6391144, y: 23, z: 75.82468}
+  m_LocalPosition: {x: 5.2, y: 23, z: 75.8}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1918849045}
@@ -32662,7 +32662,6 @@ GameObject:
   - component: {fileID: 1313830100}
   - component: {fileID: 1313830099}
   - component: {fileID: 1313830098}
-  - component: {fileID: 1313830101}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -32751,25 +32750,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!95 &1313830101
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313830096}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dce596ddfd874704a8501efa09f41be4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1321707957
 GameObject:
   m_ObjectHideFlags: 0
@@ -63730,6 +63710,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5537860573052075430, guid: 614b288947147c742a253086246cf8f5, type: 3}
   m_PrefabInstance: {fileID: 4619293575260093808}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2028140645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028140644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f023c2f4d36e7043befc88de15e935c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 349738637}
+  dialogNpc:
+  - 'Entidade: Teste'
+  - 'Entidade: ...'
+  - 'Entidade: ...'
+  npcDialog: 0
+  index: 0
+  typingSpeed: 0.06
+  typingSpeedReal: 0
+  typingSpeedAcelerado: -6
+  andar: {fileID: 0}
+  ataque: {fileID: 0}
+  continueButton: {fileID: 1164824302}
+  podePassar: 0
 --- !u!136 &2028140646
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -63744,6 +63750,22 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2028140648
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028140644}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2033956487
 GameObject:
   m_ObjectHideFlags: 0
@@ -80804,6 +80826,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3941707683603990773, guid: cd61fc4a730756b43ba61978b99d6746, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941707683811691726, guid: cd61fc4a730756b43ba61978b99d6746, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3941707683811691727, guid: cd61fc4a730756b43ba61978b99d6746, type: 3}
       propertyPath: m_SizeDelta.x
       value: 78
@@ -84561,6 +84591,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: textDisplay
       value: 

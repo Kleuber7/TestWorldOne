@@ -6,7 +6,7 @@ using TMPro;
 public class Dialog : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] sentences, sentences2, tutorialInvoker;
+    public string[] sentences, sentences2;
     public int index;
     public float typingSpeed, typingSpeedReal, typingSpeedAcelerado = -6;
 
@@ -15,11 +15,9 @@ public class Dialog : MonoBehaviour
 
     public GameObject continueButton;
 
-    private AudioSource source;
-
     public static bool dialogoB;
 
-    public bool podePassar, sentenca, tutorialIn;
+    public bool podePassar, sentenca;
 
 
     void Start()
@@ -27,7 +25,6 @@ public class Dialog : MonoBehaviour
         typingSpeedReal = typingSpeed;
         andar = GameObject.FindGameObjectWithTag("Player").GetComponent<Andar>();
         ataque = GameObject.FindGameObjectWithTag("Player").GetComponent<AtaqueBasico>();
-        source = GetComponent<AudioSource>();
         if (Jogador_Status.mortes == 0)
         {
 
@@ -68,15 +65,12 @@ public class Dialog : MonoBehaviour
 
             if (dialogoB)
             {
-                if (textDisplay.text == sentences[index] && sentenca)
+                if (sentenca)
                 {
-                    podePassar = true;
-                    continueButton.SetActive(true);
-
-                    if (index == sentences.Length - 1)
+                    if (textDisplay.text == sentences[index])
                     {
-                        ataque.AtivarAtaque();
-                        dialogoB = false;
+                        podePassar = true;
+                        continueButton.SetActive(true);
                     }
                 }
             }
@@ -107,11 +101,6 @@ public class Dialog : MonoBehaviour
                 {
                     podePassar = true;
                     continueButton.SetActive(true);
-                    if (index == sentences.Length - 1)
-                    {
-                        ataque.AtivarAtaque();
-                        dialogoB = false;
-                    }
                 }
             }
         }
@@ -121,7 +110,6 @@ public class Dialog : MonoBehaviour
     IEnumerator Type1()
     {
         sentenca = true;
-        tutorialIn = false;
         podePassar = false;
 
         dialogoB = true;
@@ -141,7 +129,6 @@ public class Dialog : MonoBehaviour
     IEnumerator Type2()
     {
         sentenca = true;
-        tutorialIn = false;
         podePassar = false;
 
         dialogoB = true;
@@ -160,10 +147,8 @@ public class Dialog : MonoBehaviour
     }
 
 
-    public void NextSentence()
+    void NextSentence()
     {
-        source.Play();
-
         continueButton.SetActive(false);
 
         if (Jogador_Status.mortes == 0 && sentenca)
@@ -178,6 +163,9 @@ public class Dialog : MonoBehaviour
             else
             {
                 textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
                 //imagemDialog.SetActive(false);
             }
         }
@@ -191,6 +179,9 @@ public class Dialog : MonoBehaviour
             else
             {
                 textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
                 //imagemDialog.SetActive(false);
             }
         }
@@ -237,18 +228,18 @@ public class Dialog : MonoBehaviour
     //    typingSpeed = typingSpeedReal;
     //}
 
-//    if (tutorialIn && Jogador_Status.mortes == 0)
-//        {
-//            if (index<tutorialInvoker.Length)
-//            {
-//                textDisplay.text = "";
-//                StartCoroutine(TutorialInvok());
-//}
-//            else
-//{
-//    textDisplay.text = "";
-//}
-//        }
+    //    if (tutorialIn && Jogador_Status.mortes == 0)
+    //        {
+    //            if (index<tutorialInvoker.Length)
+    //            {
+    //                textDisplay.text = "";
+    //                StartCoroutine(TutorialInvok());
+    //}
+    //            else
+    //{
+    //    textDisplay.text = "";
+    //}
+    //        }
 
     #endregion
 }
