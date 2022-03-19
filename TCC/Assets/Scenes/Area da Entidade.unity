@@ -45089,6 +45089,36 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1466160477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7752054182750900692, guid: b717b3d904963e744b13f4324e08d8f1, type: 3}
+  m_PrefabInstance: {fileID: 783327634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1466160479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466160477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08078fb9bb43f0c47a2746851fb7ae27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 349738637}
+  dialogNpc:
+  - 'Ferreiro: Ola'
+  npcDialog: 0
+  canTalk: 0
+  index: 0
+  typingSpeed: 0.06
+  typingSpeedReal: 0
+  typingSpeedAcelerado: -6
+  andar: {fileID: 0}
+  ataque: {fileID: 0}
+  continueButton: {fileID: 1164824302}
+  podePassar: 0
 --- !u!1 &1468007786
 GameObject:
   m_ObjectHideFlags: 0
@@ -63728,6 +63758,7 @@ MonoBehaviour:
   - 'Entidade: ...'
   - 'Entidade: ...'
   npcDialog: 0
+  canTalk: 0
   index: 0
   typingSpeed: 0.06
   typingSpeedReal: 0
@@ -88723,6 +88754,7 @@ GameObject:
   - component: {fileID: 6736273691283683934}
   - component: {fileID: 6736273691283683931}
   - component: {fileID: 6736273691283683933}
+  - component: {fileID: 6736273691283683936}
   m_Layer: 0
   m_Name: Estilista
   m_TagString: Untagged
@@ -88800,6 +88832,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6736273691283683936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6736273691283683932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f023c2f4d36e7043befc88de15e935c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 349738637}
+  dialogNpc:
+  - "Estilista: Ol\xE1"
+  npcDialog: 0
+  canTalk: 0
+  index: 0
+  typingSpeed: 0.06
+  typingSpeedReal: 0
+  typingSpeedAcelerado: -6
+  andar: {fileID: 0}
+  ataque: {fileID: 0}
+  continueButton: {fileID: 1164824302}
+  podePassar: 0
 --- !u!224 &6736273691315582040
 RectTransform:
   m_ObjectHideFlags: 0

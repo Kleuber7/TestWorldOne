@@ -33,12 +33,13 @@ public class DialogFerreiro : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && canTalk)
         {
+            index = 0;
             StartCoroutine(NpcDialogs());
         }
 
-        EntityDialog();
+        FerreiroDialog();
     }
-    public void EntityDialog()
+    public void FerreiroDialog()
     {
         if (Jogador_Status.mortes == 0)
         {

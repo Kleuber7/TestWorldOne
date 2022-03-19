@@ -33,6 +33,7 @@ public class DialogStylist : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && canTalk)
         {
+            index = 0;
             StartCoroutine(NpcDialogs());
         }
 
