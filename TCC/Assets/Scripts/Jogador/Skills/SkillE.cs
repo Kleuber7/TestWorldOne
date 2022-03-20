@@ -28,7 +28,7 @@ public class SkillE : MonoBehaviour
     {
         if (cdSkill && status.Mana >= manaCost)
         {
-            if (Input.GetKeyDown(key) && !PLASkills.castingSkill)
+            if (Input.GetKeyDown(key) && !PLASkills.castingSkill && !GameManager.gameManager.atacando)
             {
                 status.Mana -= manaCost;
                 TimeTentacles();
