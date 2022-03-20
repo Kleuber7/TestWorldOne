@@ -153,6 +153,7 @@ public class INIPerseguir : MonoBehaviour
 
     IEnumerator DanoInimigo()
     {
+        Debug.Log("EntrouDano");
         finishAnimation = false;
         atacando = true;
 
@@ -174,6 +175,7 @@ public class INIPerseguir : MonoBehaviour
                 areaDoAtaque.gameObject.SetActive(true);
             }
         }
+        Debug.Log("TerminouDano");
         GetAnimationState();
         StartCoroutine(ResetaAtaque());
     }
