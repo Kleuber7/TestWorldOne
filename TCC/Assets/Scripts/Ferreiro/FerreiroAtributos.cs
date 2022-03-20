@@ -65,14 +65,17 @@ public class FerreiroAtributos : MonoBehaviour
     public PotionVidaSO potionVidaSO;
     public PotionManaSO potionManaSO;
 
+    public bool canOpen;
+
     private void Start()
     {
         barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if (other.gameObject.tag == "Player")
+
+        if (canOpen)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -94,7 +97,7 @@ public class FerreiroAtributos : MonoBehaviour
                 levelMana = status.levelMana;
                 textoLevelMana.text = "Level " + levelMana;
                 textoPrecoMana.text = precoMana.ToString();
-                
+
                 ataqueSO.powerUp = (status.levelAtaque * 50);
                 ataqueSO.preco = (status.levelAtaque * 50);
                 powerUpAtaque = ataqueSO.powerUp;
@@ -117,6 +120,22 @@ public class FerreiroAtributos : MonoBehaviour
                 precoPotionMana = potionManaSO.preco;
                 textoPrecoPotionMana.text = precoPotionMana.ToString();
             }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            canOpen = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            canOpen = false;
         }
     }
 
