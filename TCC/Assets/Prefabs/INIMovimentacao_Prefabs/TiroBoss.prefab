@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 516642764609288496}
   - component: {fileID: 1144109624206753970}
   - component: {fileID: 2688170912389801516}
-  - component: {fileID: 4619884268849323176}
   - component: {fileID: 8695885478554190818}
   - component: {fileID: 5312441275455640821}
+  - component: {fileID: 1520521699403808733}
   m_Layer: 2
   m_Name: TiroBoss
   m_TagString: Untagged
@@ -98,22 +98,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4619884268849323176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205898950570715345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c70027049a7ec140bdb4b65cb588692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadeDisparo: 60
-  danoDisparo: 40
-  direcao: {x: 0, y: 0, z: 0}
-  atirou: 0
 --- !u!54 &8695885478554190818
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,7 +134,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72a99a5731d99154e82c78c0d94beef7, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,3 +221,19 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &1520521699403808733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205898950570715345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe249145e5c61f45af2755b82e0ae32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeDisparo: 120
+  danoDisparo: 40
+  direcao: {x: 0, y: 0, z: 0}
+  atirou: 0
