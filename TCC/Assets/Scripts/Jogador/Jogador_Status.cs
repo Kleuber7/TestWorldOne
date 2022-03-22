@@ -7,7 +7,7 @@ public class Jogador_Status : MonoBehaviour
     public ScriptablePlayer status;
     public List<GameObject> skin;
     public GameObject dinheiroS;
-
+    public FSMJogador animaPlayer;
 
     public InformacoesHUDJogador barras;
 
@@ -34,11 +34,13 @@ public class Jogador_Status : MonoBehaviour
         {
             skin[(int)Skin.Fire].SetActive(false);
             skin[((int)status.skin)].SetActive(true);
+            animaPlayer.jogadorAnima = skin[((int)status.skin)].GetComponent<Animator>();
         }
         else if(status.skin == Skin.Fire)
         {
             skin[(int)Skin.Default].SetActive(false);
             skin[((int)status.skin)].SetActive(true);
+            animaPlayer.jogadorAnima = skin[((int)status.skin)].GetComponent<Animator>();
         }
 
     }
