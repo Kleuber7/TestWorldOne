@@ -5,7 +5,7 @@ using UnityEngine;
 public class BOSSCombateBasico : MonoBehaviour
 {
     public BOSSGerenciador gerenciador;
-    public INITiro tiro;
+    public BOSSProjetil tiro;
     public Transform pontoDisparo;
     public bool podeAtirar;
     public bool cdEstado;
@@ -24,9 +24,10 @@ public class BOSSCombateBasico : MonoBehaviour
         {
             if(podeAtirar)
             {
-                INITiro tiroDisparado;
-                tiroDisparado = Instantiate(tiro.gameObject, pontoDisparo.position, pontoDisparo.rotation).GetComponent<INITiro>();
-                tiroDisparado.direcao = gerenciador.alvo.transform.position - transform.position;
+                transform.LookAt(new Vector3(gerenciador.alvo.transform.position.x - transform.position.x, transform.position.y, gerenciador.alvo.transform.position.z - transform.position.z));
+                BOSSProjetil tiroDisparado;
+                tiroDisparado = Instantiate(tiro.gameObject, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
+                tiroDisparado.direcao = gerenciador.alvo.transform.position - pontoDisparo.position;
                 tiroDisparado.atirou = true;
                 StartCoroutine(CDDisparo());
             }
