@@ -27,6 +27,7 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private float timeAnimation;
     [SerializeField] private float timeTakeDamage;
     [SerializeField] private float timeTakeDamageIndividual = 2f;
+    [SerializeField] public bool superArmor = false;
 
     private void Start()
     {
@@ -76,10 +77,6 @@ public class INIPerseguir : MonoBehaviour
                         }
                     }
                 }
-                //else
-                //{
-                //    GetComponentInParent<FSMInimigos>().Iddle();
-                //}
             }
             if (Jogador_Status.Invisivel)
             {

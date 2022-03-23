@@ -24,9 +24,12 @@ public class DanoAtaqueBasico : MonoBehaviour
         {
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
-            other.GetComponentInChildren<INIPerseguir>().ManageDamage();
-            other.GetComponent<FSMInimigos>().ChangeAnimationState("");
-            other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
+            if (!other.GetComponentInChildren<INIPerseguir>().superArmor)
+            {
+                other.GetComponentInChildren<INIPerseguir>().ManageDamage();
+                other.GetComponent<FSMInimigos>().ChangeAnimationState("");
+                other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
+            }
             other.GetComponent<INIStatus>().TakeDamageEffect();
             attackOne.PlayAttackOne();
             if (ataqueBasico.contadorCombo < 3)
