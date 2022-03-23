@@ -31,7 +31,7 @@ public class Andar : MonoBehaviour
         {
             transform.Translate((direcaoRotacao - transform.position).normalized * velocidadeDesloca * Time.deltaTime, Space.World);
         }
-        else
+        else if(!PLASkills.castingSkill)
         {
             ControladorMov.enabled = false;
             jogadorAnima.ChangeAnimationState(jogadorAnima.Parado());
@@ -66,11 +66,11 @@ public class Andar : MonoBehaviour
 
         
         
-            if (Direcao.x == 0 && Direcao.z == 0)
+            if (Direcao.x == 0 && Direcao.z == 0 && !PLASkills.castingSkill)
             {
                 jogadorAnima.ChangeAnimationState(jogadorAnima.Parado());
             }
-            else
+            else if(!PLASkills.castingSkill)
             {
                 jogadorAnima.ChangeAnimationState(jogadorAnima.Andar());
             }
