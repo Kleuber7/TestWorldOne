@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class INIPerseguir : MonoBehaviour
 {
-    [SerializeField] private Transform alvo;
+    [SerializeField] public Transform alvo;
     [SerializeField] float velocidade;
     [SerializeField] public float velocidadeDeAtaque, velocidadeAtaqueOriginal;
     [SerializeField] private Transform inimigo;
@@ -27,6 +27,9 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private float timeAnimation;
     [SerializeField] private float timeTakeDamage;
     [SerializeField] private float timeTakeDamageIndividual = 2f;
+    [SerializeField] public bool superArmor = false;
+    [SerializeField] private Crew crew;
+    [SerializeField] public bool inCrew = false;
 
     private void Start()
     {
@@ -59,7 +62,7 @@ public class INIPerseguir : MonoBehaviour
             }
             else if (Vector3.Distance(transform.position, alvo.position) <= distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel)
             {
-                
+
                 if (!atacando && !takingDamage)
                 {
                     if (distanciaParar < 25)
@@ -69,17 +72,13 @@ public class INIPerseguir : MonoBehaviour
                     }
                     else
                     {
-                        if(!takingDamage)
+                        if (!takingDamage)
                         {
                             StopCoroutine(AtiraProjetil());
                             StartCoroutine(AtiraProjetil());
                         }
                     }
                 }
-                //else
-                //{
-                //    GetComponentInParent<FSMInimigos>().Iddle();
-                //}
             }
             if (Jogador_Status.Invisivel)
             {
@@ -90,10 +89,15 @@ public class INIPerseguir : MonoBehaviour
                 NaoPerseguir();
             }
 
+            if (Vector3.Distance(transform.position, alvo.position) > areaVisao * 4)
+            {
+                inCrew = false;
+            }
+
         }
         else
         {
-            if (!scriptPatrulha.despertando)
+            if (!scriptPatrulha.despertando && !inCrew)
             {
                 scriptPatrulha.SetPatrulha(true);
             }
@@ -117,6 +121,8 @@ public class INIPerseguir : MonoBehaviour
         {
             alvo = other.gameObject.transform;
             Perseguir();
+
+            crew.CallCrew(alvo);
         }
     }
 
@@ -200,7 +206,7 @@ public class INIPerseguir : MonoBehaviour
         StopCoroutine(DanoInimigo());
         StopCoroutine(AtiraProjetil());
     }
-   
+
     async void GetAnimationState()
     {
         await GetAnimationStateAsync();

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41d83931b4894d24cb52cdaffc146b1b
+guid: 74d5946561946614f9bcbce5c022e3de
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -28,8 +28,11 @@ ModelImporter:
       74: -8804346700323964907
     second: Tiro
   - first:
-      74: 5521311862580297722
-    second: Armature.001|Armature.001|Atk_1_Marcelo|Atk_1_Marcelo.001
+      74: -4200127574132789997
+    second: Run_Forward_21_03
+  - first:
+      74: -2736333024175388522
+    second: Skill_TentacleSequence
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -70,7 +73,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -215,7 +218,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -291,11 +294,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.001|Armature.001|Atk_1_Marcelo|Atk_1_Marcelo.001
-      takeName: Armature.001|Armature.001|Atk_1_Marcelo|Atk_1_Marcelo.001
+      name: Run_Forward_21_03
+      takeName: Run_Forward_21_03
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 53
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Skill_TentacleSequence
+      takeName: Skill_TentacleSequence
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 160
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

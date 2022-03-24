@@ -31,7 +31,7 @@ public class SkillE : MonoBehaviour
             if (Input.GetKeyDown(key) && !PLASkills.castingSkill && !GameManager.gameManager.atacando)
             {
                 status.Mana -= manaCost;
-                TimeTentacles();
+                StartCoroutine(TimeTentacles());
                 CDSkill();
             }
         }
@@ -80,22 +80,27 @@ public class SkillE : MonoBehaviour
         await Task.Delay(1500 * (int)cooldownTime);
         cdSkill = true;
     }
-    async void TimeTentacles()
-    {
-        await TimeTentaclesAsync();
-        tentaculo.enabled = false;
-        status.speed = status.maxSpeed;
-        jogadorA.ChangeAnimationState("");
-        PLASkills.castingSkill = false;
-    }
+    //async void TimeTentacles()
+    //{
+    //    //await TimeTentaclesAsync();
+    //    tentaculo.enabled = false;
+    //    status.speed = status.maxSpeed;
+    //    jogadorA.ChangeAnimationState("");
+    //    PLASkills.castingSkill = false;
+    //}
 
-    async Task TimeTentaclesAsync()
+    IEnumerator TimeTentacles()
     {
         PLASkills.castingSkill = true;
         status.speed = speedReduction;
         tentaculo.enabled = true;
         jogadorA.ChangeAnimationState(jogadorA.Testaculos());
         skillEffect.PlayParticleEffect();
-        await Task.Delay(animTime);
+        yield return new WaitForSeconds(animTime);
+        
+        tentaculo.enabled = false;
+        status.speed = status.maxSpeed;
+        jogadorA.ChangeAnimationState("");
+        PLASkills.castingSkill = false;
     }
 }

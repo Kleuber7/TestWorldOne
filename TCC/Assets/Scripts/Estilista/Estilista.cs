@@ -7,6 +7,7 @@ public class Estilista : MonoBehaviour
     [SerializeField] private GameObject stylistCanvas;
     [SerializeField] private ScriptablePlayer status;
     [SerializeField] private Jogador_Status skinStatus;
+    [SerializeField] private FSMJogador animaPlayer;
     [SerializeField] private bool canOpen;
 
 
@@ -26,6 +27,7 @@ public class Estilista : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            animaPlayer = other.GetComponent<FSMJogador>();
             skinStatus = other.GetComponent<Jogador_Status>();
             canOpen = true;
         }
@@ -46,12 +48,14 @@ public class Estilista : MonoBehaviour
             status.skin = Skin.Default;
             skinStatus.skin[(int)Skin.Fire].SetActive(false);
             skinStatus.skin[((int)status.skin)].SetActive(true);
+            animaPlayer.jogadorAnima = skinStatus.skin[((int)status.skin)].GetComponent<Animator>();
         }
         else if(skin == (int)Skin.Fire)
         {
             status.skin = Skin.Fire;
             skinStatus.skin[(int)Skin.Default].SetActive(false);
             skinStatus.skin[((int)status.skin)].SetActive(true);
+            animaPlayer.jogadorAnima = skinStatus.skin[((int)status.skin)].GetComponent<Animator>();
         }
 
     }
