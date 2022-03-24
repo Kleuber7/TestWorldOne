@@ -1770,6 +1770,36 @@ Transform:
   m_Father: {fileID: 1847774821473494827}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3518509084660651970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6703127449624160913}
+  m_Layer: 0
+  m_Name: PontoDisparo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6703127449624160913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518509084660651970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.27, y: 15.78, z: 6.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7487282167220095628}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3544339443336839032
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,6 +3697,8 @@ GameObject:
   - component: {fileID: 1058389990947791543}
   - component: {fileID: 5204223593122433839}
   - component: {fileID: 8870391560545601967}
+  - component: {fileID: 5744400910538814888}
+  - component: {fileID: 8974071397108480324}
   m_Layer: 0
   m_Name: BossPrefab
   m_TagString: Untagged
@@ -3687,6 +3719,7 @@ Transform:
   m_Children:
   - {fileID: 1970604270783732242}
   - {fileID: 295452340576175021}
+  - {fileID: 6703127449624160913}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3708,8 +3741,8 @@ MonoBehaviour:
   velocidade: 2
   duracaoPath: 10
   iniciarPath: 0
-  scriptDano: {fileID: 6906092032775305025, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
-  gerenciador: {fileID: 6906092032775305031, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
+  scriptDano: {fileID: 7771928437239618870}
+  gerenciador: {fileID: 1058389990947791543}
 --- !u!114 &1255247559213578095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3723,17 +3756,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posicaoInicial: {fileID: 0}
-  pontosDeDisparo: {fileID: 0}
+  pontosDeDisparo: {fileID: 3518509084660651970}
   rotacaoInicial: {x: 0, y: -90, z: 0}
   rotacaoFinal: {x: 0, y: 90, z: 0}
   velocidade: 2
   velocidadeRotacao: 2
   iniciarTiros: 0
   prefabTiro: {fileID: 205898950570715345, guid: 330d1827c4ada95498c797982acee933, type: 3}
-  pontoDisparo: {fileID: 6906092033078551221, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
+  pontoDisparo: {fileID: 6703127449624160913}
   contadorDisparos: 0
   numeroDeDisparos: 10
-  gerenciador: {fileID: 6906092032775305031, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
+  gerenciador: {fileID: 1058389990947791543}
 --- !u!114 &7771928437239618870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3769,9 +3802,9 @@ MonoBehaviour:
   alvo: {fileID: 0}
   posicaoCombate: {fileID: 0}
   posicoesCombate: {fileID: 0}
-  status: {fileID: 6906092032775305030, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
-  scriptPath: {fileID: 6906092032775305054, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
-  scriptTiros: {fileID: 6906092032775305024, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
+  status: {fileID: 5204223593122433839}
+  scriptPath: {fileID: 977797314580505177}
+  scriptTiros: {fileID: 1255247559213578095}
   delayTrocaDeEstado: 2
 --- !u!114 &5204223593122433839
 MonoBehaviour:
@@ -3802,13 +3835,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ab5bec8d9997c49b0af602e41ecdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gerenciador: {fileID: 6906092032775305031, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
-  tiro: {fileID: 4619884268849323176, guid: 895a73e14b90f1542bd68ba347a85293, type: 3}
-  pontoDisparo: {fileID: 6906092033078551221, guid: ca1cebdb06896f04f94e1b956e2199f0, type: 3}
+  gerenciador: {fileID: 1058389990947791543}
+  tiro: {fileID: 8419857588217040868, guid: 895a73e14b90f1542bd68ba347a85293, type: 3}
+  pontoDisparo: {fileID: 6703127449624160913}
   podeAtirar: 0
   cdEstado: 0
   velocidadeDeAtaque: 1
   tempoEstado: 10
+--- !u!65 &5744400910538814888
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828377493923237942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 25, z: 20}
+  m_Center: {x: 0, y: 12.5, z: -5}
+--- !u!95 &8974071397108480324
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828377493923237942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7887980390714259042
 GameObject:
   m_ObjectHideFlags: 0

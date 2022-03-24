@@ -43,7 +43,7 @@ public class BOSSTiros : MonoBehaviour
 
     IEnumerator Disparos()
     {
-        INITiro tiro = Instantiate(prefabTiro, pontoDisparo.position, pontoDisparo.rotation).GetComponent<INITiro>();
+        BOSSProjetil tiro = Instantiate(prefabTiro, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
         tiro.gameObject.transform.localScale = new Vector3(5, 5, 5);
         tiro.direcao = tiro.gameObject.transform.forward;
         tiro.atirou = true;
