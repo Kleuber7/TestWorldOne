@@ -12,7 +12,7 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private bool perseguir = false;
     [SerializeField] private bool atacando = false;
     [SerializeField] private float distanciaParar;
-    [SerializeField] private float areaVisao;
+    [SerializeField] public float areaVisao;
     [SerializeField] private INIStatus status;
     [SerializeField] private bool podeDardano = true;
     [SerializeField] private EsquivaOfensiva esquiva;
@@ -80,20 +80,8 @@ public class INIPerseguir : MonoBehaviour
                     }
                 }
             }
-            if (Jogador_Status.Invisivel)
-            {
-                NaoPerseguir();
-            }
-            if (Vector3.Distance(transform.position, alvo.position) > areaVisao)
-            {
-                NaoPerseguir();
-            }
 
-            if (Vector3.Distance(transform.position, alvo.position) > areaVisao * 4)
-            {
-                inCrew = false;
-            }
-
+            crew.CheckCrew();
         }
         else
         {
