@@ -101,7 +101,7 @@ Material:
     - _AcuteDepthThresHold: 1
     - _AcuteStartDot: 1
     - _AlphaClip: 0
-    - _AmbientStrength: 0
+    - _AmbientStrength: 1
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -115,11 +115,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FallofAmount: 0.05
+    - _FallofAmount: 0.09
     - _FarNormalEndDepth: 1
     - _FarNormalStartDepth: 1
     - _FarNormalThresHold: 1
-    - _FresnelSize: 0.1
+    - _FresnelSize: 0.218
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -148,7 +148,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 1, g: 1, b: 1, a: 0}
+    - _FresnelColor: {r: 1, g: 0, b: 0.8503313, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
