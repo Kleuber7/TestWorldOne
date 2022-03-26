@@ -3699,6 +3699,7 @@ GameObject:
   - component: {fileID: 8870391560545601967}
   - component: {fileID: 5744400910538814888}
   - component: {fileID: 8974071397108480324}
+  - component: {fileID: 7225370181549348243}
   m_Layer: 0
   m_Name: BossPrefab
   m_TagString: Untagged
@@ -3743,6 +3744,8 @@ MonoBehaviour:
   iniciarPath: 0
   scriptDano: {fileID: 7771928437239618870}
   gerenciador: {fileID: 1058389990947791543}
+  fsm: {fileID: 7225370181549348243}
+  tempoPreparacaoDash: 0.5
 --- !u!114 &1255247559213578095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3762,11 +3765,12 @@ MonoBehaviour:
   velocidade: 2
   velocidadeRotacao: 2
   iniciarTiros: 0
-  prefabTiro: {fileID: 205898950570715345, guid: 330d1827c4ada95498c797982acee933, type: 3}
+  prefabTiro: {fileID: 3066154075505849724, guid: 5f7dd4c063cf24e458364f3080e0e6ec, type: 3}
   pontoDisparo: {fileID: 6703127449624160913}
   contadorDisparos: 0
   numeroDeDisparos: 10
   gerenciador: {fileID: 1058389990947791543}
+  fsm: {fileID: 7225370181549348243}
 --- !u!114 &7771928437239618870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3836,12 +3840,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gerenciador: {fileID: 1058389990947791543}
-  tiro: {fileID: 8419857588217040868, guid: 895a73e14b90f1542bd68ba347a85293, type: 3}
+  tiro: {fileID: 4276053425753757726, guid: 5f7dd4c063cf24e458364f3080e0e6ec, type: 3}
   pontoDisparo: {fileID: 6703127449624160913}
   podeAtirar: 0
   cdEstado: 0
   velocidadeDeAtaque: 1
   tempoEstado: 10
+  fsm: {fileID: 7225370181549348243}
 --- !u!65 &5744400910538814888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3865,7 +3870,7 @@ Animator:
   m_GameObject: {fileID: 7828377493923237942}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e9fb9ed3ae0911498a5ef620e331083, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3874,6 +3879,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7225370181549348243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828377493923237942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b236917dd45af4b9e92d5c80ae6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BOSSAnima: {fileID: 8974071397108480324}
 --- !u!1 &7887980390714259042
 GameObject:
   m_ObjectHideFlags: 0
