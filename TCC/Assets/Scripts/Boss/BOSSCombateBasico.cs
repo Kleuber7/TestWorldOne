@@ -11,6 +11,7 @@ public class BOSSCombateBasico : MonoBehaviour
     public bool cdEstado;
     public float velocidadeDeAtaque;
     public float tempoEstado;
+    public FSMBoss fsm;
 
     void FixedUpdate()
     {
@@ -25,10 +26,13 @@ public class BOSSCombateBasico : MonoBehaviour
             if(podeAtirar)
             {
                 transform.LookAt(new Vector3(gerenciador.alvo.transform.position.x - transform.position.x, transform.position.y, gerenciador.alvo.transform.position.z - transform.position.z));
+                fsm.ChangeAnimationState("");
+                fsm.ChangeAnimationState(fsm.Atirando());
                 BOSSProjetil tiroDisparado;
                 tiroDisparado = Instantiate(tiro.gameObject, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
                 tiroDisparado.direcao = gerenciador.alvo.transform.position - pontoDisparo.position;
                 tiroDisparado.atirou = true;
+                tiroDisparado.transform.LookAt(tiroDisparado.direcao);
                 StartCoroutine(CDDisparo());
             }
         }
@@ -48,6 +52,7 @@ public class BOSSCombateBasico : MonoBehaviour
         yield return new WaitForSeconds(tempoEstado);
         StopCoroutine(CDDisparo());
         StartCoroutine(gerenciador.DelayTrocaDeEstadoCombate());
+        fsm.ChangeAnimationState(fsm.Idle());
         cdEstado = false;
     }
 }
