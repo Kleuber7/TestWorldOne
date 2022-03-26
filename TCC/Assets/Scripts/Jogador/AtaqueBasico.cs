@@ -16,6 +16,7 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] public List<float> duracaoAtaques;
     [SerializeField] private float timeReturnAnimation = 0.15f;
     [SerializeField] public float respectTime;
+    [SerializeField] private float duracaoAtaque4;
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -54,7 +55,14 @@ public class AtaqueBasico : MonoBehaviour
                 
                 StopAllCoroutines();
                 StartCoroutine(expiraCombo());
-                StartCoroutine(CDAtaque());
+                if (contadorCombo != 3)
+                {
+                    StartCoroutine(CDAtaque());
+                }
+                else
+                {
+                    StartCoroutine(CDAtaque4());
+                }
                 StartCoroutine(TempoAtaqueAnim());
 
                 if (contadorCombo == 0)
@@ -114,6 +122,14 @@ public class AtaqueBasico : MonoBehaviour
 
         podeAtacar = false;
         yield return new WaitForSeconds(duracaoAtaques[contadorCombo]);
+        podeAtacar = true;
+    }
+
+    public IEnumerator CDAtaque4()
+    {
+
+        podeAtacar = false;
+        yield return new WaitForSeconds(duracaoAtaques[contadorCombo] + duracaoAtaque4);
         podeAtacar = true;
     }
 

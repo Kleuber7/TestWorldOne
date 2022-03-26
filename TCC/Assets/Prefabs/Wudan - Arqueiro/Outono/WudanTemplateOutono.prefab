@@ -450,7 +450,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5679304195956116468}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 3.45
   m_Height: 2
@@ -795,6 +795,9 @@ MonoBehaviour:
   timeAnimation: 0
   timeTakeDamage: 0
   timeTakeDamageIndividual: 2
+  superArmor: 0
+  crew: {fileID: 0}
+  inCrew: 0
 --- !u!136 &9140767675974800444
 CapsuleCollider:
   m_ObjectHideFlags: 0
