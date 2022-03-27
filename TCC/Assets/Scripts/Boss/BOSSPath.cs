@@ -12,8 +12,10 @@ public class BOSSPath : MonoBehaviour
     public float velocidade;
     public float duracaoPath;
     public bool iniciarPath;
-    public OBJDano scriptDano;
+    public BOSSDano scriptDano;
     public BOSSGerenciador gerenciador;
+    public FSMBoss fsm;
+    public float tempoPreparacaoDash;
 
     void FixedUpdate()
     {
@@ -26,7 +28,10 @@ public class BOSSPath : MonoBehaviour
         if(iniciarPath)
         {
             SetaPontos();
-            transform.DOMove(posicaoInicial.position, 1/velocidade).SetEase(Ease.InCirc).OnComplete(() => transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).SetLookAt(-1).OnPlay(() => scriptDano.enabled = true).OnComplete(() => {scriptDano.enabled = false; StartCoroutine(gerenciador.DelayTrocaDeEstadoAtravessar());}));
+            //fsm.ChangeAnimationState(fsm.PreparandoDash());
+            //StartCoroutine(TempoPreparacaoDash());
+            transform.LookAt(new Vector3(posicaoInicial.position.x, transform.position.y, posicaoInicial.position.z));
+            transform.DOMove(posicaoInicial.position, (posicaoInicial.position - transform.position).magnitude / velocidade).SetEase(Ease.Linear).OnComplete(() => {transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).SetLookAt(-1).OnPlay(() => scriptDano.podeDarDano = true).OnComplete(() => {scriptDano.podeDarDano = false; StartCoroutine(gerenciador.DelayTrocaDeEstadoAtravessar()); fsm.ChangeAnimationState(fsm.Idle());}); fsm.ChangeAnimationState(fsm.PreparandoDash()); StartCoroutine(TempoPreparacaoDash());});
             iniciarPath = false;
         }
     }
@@ -50,5 +55,11 @@ public class BOSSPath : MonoBehaviour
         {
             posicaoPontos[i] = pontosPath[i].position;
         }
+    }
+
+    public IEnumerator TempoPreparacaoDash()
+    {
+        yield return new WaitForSeconds(tempoPreparacaoDash);
+        fsm.ChangeAnimationState(fsm.Dash());
     }
 }

@@ -1719,10 +1719,10 @@ MonoBehaviour:
   salasPrimavera:
   - {fileID: 4127469519124169457, guid: 60bf95d579cb2f44f9ed3d0d3e7bb8b9, type: 3}
   - {fileID: 4006738301590040354, guid: 26810bb854a7d0a4e952e3a3d850a667, type: 3}
-  salaBoss: {fileID: 7130072106457308520, guid: 5a4331f9e2deaa84dad676b21d0546a7, type: 3}
+  salaBoss: {fileID: 1036052215756357192, guid: 8a67e55f6062de041918a595e384b887, type: 3}
   salas: []
   tempoEspera: 0
-  numerosSalas: 50
+  numerosSalas: 1
   contadorSalasBoss: 0
   contadorSalas: 0
 --- !u!4 &568521226
@@ -44809,6 +44809,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2173617620674394720, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173617620674394720, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2209864284643805980, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
@@ -45636,6 +45644,14 @@ PrefabInstance:
     - target: {fileID: 7985352241971347884, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_LocalPosition.z
       value: 206.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041031415852820138, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041031415852820138, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8061182035376082243, guid: 0d393c8dda5e2624fb5aea8c5ada06b0, type: 3}
       propertyPath: m_Layer

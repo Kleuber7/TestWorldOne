@@ -12,7 +12,7 @@ public class BASEStatus : MonoBehaviour
         vida = vidaMax;
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         ChecaMorrer();
     }
@@ -28,7 +28,6 @@ public class BASEStatus : MonoBehaviour
     public virtual void TomarDano(float dano)
     {
         vida -= dano;
-        
     }
 
     public virtual void Morrer()

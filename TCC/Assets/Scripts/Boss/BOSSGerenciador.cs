@@ -19,7 +19,7 @@ public class BOSSGerenciador : MonoBehaviour
 
     void Start()
     {
-        //alvo = GameManager.gameManager.GetPlayer();
+        alvo = GameManager.gameManager.GetPlayer();
         AtivaCombateBasico();
     }
 
@@ -81,7 +81,8 @@ public class BOSSGerenciador : MonoBehaviour
     public void PosicionaCombate()
     {
         EscolhePosicaoCombate();
-        transform.DOMove(posicaoCombate.position, 1/status.velocidade).SetEase(Ease.Linear).OnComplete(() => transform.DORotate(posicaoCombate.GetComponent<PontoDisparo>().rotacaoInicial, 1/status.velocidade).SetEase(Ease.Linear).OnComplete(() => combateBasico = true));
+        transform.LookAt(new Vector3(posicaoCombate.position.x, transform.position.y, posicaoCombate.position.z));
+        transform.DOMove(posicaoCombate.position, (posicaoCombate.position - transform.position).magnitude / status.velocidade).SetEase(Ease.Linear).OnComplete(() => transform.DORotate(posicaoCombate.GetComponent<PontoDisparo>().rotacaoInicial, 1/status.velocidade).SetEase(Ease.Linear).OnComplete(() => combateBasico = true));
     }
 
     public void AtivaCombateBasico()
