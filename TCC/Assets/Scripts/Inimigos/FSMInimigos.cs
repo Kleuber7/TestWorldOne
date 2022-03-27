@@ -20,17 +20,7 @@ public class FSMInimigos : MonoBehaviour
         //reassign the current state
         currentState = newState;
     }
-    public void StopAnimationState(string newState)
-    {
-        InimigoAnima.Play(newState, -1, 0);
-    }
-
     
-    public void ResetAnimation()
-    {
-        InimigoAnima.enabled = false;
-        InimigoAnima.enabled = true;
-    }
     public string Patrulhando()
     {
         const string Enemy_Patrol = "Patrulhar";
