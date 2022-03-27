@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9178364274758932287}
   - component: {fileID: 1301820665028172725}
   - component: {fileID: 8309941929636473615}
+  - component: {fileID: 1289899477054127968}
   m_Layer: 2
   m_Name: FlechaBOSS
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3066154075505849724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9, y: 9, z: 9}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 8353125335699797236}
   m_Father: {fileID: 0}
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadeDisparo: 600
-  danoDisparo: 40
+  danoDisparo: 10
   direcao: {x: 0, y: 0, z: 0}
   atirou: 0
 --- !u!96 &9178364274758932287
@@ -187,6 +188,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.7
   m_Center: {x: 0, y: 0, z: 1}
+--- !u!135 &1289899477054127968
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066154075505849724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.7
+  m_Center: {x: 0, y: -5, z: 1}
 --- !u!1001 &8387666513373352735
 PrefabInstance:
   m_ObjectHideFlags: 0

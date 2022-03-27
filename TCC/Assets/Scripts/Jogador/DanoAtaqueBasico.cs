@@ -50,6 +50,13 @@ public class DanoAtaqueBasico : MonoBehaviour
             other.GetComponent<StatusBoboneco>().TomarDano(dano);
             attackOne.PlayAttackOne();
         }
+        else if(other.gameObject.tag == "Boss")
+        {
+            critico.DoAttack();
+            DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
+            other.GetComponent<BOSSStatus>().TomarDano(dano);
+            attackOne.PlayAttackOne();
+        }
 
         //if(ataqueBasico.contadorCombo == 3)
         //{

@@ -37,7 +37,6 @@ public class SkillE : MonoBehaviour
         }
     }
 
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Inimigo")
@@ -56,6 +55,15 @@ public class SkillE : MonoBehaviour
             {
                 StartCoroutine(Duracao());
                 other.GetComponent<StatusBoboneco>().TomarDano(dano);
+            }
+            ativacao = false;
+        }
+        if (other.gameObject.tag == "Boss")
+        {
+            if (podeTomardano)
+            {
+                StartCoroutine(Duracao());
+                other.gameObject.GetComponent<BOSSStatus>().TomarDano(dano);
             }
             ativacao = false;
         }
