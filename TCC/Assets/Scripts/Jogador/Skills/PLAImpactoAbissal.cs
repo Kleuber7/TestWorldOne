@@ -34,6 +34,10 @@ public class PLAImpactoAbissal : MonoBehaviour
             {
                 inimigo.gameObject.GetComponent<StatusBoboneco>().TomarDano(danoDoImpacto);
             }
+            if(inimigo.gameObject.tag == "Boss")
+            {
+                inimigo.gameObject.GetComponent<BOSSStatus>().TomarDano(danoDoImpacto);
+            }
         }
     }
 
