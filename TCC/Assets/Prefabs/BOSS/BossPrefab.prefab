@@ -3739,7 +3739,7 @@ MonoBehaviour:
   pontosPai: {fileID: 0}
   pontosPath: []
   posicaoInicial: {fileID: 0}
-  velocidade: 2
+  velocidade: 100
   duracaoPath: 10
   iniciarPath: 0
   scriptDano: {fileID: 7771928437239618870}
@@ -3762,7 +3762,7 @@ MonoBehaviour:
   pontosDeDisparo: {fileID: 3518509084660651970}
   rotacaoInicial: {x: 0, y: -90, z: 0}
   rotacaoFinal: {x: 0, y: 90, z: 0}
-  velocidade: 2
+  velocidade: 100
   velocidadeRotacao: 2
   iniciarTiros: 0
   prefabTiro: {fileID: 3066154075505849724, guid: 5f7dd4c063cf24e458364f3080e0e6ec, type: 3}
@@ -3783,7 +3783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f2f14287ed69a46a9eb20c045b914f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dano: 30
+  dano: 50
   danoReal: 0
   tagColisor: Player
   status: {fileID: 0}
@@ -3824,7 +3824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 5000
   vidaMax: 5000
-  velocidade: 2
+  velocidade: 100
   enfurecido: 0
   danoAtaqueBasico: 50
 --- !u!114 &8870391560545601967
