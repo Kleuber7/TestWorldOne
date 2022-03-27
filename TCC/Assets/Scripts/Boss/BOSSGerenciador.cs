@@ -19,7 +19,7 @@ public class BOSSGerenciador : MonoBehaviour
 
     void Start()
     {
-        //alvo = GameManager.gameManager.GetPlayer();
+        alvo = GameManager.gameManager.GetPlayer();
         AtivaCombateBasico();
     }
 
