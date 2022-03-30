@@ -8,7 +8,7 @@ public class FerreiroAtributos : MonoBehaviour
     [Header("Referências")]
     public DinheiroFerreiro dinheiroFerreiro;
     public ScriptablePlayer status;
-    private InformacoesHUDJogador barras;
+    public InformacoesHUDJogador barras;
     public GameObject HUDFerreiro;
 
     [Header("Vida UI Info")]
@@ -77,9 +77,6 @@ public class FerreiroAtributos : MonoBehaviour
 
         if (canOpen)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                HUDFerreiro.SetActive(true);
                 dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
 
                 vidaSO.powerUp = (status.levelVida * 100);
@@ -119,7 +116,6 @@ public class FerreiroAtributos : MonoBehaviour
 
                 precoPotionMana = potionManaSO.preco;
                 textoPrecoPotionMana.text = precoPotionMana.ToString();
-            }
         }
     }
 
@@ -147,7 +143,6 @@ public class FerreiroAtributos : MonoBehaviour
             status.health = status.maxHealth;
             status.money -= precoVida;
             UpaVida();
-            barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
             barras.SetHealth(status.health);
         }
@@ -163,7 +158,6 @@ public class FerreiroAtributos : MonoBehaviour
             barras.SetMana(status.Mana);
             status.money -= precoMana;
             UpaMana();
-            barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
@@ -176,7 +170,6 @@ public class FerreiroAtributos : MonoBehaviour
             status.attack = status.maxAttack;
             status.money -= precoAtaque;
             UpaAtaque();
-            barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
@@ -189,7 +182,6 @@ public class FerreiroAtributos : MonoBehaviour
             status.defense = status.maxDefense;
             status.money -= precoDefesa;
             UpaDefesa();
-            barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
@@ -200,7 +192,6 @@ public class FerreiroAtributos : MonoBehaviour
         {
             status.qntdPotionVida++;
             status.money -= precoPotionVida;
-            barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
@@ -211,7 +202,6 @@ public class FerreiroAtributos : MonoBehaviour
         {
             status.qntdPotionMana++;
             status.money -= precoPotionMana;
-            barras.AtualizaDinheiro(status.money);
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }

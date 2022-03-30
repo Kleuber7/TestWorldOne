@@ -31,6 +31,8 @@ public class DialogEntity : MonoBehaviour
     }
     void Update()
     {
+        //if (Jogador_Status.mortes == 0)
+        //{
         if (Input.GetKeyDown(KeyCode.R) && canTalk)
         {
             index = 0;
@@ -38,39 +40,35 @@ public class DialogEntity : MonoBehaviour
         }
 
         EntityDialog();
+        //}
     }
     public void EntityDialog()
     {
-        if (Jogador_Status.mortes == 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            typingSpeed = typingSpeedAcelerado;
 
+        }
+
+        if (podePassar)
+        {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                typingSpeed = typingSpeedAcelerado;
-
+                NextSentence();
+                typingSpeed = typingSpeedReal;
             }
+        }
 
-            if (podePassar)
+        if (Dialog.dialogoB)
+        {
+            if (npcDialog)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (textDisplay.text == dialogNpc[index])
                 {
-                    NextSentence();
-                    typingSpeed = typingSpeedReal;
+                    podePassar = true;
+                    continueButton.SetActive(true);
                 }
             }
-
-            if (Dialog.dialogoB)
-            {
-                if (npcDialog)
-                {
-                    if (textDisplay.text == dialogNpc[index])
-                    {
-                        podePassar = true;
-                        continueButton.SetActive(true);
-                    }
-                }
-            }
-
         }
     }
 
@@ -112,7 +110,7 @@ public class DialogEntity : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
-       
+
         index++;
         typingSpeed = typingSpeedReal;
     }
@@ -122,7 +120,7 @@ public class DialogEntity : MonoBehaviour
 
         continueButton.SetActive(false);
 
-        if (npcDialog && Jogador_Status.mortes == 0)
+        if (npcDialog)
         {
             if (index < dialogNpc.Length)
             {
