@@ -4,42 +4,24 @@ using UnityEngine;
 
 public class Estilista : MonoBehaviour
 {
-    [SerializeField] private GameObject stylistCanvas;
+    [SerializeField] public GameObject stylistCanvas;
     [SerializeField] private ScriptablePlayer status;
     [SerializeField] private Jogador_Status skinStatus;
     [SerializeField] private FSMJogador animaPlayer;
     [SerializeField] private bool canOpen;
 
 
-    private void Update()
-    {
-        
-
-        if (canOpen)
-        {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                stylistCanvas.SetActive(true);
-            }
-        }
-    }
+   
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             animaPlayer = other.GetComponent<FSMJogador>();
             skinStatus = other.GetComponent<Jogador_Status>();
-            canOpen = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            canOpen = false;
-        }
-    }
+   
 
     public void ChangeSkin(int skin)
     {

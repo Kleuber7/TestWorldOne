@@ -18,7 +18,7 @@ public class DialogStylist : MonoBehaviour
 
     public GameObject continueButton;
     public bool podePassar;
-
+    public Estilista stylist;
 
 
     void Start()
@@ -31,46 +31,44 @@ public class DialogStylist : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && canTalk)
-        {
-            index = 0;
-            StartCoroutine(NpcDialogs());
-        }
+        //if (Jogador_Status.mortes == 0)
+        //{
+            if (Input.GetKeyDown(KeyCode.R) && canTalk)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs());
+            }
 
-        StylistDialog();
+            StylistDialog();
+       // }
     }
     public void StylistDialog()
     {
-        if (Jogador_Status.mortes == 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            typingSpeed = typingSpeedAcelerado;
 
+        }
+
+        if (podePassar)
+        {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                typingSpeed = typingSpeedAcelerado;
-
+                NextSentence();
+                typingSpeed = typingSpeedReal;
             }
+        }
 
-            if (podePassar)
+        if (Dialog.dialogoB)
+        {
+            if (npcDialog)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (textDisplay.text == dialogNpc[index])
                 {
-                    NextSentence();
-                    typingSpeed = typingSpeedReal;
+                    podePassar = true;
+                    continueButton.SetActive(true);
                 }
             }
-
-            if (Dialog.dialogoB)
-            {
-                if (npcDialog)
-                {
-                    if (textDisplay.text == dialogNpc[index])
-                    {
-                        podePassar = true;
-                        continueButton.SetActive(true);
-                    }
-                }
-            }
-
         }
     }
 
@@ -79,8 +77,8 @@ public class DialogStylist : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if(!npcDialog)
-            canTalk = true;
+            if (!npcDialog)
+                canTalk = true;
         }
     }
 
@@ -120,7 +118,7 @@ public class DialogStylist : MonoBehaviour
 
         continueButton.SetActive(false);
 
-        if (npcDialog && Jogador_Status.mortes == 0)
+        if (npcDialog)
         {
             if (index < dialogNpc.Length)
             {
@@ -133,6 +131,7 @@ public class DialogStylist : MonoBehaviour
                 ataque.AtivarAtaque();
                 Dialog.dialogoB = false;
                 npcDialog = false;
+                stylist.stylistCanvas.SetActive(true);
             }
         }
     }

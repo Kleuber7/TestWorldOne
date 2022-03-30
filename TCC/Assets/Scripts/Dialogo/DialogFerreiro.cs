@@ -18,6 +18,7 @@ public class DialogFerreiro : MonoBehaviour
 
     public GameObject continueButton;
     public bool podePassar;
+    public FerreiroAtributos atributos;
 
 
 
@@ -31,6 +32,8 @@ public class DialogFerreiro : MonoBehaviour
     }
     void Update()
     {
+        //if (Jogador_Status.mortes == 0)
+        //{
         if (Input.GetKeyDown(KeyCode.R) && canTalk)
         {
             index = 0;
@@ -38,39 +41,36 @@ public class DialogFerreiro : MonoBehaviour
         }
 
         FerreiroDialog();
+        //}
     }
     public void FerreiroDialog()
     {
-        if (Jogador_Status.mortes == 0)
-        {
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            typingSpeed = typingSpeedAcelerado;
+
+        }
+
+        if (podePassar)
+        {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                typingSpeed = typingSpeedAcelerado;
-
+                NextSentence();
+                typingSpeed = typingSpeedReal;
             }
+        }
 
-            if (podePassar)
+        if (Dialog.dialogoB)
+        {
+            if (npcDialog)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (textDisplay.text == dialogNpc[index])
                 {
-                    NextSentence();
-                    typingSpeed = typingSpeedReal;
+                    podePassar = true;
+                    continueButton.SetActive(true);
                 }
             }
-
-            if (Dialog.dialogoB)
-            {
-                if (npcDialog)
-                {
-                    if (textDisplay.text == dialogNpc[index])
-                    {
-                        podePassar = true;
-                        continueButton.SetActive(true);
-                    }
-                }
-            }
-
         }
     }
 
@@ -79,8 +79,8 @@ public class DialogFerreiro : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if(!npcDialog)
-            canTalk = true;
+            if (!npcDialog)
+                canTalk = true;
         }
     }
 
@@ -120,7 +120,7 @@ public class DialogFerreiro : MonoBehaviour
 
         continueButton.SetActive(false);
 
-        if (npcDialog && Jogador_Status.mortes == 0)
+        if (npcDialog)
         {
             if (index < dialogNpc.Length)
             {
@@ -133,6 +133,7 @@ public class DialogFerreiro : MonoBehaviour
                 ataque.AtivarAtaque();
                 Dialog.dialogoB = false;
                 npcDialog = false;
+                atributos.HUDFerreiro.SetActive(true);
             }
         }
     }

@@ -13,21 +13,21 @@ public class InformacoesHUDJogador : MonoBehaviour
     //public Gradient gradient;
     //public Image fill;
 
-    private void Start()
-    {
+    //private void Start()
+    //{
         
-        StartCoroutine(ChamaRefs());
-    }
+    //    StartCoroutine(ChamaRefs());
+    //}
 
-    IEnumerator ChamaRefs()
-    {
-        yield return new WaitForSeconds(.5f);
+    //IEnumerator ChamaRefs()
+    //{
+    //    yield return new WaitForSeconds(.5f);
         
-        dinheiroTxt = GameObject.Find("Valor").GetComponent<Text>();
-        sliderVida = GameObject.Find("HealthBar").GetComponent<Slider>();
-        sliderMana = GameObject.Find("ManaBar").GetComponent<Slider>();
+    //    dinheiroTxt = GameObject.Find("Valor").GetComponent<Text>();
+    //    sliderVida = GameObject.Find("HealthBar").GetComponent<Slider>();
+    //    sliderMana = GameObject.Find("ManaBar").GetComponent<Slider>();
 
-    }
+    //}
 
     private void LateUpdate() 
     {
@@ -37,10 +37,10 @@ public class InformacoesHUDJogador : MonoBehaviour
     }
 
 
-    public void AtualizaDinheiro(float dinheiro)
-    {
-        dinheiroTxt.text = dinheiro.ToString();
-    }
+    //public void AtualizaDinheiro(float dinheiro)
+    //{
+    //    dinheiroTxt.text = dinheiro.ToString();
+    //}
 
     //public void MaximoVida(float vida)
     //{

@@ -15952,17 +15952,6 @@ Transform:
   m_Father: {fileID: 1497050977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &762184797 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2706592682404929059, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
-  m_PrefabInstance: {fileID: 1542661331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe52a6dacee629e4c8a4c8664277b401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &763667569
 GameObject:
   m_ObjectHideFlags: 0
@@ -24241,6 +24230,17 @@ Transform:
   m_Father: {fileID: 1403317873}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1056654633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8964232273991049929, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+  m_PrefabInstance: {fileID: 1542661331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe52a6dacee629e4c8a4c8664277b401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1063578752
 GameObject:
   m_ObjectHideFlags: 0
@@ -45177,6 +45177,7 @@ MonoBehaviour:
   ataque: {fileID: 0}
   continueButton: {fileID: 1164824302}
   podePassar: 0
+  atributos: {fileID: 0}
 --- !u!1 &1468007786
 GameObject:
   m_ObjectHideFlags: 0
@@ -46151,6 +46152,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1829885709249860331, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_TagString
+      value: InfoJogador
+      objectReference: {fileID: 0}
     - target: {fileID: 2317201674145060667, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -18
@@ -46367,7 +46372,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 317.16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6395709787295650958, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
 --- !u!1 &1542687183
 GameObject:
@@ -76418,7 +76424,7 @@ PrefabInstance:
     - target: {fileID: 5415744866972104659, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: barras
       value: 
-      objectReference: {fileID: 762184797}
+      objectReference: {fileID: 1056654633}
     - target: {fileID: 5415744866972104659, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: status
       value: 
@@ -82284,7 +82290,7 @@ RectTransform:
   m_GameObject: {fileID: 8455980102990368562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054182805679210}
   m_Father: {fileID: 7752054184048181024}
@@ -82292,7 +82298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7, y: 298}
+  m_AnchoredPosition: {x: 11, y: 285.82}
   m_SizeDelta: {x: 200, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!137 &3585633684243456016
@@ -92396,12 +92402,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6736273691283683932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f023c2f4d36e7043befc88de15e935c, type: 3}
+  m_Script: {fileID: 11500000, guid: a3b87ff143ceb0b4f9d72a4d1a76d2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 349738637}
   dialogNpc:
-  - "Estilista: Ol\xE1"
+  - 'Estilista: Qual skin gostaria de usar?'
   npcDialog: 0
   canTalk: 0
   index: 0
@@ -92412,6 +92418,7 @@ MonoBehaviour:
   ataque: {fileID: 0}
   continueButton: {fileID: 1164824302}
   podePassar: 0
+  stylist: {fileID: 6736273691283683933}
 --- !u!224 &6736273691315582040
 RectTransform:
   m_ObjectHideFlags: 0
@@ -93277,7 +93284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 349738637}
   dialogNpc:
-  - 'Ferreiro: Ola'
+  - 'Ferreiro: Boas compras.'
   npcDialog: 0
   canTalk: 0
   index: 0
@@ -93288,6 +93295,7 @@ MonoBehaviour:
   ataque: {fileID: 0}
   continueButton: {fileID: 1164824302}
   podePassar: 0
+  atributos: {fileID: 6912258991370773947}
 --- !u!136 &6912258991370773946
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93316,6 +93324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dinheiroFerreiro: {fileID: 8455980102990368563}
   status: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
+  barras: {fileID: 0}
   HUDFerreiro: {fileID: 7752054184048181027}
   vidaInfo: {fileID: 7752054182977917435}
   powerUpVida: 0
@@ -96558,7 +96567,7 @@ RectTransform:
   m_GameObject: {fileID: 7752054182830326726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054183345460364}
   m_Father: {fileID: 7752054184048181024}
@@ -96566,7 +96575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.013, y: 0}
+  m_AnchoredPosition: {x: 15, y: 2.7243}
   m_SizeDelta: {x: 700, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7752054182830326726
@@ -96685,6 +96694,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7752054182873941415}
         m_TargetAssemblyTypeName: AtivaInfo, Assembly-CSharp
         m_MethodName: AtivaDesativa
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6912258991370773947}
+        m_TargetAssemblyTypeName: FerreiroAtributos, Assembly-CSharp
+        m_MethodName: EvoluirVidaMax
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -97542,6 +97563,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6912258991370773947}
+        m_TargetAssemblyTypeName: FerreiroAtributos, Assembly-CSharp
+        m_MethodName: EvoluirAtaque
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7752054183135200879
 GameObject:
   m_ObjectHideFlags: 0
@@ -97720,7 +97753,7 @@ RectTransform:
   m_GameObject: {fileID: 7752054183226895348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054183532929772}
   - {fileID: 7752054183854396213}
@@ -97729,7 +97762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.013, y: 0}
+  m_AnchoredPosition: {x: 15, y: 2.7243}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7752054183273272862
@@ -97741,7 +97774,7 @@ RectTransform:
   m_GameObject: {fileID: 7752054183273272865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054184185339876}
   - {fileID: 7752054183150524784}
@@ -97750,7 +97783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.013, y: 0}
+  m_AnchoredPosition: {x: 15, y: 2.7243}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7752054183273272865
@@ -97971,6 +98004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dinheiroFerreiro: {fileID: 8455980102990368563}
   status: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
+  barras: {fileID: 0}
   HUDFerreiro: {fileID: 7752054184048181027}
   vidaInfo: {fileID: 7752054182977917435}
   powerUpVida: 0
@@ -98378,6 +98412,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6912258991370773947}
+        m_TargetAssemblyTypeName: FerreiroAtributos, Assembly-CSharp
+        m_MethodName: EvoluirManaMax
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7752054183532929775
 GameObject:
   m_ObjectHideFlags: 0
@@ -98599,14 +98645,14 @@ RectTransform:
   m_GameObject: {fileID: 7752054183776239010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children: []
   m_Father: {fileID: 7752054184048181024}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 319.17, y: 255}
+  m_AnchoredPosition: {x: 321, y: 244.97}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7752054183808334398
@@ -98634,7 +98680,7 @@ RectTransform:
   m_GameObject: {fileID: 7752054183808334398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054183135200876}
   - {fileID: 7752054182981368378}
@@ -98643,7 +98689,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.013, y: 0}
+  m_AnchoredPosition: {x: 15, y: 2.7243}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7752054183854396208
@@ -99003,6 +99049,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7752054183879942114}
         m_TargetAssemblyTypeName: AtivaInfo, Assembly-CSharp
         m_MethodName: AtivaDesativa
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6912258991370773947}
+        m_TargetAssemblyTypeName: FerreiroAtributos, Assembly-CSharp
+        m_MethodName: ComprarPotionMana
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -99475,7 +99533,7 @@ RectTransform:
   m_GameObject: {fileID: 7752054184119420756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054182873941419}
   - {fileID: 7752054183023033922}
@@ -99484,7 +99542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.013, y: -0}
+  m_AnchoredPosition: {x: 15, y: 2.7243}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7752054184172958992
@@ -99591,7 +99649,7 @@ RectTransform:
   m_GameObject: {fileID: 7752054184173616936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054184307422649}
   - {fileID: 7752054184049728560}
@@ -99600,7 +99658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.013, y: 0}
+  m_AnchoredPosition: {x: 15, y: 2.7243}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7752054184181846694
@@ -99809,6 +99867,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6912258991370773947}
+        m_TargetAssemblyTypeName: FerreiroAtributos, Assembly-CSharp
+        m_MethodName: ComprarPotionVida
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7752054184185339879
 GameObject:
   m_ObjectHideFlags: 0
@@ -99973,6 +100043,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7752054184307422645}
         m_TargetAssemblyTypeName: AtivaInfo, Assembly-CSharp
         m_MethodName: AtivaDesativa
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6912258991370773947}
+        m_TargetAssemblyTypeName: FerreiroAtributos, Assembly-CSharp
+        m_MethodName: EvoluirDefesa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -100457,7 +100539,7 @@ RectTransform:
   m_GameObject: {fileID: 7752054184608743045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9476, y: 0.9476, z: 0.9476}
+  m_LocalScale: {x: 0.90022, y: 0.90022, z: 0.90022}
   m_Children:
   - {fileID: 7752054183879942116}
   - {fileID: 7752054184610669924}
@@ -100466,7 +100548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.013, y: 0}
+  m_AnchoredPosition: {x: 15, y: 2.7243}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7752054184608743045
