@@ -17,6 +17,7 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] private float timeReturnAnimation = 0.15f;
     [SerializeField] public float respectTime;
     [SerializeField] private float duracaoAtaque4;
+    [SerializeField] private LayerMask layer;
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -44,7 +45,7 @@ public class AtaqueBasico : MonoBehaviour
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && Vector3.Distance(transform.position, hit.point) > 5f)
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layer) && Vector3.Distance(transform.position, hit.point) > 5f)
                 {
                     andar.direcaoRotacao = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                     transform.LookAt(andar.direcaoRotacao);
