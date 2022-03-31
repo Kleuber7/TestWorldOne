@@ -144,7 +144,6 @@ public class FerreiroAtributos : MonoBehaviour
             status.money -= precoVida;
             UpaVida();
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
-            barras.SetHealth(status.health);
         }
 
     }
@@ -155,7 +154,6 @@ public class FerreiroAtributos : MonoBehaviour
         {
             status.maxMana += powerUpMana;
             status.Mana = status.maxMana;
-            barras.SetMana(status.Mana);
             status.money -= precoMana;
             UpaMana();
             dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
