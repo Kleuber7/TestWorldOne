@@ -167,7 +167,7 @@ public class Jogador_Status : MonoBehaviour
 
     public void TomarDano(float dano)
     {
-        status.health -= dano - (status.defense / 10);
+        status.health -= dano/* - (status.defense / 10)*/;
 
         barras.SetHealth(status.health);
     }
