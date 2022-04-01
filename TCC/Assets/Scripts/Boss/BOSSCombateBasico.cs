@@ -30,7 +30,7 @@ public class BOSSCombateBasico : MonoBehaviour
                 fsm.ChangeAnimationState(fsm.Atirando());
                 BOSSProjetil tiroDisparado;
                 tiroDisparado = Instantiate(tiro.gameObject, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
-                tiroDisparado.direcao = gerenciador.alvo.transform.position - pontoDisparo.position;
+                tiroDisparado.direcao = new Vector3(gerenciador.alvo.transform.position.x, gerenciador.alvo.transform.position.y + 5, gerenciador.alvo.transform.position.z) - pontoDisparo.position;
                 tiroDisparado.atirou = true;
                 tiroDisparado.transform.LookAt(gerenciador.alvo.transform.position);
                 StartCoroutine(CDDisparo());
