@@ -24,17 +24,14 @@ public class INIPatrulha : INIMovimento
     {
         reinicia = false;
         iniAnima = GetComponent<FSMInimigos>();
-        //pontos = pontosScript.GetPontos();
         pontosDG = new Vector3[pontos.Length];
         for(int i = 0; i < pontos.Length; i++)
         {
             pontosDG[i] = pontos[i].position;
         }
-        //RecalculaDirecao(this.gameObject.transform);
         StartCoroutine(Despertar());
     }
 
-    
     void FixedUpdate()
     {
         AplicaGravidade();
@@ -44,9 +41,6 @@ public class INIPatrulha : INIMovimento
             if(!scriptPerseguir.GetPerseguir() && !this.gameObject.GetComponent<INIStatus>().GetStunado() && !scriptPerseguir.GetAtacando() && scriptPerseguir.finishAnimation)
             {
                     
-                //inimigo.transform.position = Vector3.MoveTowards(transform.position, direcao, velocidade * Time.deltaTime);
-                //Vector3 direcaoRotacao = new Vector3(direcao.x, transform.position.y, direcao.z);
-                //transform.LookAt(direcaoRotacao);
                 iniAnima.ChangeAnimationState(iniAnima.Patrulhando());
                 if(reinicia)
                 {
@@ -56,45 +50,9 @@ public class INIPatrulha : INIMovimento
         }
         else
         {
-            //RecalculaDirecao(this.gameObject.transform);
-            //patrulha = true;
             ParaPatrulha();
         }
     }
-
-
-    
-
-    // IEnumerator Descansar()
-    // {
-    //     if(!patrulha)
-    //     {
-    //         yield return new WaitForSeconds(tempoDescanso);
-    //         RecalculaDirecao(this.gameObject.transform);
-    //         patrulha = true;
-    //         StopAllCoroutines();
-    //     }
-    //     else
-    //     {
-    //         yield return null;
-    //     }
-    // }
-
-    // public Vector3 RecalculaDirecao(Transform posicaoAtual)
-    // {
-    //     posicaoAtual = this.transform;
-        
-    //     if(Vector3.Distance(posicaoAtual.position, pontos[0].position) <= 2f)
-    //     {
-    //         direcao = pontos[Random.Range(1, pontos.Length - 1)].position;
-    //     }
-    //     else
-    //     {
-    //         direcao = pontos[0].position;
-    //     }
-
-    //     return direcao;
-    // }
 
     public bool GetPatrulha()
     {
@@ -129,7 +87,7 @@ public class INIPatrulha : INIMovimento
     {
         if(Vector3.Distance(transform.position, pontosDG[0]) > .1f)
         {
-            transform.DOMove(pontosDG[0], velocidade).SetEase(Ease.Linear).OnComplete(() => {transform.DOPath(pontosDG, 100 / velocidade, PathType.Linear).SetEase(Ease.Linear).SetLoops(-1).SetLookAt(.01f);});
+            transform.DOMove(pontosDG[0], (inimigo.transform.position - pontosDG[0]).magnitude / velocidade / 2).SetEase(Ease.Linear).OnComplete(() => {transform.DOPath(pontosDG, 100 / velocidade, PathType.Linear).SetEase(Ease.Linear).SetLoops(-1).SetLookAt(.01f);});
         }
         else
         {

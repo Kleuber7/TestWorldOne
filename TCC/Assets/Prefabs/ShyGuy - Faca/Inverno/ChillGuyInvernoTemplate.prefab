@@ -151,13 +151,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 0}
-  velocidade: 8
+  velocidade: 30
   velocidadeDeAtaque: 1.3
   velocidadeAtaqueOriginal: 0
   inimigo: {fileID: 7138199865644451647}
   perseguir: 0
   atacando: 0
-  distanciaParar: 10
+  distanciaParar: 15
   areaVisao: 20
   status: {fileID: 9105915996415272965}
   podeDardano: 1
@@ -173,6 +173,9 @@ MonoBehaviour:
   timeAnimation: 0
   timeTakeDamage: 0
   timeTakeDamageIndividual: 2
+  superArmor: 0
+  crew: {fileID: 0}
+  inCrew: 0
 --- !u!136 &2945976815826193866
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -642,6 +645,22 @@ PrefabInstance:
     - target: {fileID: 4833387038931313514, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627645867300328401, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627645867300328401, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627645867300328401, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
+      propertyPath: m_FillMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7012576500936148671, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9122730374400442598, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
       propertyPath: m_Layer

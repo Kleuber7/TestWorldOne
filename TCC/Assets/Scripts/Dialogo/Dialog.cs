@@ -67,10 +67,13 @@ public class Dialog : MonoBehaviour
             {
                 if (sentenca)
                 {
-                    if (textDisplay.text == sentences[index])
+                    if(index < sentences.Length)
                     {
-                        podePassar = true;
-                        continueButton.SetActive(true);
+                        if (textDisplay.text == sentences[index])
+                        {
+                            podePassar = true;
+                            continueButton.SetActive(true);
+                        }
                     }
                 }
             }
