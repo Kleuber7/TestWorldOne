@@ -215,7 +215,6 @@ public class INIPerseguir : MonoBehaviour
 
     public IEnumerator AtiraProjetil()
     {
-
         atacando = true;
 
         yield return new WaitForSecondsRealtime(1 / velocidadeDeAtaque);
@@ -225,6 +224,7 @@ public class INIPerseguir : MonoBehaviour
             tiro = Instantiate(prefabProjetil, pontoDeTiro.position, pontoDeTiro.rotation).GetComponent<INITiro>();
             Vector3 direcaoInimigo = alvo.transform.position - tiro.gameObject.transform.position;
             tiro.direcao = direcaoInimigo;
+            tiro.transform.LookAt(alvo);
             tiro.atirou = true;
             iniAnima.ChangeAnimationState(iniAnima.Atacar());
 
