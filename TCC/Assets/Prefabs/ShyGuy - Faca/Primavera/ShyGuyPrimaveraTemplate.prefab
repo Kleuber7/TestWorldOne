@@ -350,13 +350,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 0}
-  velocidade: 8
+  velocidade: 30
   velocidadeDeAtaque: 1.3
   velocidadeAtaqueOriginal: 0
   inimigo: {fileID: 482220167271246829}
   perseguir: 0
   atacando: 0
-  distanciaParar: 10
+  distanciaParar: 15
   areaVisao: 20
   status: {fileID: 7108644352561088335}
   podeDardano: 1
@@ -372,6 +372,9 @@ MonoBehaviour:
   timeAnimation: 0
   timeTakeDamage: 0
   timeTakeDamageIndividual: 2
+  superArmor: 0
+  crew: {fileID: 0}
+  inCrew: 0
 --- !u!136 &4913429907974386025
 CapsuleCollider:
   m_ObjectHideFlags: 0
