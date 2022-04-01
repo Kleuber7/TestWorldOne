@@ -216,22 +216,26 @@ public class INIPerseguir : MonoBehaviour
     public IEnumerator AtiraProjetil()
     {
         atacando = true;
+        iniAnima.ChangeAnimationState(iniAnima.Iddle());
 
         yield return new WaitForSecondsRealtime(1 / velocidadeDeAtaque);
 
+        iniAnima.ChangeAnimationState(iniAnima.Atacar());
+
         if (alvo != null)
         {
+            yield return new WaitForSeconds(0.3f);
             tiro = Instantiate(prefabProjetil, pontoDeTiro.position, pontoDeTiro.rotation).GetComponent<INITiro>();
             Vector3 direcaoInimigo = alvo.transform.position - tiro.gameObject.transform.position;
             tiro.direcao = direcaoInimigo;
             tiro.transform.LookAt(alvo);
             tiro.atirou = true;
-            iniAnima.ChangeAnimationState(iniAnima.Atacar());
-
         }
         atacando = false;
     }
 
+
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
