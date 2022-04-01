@@ -28,6 +28,8 @@ public class INIStatus : BASEStatus
 
     IEnumerator MorrerAnim()
     {
+        
+        
         GetComponentInChildren<INIPerseguir>().enabled = false;
         //GetComponent<INIPatrulha>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;

@@ -14,7 +14,9 @@ public class DanoAtaqueBasico : MonoBehaviour
     public Testing damagePop;
     [SerializeField] private FireAttack fireAttack;
     [SerializeField] private SoundManagerAttack attackOne;
+    [SerializeField] private ScriptablePlayer status;
 
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +44,8 @@ public class DanoAtaqueBasico : MonoBehaviour
                 StartCoroutine(DividedDamage(other.GetComponent<INIStatus>()));
                 fireAttack.AttackFire(other.GetComponent<INIStatus>());
             }
+
+            critico.ResetAttack();
         }
         else if (other.gameObject.tag == "Boboneco")
         {
@@ -49,6 +53,7 @@ public class DanoAtaqueBasico : MonoBehaviour
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
             other.GetComponent<StatusBoboneco>().TomarDano(dano);
             attackOne.PlayAttackOne();
+            critico.ResetAttack();
         }
         else if(other.gameObject.tag == "Boss")
         {
@@ -56,6 +61,7 @@ public class DanoAtaqueBasico : MonoBehaviour
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
             other.GetComponent<BOSSStatus>().TomarDano(dano);
             attackOne.PlayAttackOne();
+            critico.ResetAttack();
         }
 
         //if(ataqueBasico.contadorCombo == 3)
