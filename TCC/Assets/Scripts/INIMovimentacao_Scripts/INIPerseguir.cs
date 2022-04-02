@@ -81,7 +81,10 @@ public class INIPerseguir : MonoBehaviour
                 }
             }
 
-            crew.CheckCrew();
+            if(crew != null)
+            {
+                crew.CheckCrew();
+            }
         }
         else
         {
