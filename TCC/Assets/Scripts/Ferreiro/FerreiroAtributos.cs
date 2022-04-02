@@ -51,11 +51,13 @@ public class FerreiroAtributos : MonoBehaviour
     public GameObject potionVidaInfo;
     public int precoPotionVida;
     public Text textoPrecoPotionVida;
+    public Text descricaoPotionVida;
 
     [Header("Potion de Mana UI Info")]
     public GameObject potionManaInfo;
     public int precoPotionMana;
     public Text textoPrecoPotionMana;
+    public Text descricaoPotionMana;
 
     [Header("Scriptable Objects")]
     public VidaSO vidaSO;
@@ -86,6 +88,7 @@ public class FerreiroAtributos : MonoBehaviour
                 levelVida = status.levelVida;
                 textoLevelVida.text = "Level " + levelVida;
                 textoPrecoVida.text = precoVida.ToString();
+                descricaoVida.text = vidaSO.descricao + powerUpVida + " pontos.";
 
                 manaSO.powerUp = (status.levelMana * 100);
                 manaSO.preco = (status.levelMana * 100);
@@ -94,6 +97,7 @@ public class FerreiroAtributos : MonoBehaviour
                 levelMana = status.levelMana;
                 textoLevelMana.text = "Level " + levelMana;
                 textoPrecoMana.text = precoMana.ToString();
+                descricaoMana.text = manaSO.descricao + powerUpMana + " pontos.";
 
                 ataqueSO.powerUp = (status.levelAtaque * 50);
                 ataqueSO.preco = (status.levelAtaque * 50);
@@ -102,6 +106,7 @@ public class FerreiroAtributos : MonoBehaviour
                 levelAtaque = status.levelAtaque;
                 textoLevelAtaque.text = "Level " + levelAtaque;
                 textoPrecoAtaque.text = precoAtaque.ToString();
+                descricaoAtaque.text = ataqueSO.descricao + powerUpAtaque + " pontos.";
 
                 defesaSO.powerUp = (status.levelDefesa * 50);
                 defesaSO.preco = (status.levelDefesa * 50);
@@ -110,12 +115,16 @@ public class FerreiroAtributos : MonoBehaviour
                 levelDefesa = status.levelDefesa;
                 textoLevelDefesa.text = "Level " + levelDefesa;
                 textoPrecoDefesa.text = precoDefesa.ToString();
+                descricaoDefesa.text = defesaSO.descricao + powerUpDefesa + " pontos.";
 
                 precoPotionVida = potionVidaSO.preco;
                 textoPrecoPotionVida.text = precoPotionVida.ToString();
+                descricaoPotionVida.text = potionVidaSO.descricao;
+                
 
                 precoPotionMana = potionManaSO.preco;
                 textoPrecoPotionMana.text = precoPotionMana.ToString();
+                descricaoPotionMana.text = potionManaSO.descricao;
         }
     }
 
@@ -214,6 +223,7 @@ public class FerreiroAtributos : MonoBehaviour
         levelVida = status.levelVida;
         textoLevelVida.text = "Level " + levelVida;
         textoPrecoVida.text = precoVida.ToString();
+        descricaoVida.text = vidaSO.descricao + powerUpVida + " pontos.";
     }
     public void UpaMana()
     {
@@ -225,6 +235,7 @@ public class FerreiroAtributos : MonoBehaviour
         levelMana = status.levelMana;
         textoLevelMana.text = "Level " + levelMana;
         textoPrecoMana.text = precoMana.ToString();
+        descricaoMana.text = manaSO.descricao + powerUpMana + " pontos.";
     }
     public void UpaAtaque()
     {
@@ -236,6 +247,7 @@ public class FerreiroAtributos : MonoBehaviour
         levelAtaque = status.levelAtaque;
         textoLevelAtaque.text = "Level " + levelAtaque;
         textoPrecoAtaque.text = precoAtaque.ToString();
+        descricaoAtaque.text = ataqueSO.descricao + powerUpAtaque + " pontos.";
     }
     public void UpaDefesa()
     {
@@ -247,5 +259,6 @@ public class FerreiroAtributos : MonoBehaviour
         levelDefesa = status.levelDefesa;
         textoLevelDefesa.text = "Level " + levelDefesa;
         textoPrecoDefesa.text = precoDefesa.ToString();
+        descricaoDefesa.text = defesaSO.descricao + powerUpDefesa + " pontos.";
     }
 }
