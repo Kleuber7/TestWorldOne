@@ -31,7 +31,10 @@ public class Spawner : MonoBehaviour
     }
     public async Task DeleteLastSpawnAsync()
     {
-        currentSpawn = spawner.transform.GetChild(0).gameObject;
+        if(spawner.transform.childCount > 0)
+        {
+            currentSpawn = spawner.transform.GetChild(0).gameObject;
+        }
 
         if (Teleporting.podeExcluirP == true)
         {

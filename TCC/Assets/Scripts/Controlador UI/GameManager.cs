@@ -95,7 +95,10 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
-            cenas[i] = SceneManager.GetSceneAt(i);
+            if(i < cenas.Length)
+            {
+                cenas[i] = SceneManager.GetSceneAt(i);
+            }
         }
 
         if (SceneManager.GetSceneAt(0).buildIndex != cenaIndex)

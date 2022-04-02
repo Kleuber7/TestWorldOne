@@ -24,14 +24,20 @@ public class Crew : MonoBehaviour
         {
             if (crew.inCrew)
             {
-                if (Vector3.Distance(crew.transform.position, crew.alvo.position) < crew.areaVisao)
+                if(crew != null)
                 {
-                    checkCrew = true;
-                    break;
-                }
-                else
-                {
-                    checkCrew = false;
+                    if(crew.alvo != null)
+                    {
+                        if (Vector3.Distance(crew.transform.position, crew.alvo.position) < crew.areaVisao)
+                        {
+                            checkCrew = true;
+                            break;
+                        }
+                        else
+                        {
+                            checkCrew = false;
+                        }
+                    }
                 }
             }
         }
