@@ -39,7 +39,6 @@ public class Critico : MonoBehaviour
         bool criticalHit = Random.Range(0, 100) < 15;
         if (criticalHit)
         {
-            Debug.Log("Critou");
             danoReal = dano.dano;
             dano.dano *= 1.5f;
             dano.dano += (status.attack / 100) * dano.dano;
