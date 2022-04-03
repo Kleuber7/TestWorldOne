@@ -16,6 +16,7 @@ public class DialogEntity : MonoBehaviour
     public Andar andar;
     public AtaqueBasico ataque;
 
+    public GameObject imagemDialog;
     public GameObject continueButton;
     public bool podePassar;
 
@@ -106,7 +107,7 @@ public class DialogEntity : MonoBehaviour
         foreach (char letter in dialogNpc[index].ToCharArray())
         {
             textDisplay.text += letter;
-            // imagemDialog.SetActive(true);
+            imagemDialog.SetActive(true);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -133,6 +134,7 @@ public class DialogEntity : MonoBehaviour
                 ataque.AtivarAtaque();
                 Dialog.dialogoB = false;
                 npcDialog = false;
+                imagemDialog.SetActive(false);
             }
         }
     }

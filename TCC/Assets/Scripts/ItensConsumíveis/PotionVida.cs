@@ -12,7 +12,7 @@ public class PotionVida : MonoBehaviour
 
     private void Update() 
     {
-        if(!status.morreu)
+        if(!Jogador_Status.morreu)
         {
             if(inventarioConsumiveis.qntdPotionVida > 0)
             {

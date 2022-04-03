@@ -9,27 +9,20 @@ public class Jogador_Status : MonoBehaviour
     public GameObject dinheiroS;
     public FSMJogador animaPlayer;
 
-    public InformacoesHUDJogador barras;
-
     public static int mortes;
-    public bool morreu;
+    public static bool morreu;
     public static bool Invisivel;
     public static bool podeDarDano = true;
     [SerializeField] private Transform pointHUD;
     
     void Start()
     {
-       
         status.health = status.maxHealth;
         status.Mana = status.maxMana;
         status.defense = status.maxDefense;
         status.attack = status.maxAttack;
         status.speed = status.maxSpeed;
 
-
-        //barras.MaximoVida(status.maxHealth);
-       // barras.MaximoMana(status.maxMana);
-        
         if(status.skin == Skin.Default)
         {
             skin[(int)Skin.Fire].SetActive(false);
@@ -45,34 +38,14 @@ public class Jogador_Status : MonoBehaviour
 
     }
     void Update()
-    {
-
-        //RegenerarVida();
-        RegenerarMana();
-         
+    { 
         if (status.health <= 0 && status.ExtraLife <= 0)
         {
-            //Ligar novamente quando tiver shader   
-            //if (GetComponentInChildren<Dissolver>().dissolverValor > 0)
-                //{
-                //   StartCoroutine(GetComponentInChildren<Dissolver>().DissolverSegundos());
-                //}
-                //GetComponent<Dissolver>().render.material.SetFloat("_DissolverController", GetComponent<Dissolver>().dissolverValor);
                 mortes++;
                 StartCoroutine(MorrerContagem());
-            
+           
         }
-        //Ligar novamente quando tiver shader de dissolver
-        //else if(Vida <= 0 && VidaExtra >= 1)
-        //{
-            
-        //    StartCoroutine(GetComponentInChildren<Dissolver>().DissolverReviver());
-
-
-        //    StartCoroutine(GetComponentInChildren<Dissolver>().DissolverReviverVolta());
-        //}
-
-
+        
         AtualizaValoresMaximos();
         
     }
@@ -106,17 +79,19 @@ public class Jogador_Status : MonoBehaviour
         GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
 
         status.health = status.maxHealth;
-        barras.SetHealth(status.health);
         morreu = false;
-        
-        Destroy(this.gameObject);
+
+        gameObject.SetActive(false);
     }
 
     IEnumerator MorrerContagem()
     {
-        morreu = true;
-        GameManager.gameManager.teleportando = true;
-        yield return new WaitForSeconds(2.5f);
+        if (!morreu)
+        {
+            morreu = true;
+            animaPlayer.ChangeAnimationState(animaPlayer.Morte());
+        }
+        yield return new WaitForSeconds(3f);
         Morrer();
     }
 
@@ -124,28 +99,21 @@ public class Jogador_Status : MonoBehaviour
 
     public void AtualizaValoresMaximos()
     {
+        RegenerarMana();
+
         if (status.moneyHUD)
         {
             Instantiate(dinheiroS, pointHUD.position, Quaternion.identity);
             status.moneyHUD = false;
         }
         
-
-
-        if (barras == null)
-        {
-            barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
-        }
-
         if (status.health > status.maxHealth)
         {
             status.health = status.maxHealth;
-            //barras.MaximoVida(status.maxHealth);
         }
         if(status.Mana > status.maxMana)
         {
             status.Mana = status.maxMana;
-            //barras.MaximoMana(status.maxMana);
         }
         if (status.defense > status.maxDefense)
         {
@@ -169,6 +137,5 @@ public class Jogador_Status : MonoBehaviour
     {
         status.health -= dano/* - (status.defense / 10)*/;
 
-        barras.SetHealth(status.health);
     }
 }
