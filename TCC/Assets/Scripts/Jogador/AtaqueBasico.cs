@@ -18,6 +18,9 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] public float respectTime;
     [SerializeField] private float duracaoAtaque4;
     [SerializeField] private LayerMask layer;
+    [SerializeField] private float timeTakeDamage;
+    [SerializeField] private float timeTakeDamagePlayer;
+    [SerializeField] public bool takingDamagePlayer = false;
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -25,21 +28,13 @@ public class AtaqueBasico : MonoBehaviour
 
     private void Update()
     {
-        //if(scrpitDeAtaqueADistancia.ataqueADistancia)
-        //{
-        //    podeAtacar = false;
-        //}
-        //else
-        //{
-        //    podeAtacar = true;
-        //}
-
+        
         if (contadorCombo >= areaDeAtaque.Length)
         {
             contadorCombo = 0;
         }
 
-        if (Input.GetMouseButtonDown(0) && !PLASkills.castingSkill)
+        if (Input.GetMouseButtonDown(0) && !PLASkills.castingSkill && !takingDamagePlayer && !Jogador_Status.morreu)
         {
             if (podeAtacar == true)
             {
@@ -95,6 +90,28 @@ public class AtaqueBasico : MonoBehaviour
                 }
             }
         }
+        TakeDamage();
+    }
+
+    void TakeDamage()
+    {
+        if (timeTakeDamage <= 0)
+        {
+            takingDamagePlayer = false;
+            timeTakeDamage = 0;
+        }
+        else
+        {
+            timeTakeDamage -= Time.deltaTime;
+        }
+
+    }
+
+    public void ManageDamage()
+    {
+        timeTakeDamage = timeTakeDamagePlayer;
+        takingDamagePlayer = true;
+       
     }
 
     IEnumerator AttackCollision(int cont, float respectTime)

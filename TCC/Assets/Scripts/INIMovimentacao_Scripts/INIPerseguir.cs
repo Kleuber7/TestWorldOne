@@ -95,15 +95,6 @@ public class INIPerseguir : MonoBehaviour
         }
     }
 
-    // private void OnTriggerEnter(Collider other) 
-    // {
-    //     if(other.gameObject.tag == "Player")
-    //     {
-    //         Debug.Log("player entrou");
-    //         alvo = other.gameObject;
-    //         Perseguir();
-    //     }
-    // }
 
     //Está utilizando "OnTriggerStay" porque o "OnTriggerEnter" por algum motivo não funciona. - Ian
     private void OnTriggerStay(Collider other)

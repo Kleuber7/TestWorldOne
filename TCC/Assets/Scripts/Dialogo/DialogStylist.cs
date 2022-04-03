@@ -16,6 +16,7 @@ public class DialogStylist : MonoBehaviour
     public Andar andar;
     public AtaqueBasico ataque;
 
+    public GameObject imagemDialog;
     public GameObject continueButton;
     public bool podePassar;
     public Estilista stylist;
@@ -107,7 +108,7 @@ public class DialogStylist : MonoBehaviour
         foreach (char letter in dialogNpc[index].ToCharArray())
         {
             textDisplay.text += letter;
-            // imagemDialog.SetActive(true);
+            imagemDialog.SetActive(true);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -135,6 +136,7 @@ public class DialogStylist : MonoBehaviour
                 Dialog.dialogoB = false;
                 npcDialog = false;
                 stylist.stylistCanvas.SetActive(true);
+                imagemDialog.SetActive(false);
             }
         }
     }

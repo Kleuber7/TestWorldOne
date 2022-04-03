@@ -12,7 +12,7 @@ public class PotionMana : MonoBehaviour
 
     private void Update() 
     {
-        if(!status.morreu)
+        if(!Jogador_Status.morreu)
         {
             if(inventarioConsumiveis.qntdPotionMana > 0)
             {

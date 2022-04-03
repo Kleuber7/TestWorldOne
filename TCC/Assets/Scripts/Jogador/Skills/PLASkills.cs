@@ -25,7 +25,7 @@ public class PLASkills : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(teclaSkill1) && !castingSkill && !GameManager.gameManager.atacando)
+        if (Input.GetKeyDown(teclaSkill1) && !castingSkill && !GameManager.gameManager.atacando && !Jogador_Status.morreu)
         {
             if (podeAtivarSkill1)
             {

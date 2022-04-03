@@ -44,15 +44,6 @@ public class FSMJogador : MonoBehaviour
        
     }
 
-
-    //public string SetHorizontal()
-    //{
-    //    const string player_Horizontal = "Horizontal";
-
-    //    return player_Horizontal;
-    //    jogadorAnima.SetFloat("Horizontal", valor);
-    //}
-
     public string Testaculos()
     {
         const string player_Testacles = "Testaculos";
@@ -72,6 +63,20 @@ public class FSMJogador : MonoBehaviour
         const string player_Shoot = "Tiro";
 
         return player_Shoot;
+
+    }
+    public string Morte()
+    {
+        const string player_Death = "Morte";
+
+        return player_Death;
+
+    }
+    public string TomarDano()
+    {
+        const string player_TakeDamage = "TomarDano";
+
+        return player_TakeDamage;
 
     }
     public string Critico()
@@ -105,14 +110,5 @@ public class FSMJogador : MonoBehaviour
         const string player_PunchThree = "Bater 4";
         return player_PunchThree;
     }
-    public string Bater5()
-    {
-        const string player_PunchThree = "Bater 5";
-        return player_PunchThree;
-    }
-    public string Bater6()
-    {
-        const string player_PunchThree = "Bater 6";
-        return player_PunchThree;
-    }
+   
 }

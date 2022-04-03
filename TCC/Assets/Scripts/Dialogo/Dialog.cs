@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class Dialog : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
@@ -13,6 +14,7 @@ public class Dialog : MonoBehaviour
     public Andar andar;
     public AtaqueBasico ataque;
 
+    public GameObject imagemDialog;
     public GameObject continueButton;
 
     public static bool dialogoB;
@@ -59,7 +61,7 @@ public class Dialog : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     NextSentence();
-                    typingSpeed = typingSpeedReal;
+                    
                 }
             }
 
@@ -94,7 +96,6 @@ public class Dialog : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     NextSentence();
-                    typingSpeed = typingSpeedReal;
                 }
             }
 
@@ -104,8 +105,8 @@ public class Dialog : MonoBehaviour
                 {
                     if (textDisplay.text == sentences2[index] && sentenca)
                     {
-                        podePassar = true;
                         continueButton.SetActive(true);
+                        podePassar = true;
                     }
                 }
             }
@@ -125,7 +126,7 @@ public class Dialog : MonoBehaviour
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
-            // imagemDialog.SetActive(true);
+            imagemDialog.SetActive(true);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -143,7 +144,7 @@ public class Dialog : MonoBehaviour
         foreach (char letter in sentences2[index].ToCharArray())
         {
             textDisplay.text += letter;
-            // imagemDialog.SetActive(true);
+            imagemDialog.SetActive(true);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -155,6 +156,7 @@ public class Dialog : MonoBehaviour
 
     void NextSentence()
     {
+        typingSpeed = typingSpeedReal;
         continueButton.SetActive(false);
 
         if (Jogador_Status.mortes == 0 && sentenca)
@@ -172,7 +174,7 @@ public class Dialog : MonoBehaviour
                 sentenca = false;
                 ataque.AtivarAtaque();
                 dialogoB = false;
-                //imagemDialog.SetActive(false);
+                imagemDialog.SetActive(false);
             }
         }
         if (Jogador_Status.mortes >= 1 && sentenca)
@@ -188,7 +190,7 @@ public class Dialog : MonoBehaviour
                 sentenca = false;
                 ataque.AtivarAtaque();
                 dialogoB = false;
-                //imagemDialog.SetActive(false);
+                imagemDialog.SetActive(false);
             }
         }
     }
