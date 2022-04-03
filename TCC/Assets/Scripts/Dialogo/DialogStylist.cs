@@ -63,10 +63,13 @@ public class DialogStylist : MonoBehaviour
         {
             if (npcDialog)
             {
-                if (textDisplay.text == dialogNpc[index])
+                if(index < dialogNpc.Length)
                 {
-                    podePassar = true;
-                    continueButton.SetActive(true);
+                    if (textDisplay.text == dialogNpc[index])
+                    {
+                        podePassar = true;
+                        continueButton.SetActive(true);
+                    }
                 }
             }
         }

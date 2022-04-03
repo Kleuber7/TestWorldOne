@@ -81,7 +81,10 @@ public class INIPerseguir : MonoBehaviour
                 }
             }
 
-            crew.CheckCrew();
+            if(crew != null)
+            {
+                crew.CheckCrew();
+            }
         }
         else
         {
@@ -105,12 +108,15 @@ public class INIPerseguir : MonoBehaviour
     //Está utilizando "OnTriggerStay" porque o "OnTriggerEnter" por algum motivo não funciona. - Ian
     private void OnTriggerStay(Collider other)
     {
-        if (alvo == null && other.gameObject.tag == "Player")
+        if(crew != null)
         {
-            alvo = other.gameObject.transform;
-            Perseguir();
+            if (alvo == null && other.gameObject.tag == "Player")
+            {
+                alvo = other.gameObject.transform;
+                Perseguir();
 
-            crew.CallCrew(alvo);
+                crew.CallCrew(alvo);
+            }
         }
     }
 

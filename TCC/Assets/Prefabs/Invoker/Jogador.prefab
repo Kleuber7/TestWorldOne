@@ -195,6 +195,7 @@ MonoBehaviour:
   damagePop: {fileID: 0}
   fireAttack: {fileID: 0}
   attackOne: {fileID: 796724312923341301}
+  status: {fileID: 0}
 --- !u!114 &948500096446067089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,9 +239,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critChance: 0
+  dano: {fileID: 0}
   danoReal: 0
   critou: 0
   jogadorAnima: {fileID: 7235825112790767654}
+  status: {fileID: 0}
 --- !u!1 &915398601572245473
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +602,7 @@ GameObject:
   - component: {fileID: 947571581684742022}
   - component: {fileID: 4655942834736587107}
   - component: {fileID: 4106585986316728428}
+  - component: {fileID: 5966083649529523810}
   m_Layer: 2
   m_Name: Ataque4
   m_TagString: Untagged
@@ -654,6 +658,7 @@ MonoBehaviour:
   damagePop: {fileID: 0}
   fireAttack: {fileID: 0}
   attackOne: {fileID: 796724312923341301}
+  status: {fileID: 0}
 --- !u!114 &947571581684742022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,9 +702,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critChance: 0
+  dano: {fileID: 0}
   danoReal: 0
   critou: 0
   jogadorAnima: {fileID: 7235825112790767654}
+  status: {fileID: 0}
+--- !u!114 &5966083649529523810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112285867867672577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f310d152d05f39f479cae8df1ac45f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoStun: 1
+  tempoStunContador: 0
+  forcaStun: 1
+  tagColisor: Inimigo
+  direcaoDeslocar: {x: 0, y: 0, z: 0}
+  desloca: 0
+  objeto: {fileID: 0}
 --- !u!1 &3339420434920415902
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +859,9 @@ MonoBehaviour:
   timeReturnAnimation: 0.15
   respectTime: 0
   duracaoAtaque4: 0
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7889753229361911877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,6 +1533,7 @@ MonoBehaviour:
   damagePop: {fileID: 0}
   fireAttack: {fileID: 0}
   attackOne: {fileID: 796724312923341301}
+  status: {fileID: 0}
 --- !u!114 &1079370960256930146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,9 +1577,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critChance: 0
+  dano: {fileID: 0}
   danoReal: 0
   critou: 0
   jogadorAnima: {fileID: 7235825112790767654}
+  status: {fileID: 0}
 --- !u!1 &6708273379239377970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,6 +1826,7 @@ MonoBehaviour:
   damagePop: {fileID: 0}
   fireAttack: {fileID: 0}
   attackOne: {fileID: 796724312923341301}
+  status: {fileID: 0}
 --- !u!114 &8489897655566436371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,9 +1870,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critChance: 0
+  dano: {fileID: 0}
   danoReal: 0
   critou: 0
   jogadorAnima: {fileID: 7235825112790767654}
+  status: {fileID: 0}
 --- !u!1 &8626360309486951368
 GameObject:
   m_ObjectHideFlags: 0

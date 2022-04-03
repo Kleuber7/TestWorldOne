@@ -9,15 +9,17 @@ public class BarraDeVida : MonoBehaviour
     [SerializeField] private INIStatus scriptDeStatus;
     [SerializeField] private Transform cam;
 
-    private void Update() 
+    private void FixedUpdate() 
     {
-        barraDeVida.value = (scriptDeStatus.vida * 100 / scriptDeStatus.vidaMax) / 100;
-        transform.position = new Vector3(scriptDeStatus.transform.position.x, transform.position.y, scriptDeStatus.transform.position.z);
-        if(scriptDeStatus.vida <= 0)
+        if(scriptDeStatus != null)
         {
-            Destroy(this.gameObject);
+            barraDeVida.value = (scriptDeStatus.vida * 100 / scriptDeStatus.vidaMax) / 100;
+            transform.position = new Vector3(scriptDeStatus.transform.position.x, transform.position.y, scriptDeStatus.transform.position.z);
+            if(scriptDeStatus.vida <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
-
     }
 
     private void LateUpdate()

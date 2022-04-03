@@ -27,7 +27,6 @@ public class PLAImpactoAbissal : MonoBehaviour
                 inimigo.GetComponent<FSMInimigos>().ChangeAnimationState(inimigo.GetComponent<FSMInimigos>().TomarDano());
                 inimigo.GetComponent<INIStatus>().TakeDamageEffect();
                 inimigo.gameObject.GetComponent<INIStatus>().TomarDano(danoDoImpacto);
-                Debug.Log("DandoDano");
                 StartCoroutine(TempoStun(inimigo));
             }
             if(inimigo.gameObject.tag == "Boboneco")
