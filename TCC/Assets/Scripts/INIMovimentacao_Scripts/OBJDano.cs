@@ -27,32 +27,18 @@ public class OBJDano : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        //if(other.gameObject.tag == tagColisor && tagColisor == "Inimigo")
-        //{
-        //    if(critico != null)
-        //    {
-        //        critico.DoAttack();
-        //    }
-        //    other.GetComponent<INIStatus>().TomarDano(dano);
-        //}
-
-        if(other.gameObject.tag == tagColisor && tagColisor == "Player" && !status.GetStunado())
+        
+        if(other.gameObject.tag == tagColisor && tagColisor == "Player" && !status.GetStunado() && !Jogador_Status.morreu)
         {
             if(critico != null)
             {
                 critico.DoAttack();
             }
-           
+
+            other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
+            other.GetComponent<AtaqueBasico>().ManageDamage();
             other.GetComponent<Jogador_Status>().TomarDano(dano);
         }
         
-        //if (other.gameObject.tag == tagColisor && tagColisor == "Boboneco")
-        //{
-        //    if(critico != null)
-        //    {
-        //        critico.DoAttack();
-        //    }
-        //    other.GetComponent<StatusBoboneco>().TomarDano(dano);
-        //}
     }
 }

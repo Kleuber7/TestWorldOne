@@ -26,8 +26,6 @@ public class BOSSStatus : BASEStatus
     {
         GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
 
-        GameManager.gameManager.GetPlayer().GetComponent<Jogador_Status>().status.health = GameManager.gameManager.GetPlayer().GetComponent<Jogador_Status>().status.maxHealth;
-        GameManager.gameManager.GetPlayer().GetComponent<Jogador_Status>().barras.SetHealth(GameManager.gameManager.GetPlayer().GetComponent<Jogador_Status>().status.health);
         Destroy(this.gameObject);
     }
 }

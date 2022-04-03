@@ -27,7 +27,7 @@ public class AtaqueADistancia : MonoBehaviour
 
     void RangedAttack()
     {
-        if (Input.GetMouseButton(1) && !PLASkills.castingSkill && !GameManager.gameManager.atacando)
+        if (Input.GetMouseButton(1) && !PLASkills.castingSkill && !GameManager.gameManager.atacando && !Jogador_Status.morreu)
         {
             RaycastHit hit;
             ataqueADistancia = true;

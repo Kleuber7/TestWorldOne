@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScriptablePlayer status;
 
     public Tela_De_Load load;
-    
+
+    public static bool gameIsPaused;
+
     private void Awake() 
     {
         cenas = new Scene[SceneManager.sceneCount];
@@ -114,21 +116,27 @@ public class GameManager : MonoBehaviour
     }
     void Menu()
     {
-        if (menuOpções.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown("escape"))
-            {
-                menuOpções.SetActive(true);
-            }
+            gameIsPaused = !gameIsPaused;
+            PauseGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        if (gameIsPaused)
+        {
+            menuOpções.SetActive(true);
+            Time.timeScale = 0f;
         }
         else
         {
-            if (Input.GetKeyDown("escape"))
-            {
-                menuOpções.SetActive(false);
-            }
+            menuOpções.SetActive(false);
+            Time.timeScale = 1;
         }
     }
+
     void ContEnemys()
     {
         contI = GameObject.FindGameObjectsWithTag("Inimigo");
