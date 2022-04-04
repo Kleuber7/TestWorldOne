@@ -8,12 +8,12 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] salasVerao;
     public GameObject[] salasOutono;
     public GameObject[] salasPrimavera;
-    public GameObject salaBoss;
+    public GameObject[] salaBoss;
+    public List<GameObject> salasBoss;
 
     public List<GameObject> salas;
 
     public float tempoEspera;
-    private bool spawnedBoss = false;
     public int numerosSalas;
     public int contadorSalasBoss;
     public int contadorSalas = 1;
