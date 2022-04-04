@@ -42,9 +42,10 @@ GameObject:
   - component: {fileID: 526260848270312043}
   - component: {fileID: 5943746977401346327}
   - component: {fileID: 4519402446311628667}
+  - component: {fileID: -5704655125501714110}
   m_Layer: 8
   m_Name: SalaBoss
-  m_TagString: "Ch\xE3o"
+  m_TagString: sala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +132,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-5704655125501714110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036052215756357192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dadb02c0f9c1f45b1142a65c58199e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templates: {fileID: 0}
 --- !u!1 &1342480042826251997
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c141775c539924e90db053597509c4, type: 3}
+--- !u!4 &7342921855804955304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7487282167220095628, guid: 80c141775c539924e90db053597509c4, type: 3}
+  m_PrefabInstance: {fileID: 148451609506058276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5347596002129124107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5204223593122433839, guid: 80c141775c539924e90db053597509c4, type: 3}
@@ -907,11 +926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5108e196c1e464b8bcbaec180228cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &7342921855804955304 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7487282167220095628, guid: 80c141775c539924e90db053597509c4, type: 3}
-  m_PrefabInstance: {fileID: 148451609506058276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &933806108283136943
 PrefabInstance:
   m_ObjectHideFlags: 0
