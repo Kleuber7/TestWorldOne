@@ -50,7 +50,7 @@ public class Dialog : MonoBehaviour
         if (Jogador_Status.mortes == 0)
         {
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 typingSpeed = typingSpeedAcelerado;
 
@@ -58,7 +58,7 @@ public class Dialog : MonoBehaviour
 
             if (podePassar)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
                 {
                     NextSentence();
                     
@@ -85,7 +85,7 @@ public class Dialog : MonoBehaviour
     {
         if (Jogador_Status.mortes >= 1)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 typingSpeed = typingSpeedAcelerado;
 
@@ -93,7 +93,7 @@ public class Dialog : MonoBehaviour
 
             if (podePassar)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
                 {
                     NextSentence();
                 }

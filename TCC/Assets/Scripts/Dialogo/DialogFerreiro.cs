@@ -47,7 +47,7 @@ public class DialogFerreiro : MonoBehaviour
     public void FerreiroDialog()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
         {
             typingSpeed = typingSpeedAcelerado;
 
@@ -55,7 +55,7 @@ public class DialogFerreiro : MonoBehaviour
 
         if (podePassar)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 NextSentence();
                 typingSpeed = typingSpeedReal;

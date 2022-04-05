@@ -45,7 +45,7 @@ public class DialogEntity : MonoBehaviour
     }
     public void EntityDialog()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
         {
             typingSpeed = typingSpeedAcelerado;
 
@@ -53,7 +53,7 @@ public class DialogEntity : MonoBehaviour
 
         if (podePassar)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 NextSentence();
                 typingSpeed = typingSpeedReal;

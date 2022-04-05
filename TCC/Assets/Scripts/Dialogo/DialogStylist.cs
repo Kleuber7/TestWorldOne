@@ -45,7 +45,7 @@ public class DialogStylist : MonoBehaviour
     }
     public void StylistDialog()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
         {
             typingSpeed = typingSpeedAcelerado;
 
@@ -53,7 +53,7 @@ public class DialogStylist : MonoBehaviour
 
         if (podePassar)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 NextSentence();
                 typingSpeed = typingSpeedReal;
