@@ -13,7 +13,7 @@ public class DanoAtaqueBasico : MonoBehaviour
     [SerializeField]private Critico critico;
     public Testing damagePop;
     [SerializeField] private FireAttack fireAttack;
-    [SerializeField] private SoundManagerAttack attackOne;
+    [SerializeField] private AudioManager attackSound;
     [SerializeField] private ScriptablePlayer status;
 
     
@@ -33,7 +33,7 @@ public class DanoAtaqueBasico : MonoBehaviour
                 other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
             }
             other.GetComponent<INIStatus>().TakeDamageEffect();
-            attackOne.PlayAttackOne();
+            attackSound.Play(attackSound.PlayerAttack());
             if (ataqueBasico.contadorCombo < 3)
             {
                 fireAttack.AttackFire(other.GetComponent<INIStatus>());
@@ -52,7 +52,7 @@ public class DanoAtaqueBasico : MonoBehaviour
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
             other.GetComponent<StatusBoboneco>().TomarDano(dano);
-            attackOne.PlayAttackOne();
+            attackSound.Play(attackSound.PlayerAttack());
             critico.ResetAttack();
         }
         else if(other.gameObject.tag == "Boss")
@@ -60,7 +60,7 @@ public class DanoAtaqueBasico : MonoBehaviour
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
             other.GetComponent<BOSSStatus>().TomarDano(dano);
-            attackOne.PlayAttackOne();
+            attackSound.Play(attackSound.PlayerAttack());
             critico.ResetAttack();
         }
 
