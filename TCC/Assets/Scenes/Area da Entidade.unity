@@ -35263,36 +35263,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8593281392630465339, guid: 898f89afc9ff5c64fa09b3c540d74bd2, type: 3}
   m_PrefabInstance: {fileID: 1394118908}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1396346137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1396346139}
-  m_Layer: 0
-  m_Name: Sound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1396346139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396346137}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.475235, y: 96.49264, z: -75.429214}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401675199
 GameObject:
   m_ObjectHideFlags: 0
@@ -54933,13 +54903,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1f4ebc7cb69eddd4ab7c5dab3958a6c6, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: Ferreiro
     clip: {fileID: 8300000, guid: eaa3c1556c332014c83b7733951dd898, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   sliderSounds: {fileID: 1691381185}
 --- !u!1 &1724707264
