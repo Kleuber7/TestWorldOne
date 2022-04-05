@@ -137,6 +137,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Unpause()
+    {
+        gameIsPaused = false;
+        Time.timeScale = 1f;
+    }
+
     void ContEnemys()
     {
         contI = GameObject.FindGameObjectsWithTag("Inimigo");
