@@ -37,6 +37,7 @@ public class OBJDano : MonoBehaviour
 
             other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
             other.GetComponent<AtaqueBasico>().ManageDamage();
+            other.GetComponent<ParticleManagerDamageInPlayer>().PlayParticleEffect();
             other.GetComponent<Jogador_Status>().TomarDano(dano);
         }
         

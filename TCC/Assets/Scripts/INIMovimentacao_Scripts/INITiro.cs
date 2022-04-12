@@ -33,6 +33,7 @@ public class INITiro : MonoBehaviour
         {
             other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
             other.GetComponent<AtaqueBasico>().ManageDamage();
+            other.GetComponent<ParticleManagerDamageInPlayer>().PlayParticleEffect();
             other.GetComponent<Jogador_Status>().TomarDano(danoDisparo);
             Destroy(this.gameObject);
         }

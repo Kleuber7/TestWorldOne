@@ -44,6 +44,13 @@ public class FSMJogador : MonoBehaviour
        
     }
 
+    public string TP()
+    {
+        const string player_TP = "TP";
+
+        return player_TP;
+
+    }
     public string Testaculos()
     {
         const string player_Testacles = "Testaculos";
