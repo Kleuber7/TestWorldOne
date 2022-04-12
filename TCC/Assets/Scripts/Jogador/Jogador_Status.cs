@@ -14,7 +14,7 @@ public class Jogador_Status : MonoBehaviour
     public static bool Invisivel;
     public static bool podeDarDano = true;
     [SerializeField] private Transform pointHUD;
-    
+
     void Start()
     {
         status.health = status.maxHealth;
@@ -136,6 +136,5 @@ public class Jogador_Status : MonoBehaviour
     public void TomarDano(float dano)
     {
         status.health -= dano/* - (status.defense / 10)*/;
-
     }
 }
