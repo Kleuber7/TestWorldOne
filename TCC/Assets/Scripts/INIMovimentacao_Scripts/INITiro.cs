@@ -29,13 +29,11 @@ public class INITiro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.gameObject.tag == "Aliado")
+        if(other.gameObject.tag == "Player" && !Jogador_Status.morreu)
         {
-            other.GetComponent<INVStatus>().TomarDano(danoDisparo);
-            Destroy(this.gameObject);
-        }
-        else if(other.gameObject.tag == "Player")
-        {
+            other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
+            other.GetComponent<AtaqueBasico>().ManageDamage();
+            other.GetComponent<ParticleManagerDamageInPlayer>().PlayParticleEffect();
             other.GetComponent<Jogador_Status>().TomarDano(danoDisparo);
             Destroy(this.gameObject);
         }

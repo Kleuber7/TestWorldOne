@@ -9,7 +9,8 @@ public class Dash : MonoBehaviour
 
     public float dashSpeed, dashTime, currentDashTime, dashSpeedWall;
     public bool canDash;
-    
+    [SerializeField] private FSMJogador animacaoJogador;
+
     [SerializeField] private ParticleManagerDashTP particleDashTP, particleDashTPFront, particleDashExplosion;
    
 
@@ -21,7 +22,7 @@ public class Dash : MonoBehaviour
 
     private void Dashh()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !canDash && !Dialog.dialogoB && GetComponent<Andar>().Direcao != Vector3.zero)
+        if (Input.GetKeyDown(KeyCode.Space) && !canDash && !Dialog.dialogoB && GetComponent<Andar>().Direcao != Vector3.zero && !PLASkills.castingSkill)
         {
            StartCoroutine(ParticleDash());
         }
@@ -39,12 +40,14 @@ public class Dash : MonoBehaviour
     IEnumerator ParticleDash()
     {
         canDash = true;
+        GameManager.gameManager.teleportando = true;
         currentDashTime = 0;
+        animacaoJogador.ChangeAnimationState(animacaoJogador.TP());
         particleDashTP.PlayParticleDash();
         yield return new WaitForSeconds(0.1f);
         particleDashTPFront.PlayParticleDash();
         particleDashExplosion.PlayParticleDash();
-
+        GameManager.gameManager.teleportando = false;
         if (DashWall.dashWall == false)
         {
             GetComponent<Andar>().ControladorMov.Move(GetComponent<Andar>().Direcao * dashSpeed);

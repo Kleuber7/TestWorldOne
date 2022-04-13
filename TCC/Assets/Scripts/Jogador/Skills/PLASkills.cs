@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PLASkills : MonoBehaviour
@@ -11,20 +12,31 @@ public class PLASkills : MonoBehaviour
     [SerializeField] private float tempoDeCastSkill1;
     [SerializeField] private PLAImpactoAbissal scriptImpactoAbissal;
     [SerializeField] private ParticleManagerSkillQ skillParticle;
-    private void Start() 
+    [SerializeField] private float timeParticleActivate = 1.02f;
+    [SerializeField] private float custoDeMana;
+    [SerializeField] private ScriptablePlayer status;
+    [SerializeField] private float timeCorrection = 0.4f;
+    public static bool castingSkill = false;
+
+    private void Start()
     {
         podeAtivarSkill1 = true;
     }
 
-    private void Update() 
+    private void Update()
     {
-        if(Input.GetKeyDown(teclaSkill1))
+        if (Input.GetKeyDown(teclaSkill1) && !castingSkill && !GameManager.gameManager.atacando && !Jogador_Status.morreu)
         {
-            if(podeAtivarSkill1)
+            if (podeAtivarSkill1)
             {
-                skillParticle.PlayParticleEffect();
-                StartCoroutine(CastSkill1());
-                StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
+                if(status.Mana >= custoDeMana)
+                {
+                    status.Mana -= custoDeMana;
+                    StartCoroutine(TimeSnare());
+                    StartCoroutine(CastSkill1());
+                    StartCoroutine(ContaTempoRecagra(skill1TempoDeRecarga));
+                }
+                
             }
         }
     }
@@ -38,7 +50,27 @@ public class PLASkills : MonoBehaviour
 
     public IEnumerator CastSkill1()
     {
-        yield return new WaitForSeconds(tempoDeCastSkill1);
+        yield return new WaitForSeconds(tempoDeCastSkill1 - timeCorrection);
         scriptImpactoAbissal.ImpactoAbissal(scriptImpactoAbissal.inimigos);
+    }
+
+    
+
+    IEnumerator TimeSnare()
+    {
+        castingSkill = true;
+        GameManager.gameManager.atacando = true;
+        GetComponent<FSMJogador>().ChangeAnimationState(GetComponent<FSMJogador>().Snare());
+        StartCoroutine(TimeParticles());
+        yield return new WaitForSeconds(tempoDeCastSkill1);
+        GameManager.gameManager.atacando = false;
+        GetComponent<FSMJogador>().ChangeAnimationState("");
+        castingSkill = false;
+    }
+
+    IEnumerator TimeParticles()
+    {
+        yield return new WaitForSeconds(timeParticleActivate);
+        skillParticle.PlayParticleEffect();
     }
 }

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SpawnerBoss : MonoBehaviour
 {
     private GameObject spawnerBoss;
     private RoomTemplates templates;
+    public int salasBoss;
 
     void Start()
     {
@@ -16,20 +18,25 @@ public class SpawnerBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        salasBoss = templates.salasBoss.Count;
         while (templates.contadorSalasBoss > 1)
         {
-            RemoverSalaBoss();
+            RemoverSalasBoss();
         }
     }
 
 
-    public void RemoverSalaBoss()
+    public async void RemoverSalasBoss()
     {
-
-        Destroy(GetComponent<Transform>().GetChild(templates.contadorSalasBoss - 1).gameObject);
-        templates.contadorSalasBoss--;
-
+        await RemoverSalasAsync();
     }
+    public async Task RemoverSalasAsync()
+    {
+        Destroy(spawnerBoss.transform.GetChild(templates.contadorSalasBoss - 1).gameObject);
+        templates.contadorSalasBoss--;
+        await Task.Yield();
+    }
+    
 
     
 }

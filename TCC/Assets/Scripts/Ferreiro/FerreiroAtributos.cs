@@ -5,256 +5,260 @@ using UnityEngine.UI;
 
 public class FerreiroAtributos : MonoBehaviour
 {
-    private Jogador_Status status;
-    private InformacoesHUDJogador barras;
+    [Header("Referências")]
+    public DinheiroFerreiro dinheiroFerreiro;
+    public ScriptablePlayer status;
+    public InformacoesHUDJogador barras;
     public GameObject HUDFerreiro;
-    public GameObject vida1, vida2, vida3, vida4;
-    public GameObject mana1, mana2, mana3, mana4;
-    public GameObject forca1, forca2, forca3, forca4;
-    public GameObject defesa1, defesa2, defesa3, defesa4;
-    public int preco1 = 50, preco2 = 100, preco3 = 150, preco4 = 200;
+
+    [Header("Vida UI Info")]
+    public GameObject vidaInfo;
+    public int powerUpVida;
+    public int levelVida;
+    public Text textoLevelVida;
+    public int precoVida;
+    public Text textoPrecoVida;
+    public Text descricaoVida;
+
+    [Header("Mana UI Info")]
+    public GameObject manaInfo;
+    public int powerUpMana;
+    public int levelMana;
+    public Text textoLevelMana;
+    public int precoMana;
+    public Text textoPrecoMana;
+    public Text descricaoMana;
+
+    [Header("Ataque UI Info")]
+    public GameObject AtaqueInfo;
+    public int powerUpAtaque;
+    public int levelAtaque;
+    public Text textoLevelAtaque;
+    public int precoAtaque;
+    public Text textoPrecoAtaque;
+    public Text descricaoAtaque;
+
+    [Header("Defesa UI Info")]
+    public GameObject defesaInfo;
+    public int powerUpDefesa;
+    public int levelDefesa;
+    public Text textoLevelDefesa;
+    public int precoDefesa;
+    public Text textoPrecoDefesa;
+    public Text descricaoDefesa;
+
+    [Header("Potion de Vida UI Info")]
+    public GameObject potionVidaInfo;
+    public int precoPotionVida;
+    public Text textoPrecoPotionVida;
+    public Text descricaoPotionVida;
+
+    [Header("Potion de Mana UI Info")]
+    public GameObject potionManaInfo;
+    public int precoPotionMana;
+    public Text textoPrecoPotionMana;
+    public Text descricaoPotionMana;
+
+    [Header("Scriptable Objects")]
+    public VidaSO vidaSO;
+    public ManaSO manaSO;
+    public AtaqueSO ataqueSO;
+    public DefesaSO defesaSO;
+    public PotionVidaSO potionVidaSO;
+    public PotionManaSO potionManaSO;
+
+    public bool canOpen;
 
     private void Start()
     {
-        status = GameObject.FindGameObjectWithTag("Player").GetComponent<Jogador_Status>();
         barras = GameObject.FindGameObjectWithTag("InfoJogador").GetComponent<InformacoesHUDJogador>();
     }
 
+    private void Update()
+    {
+
+        if (canOpen)
+        {
+                dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
+
+                vidaSO.powerUp = (status.levelVida * 100);
+                vidaSO.preco = (status.levelVida * 100);
+                powerUpVida = vidaSO.powerUp;
+                precoVida = vidaSO.preco;
+                levelVida = status.levelVida;
+                textoLevelVida.text = "Level " + levelVida;
+                textoPrecoVida.text = precoVida.ToString();
+                descricaoVida.text = vidaSO.descricao + powerUpVida + " pontos.";
+
+                manaSO.powerUp = (status.levelMana * 100);
+                manaSO.preco = (status.levelMana * 100);
+                powerUpMana = manaSO.powerUp;
+                precoMana = manaSO.preco;
+                levelMana = status.levelMana;
+                textoLevelMana.text = "Level " + levelMana;
+                textoPrecoMana.text = precoMana.ToString();
+                descricaoMana.text = manaSO.descricao + powerUpMana + " pontos.";
+
+                ataqueSO.powerUp = (status.levelAtaque * 50);
+                ataqueSO.preco = (status.levelAtaque * 50);
+                powerUpAtaque = ataqueSO.powerUp;
+                precoAtaque = ataqueSO.preco;
+                levelAtaque = status.levelAtaque;
+                textoLevelAtaque.text = "Level " + levelAtaque;
+                textoPrecoAtaque.text = precoAtaque.ToString();
+                descricaoAtaque.text = ataqueSO.descricao + powerUpAtaque + " pontos.";
+
+                defesaSO.powerUp = (status.levelDefesa * 50);
+                defesaSO.preco = (status.levelDefesa * 50);
+                powerUpDefesa = defesaSO.powerUp;
+                precoDefesa = defesaSO.preco;
+                levelDefesa = status.levelDefesa;
+                textoLevelDefesa.text = "Level " + levelDefesa;
+                textoPrecoDefesa.text = precoDefesa.ToString();
+                descricaoDefesa.text = defesaSO.descricao + powerUpDefesa + " pontos.";
+
+                precoPotionVida = potionVidaSO.preco;
+                textoPrecoPotionVida.text = precoPotionVida.ToString();
+                descricaoPotionVida.text = potionVidaSO.descricao;
+                
+
+                precoPotionMana = potionManaSO.preco;
+                textoPrecoPotionMana.text = precoPotionMana.ToString();
+                descricaoPotionMana.text = potionManaSO.descricao;
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-
-                HUDFerreiro.SetActive(true);
-                DinheiroFerreiro.dinheiroTxt = GameObject.Find("ValorFerreiro").GetComponent<Text>();
-                DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-                
-            }
+            canOpen = true;
         }
     }
 
-    public void EvoluirVidaMax50()
+    private void OnTriggerExit(Collider other)
     {
-        if (GameManager.gameManager.dinheiroJogador >= preco1 && vida1.GetComponentInChildren<Text>().text != "X" )
+        if (other.gameObject.tag == "Player")
         {
-            status.Vida_Maxima += 50;
-            status.Vida += 50;
-            GameManager.gameManager.dinheiroJogador -= 50;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            barras.SetHealth(status.Vida);
+            canOpen = false;
+        }
+    }
 
-            vida1.GetComponentInChildren<Text>().text = "X";
-            vida2.gameObject.SetActive(true);
-        }
-        
-    }
-    public void EvoluirVidaMax100()
+    public void EvoluirVidaMax()
     {
-        if (GameManager.gameManager.dinheiroJogador >= preco2 && vida2.GetComponentInChildren<Text>().text != "X")
+        if (status.money >= precoVida)
         {
-            status.Vida_Maxima += 100;
-            status.Vida += 100;
-            barras.SetHealth(status.Vida);
-            GameManager.gameManager.dinheiroJogador -= 100;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            vida2.GetComponentInChildren<Text>().text = "X";
-            vida3.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirVidaMax150()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco3 && vida3.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Vida_Maxima += 150;
-            status.Vida += 150;
-            barras.SetHealth(status.Vida);
-            GameManager.gameManager.dinheiroJogador -= 150;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            vida3.GetComponentInChildren<Text>().text = "X";
-            vida4.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirVidaMax200()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco4 && vida4.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Vida_Maxima += 200;
-            status.Vida += 200;
-            barras.SetHealth(status.Vida);
-            GameManager.gameManager.dinheiroJogador -= 200;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            vida4.GetComponentInChildren<Text>().text = "X";
+            status.maxHealth += powerUpVida;
+            status.health = status.maxHealth;
+            status.money -= precoVida;
+            UpaVida();
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
 
     }
 
-
-    public void EvoluirManaMax50()
+    public void EvoluirManaMax()
     {
-        if (GameManager.gameManager.dinheiroJogador >= preco1 && mana1.GetComponentInChildren<Text>().text != "X")
+        if (status.money >= precoMana)
         {
-            status.Mana_Maxima += 50;
-            status.Mana += 50;
-            barras.SetHealth(status.Mana);
-            GameManager.gameManager.dinheiroJogador -= 50;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            mana1.GetComponentInChildren<Text>().text = "X";
-            mana2.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirManaMax100()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco2 && mana2.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Mana_Maxima += 100;
-            status.Mana += 100;
-            barras.SetHealth(status.Mana);
-            GameManager.gameManager.dinheiroJogador -= 100;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            mana2.GetComponentInChildren<Text>().text = "X";
-            mana3.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirManaMax150()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco3 && mana3.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Mana_Maxima += 150;
-            status.Mana += 150;
-            barras.SetHealth(status.Mana);
-            GameManager.gameManager.dinheiroJogador -= 150;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            mana3.GetComponentInChildren<Text>().text = "X";
-            mana4.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirManaMax200()
-    {
-            if (GameManager.gameManager.dinheiroJogador >= preco4 && mana4.GetComponentInChildren<Text>().text != "X")
-            {
-                status.Mana_Maxima += 200;
-                status.Mana += 200;
-                barras.SetHealth(status.Mana);
-                GameManager.gameManager.dinheiroJogador -= 200;
-                barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-                 DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-                 mana4.GetComponentInChildren<Text>().text = "X";
-            }
-    }
-
-    public void EvoluirForca10()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco1 && forca1.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Ataque_Maximo += 10;
-            status.Ataque += 10;
-            GameManager.gameManager.dinheiroJogador -= 50;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            forca1.GetComponentInChildren<Text>().text = "X";
-            forca2.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirForca20()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco2 && forca2.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Ataque_Maximo += 20;
-            status.Ataque += 20;
-            GameManager.gameManager.dinheiroJogador -= 100;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            forca2.GetComponentInChildren<Text>().text = "X";
-            forca3.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirForca30()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco3 && forca3.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Ataque_Maximo += 30;
-            status.Ataque += 30;
-            GameManager.gameManager.dinheiroJogador -= 150;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            forca3.GetComponentInChildren<Text>().text = "X";
-            forca4.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirForca40()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco4 && forca4.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Ataque_Maximo += 40;
-            status.Ataque += 40;
-            GameManager.gameManager.dinheiroJogador -= 200;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            forca4.GetComponentInChildren<Text>().text = "X";
-           
+            status.maxMana += powerUpMana;
+            status.Mana = status.maxMana;
+            status.money -= precoMana;
+            UpaMana();
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
 
-    public void EvoluirDefesa10()
+    public void EvoluirAtaque()
     {
-        if (GameManager.gameManager.dinheiroJogador >= preco1 && defesa1.GetComponentInChildren<Text>().text != "X")
+        if (status.money >= precoAtaque)
         {
-            status.Defesa_Maxima += 10;
-            status.Defesa += 10;
-            GameManager.gameManager.dinheiroJogador -= 50;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            defesa1.GetComponentInChildren<Text>().text = "X";
-            defesa2.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirDefesa20()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco2 && defesa2.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Defesa_Maxima += 20;
-            status.Defesa += 20;
-            GameManager.gameManager.dinheiroJogador -= 100;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            defesa2.GetComponentInChildren<Text>().text = "X";
-            defesa3.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirDefesa30()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco3 && defesa3.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Defesa_Maxima += 30;
-            status.Defesa += 30;
-            GameManager.gameManager.dinheiroJogador -= 150;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            defesa3.GetComponentInChildren<Text>().text = "X";
-            defesa4.gameObject.SetActive(true);
-        }
-    }
-    public void EvoluirDefesa40()
-    {
-        if (GameManager.gameManager.dinheiroJogador >= preco4 && defesa4.GetComponentInChildren<Text>().text != "X")
-        {
-            status.Defesa_Maxima += 40;
-            status.Defesa += 40;
-            GameManager.gameManager.dinheiroJogador -= 200;
-            barras.AtualizaDinheiro(GameManager.gameManager.dinheiroJogador);
-            DinheiroFerreiro.dinheiroTxt.text = GameManager.gameManager.dinheiroJogador.ToString();
-            defesa4.GetComponentInChildren<Text>().text = "X";
+            status.maxAttack += powerUpAtaque;
+            status.attack = status.maxAttack;
+            status.money -= precoAtaque;
+            UpaAtaque();
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
         }
     }
 
+    public void EvoluirDefesa()
+    {
+        if (status.money >= precoDefesa)
+        {
+            status.maxDefense += powerUpDefesa;
+            status.defense = status.maxDefense;
+            status.money -= precoDefesa;
+            UpaDefesa();
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
+        }
+    }
+
+    public void ComprarPotionVida()
+    {
+        if (status.money >= precoPotionVida)
+        {
+            status.qntdPotionVida++;
+            status.money -= precoPotionVida;
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
+        }
+    }
+
+    public void ComprarPotionMana()
+    {
+        if (status.money >= precoPotionMana)
+        {
+            status.qntdPotionMana++;
+            status.money -= precoPotionMana;
+            dinheiroFerreiro.dinheiroTxt.text = status.money.ToString();
+        }
+    }
+
+    public void UpaVida()
+    {
+        status.levelVida++;
+        vidaSO.powerUp = (status.levelVida * 100);
+        vidaSO.preco = (status.levelVida * 100);
+        powerUpVida = vidaSO.powerUp;
+        precoVida = vidaSO.preco;
+        levelVida = status.levelVida;
+        textoLevelVida.text = "Level " + levelVida;
+        textoPrecoVida.text = precoVida.ToString();
+        descricaoVida.text = vidaSO.descricao + powerUpVida + " pontos.";
+    }
+    public void UpaMana()
+    {
+        status.levelMana++;
+        manaSO.powerUp = (status.levelMana * 100);
+        manaSO.preco = (status.levelMana * 100);
+        powerUpMana = manaSO.powerUp;
+        precoMana = manaSO.preco;
+        levelMana = status.levelMana;
+        textoLevelMana.text = "Level " + levelMana;
+        textoPrecoMana.text = precoMana.ToString();
+        descricaoMana.text = manaSO.descricao + powerUpMana + " pontos.";
+    }
+    public void UpaAtaque()
+    {
+        status.levelAtaque++;
+        ataqueSO.powerUp = (status.levelAtaque * 50);
+        ataqueSO.preco = (status.levelAtaque * 50);
+        powerUpAtaque = ataqueSO.powerUp;
+        precoAtaque = ataqueSO.preco;
+        levelAtaque = status.levelAtaque;
+        textoLevelAtaque.text = "Level " + levelAtaque;
+        textoPrecoAtaque.text = precoAtaque.ToString();
+        descricaoAtaque.text = ataqueSO.descricao + powerUpAtaque + " pontos.";
+    }
+    public void UpaDefesa()
+    {
+        status.levelDefesa++;
+        defesaSO.powerUp = (status.levelDefesa * 50);
+        defesaSO.preco = (status.levelDefesa * 50);
+        powerUpDefesa = defesaSO.powerUp;
+        precoDefesa = defesaSO.preco;
+        levelDefesa = status.levelDefesa;
+        textoLevelDefesa.text = "Level " + levelDefesa;
+        textoPrecoDefesa.text = precoDefesa.ToString();
+        descricaoDefesa.text = defesaSO.descricao + powerUpDefesa + " pontos.";
+    }
 }

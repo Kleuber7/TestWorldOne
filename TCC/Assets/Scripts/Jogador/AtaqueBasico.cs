@@ -13,8 +13,14 @@ public class AtaqueBasico : MonoBehaviour
     [SerializeField] private bool podeAtacar = true;
     [SerializeField] private FSMJogador animacaoJogador;
     Andar andar;
-    [SerializeField] private List<float> duracaoAtaques;
+    [SerializeField] public List<float> duracaoAtaques;
     [SerializeField] private float timeReturnAnimation = 0.15f;
+    [SerializeField] public float respectTime;
+    [SerializeField] private float duracaoAtaque4;
+    [SerializeField] private LayerMask layer;
+    [SerializeField] private float timeTakeDamage;
+    [SerializeField] private float timeTakeDamagePlayer;
+    [SerializeField] public bool takingDamagePlayer = false;
     private void Start()
     {
         andar = GetComponent<Andar>();
@@ -22,27 +28,19 @@ public class AtaqueBasico : MonoBehaviour
 
     private void Update()
     {
-        //if(scrpitDeAtaqueADistancia.ataqueADistancia)
-        //{
-        //    podeAtacar = false;
-        //}
-        //else
-        //{
-        //    podeAtacar = true;
-        //}
-
+        
         if (contadorCombo >= areaDeAtaque.Length)
         {
             contadorCombo = 0;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PLASkills.castingSkill && !takingDamagePlayer && !Jogador_Status.morreu)
         {
             if (podeAtacar == true)
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity) && Vector3.Distance(transform.position, hit.point) > 5f)
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layer) && Vector3.Distance(transform.position, hit.point) > 5f)
                 {
                     andar.direcaoRotacao = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                     transform.LookAt(andar.direcaoRotacao);
@@ -50,46 +48,77 @@ public class AtaqueBasico : MonoBehaviour
                 }
 
                 GameManager.gameManager.atacando = true;
-                areaDeAtaque[contadorCombo].enabled = true;
+                
                 StopAllCoroutines();
-
                 StartCoroutine(expiraCombo());
-                StartCoroutine(CDAtaque());
+                if (contadorCombo != 3)
+                {
+                    StartCoroutine(CDAtaque());
+                }
+                else
+                {
+                    StartCoroutine(CDAtaque4());
+                }
                 StartCoroutine(TempoAtaqueAnim());
 
                 if (contadorCombo == 0)
                 {
+
+                    StartCoroutine(AttackCollision(contadorCombo, respectTime));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater1());
                 }
                 else if (contadorCombo == 1)
                 {
+                    StartCoroutine(AttackCollision(contadorCombo, respectTime));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater2());
                 }
                 else if (contadorCombo == 2)
                 {
+                    StartCoroutine(AttackCollision(contadorCombo, respectTime));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater3());
                 }
                 else if (contadorCombo == 3)
                 {
+                    StartCoroutine(AttackCollision(contadorCombo, 0.5f));
                     animacaoJogador.ChangeAnimationState(animacaoJogador.Bater4());
                 }
-                else if (contadorCombo == 4)
-                {
-                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater5());
-                }
-                else if (contadorCombo == 5)
-                {
-                    animacaoJogador.ChangeAnimationState(animacaoJogador.Bater6());
-                }
+               
+               
                 if (combo)
                 {
                     contadorCombo++;
                 }
             }
         }
+        TakeDamage();
     }
 
+    void TakeDamage()
+    {
+        if (timeTakeDamage <= 0)
+        {
+            takingDamagePlayer = false;
+            timeTakeDamage = 0;
+        }
+        else
+        {
+            timeTakeDamage -= Time.deltaTime;
+        }
 
+    }
+
+    public void ManageDamage()
+    {
+        timeTakeDamage = timeTakeDamagePlayer;
+        takingDamagePlayer = true;
+       
+    }
+
+    IEnumerator AttackCollision(int cont, float respectTime)
+    {
+        yield return new WaitForSeconds(duracaoAtaques[contadorCombo] - respectTime);
+        areaDeAtaque[cont].enabled = true;
+    }
     public void DesativarAtaque()
     {
         podeAtacar = false;
@@ -111,6 +140,14 @@ public class AtaqueBasico : MonoBehaviour
 
         podeAtacar = false;
         yield return new WaitForSeconds(duracaoAtaques[contadorCombo]);
+        podeAtacar = true;
+    }
+
+    public IEnumerator CDAtaque4()
+    {
+
+        podeAtacar = false;
+        yield return new WaitForSeconds(duracaoAtaques[contadorCombo] + duracaoAtaque4);
         podeAtacar = true;
     }
 

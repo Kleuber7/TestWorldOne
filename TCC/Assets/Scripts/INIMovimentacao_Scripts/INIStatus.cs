@@ -26,14 +26,15 @@ public class INIStatus : BASEStatus
 
     IEnumerator MorrerAnim()
     {
+        
+        
         GetComponentInChildren<INIPerseguir>().enabled = false;
         //GetComponent<INIPatrulha>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<FSMInimigos>().ChangeAnimationState(GetComponent<FSMInimigos>().Morte());
-        yield return new WaitForSeconds(4f);
-
-        this.GetComponent<INIDropar>().Dropar();
+        yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
+        GetComponent<INIMoney>().Money();
     }
 
     void Start()

@@ -23,12 +23,19 @@ public class PLAImpactoAbissal : MonoBehaviour
         {
             if(inimigo.gameObject.tag == "Inimigo")
             {
+                inimigo.GetComponent<FSMInimigos>().ChangeAnimationState("");
+                inimigo.GetComponent<FSMInimigos>().ChangeAnimationState(inimigo.GetComponent<FSMInimigos>().TomarDano());
+                inimigo.GetComponent<INIStatus>().TakeDamageEffect();
                 inimigo.gameObject.GetComponent<INIStatus>().TomarDano(danoDoImpacto);
                 StartCoroutine(TempoStun(inimigo));
             }
             if(inimigo.gameObject.tag == "Boboneco")
             {
                 inimigo.gameObject.GetComponent<StatusBoboneco>().TomarDano(danoDoImpacto);
+            }
+            if(inimigo.gameObject.tag == "Boss")
+            {
+                inimigo.gameObject.GetComponent<BOSSStatus>().TomarDano(danoDoImpacto);
             }
         }
     }

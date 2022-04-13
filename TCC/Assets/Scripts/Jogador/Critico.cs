@@ -5,16 +5,16 @@ using UnityEngine;
 public class Critico : MonoBehaviour
 {
     public float critChance = 0.0f;
-    private DanoAtaqueBasico dano;
+    public DanoAtaqueBasico dano;
     public float danoReal = 0;
     public bool critou;
     public FSMJogador jogadorAnima;
+    public ScriptablePlayer status;
 
 
     private void Start()
     {
-        danoReal = GetComponent<DanoAtaqueBasico>().dano;
-        dano = GetComponent<DanoAtaqueBasico>();
+        danoReal = dano.dano;
     }
 
    
@@ -36,11 +36,13 @@ public class Critico : MonoBehaviour
     public void DoAttack()
     {
         
-        bool criticalHit = Random.Range(0, 100) < 25;
+        bool criticalHit = Random.Range(0, 100) < 15;
         if (criticalHit)
         {
-            Debug.Log("Critou");
-            dano.dano *= 2f;
+            danoReal = dano.dano;
+            dano.dano *= 1.5f;
+            dano.dano += (status.attack / 100) * dano.dano;
+
             critou = true;
             jogadorAnima.ChangeAnimationState(jogadorAnima.Critico());
 
@@ -48,7 +50,13 @@ public class Critico : MonoBehaviour
         else
         {
             critou = false;
-            dano.dano = danoReal;
+            danoReal = dano.dano;
+            dano.dano += (status.attack / 100) * dano.dano;
         }
+    }
+
+    public void ResetAttack()
+    {
+        dano.dano = danoReal;
     }
 }

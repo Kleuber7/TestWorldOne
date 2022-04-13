@@ -11,9 +11,12 @@ public class CamSmooth : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(player == null)
+        if(GameManager.gameManager != null)
         {
-            player = GameManager.gameManager.GetPlayer().transform;
+            if(player == null)
+            {
+                player = GameManager.gameManager.GetPlayer().transform;
+            }
         }
 
         CamFollow();

@@ -18,13 +18,10 @@ public class RoomSpawner : MonoBehaviour
     private SpawnerBoss objetoPaiBoss;
     public int espacoLiberado = 1;
 
-    public static bool verao, outono, primavera, inverno;
-
-    public float waitTime = 0.5f;
+    public static bool verao, outono, primavera, inverno, boss;
 
     public void Start()
     {
-        //Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         objetoPai = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
         objetoPaiBoss = GameObject.FindGameObjectWithTag("SpawnerBoss").GetComponent<SpawnerBoss>();
@@ -37,26 +34,23 @@ public class RoomSpawner : MonoBehaviour
 
 
 
-    private void LateUpdate()
+    private void Update()
     {
-        if (Teleporting.cima == true)
+        if (Teleporting.cima == true && !boss)
         {
-            if (templates.salas.Count < templates.numerosSalas)
-            {
-                if (Teleporting.podeExcluirP)
-                    return;
+            if (Teleporting.podeExcluirP)
+                return;
 
-                WaitTime();
-            }
+            WaitTime();
+            spawned = false;
         }
-        if (Teleporting.cima == true)
+        else if (Teleporting.cima == true && boss)
         {
-            if (templates.salas.Count == templates.numerosSalas - 1)
-            {
-                if (Teleporting.podeExcluirP)
-                    return;
-                WaitTimeBoss();
-            }
+            if (Teleporting.podeExcluirP)
+                return;
+
+            SpawnBoss();
+            spawned = false;
         }
 
     }
@@ -64,34 +58,27 @@ public class RoomSpawner : MonoBehaviour
     async void WaitTimeBoss()
     {
         await WaitTimeBossAsync();
-        Destroy(gameObject, waitTime);
     }
     async Task WaitTimeBossAsync()
     {
-
         await Task.Delay(100);
         SpawnBoss();
     }
     async void WaitTime()
     {
         await WaitTimeAsync();
-        Destroy(gameObject, waitTime);
     }
     async Task WaitTimeAsync()
     {
-
         await Task.Delay(100);
         SpawnCima();
     }
 
     void SpawnCima()
     {
-        aleatorio = Random.Range(1, 3);
-        abrirDirecao = aleatorio;
 
         if (spawned == false)
         {
-
             if (verao)
             {
                 aleatorio = Random.Range(0, templates.salasVerao.Length);
@@ -99,13 +86,11 @@ public class RoomSpawner : MonoBehaviour
 
                 verao = false;
                 Teleporting.podeExcluirP = true;
-
             }
             else if (outono)
             {
                 aleatorio = Random.Range(0, templates.salasOutono.Length);
                 Instantiate(templates.salasOutono[aleatorio], transform.position, templates.salasOutono[aleatorio].transform.rotation, objetoPai.transform);
-
 
                 outono = false;
                 Teleporting.podeExcluirP = true;
@@ -116,7 +101,6 @@ public class RoomSpawner : MonoBehaviour
                 aleatorio = Random.Range(0, templates.salasPrimavera.Length);
                 Instantiate(templates.salasPrimavera[aleatorio], transform.position, templates.salasPrimavera[aleatorio].transform.rotation, objetoPai.transform);
 
-
                 primavera = false;
                 Teleporting.podeExcluirP = true;
 
@@ -126,33 +110,25 @@ public class RoomSpawner : MonoBehaviour
                 aleatorio = Random.Range(0, templates.salasInverno.Length);
                 Instantiate(templates.salasInverno[aleatorio], transform.position, templates.salasInverno[aleatorio].transform.rotation, objetoPai.transform);
 
-
                 inverno = false;
                 Teleporting.podeExcluirP = true;
 
             }
-
             spawned = true;
-
         }
 
-        if (GameObject.FindGameObjectWithTag("sala"))
-        {
-            templates.contadorSalas = objetoPai.transform.childCount;
-        }
-
+            templates.contadorSalas = templates.salas.Count;
     }
 
     void SpawnBoss()
     {
         if (spawned == false)
         {
-            Instantiate(templates.salaBoss, transform.position, templates.salaBoss.transform.rotation, objetoPaiBoss.transform);
+            templates.salaBoss[0].gameObject.SetActive(true);
+            boss = false;
 
-            if (GameObject.FindGameObjectWithTag("salaBoss"))
-            {
-                templates.contadorSalasBoss = objetoPaiBoss.transform.childCount;
-            }
+            templates.contadorSalasBoss = templates.salasBoss.Count;
+
             spawned = true;
 
             Teleporting.podeExcluirP = true;
@@ -160,28 +136,28 @@ public class RoomSpawner : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    //private void OnTriggerEnter(Collider other)
+    //{
 
-        if (other.CompareTag("SpawnPoint"))
-        {
+    //    if (other.CompareTag("SpawnPoint"))
+    //    {
 
-            espacoLiberado = 0;
+    //        espacoLiberado = 0;
 
 
-        }
-        else
-        {
-            espacoLiberado = 1;
-        }
+    //    }
+    //    else
+    //    {
+    //        espacoLiberado = 1;
+    //    }
 
-        if (espacoLiberado == 0)
-        {
+    //    //if (espacoLiberado == 0)
+    //    //{
 
-            Destroy(other.gameObject);
+    //    //    Destroy(other.gameObject);
 
-        }
-    }
+    //    //}
+    //}
 
 
     #region coments

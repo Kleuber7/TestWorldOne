@@ -5,24 +5,25 @@ using CodeMonkey.Utils;
 public class Andar : MonoBehaviour
 {
     public CharacterController ControladorMov;
-    public Jogador_Status Jogador;
-    public Vector3  Direcao;
+    public ScriptablePlayer Jogador;
+    public Vector3 Direcao;
     public Vector3 direcaoRotacao;
     [SerializeField] private FSMJogador jogadorAnima;
     [SerializeField] public float velocidadeDesloca;
     private float distanciaAnterior;
     [SerializeField] private AtaqueADistancia scriptDeAtaqueADistancia;
+    [SerializeField] private AtaqueBasico scriptAttack;
 
     public void Start()
     {
         ControladorMov = this.gameObject.GetComponent<CharacterController>();
-        
+
     }
 
-    
+
     public void FixedUpdate()
     {
-        if(!GameManager.gameManager.teleportando && !GameManager.gameManager.atacando && !Dialog.dialogoB && !Teleporting.teleportando && !scriptDeAtaqueADistancia.ataqueADistancia)
+        if (!GameManager.gameManager.teleportando && !GameManager.gameManager.atacando && !Dialog.dialogoB && !Teleporting.teleportando && !scriptDeAtaqueADistancia.ataqueADistancia && !Jogador_Status.morreu)
         {
             ControladorMov.enabled = true;
             Mover();
@@ -31,12 +32,11 @@ public class Andar : MonoBehaviour
         {
             transform.Translate((direcaoRotacao - transform.position).normalized * velocidadeDesloca * Time.deltaTime, Space.World);
         }
-        else
+        else if (!PLASkills.castingSkill && !Jogador_Status.morreu)
         {
             ControladorMov.enabled = false;
-            jogadorAnima.ChangeAnimationState(jogadorAnima.Parado());
         }
-        
+
 
 
         //if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(1))
@@ -56,55 +56,25 @@ public class Andar : MonoBehaviour
     {
         Direcao = Vector3.zero;
 
-        
+
         Direcao.x = Input.GetAxisRaw("Horizontal") - Input.GetAxisRaw("Vertical");
         Direcao.z = Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Horizontal");
 
-        ControladorMov.Move(new Vector3(Direcao.x, 0, Direcao.z) * Jogador.Velocidade * Time.deltaTime);
+        ControladorMov.Move(new Vector3(Direcao.x, 0, Direcao.z) * Jogador.speed * Time.deltaTime);
         transform.localRotation *= Quaternion.FromToRotation(transform.forward, Direcao);
         transform.rotation = new Quaternion(0, transform.localRotation.y, 0, transform.localRotation.w);
 
-        
-        
-            if (Direcao.x == 0 && Direcao.z == 0)
+
+        if (!scriptAttack.takingDamagePlayer)
+        {
+            if (Direcao.x == 0 && Direcao.z == 0 && !PLASkills.castingSkill)
             {
                 jogadorAnima.ChangeAnimationState(jogadorAnima.Parado());
             }
-            else
+            else if (!PLASkills.castingSkill)
             {
                 jogadorAnima.ChangeAnimationState(jogadorAnima.Andar());
             }
-        
-
-        // if(direcaoRotacao.x > 0)
-        // {
-        //     jogadorAnima.SetHorizontal(1);
-        // }
-        // else
-        // {
-        //     jogadorAnima.SetHorizontal(-1);
-        // }
-
-        // if(direcaoRotacao.z > 0)
-        // {
-        //     jogadorAnima.SetVertical(1);
-        // }
-        // else
-        // {
-        //     jogadorAnima.SetVertical(-1);
-        // }
-
-        // if(Vector3.Distance(this.transform.position, hit.point) >= distanciaAnterior + 1f)
-        // {
-        //     jogadorAnima.SetHorizontal(1);
-        //     jogadorAnima.SetVertical(-1);
-        // }
-        // else
-        // {
-        //     jogadorAnima.SetHorizontal(-1);
-        //     jogadorAnima.SetVertical(1);
-        // }
-
-        // distanciaAnterior = Vector3.Distance(this.transform.position, hit.point);
+        }
     }
 }

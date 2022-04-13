@@ -18,9 +18,12 @@ public class GameManager : MonoBehaviour
     public GameObject[] contI;
     public int numeroI;
     [SerializeField] public GameObject menuOpções;
+    [SerializeField] private ScriptablePlayer status;
 
     public Tela_De_Load load;
-    
+
+    public static bool gameIsPaused;
+
     private void Awake() 
     {
         cenas = new Scene[SceneManager.sceneCount];
@@ -51,7 +54,6 @@ public class GameManager : MonoBehaviour
     {
         if (gameManager != null)
         {
-            dinheiroJogador = gameManager.dinheiroJogador;
             Destroy(gameManager.gameObject);
             gameManager = this;
         }
@@ -95,7 +97,10 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
-            cenas[i] = SceneManager.GetSceneAt(i);
+            if(i < cenas.Length)
+            {
+                cenas[i] = SceneManager.GetSceneAt(i);
+            }
         }
 
         if (SceneManager.GetSceneAt(0).buildIndex != cenaIndex)
@@ -111,21 +116,33 @@ public class GameManager : MonoBehaviour
     }
     void Menu()
     {
-        if (menuOpções.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown("escape"))
-            {
-                menuOpções.SetActive(true);
-            }
+            gameIsPaused = !gameIsPaused;
+            PauseGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        if (gameIsPaused)
+        {
+            menuOpções.SetActive(true);
+            Time.timeScale = 0f;
         }
         else
         {
-            if (Input.GetKeyDown("escape"))
-            {
-                menuOpções.SetActive(false);
-            }
+            menuOpções.SetActive(false);
+            Time.timeScale = 1;
         }
     }
+
+    public void Unpause()
+    {
+        gameIsPaused = false;
+        Time.timeScale = 1f;
+    }
+
     void ContEnemys()
     {
         contI = GameObject.FindGameObjectsWithTag("Inimigo");

@@ -8,7 +8,7 @@ public class PosicionamentoInicial : MonoBehaviour
     private bool spawnou;
 
 
-    private void Update()
+    private void LateUpdate()
     {
         Posiciona();
     }
@@ -23,7 +23,12 @@ public class PosicionamentoInicial : MonoBehaviour
         {
             if (GameManager.gameManager.teleportando)
             {
-                StartCoroutine(WaitTp());
+                posicaoInicial = GameObject.FindGameObjectWithTag("PontoInicialTeleport").transform;
+                if (Vector3.Distance(transform.position, posicaoInicial.position) > .1f)
+                {
+                    gameObject.transform.position = posicaoInicial.transform.position;
+                    gameObject.transform.rotation = posicaoInicial.transform.rotation;
+                }
             }
             GameManager.gameManager.teleportando = true;
         }
@@ -35,15 +40,4 @@ public class PosicionamentoInicial : MonoBehaviour
 
     }
 
-    IEnumerator WaitTp()
-    {
-        yield return new WaitForSeconds(0.2f);
-
-        posicaoInicial = GameObject.FindGameObjectWithTag("PontoInicialTeleport").transform;
-        if (Vector3.Distance(transform.position, posicaoInicial.position) > .1f)
-        {
-            gameObject.transform.position = posicaoInicial.transform.position;
-            gameObject.transform.rotation = posicaoInicial.transform.rotation;
-        }
-    }
 }

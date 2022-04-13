@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class INIPerseguir : MonoBehaviour
 {
-    [SerializeField] private Transform alvo;
+    [SerializeField] public Transform alvo;
     [SerializeField] float velocidade;
     [SerializeField] public float velocidadeDeAtaque, velocidadeAtaqueOriginal;
     [SerializeField] private Transform inimigo;
     [SerializeField] private bool perseguir = false;
     [SerializeField] private bool atacando = false;
     [SerializeField] private float distanciaParar;
-    [SerializeField] private float areaVisao;
+    [SerializeField] public float areaVisao;
     [SerializeField] private INIStatus status;
     [SerializeField] private bool podeDardano = true;
     [SerializeField] private EsquivaOfensiva esquiva;
@@ -24,8 +24,12 @@ public class INIPerseguir : MonoBehaviour
     [SerializeField] private Collider areaDoAtaque;
     [SerializeField] public bool finishAnimation = true;
     [SerializeField] public bool takingDamage = false;
-    public float timeAnimation;
-    public float timeTakeDamage;
+    [SerializeField] private float timeAnimation;
+    [SerializeField] private float timeTakeDamage;
+    [SerializeField] private float timeTakeDamageIndividual = 2f;
+    [SerializeField] public bool superArmor = false;
+    [SerializeField] private Crew crew;
+    [SerializeField] public bool inCrew = false;
 
     private void Start()
     {
@@ -58,63 +62,52 @@ public class INIPerseguir : MonoBehaviour
             }
             else if (Vector3.Distance(transform.position, alvo.position) <= distanciaParar && !status.GetStunado() && !Jogador_Status.Invisivel)
             {
+
                 if (!atacando && !takingDamage)
                 {
-                    if (distanciaParar < 20)
+                    if (distanciaParar < 25)
                     {
                         StopCoroutine(DanoInimigo());
                         StartCoroutine(DanoInimigo());
                     }
                     else
                     {
-                        if(!takingDamage)
+                        if (!takingDamage)
                         {
                             StopCoroutine(AtiraProjetil());
                             StartCoroutine(AtiraProjetil());
                         }
                     }
                 }
-                //else
-                //{
-                //    GetComponentInParent<FSMInimigos>().Iddle();
-                //}
-            }
-            if (Jogador_Status.Invisivel)
-            {
-                NaoPerseguir();
-            }
-            if (Vector3.Distance(transform.position, alvo.position) > areaVisao)
-            {
-                NaoPerseguir();
             }
 
+            if(crew != null)
+            {
+                crew.CheckCrew();
+            }
         }
         else
         {
-            if (!scriptPatrulha.despertando)
+            if (!scriptPatrulha.despertando && !inCrew)
             {
                 scriptPatrulha.SetPatrulha(true);
             }
         }
     }
 
-    // private void OnTriggerEnter(Collider other) 
-    // {
-    //     if(other.gameObject.tag == "Player")
-    //     {
-    //         Debug.Log("player entrou");
-    //         alvo = other.gameObject;
-    //         Perseguir();
-    //     }
-    // }
 
     //Está utilizando "OnTriggerStay" porque o "OnTriggerEnter" por algum motivo não funciona. - Ian
     private void OnTriggerStay(Collider other)
     {
-        if (alvo == null && other.gameObject.tag == "Player")
+        if(crew != null)
         {
-            alvo = other.gameObject.transform;
-            Perseguir();
+            if (alvo == null && other.gameObject.tag == "Player")
+            {
+                alvo = other.gameObject.transform;
+                Perseguir();
+
+                crew.CallCrew(alvo);
+            }
         }
     }
 
@@ -193,12 +186,12 @@ public class INIPerseguir : MonoBehaviour
 
     public void ManageDamage()
     {
-        timeTakeDamage = 2;
+        timeTakeDamage = timeTakeDamageIndividual;
         takingDamage = true;
         StopCoroutine(DanoInimigo());
         StopCoroutine(AtiraProjetil());
     }
-   
+
     async void GetAnimationState()
     {
         await GetAnimationStateAsync();
@@ -219,23 +212,27 @@ public class INIPerseguir : MonoBehaviour
 
     public IEnumerator AtiraProjetil()
     {
-
         atacando = true;
+        iniAnima.ChangeAnimationState(iniAnima.Iddle());
 
         yield return new WaitForSecondsRealtime(1 / velocidadeDeAtaque);
 
+        iniAnima.ChangeAnimationState(iniAnima.Atacar());
+
         if (alvo != null)
         {
+            yield return new WaitForSeconds(0.3f);
             tiro = Instantiate(prefabProjetil, pontoDeTiro.position, pontoDeTiro.rotation).GetComponent<INITiro>();
             Vector3 direcaoInimigo = alvo.transform.position - tiro.gameObject.transform.position;
             tiro.direcao = direcaoInimigo;
+            tiro.transform.LookAt(alvo);
             tiro.atirou = true;
-            iniAnima.ChangeAnimationState(iniAnima.Atacar());
-
         }
         atacando = false;
     }
 
+
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

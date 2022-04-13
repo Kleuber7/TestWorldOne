@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class Dialog : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] sentences, sentences2, tutorialInvoker;
+    public string[] sentences, sentences2;
     public int index;
     public float typingSpeed, typingSpeedReal, typingSpeedAcelerado = -6;
 
     public Andar andar;
     public AtaqueBasico ataque;
 
+    public GameObject imagemDialog;
     public GameObject continueButton;
-
-    private AudioSource source;
 
     public static bool dialogoB;
 
-    public bool podePassar, sentenca, tutorialIn;
+    public bool podePassar, sentenca;
 
 
     void Start()
@@ -27,7 +27,6 @@ public class Dialog : MonoBehaviour
         typingSpeedReal = typingSpeed;
         andar = GameObject.FindGameObjectWithTag("Player").GetComponent<Andar>();
         ataque = GameObject.FindGameObjectWithTag("Player").GetComponent<AtaqueBasico>();
-        source = GetComponent<AudioSource>();
         if (Jogador_Status.mortes == 0)
         {
 
@@ -51,7 +50,7 @@ public class Dialog : MonoBehaviour
         if (Jogador_Status.mortes == 0)
         {
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 typingSpeed = typingSpeedAcelerado;
 
@@ -59,24 +58,24 @@ public class Dialog : MonoBehaviour
 
             if (podePassar)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
                 {
                     NextSentence();
-                    typingSpeed = typingSpeedReal;
+                    
                 }
             }
 
             if (dialogoB)
             {
-                if (textDisplay.text == sentences[index] && sentenca)
+                if (sentenca)
                 {
-                    podePassar = true;
-                    continueButton.SetActive(true);
-
-                    if (index == sentences.Length - 1)
+                    if(index < sentences.Length)
                     {
-                        ataque.AtivarAtaque();
-                        dialogoB = false;
+                        if (textDisplay.text == sentences[index])
+                        {
+                            podePassar = true;
+                            continueButton.SetActive(true);
+                        }
                     }
                 }
             }
@@ -86,7 +85,7 @@ public class Dialog : MonoBehaviour
     {
         if (Jogador_Status.mortes >= 1)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 typingSpeed = typingSpeedAcelerado;
 
@@ -94,23 +93,20 @@ public class Dialog : MonoBehaviour
 
             if (podePassar)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
                 {
                     NextSentence();
-                    typingSpeed = typingSpeedReal;
                 }
             }
 
             if (dialogoB)
             {
-                if (textDisplay.text == sentences2[index] && sentenca)
+                if(index < sentences2.Length)
                 {
-                    podePassar = true;
-                    continueButton.SetActive(true);
-                    if (index == sentences.Length - 1)
+                    if (textDisplay.text == sentences2[index] && sentenca)
                     {
-                        ataque.AtivarAtaque();
-                        dialogoB = false;
+                        continueButton.SetActive(true);
+                        podePassar = true;
                     }
                 }
             }
@@ -121,7 +117,6 @@ public class Dialog : MonoBehaviour
     IEnumerator Type1()
     {
         sentenca = true;
-        tutorialIn = false;
         podePassar = false;
 
         dialogoB = true;
@@ -131,7 +126,7 @@ public class Dialog : MonoBehaviour
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
-            // imagemDialog.SetActive(true);
+            imagemDialog.SetActive(true);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -141,7 +136,6 @@ public class Dialog : MonoBehaviour
     IEnumerator Type2()
     {
         sentenca = true;
-        tutorialIn = false;
         podePassar = false;
 
         dialogoB = true;
@@ -150,7 +144,7 @@ public class Dialog : MonoBehaviour
         foreach (char letter in sentences2[index].ToCharArray())
         {
             textDisplay.text += letter;
-            // imagemDialog.SetActive(true);
+            imagemDialog.SetActive(true);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -160,10 +154,9 @@ public class Dialog : MonoBehaviour
     }
 
 
-    public void NextSentence()
+    void NextSentence()
     {
-        source.Play();
-
+        typingSpeed = typingSpeedReal;
         continueButton.SetActive(false);
 
         if (Jogador_Status.mortes == 0 && sentenca)
@@ -178,7 +171,10 @@ public class Dialog : MonoBehaviour
             else
             {
                 textDisplay.text = "";
-                //imagemDialog.SetActive(false);
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
+                imagemDialog.SetActive(false);
             }
         }
         if (Jogador_Status.mortes >= 1 && sentenca)
@@ -191,7 +187,10 @@ public class Dialog : MonoBehaviour
             else
             {
                 textDisplay.text = "";
-                //imagemDialog.SetActive(false);
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
+                imagemDialog.SetActive(false);
             }
         }
     }
@@ -237,18 +236,18 @@ public class Dialog : MonoBehaviour
     //    typingSpeed = typingSpeedReal;
     //}
 
-//    if (tutorialIn && Jogador_Status.mortes == 0)
-//        {
-//            if (index<tutorialInvoker.Length)
-//            {
-//                textDisplay.text = "";
-//                StartCoroutine(TutorialInvok());
-//}
-//            else
-//{
-//    textDisplay.text = "";
-//}
-//        }
+    //    if (tutorialIn && Jogador_Status.mortes == 0)
+    //        {
+    //            if (index<tutorialInvoker.Length)
+    //            {
+    //                textDisplay.text = "";
+    //                StartCoroutine(TutorialInvok());
+    //}
+    //            else
+    //{
+    //    textDisplay.text = "";
+    //}
+    //        }
 
     #endregion
 }
