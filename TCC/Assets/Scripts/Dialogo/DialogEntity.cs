@@ -16,6 +16,7 @@ public class DialogEntity : MonoBehaviour
     public Andar andar;
     public AtaqueBasico ataque;
 
+    public GameObject imagemFundo;
     public GameObject imagemDialog;
     public GameObject continueButton;
     public bool podePassar;
@@ -56,7 +57,6 @@ public class DialogEntity : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 NextSentence();
-                typingSpeed = typingSpeedReal;
             }
         }
 
@@ -64,10 +64,13 @@ public class DialogEntity : MonoBehaviour
         {
             if (npcDialog)
             {
-                if (textDisplay.text == dialogNpc[index])
+                if (index < dialogNpc.Length)
                 {
-                    podePassar = true;
-                    continueButton.SetActive(true);
+                    if (textDisplay.text == dialogNpc[index])
+                    {
+                        podePassar = true;
+                        continueButton.SetActive(true);
+                    }
                 }
             }
         }
@@ -95,6 +98,7 @@ public class DialogEntity : MonoBehaviour
 
     IEnumerator NpcDialogs()
     {
+        imagemFundo.SetActive(true);
         canTalk = false;
         npcDialog = true;
 
@@ -116,10 +120,9 @@ public class DialogEntity : MonoBehaviour
         typingSpeed = typingSpeedReal;
     }
 
-    void NextSentence()
+    public void NextSentence()
     {
-
-        continueButton.SetActive(false);
+        typingSpeed = typingSpeedReal;
 
         if (npcDialog)
         {
@@ -135,8 +138,11 @@ public class DialogEntity : MonoBehaviour
                 Dialog.dialogoB = false;
                 npcDialog = false;
                 imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
             }
         }
+
+        continueButton.SetActive(false);
     }
 
 

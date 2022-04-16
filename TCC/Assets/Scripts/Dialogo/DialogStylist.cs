@@ -16,6 +16,7 @@ public class DialogStylist : MonoBehaviour
     public Andar andar;
     public AtaqueBasico ataque;
 
+    public GameObject imagemFundo;
     public GameObject imagemDialog;
     public GameObject continueButton;
     public bool podePassar;
@@ -56,7 +57,6 @@ public class DialogStylist : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 NextSentence();
-                typingSpeed = typingSpeedReal;
             }
         }
 
@@ -96,6 +96,7 @@ public class DialogStylist : MonoBehaviour
 
     IEnumerator NpcDialogs()
     {
+        imagemFundo.SetActive(true);
         canTalk = false;
         npcDialog = true;
 
@@ -117,10 +118,9 @@ public class DialogStylist : MonoBehaviour
         typingSpeed = typingSpeedReal;
     }
 
-    void NextSentence()
+    public void NextSentence()
     {
-
-        continueButton.SetActive(false);
+        typingSpeed = typingSpeedReal;
 
         if (npcDialog)
         {
@@ -137,7 +137,10 @@ public class DialogStylist : MonoBehaviour
                 npcDialog = false;
                 stylist.stylistCanvas.SetActive(true);
                 imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
             }
         }
+        continueButton.SetActive(false);
+
     }
 }

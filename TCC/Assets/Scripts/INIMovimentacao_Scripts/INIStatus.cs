@@ -8,8 +8,6 @@ public class INIStatus : BASEStatus
     public static float danoUp = 2, vidaUp = 50;
     public float range;
     [SerializeField] private float stunTime = 0.5f;
-    public bool Efeito_Comromper;
-    public GameObject Forma_Aliado;
     [SerializeField] private bool stunado = false;
     [SerializeField] public bool podeTomardanoSunFire = true;
     [SerializeField] private ParticleManagerAttack particleDamage;
