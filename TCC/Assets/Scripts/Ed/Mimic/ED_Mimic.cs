@@ -23,7 +23,7 @@ public class ED_Mimic : MonoBehaviour
     [Tooltip("Controla as animaçoes do MIMIC")]
     public Animator Controlador_Animator;
 
-    private INIStatus RefVida;
+    public INIStatus RefVida;
     void Start()
     {
         Vida_AntDano = Vida_Atual;
@@ -67,7 +67,7 @@ public class ED_Mimic : MonoBehaviour
         if(Alvo!=null && Liberado==true)
         {
             //Dash estilo Xadrez
-            StartCoroutine("Bauzada");
+            StartCoroutine(Bauzada());
         }
     }
     IEnumerator Bauzada()
