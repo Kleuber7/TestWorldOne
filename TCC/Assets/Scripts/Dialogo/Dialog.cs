@@ -15,6 +15,7 @@ public class Dialog : MonoBehaviour
     public AtaqueBasico ataque;
 
     public GameObject imagemDialog;
+    public GameObject imagemFundo;
     public GameObject continueButton;
 
     public static bool dialogoB;
@@ -61,7 +62,6 @@ public class Dialog : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
                 {
                     NextSentence();
-                    
                 }
             }
 
@@ -79,6 +79,7 @@ public class Dialog : MonoBehaviour
                     }
                 }
             }
+            
         }
     }
     void DeathDialog()
@@ -110,12 +111,14 @@ public class Dialog : MonoBehaviour
                     }
                 }
             }
+            
         }
     }
 
 
     IEnumerator Type1()
     {
+        imagemFundo.SetActive(true);
         sentenca = true;
         podePassar = false;
 
@@ -135,6 +138,7 @@ public class Dialog : MonoBehaviour
     }
     IEnumerator Type2()
     {
+        imagemFundo.SetActive(true);
         sentenca = true;
         podePassar = false;
 
@@ -154,7 +158,7 @@ public class Dialog : MonoBehaviour
     }
 
 
-    void NextSentence()
+    public void NextSentence()
     {
         typingSpeed = typingSpeedReal;
         continueButton.SetActive(false);
@@ -175,6 +179,7 @@ public class Dialog : MonoBehaviour
                 ataque.AtivarAtaque();
                 dialogoB = false;
                 imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
             }
         }
         if (Jogador_Status.mortes >= 1 && sentenca)
@@ -191,6 +196,7 @@ public class Dialog : MonoBehaviour
                 ataque.AtivarAtaque();
                 dialogoB = false;
                 imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
             }
         }
     }

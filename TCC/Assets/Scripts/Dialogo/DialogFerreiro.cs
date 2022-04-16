@@ -16,6 +16,7 @@ public class DialogFerreiro : MonoBehaviour
     public Andar andar;
     public AtaqueBasico ataque;
 
+    public GameObject imagemFundo;
     public GameObject imagemDialog;
     public GameObject continueButton;
     public bool podePassar;
@@ -33,8 +34,6 @@ public class DialogFerreiro : MonoBehaviour
     }
     void Update()
     {
-        //if (Jogador_Status.mortes == 0)
-        //{
         if (Input.GetKeyDown(KeyCode.R) && canTalk)
         {
             index = 0;
@@ -42,7 +41,6 @@ public class DialogFerreiro : MonoBehaviour
         }
 
         FerreiroDialog();
-        //}
     }
     public void FerreiroDialog()
     {
@@ -58,7 +56,6 @@ public class DialogFerreiro : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 NextSentence();
-                typingSpeed = typingSpeedReal;
             }
         }
 
@@ -66,7 +63,7 @@ public class DialogFerreiro : MonoBehaviour
         {
             if (npcDialog)
             {
-                if(index < dialogNpc.Length)
+                if (index < dialogNpc.Length)
                 {
                     if (textDisplay.text == dialogNpc[index])
                     {
@@ -98,6 +95,7 @@ public class DialogFerreiro : MonoBehaviour
 
     IEnumerator NpcDialogs()
     {
+        imagemFundo.SetActive(true);
         canTalk = false;
         npcDialog = true;
 
@@ -119,10 +117,10 @@ public class DialogFerreiro : MonoBehaviour
         typingSpeed = typingSpeedReal;
     }
 
-    void NextSentence()
+    public void NextSentence()
     {
-
-        continueButton.SetActive(false);
+        typingSpeed = typingSpeedReal;
+        
 
         if (npcDialog)
         {
@@ -139,7 +137,9 @@ public class DialogFerreiro : MonoBehaviour
                 npcDialog = false;
                 atributos.HUDFerreiro.SetActive(true);
                 imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
             }
         }
+        continueButton.SetActive(false);
     }
 }
