@@ -12,9 +12,6 @@ public class INIStatus : BASEStatus
     [SerializeField] public bool podeTomardanoSunFire = true;
     [SerializeField] private ParticleManagerAttack particleDamage;
 
-    public bool teste;
-    
-
     public override void Morrer()
     {
         
@@ -39,7 +36,6 @@ public class INIStatus : BASEStatus
 
     void Start()
     {
-        teste = true;
         dano += danoUp;
         vidaMax += vidaUp;
         vida += vidaUp;
