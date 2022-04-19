@@ -24384,30 +24384,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.018676855, y: 0.019285636, z: 0.007536842}
   m_Center: {x: 0.0000076005244, y: -0.000067028675, z: 0.00013867485}
---- !u!1 &990630352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4312113352095978623, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
-  m_PrefabInstance: {fileID: 2493139183562820229}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &990630354
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990630352}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 21acb22ab60bceb459e90c16baeb121a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &991186863
 GameObject:
   m_ObjectHideFlags: 0
@@ -72920,7 +72896,7 @@ PrefabInstance:
     - target: {fileID: 5415744866972104659, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: skin.Array.data[0]
       value: 
-      objectReference: {fileID: 990630352}
+      objectReference: {fileID: 2493139183562820236}
     - target: {fileID: 5415744866972104659, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: skin.Array.data[1]
       value: 
@@ -73864,7 +73840,7 @@ PrefabInstance:
     - target: {fileID: 7235825112790767654, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: jogadorAnima
       value: 
-      objectReference: {fileID: 990630354}
+      objectReference: {fileID: 2493139183562820237}
     - target: {fileID: 7243043278914658830, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -74101,6 +74077,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7885582820552475895, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a73673687fb76d44bc77f888a896f0c, type: 2}
+    - target: {fileID: 7885582820552475895, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a73673687fb76d44bc77f888a896f0c, type: 2}
     - target: {fileID: 7888548027828718385, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -74884,6 +74868,30 @@ MonoBehaviour:
   timeTakeDamage: 0
   takingDamage: 0
   inimigoRef: {fileID: 0}
+--- !u!1 &2493139183562820236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2892512486860177205, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+  m_PrefabInstance: {fileID: 2493139183562820229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2493139183562820237
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493139183562820236}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21acb22ab60bceb459e90c16baeb121a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2549415615029625212
 Transform:
   m_ObjectHideFlags: 0
