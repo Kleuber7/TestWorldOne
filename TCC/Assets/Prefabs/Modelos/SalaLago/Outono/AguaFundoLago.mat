@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AguaFundoLago
+  m_Shader: {fileID: -6465566751694194690, guid: edbf9e96a2a48f845ac8fa9dc4279692, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_a0694e17bf5640d4a5efb86b5dbba9dc:
+        m_Texture: {fileID: 2800000, guid: 8f98521dce539584bb5fa7ecbaab8215, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_76cfe5ca25714ceea3ef93e26e66ec7a: 0.0001
+    m_Colors:
+    - Vector2_dc455791ff9c42deb59dc088f12c5d61: {r: 5, g: 5, b: 0, a: 0}
+    - Vector2_f9d95ce89d964d54b83b8ff1afff127b: {r: 0.001, g: 0.001, b: 0, a: 0}
+  m_BuildTextureStacks: []
