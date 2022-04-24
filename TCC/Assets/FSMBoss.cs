@@ -30,11 +30,11 @@ public class FSMBoss : MonoBehaviour
         BOSSAnima.enabled = true;
     }
 
-    public string Idle()
+    public string Iddle()
     {
-        const string BOSS_Idle = "Idle";
+        const string BOSS_Iddle = "Iddle";
 
-        return BOSS_Idle;
+        return BOSS_Iddle;
     }
 
     public string Atirando()
@@ -56,5 +56,33 @@ public class FSMBoss : MonoBehaviour
         const string BOSS_Dash = "Dash";
 
         return BOSS_Dash;
+    }
+
+    public string PreparandoPulo()
+    {
+        const string BOSS_PPulo = "PreparandoPulo";
+
+        return BOSS_PPulo;
+    }
+
+    public string Pulo()
+    {
+        const string BOSS_Pulo = "Pulo";
+
+        return BOSS_Pulo;
+    }
+
+    public string Queda()
+    {
+        const string BOSS_Queda = "Queda";
+
+        return BOSS_Queda;
+    }
+
+    public string Morte()
+    {
+        const string BOSS_Morte = "Morte";
+
+        return BOSS_Morte;
     }
 }
