@@ -16,6 +16,7 @@ public class BOSSGerenciador : MonoBehaviour
     public BOSSPath scriptPath;
     public BOSSTiros scriptTiros;
     public float delayTrocaDeEstado;
+    public FSMBoss fsm;
 
     void Start()
     {
@@ -82,7 +83,7 @@ public class BOSSGerenciador : MonoBehaviour
     {
         EscolhePosicaoCombate();
         transform.LookAt(new Vector3(posicaoCombate.position.x, transform.position.y, posicaoCombate.position.z));
-        transform.DOMove(posicaoCombate.position, (posicaoCombate.position - transform.position).magnitude / status.velocidade).SetEase(Ease.Linear).OnComplete(() => transform.DORotate(posicaoCombate.GetComponent<PontoDisparo>().rotacaoInicial, 1/status.velocidade).SetEase(Ease.Linear).OnComplete(() => combateBasico = true));
+        transform.DOMove(posicaoCombate.position, (posicaoCombate.position - transform.position).magnitude / status.velocidade).SetEase(Ease.Linear).OnPlay(()=> {fsm.ChangeAnimationState(fsm.PreparandoPulo()); StartCoroutine(DelayPulo());}).OnComplete(() => transform.DORotate(posicaoCombate.GetComponent<PontoDisparo>().rotacaoInicial, 1/status.velocidade).SetEase(Ease.Linear).OnComplete(() => combateBasico = true));
     }
 
     public void AtivaCombateBasico()
@@ -106,5 +107,11 @@ public class BOSSGerenciador : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTrocaDeEstado);
         AlteraEstadoAtravessar();
+    }
+
+    public IEnumerator DelayPulo()
+    {
+        yield return new WaitForSeconds(1);
+        fsm.ChangeAnimationState(fsm.Pulo());
     } 
 }

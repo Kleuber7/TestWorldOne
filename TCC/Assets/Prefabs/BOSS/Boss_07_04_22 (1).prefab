@@ -50,9 +50,9 @@ GameObject:
   - component: {fileID: -5608254555588767902}
   - component: {fileID: 6294232470313105730}
   - component: {fileID: -3173724712006430120}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss_07_04_22 (1)
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   velocidadeRotacao: 2
   iniciarTiros: 0
   prefabTiro: {fileID: 3066154075505849724, guid: 5f7dd4c063cf24e458364f3080e0e6ec, type: 3}
-  pontoDisparo: {fileID: 6703127449624160913, guid: 80c141775c539924e90db053597509c4, type: 3}
+  pontoDisparo: {fileID: 99958233093928510}
   contadorDisparos: 0
   numeroDeDisparos: 10
   gerenciador: {fileID: 231444825419134836}
@@ -144,6 +144,7 @@ MonoBehaviour:
   scriptPath: {fileID: -5405325601310149728}
   scriptTiros: {fileID: 8053570397467980685}
   delayTrocaDeEstado: 2
+  fsm: {fileID: -6546579522249083510}
 --- !u!114 &-8020710235515163880
 MonoBehaviour:
   m_ObjectHideFlags: 0
