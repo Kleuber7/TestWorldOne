@@ -15,7 +15,7 @@ public class BOSSPath : MonoBehaviour
     public BOSSDano scriptDano;
     public BOSSGerenciador gerenciador;
     public FSMBoss fsm;
-    public float tempoPreparacaoDash;
+    public float tempoPreparacaoPulo;
 
     void FixedUpdate()
     {
@@ -28,10 +28,10 @@ public class BOSSPath : MonoBehaviour
         if(iniciarPath)
         {
             SetaPontos();
-            //fsm.ChangeAnimationState(fsm.PreparandoDash());
-            //StartCoroutine(TempoPreparacaoDash());
+            fsm.ChangeAnimationState(fsm.PreparandoPulo());
+            StartCoroutine(TempoPreparacaoPulo());
             transform.LookAt(new Vector3(posicaoInicial.position.x, transform.position.y, posicaoInicial.position.z));
-            transform.DOMove(posicaoInicial.position, (posicaoInicial.position - transform.position).magnitude / velocidade).SetEase(Ease.Linear).OnComplete(() => {transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).SetLookAt(-1).OnPlay(() => scriptDano.podeDarDano = true).OnComplete(() => {scriptDano.podeDarDano = false; StartCoroutine(gerenciador.DelayTrocaDeEstadoAtravessar()); fsm.ChangeAnimationState(fsm.Idle());}); fsm.ChangeAnimationState(fsm.PreparandoDash()); StartCoroutine(TempoPreparacaoDash());});
+            transform.DOMove(posicaoInicial.position, (posicaoInicial.position - transform.position).magnitude / velocidade).SetEase(Ease.Linear).OnComplete(() => {transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).SetLookAt(-1).OnPlay(() => scriptDano.podeDarDano = true).OnComplete(() => {scriptDano.podeDarDano = false; StartCoroutine(gerenciador.DelayTrocaDeEstadoAtravessar()); fsm.ChangeAnimationState(fsm.Iddle());}); fsm.ChangeAnimationState(fsm.PreparandoPulo()); StartCoroutine(TempoPreparacaoPulo());});
             iniciarPath = false;
         }
     }
@@ -57,9 +57,9 @@ public class BOSSPath : MonoBehaviour
         }
     }
 
-    public IEnumerator TempoPreparacaoDash()
+    public IEnumerator TempoPreparacaoPulo()
     {
-        yield return new WaitForSeconds(tempoPreparacaoDash);
-        fsm.ChangeAnimationState(fsm.Dash());
+        yield return new WaitForSeconds(tempoPreparacaoPulo);
+        fsm.ChangeAnimationState(fsm.Pulo());
     }
 }

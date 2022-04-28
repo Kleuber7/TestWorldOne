@@ -31,7 +31,7 @@ public class BOSSTiros : MonoBehaviour
         {
             EscolhePontoDeDisparo();
             transform.LookAt(new Vector3(posicaoInicial.position.x, transform.position.y, posicaoInicial.position.z));
-            transform.DOMove(posicaoInicial.position, (posicaoInicial.position - transform.position).magnitude / velocidade).SetEase(Ease.Linear).OnComplete(() => transform.DORotate(new Vector3(posicaoInicial.rotation.x, posicaoInicial.rotation.y, posicaoInicial.rotation.z), 1/velocidadeRotacao).OnComplete(() => transform.DORotate(rotacaoInicial, 1/velocidadeRotacao).SetEase(Ease.InCirc).OnComplete(() => transform.DORotate(rotacaoFinal, 1/(velocidadeRotacao / 2)).SetDelay(1f).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(Disparos())).OnComplete(() => {StartCoroutine(gerenciador.DelayTrocaDeEstadoAtirar()); fsm.ChangeAnimationState(fsm.Idle());}))));
+            StartCoroutine(PreparacaoPulo());
             iniciarTiros = false;
         }
     }
@@ -61,5 +61,12 @@ public class BOSSTiros : MonoBehaviour
         {
             contadorDisparos = 0;
         }
+    }
+
+    IEnumerator PreparacaoPulo()
+    {
+        fsm.ChangeAnimationState(fsm.PreparandoPulo());
+        yield return new WaitForSeconds(1);
+        transform.DOMove(posicaoInicial.position, (posicaoInicial.position - transform.position).magnitude / velocidade).SetEase(Ease.Linear).OnComplete(() => transform.DORotate(new Vector3(posicaoInicial.rotation.x, posicaoInicial.rotation.y, posicaoInicial.rotation.z), 1/velocidadeRotacao).OnComplete(() => transform.DORotate(rotacaoInicial, 1/velocidadeRotacao).SetEase(Ease.InCirc).OnComplete(() => transform.DORotate(rotacaoFinal, 1/(velocidadeRotacao / 2)).SetDelay(1f).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(Disparos())).OnComplete(() => {StartCoroutine(gerenciador.DelayTrocaDeEstadoAtirar()); fsm.ChangeAnimationState(fsm.Iddle());})))).OnPlay(() => fsm.ChangeAnimationState(fsm.Pulo()));
     }
 }
