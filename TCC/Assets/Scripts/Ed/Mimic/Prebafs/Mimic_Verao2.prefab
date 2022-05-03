@@ -76,6 +76,8 @@ MonoBehaviour:
   danoReal: 20
   range: 10
   stunTime: 0.5
+  Efeito_Comromper: 0
+  Forma_Aliado: {fileID: 0}
   stunado: 0
   podeTomardanoSunFire: 1
   particleDamage: {fileID: 0}
@@ -89,16 +91,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 577943564327868024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8cf4f8ad84576489b3a747ce3c3eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a6348d71d155884ba8d7aea66f36c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Alvo: {fileID: 0}
-  Barra_Vida: {fileID: 8022111464029813775}
-  Local_Final: {fileID: 2801819702177939454}
-  Proximo_Dash: 3
-  Velocidade_Dash: 1
+  Barra_Vida: {fileID: 0}
+  Local_Final: {fileID: 0}
+  Proximo_Dash: 0
+  Velocidade_Dash: 0
   Liberado: 0
-  Controlador_Animator: {fileID: 7118849342072781272}
+  Controlador_Animator: {fileID: 0}
+  RefVida: 0
 --- !u!135 &-5521988234988073164
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1493,11 +1496,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
---- !u!1 &8022111464029813775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4833387038931313514, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
-  m_PrefabInstance: {fileID: 3190765396155146085}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1363369768461348070 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4516065530868315011, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
