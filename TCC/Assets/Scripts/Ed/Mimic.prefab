@@ -42,12 +42,11 @@ GameObject:
   - component: {fileID: 1208811639686039290}
   - component: {fileID: 1208811639686039293}
   - component: {fileID: 1208811639686039295}
+  - component: {fileID: 1208811639686039294}
   - component: {fileID: 1208811639686039292}
-  - component: {fileID: 343475485618454473}
-  - component: {fileID: 1718355125958989886}
   m_Layer: 0
   m_Name: Mimic
-  m_TagString: Inimigo
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4ccb66ba3d15240458492877fc28ae91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,6 +128,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1208811639686039294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208811639686039281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8cf4f8ad84576489b3a747ce3c3eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alvo: {fileID: 0}
+  Local_Final: {fileID: 1208811639280576214}
+  Proximo_Dash: 2
+  Duracao_Dash: 0.5
+  Liberado: 0
+  Velocidade: 2
 --- !u!54 &1208811639686039292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -145,42 +162,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &343475485618454473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208811639686039281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ef52ba22438704da05ea1281624670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 100
-  vidaMax: 100
-  dano: 20
-  danoReal: 20
-  range: 10
-  Efeito_Comromper: 0
-  Forma_Aliado: {fileID: 0}
-  stunado: 0
-  podeTomardanoSunFire: 1
-  teste: 0
---- !u!114 &1718355125958989886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208811639686039281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8cf4f8ad84576489b3a747ce3c3eb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Alvo: {fileID: 0}
-  Local_Final: {fileID: 1208811639280576214}
-  Proximo_Dash: 3
-  Velocidade_Dash: 1
-  Liberado: 0
