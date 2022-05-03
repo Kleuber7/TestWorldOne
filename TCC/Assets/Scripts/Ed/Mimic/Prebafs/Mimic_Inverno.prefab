@@ -634,7 +634,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2497485914995311283, guid: 8a225bdfe8ccc3c4493844b9dbc8fed4, type: 3}
+  - {fileID: 2100000, guid: fa094e501a2b3f845ae1c022c5ee284b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -978,12 +978,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alvo: {fileID: 0}
-  Barra_Vida: {fileID: 0}
-  Local_Final: {fileID: 0}
-  Proximo_Dash: 0
-  Velocidade_Dash: 0
+  Barra_Vida: {fileID: 4472786086885420345}
+  Local_Final: {fileID: 1898452742731659708}
+  Proximo_Dash: 2
+  Velocidade_Dash: 10
   Liberado: 0
-  Controlador_Animator: {fileID: 0}
+  Controlador_Animator: {fileID: 2851892882085374064}
   RefVida: 0
 --- !u!135 &1141928701628614025
 SphereCollider:
@@ -1559,6 +1559,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
+--- !u!1 &4472786086885420345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4833387038931313514, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}
+  m_PrefabInstance: {fileID: 9007521243144326739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4876674318939831760 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4516065530868315011, guid: f3d7cda74a449164bb577657436ba7c2, type: 3}

@@ -39,7 +39,7 @@ public class ED_Mimic : MonoBehaviour
 
         if(Vida_Atual<=0)
         {
-            Destroy(this.gameObject,1f);
+            Destroy(this.gameObject,3f);
         }else
         {
             Seguir();
@@ -47,7 +47,7 @@ public class ED_Mimic : MonoBehaviour
     }
     private void OnTriggerEnter( Collider Outro)
     {
-        if(Outro.gameObject.name =="Invoker_New")
+        if(Outro.gameObject.name =="Jogador")
         {
             Controlador_Animator.SetBool("Alvo", true);
             Barra_Vida.SetActive(true);
