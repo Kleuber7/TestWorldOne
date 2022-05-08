@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Skin {Default, Fire};
+public enum Skin {Default, Mahou, Emissario, Pesadelo, Abobora};
 [CreateAssetMenu]
 public class ScriptablePlayer : ScriptableObject
 {
@@ -20,5 +20,5 @@ public class ScriptablePlayer : ScriptableObject
     public Skin skin;
     public bool moneyHUD;
     public int moneyEarn;
-    
+    public bool FirstTime;
 }

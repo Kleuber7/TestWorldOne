@@ -7,6 +7,7 @@ public class OBJDesloca : MonoBehaviour
 {
     [SerializeField] public float tempoStun;
     [SerializeField] public float forcaStun;
+    [SerializeField] public float forcaDesloca;
     [SerializeField] private string tagColisor;
     [SerializeField] public Vector3 direcaoDeslocar;
     [SerializeField] public bool desloca = false;
