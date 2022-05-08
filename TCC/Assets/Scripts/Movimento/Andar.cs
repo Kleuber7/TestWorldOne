@@ -23,7 +23,7 @@ public class Andar : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (!GameManager.gameManager.teleportando && !GameManager.gameManager.atacando && !Dialog.dialogoB && !Teleporting.teleportando && !scriptDeAtaqueADistancia.ataqueADistancia && !Jogador_Status.morreu)
+        if (!GameManager.gameManager.teleportando && !GameManager.gameManager.atacando && !Dialog.dialogoB && !Teleporting.teleportando && !Jogador_Status.morreu)
         {
             ControladorMov.enabled = true;
             Mover();

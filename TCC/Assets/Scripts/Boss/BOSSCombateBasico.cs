@@ -55,7 +55,6 @@ public class BOSSCombateBasico : MonoBehaviour
         yield return new WaitForSeconds(tempoEstado);
         StopCoroutine(CDDisparo());
         StartCoroutine(gerenciador.DelayTrocaDeEstadoCombate());
-        //fsm.ChangeAnimationState(fsm.Iddle());
         cdEstado = false;
     }
 }

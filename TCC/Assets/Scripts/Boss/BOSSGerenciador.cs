@@ -17,10 +17,12 @@ public class BOSSGerenciador : MonoBehaviour
     public BOSSTiros scriptTiros;
     public float delayTrocaDeEstado;
     public FSMBoss fsm;
+    public Camera cam;
 
     void Start()
     {
         alvo = GameManager.gameManager.GetPlayer();
+        Camera.main.gameObject.SetActive(false);
         AtivaCombateBasico();
     }
 
@@ -83,7 +85,7 @@ public class BOSSGerenciador : MonoBehaviour
     {
         EscolhePosicaoCombate();
         transform.LookAt(new Vector3(posicaoCombate.position.x, transform.position.y, posicaoCombate.position.z));
-        transform.DOMove(posicaoCombate.position, (posicaoCombate.position - transform.position).magnitude / status.velocidade).SetEase(Ease.Linear).OnPlay(()=> {fsm.ChangeAnimationState(fsm.PreparandoPulo()); StartCoroutine(DelayPulo());}).OnComplete(() => transform.DORotate(posicaoCombate.GetComponent<PontoDisparo>().rotacaoInicial, 1/status.velocidade).SetEase(Ease.Linear).OnComplete(() => combateBasico = true));
+        transform.DOJump(posicaoCombate.position, ((posicaoCombate.position - transform.position).magnitude / status.velocidade) * 4, 1,(posicaoCombate.position - transform.position).magnitude / status.velocidade, false).SetEase(Ease.Linear).OnPlay(()=> {fsm.ChangeAnimationState(fsm.PreparandoPulo()); StartCoroutine(DelayPulo());}).OnComplete(() => transform.DORotate(posicaoCombate.GetComponent<PontoDisparo>().rotacaoInicial, 1/status.velocidade).SetEase(Ease.Linear).OnComplete(() => combateBasico = true));
     }
 
     public void AtivaCombateBasico()
@@ -99,6 +101,7 @@ public class BOSSGerenciador : MonoBehaviour
 
     public IEnumerator DelayTrocaDeEstadoAtirar()
     {
+        fsm.ChangeAnimationState(fsm.Iddle());
         yield return new WaitForSeconds(delayTrocaDeEstado);
         AlteraEstadoAtirar();
     } 
@@ -111,7 +114,14 @@ public class BOSSGerenciador : MonoBehaviour
 
     public IEnumerator DelayPulo()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
         fsm.ChangeAnimationState(fsm.Pulo());
-    } 
+        StartCoroutine(TempoPulo());
+    }
+
+    public IEnumerator TempoPulo()
+    {
+        yield return new WaitForSeconds(.5f);
+        fsm.ChangeAnimationState(fsm.Queda());
+    }
 }

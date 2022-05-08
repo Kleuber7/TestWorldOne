@@ -25,14 +25,27 @@ public class Jogador_Status : MonoBehaviour
 
         if(status.skin == Skin.Default)
         {
-            skin[(int)Skin.Fire].SetActive(false);
-            skin[((int)status.skin)].SetActive(true);
+            AtivaDefault();
             animaPlayer.jogadorAnima = skin[((int)status.skin)].GetComponent<Animator>();
         }
-        else if(status.skin == Skin.Fire)
+        else if(status.skin == Skin.Mahou)
         {
-            skin[(int)Skin.Default].SetActive(false);
-            skin[((int)status.skin)].SetActive(true);
+            AtivaMahou();
+            animaPlayer.jogadorAnima = skin[((int)status.skin)].GetComponent<Animator>();
+        }
+        else if (status.skin == Skin.Emissario)
+        {
+            AtivaEmissario();
+            animaPlayer.jogadorAnima = skin[((int)status.skin)].GetComponent<Animator>();
+        }
+        else if (status.skin == Skin.Pesadelo)
+        {
+            AtivaPesadelo();
+            animaPlayer.jogadorAnima = skin[((int)status.skin)].GetComponent<Animator>();
+        }
+        else if (status.skin == Skin.Abobora)
+        {
+            AtivaAbobora();
             animaPlayer.jogadorAnima = skin[((int)status.skin)].GetComponent<Animator>();
         }
 
@@ -137,4 +150,46 @@ public class Jogador_Status : MonoBehaviour
     {
         status.health -= dano/* - (status.defense / 10)*/;
     }
+
+    public void AtivaDefault()
+    {
+        skin[(int)Skin.Mahou].SetActive(false);
+        skin[(int)Skin.Pesadelo].SetActive(false);
+        skin[(int)Skin.Emissario].SetActive(false);
+        skin[(int)Skin.Abobora].SetActive(false);
+        skin[((int)status.skin)].SetActive(true);
+    }
+    public void AtivaMahou()
+    {
+        skin[(int)Skin.Default].SetActive(false);
+        skin[(int)Skin.Pesadelo].SetActive(false);
+        skin[(int)Skin.Emissario].SetActive(false);
+        skin[(int)Skin.Abobora].SetActive(false);
+        skin[((int)status.skin)].SetActive(true);
+    }
+    public void AtivaEmissario()
+    {
+        skin[(int)Skin.Mahou].SetActive(false);
+        skin[(int)Skin.Pesadelo].SetActive(false);
+        skin[(int)Skin.Default].SetActive(false);
+        skin[(int)Skin.Abobora].SetActive(false);
+        skin[((int)status.skin)].SetActive(true);
+    }
+    public void AtivaPesadelo()
+    {
+        skin[(int)Skin.Mahou].SetActive(false);
+        skin[(int)Skin.Default].SetActive(false);
+        skin[(int)Skin.Emissario].SetActive(false);
+        skin[(int)Skin.Abobora].SetActive(false);
+        skin[((int)status.skin)].SetActive(true);
+    }
+    public void AtivaAbobora()
+    {
+        skin[(int)Skin.Mahou].SetActive(false);
+        skin[(int)Skin.Pesadelo].SetActive(false);
+        skin[(int)Skin.Emissario].SetActive(false);
+        skin[(int)Skin.Default].SetActive(false);
+        skin[((int)status.skin)].SetActive(true);
+    }
+
 }

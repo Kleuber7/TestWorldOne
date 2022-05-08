@@ -33,56 +33,48 @@ public class FSMBoss : MonoBehaviour
     public string Iddle()
     {
         const string BOSS_Iddle = "Iddle";
-
         return BOSS_Iddle;
     }
 
     public string Atirando()
     {
         const string BOSS_Atirando = "Atirando";
-
         return BOSS_Atirando;
     }
 
     public string PreparandoDash()
     {
         const string BOSS_PDash = "PreparandoDash";
-
         return BOSS_PDash;
     }
 
     public string Dash()
     {
         const string BOSS_Dash = "Dash";
-
         return BOSS_Dash;
     }
 
     public string PreparandoPulo()
     {
         const string BOSS_PPulo = "PreparandoPulo";
-
         return BOSS_PPulo;
     }
 
     public string Pulo()
     {
         const string BOSS_Pulo = "Pulo";
-
         return BOSS_Pulo;
     }
 
     public string Queda()
     {
         const string BOSS_Queda = "Queda";
-
         return BOSS_Queda;
     }
 
     public string Morte()
     {
         const string BOSS_Morte = "Morte";
-
         return BOSS_Morte;
     }
 }
