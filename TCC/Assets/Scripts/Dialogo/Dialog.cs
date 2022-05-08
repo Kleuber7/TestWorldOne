@@ -17,21 +17,28 @@ public class Dialog : MonoBehaviour
     public GameObject imagemDialog;
     public GameObject imagemFundo;
     public GameObject continueButton;
+    public ScriptablePlayer scriptable;
 
     public static bool dialogoB;
 
     public bool podePassar, sentenca;
 
+    public float timeVideo;
 
     void Start()
     {
         typingSpeedReal = typingSpeed;
         andar = GameObject.FindGameObjectWithTag("Player").GetComponent<Andar>();
         ataque = GameObject.FindGameObjectWithTag("Player").GetComponent<AtaqueBasico>();
-        if (Jogador_Status.mortes == 0)
+
+        if (Jogador_Status.mortes == 0 && !scriptable.FirstTime)
         {
 
             StartCoroutine(Type1());
+        }
+        else if(scriptable.FirstTime)
+        {
+            StartCoroutine(VideoPlay());
         }
         else if (Jogador_Status.mortes >= 1)
         {
@@ -115,7 +122,12 @@ public class Dialog : MonoBehaviour
         }
     }
 
-
+    IEnumerator VideoPlay()
+    {
+        yield return new WaitForSeconds(timeVideo);
+        StartCoroutine(Type1());
+        scriptable.FirstTime = false;
+    }
     IEnumerator Type1()
     {
         imagemFundo.SetActive(true);
