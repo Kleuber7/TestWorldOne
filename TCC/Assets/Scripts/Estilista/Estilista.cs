@@ -28,18 +28,33 @@ public class Estilista : MonoBehaviour
         if(skin == (int)Skin.Default)
         {
             status.skin = Skin.Default;
-            skinStatus.skin[(int)Skin.Fire].SetActive(false);
-            skinStatus.skin[((int)status.skin)].SetActive(true);
+            skinStatus.AtivaDefault();
             animaPlayer.jogadorAnima = skinStatus.skin[((int)status.skin)].GetComponent<Animator>();
         }
-        else if(skin == (int)Skin.Fire)
+        else if(skin == (int)Skin.Mahou)
         {
-            status.skin = Skin.Fire;
-            skinStatus.skin[(int)Skin.Default].SetActive(false);
-            skinStatus.skin[((int)status.skin)].SetActive(true);
+            status.skin = Skin.Mahou;
+            skinStatus.AtivaMahou();
             animaPlayer.jogadorAnima = skinStatus.skin[((int)status.skin)].GetComponent<Animator>();
         }
-
+        else if (skin == (int)Skin.Emissario)
+        {
+            status.skin = Skin.Emissario;
+            skinStatus.AtivaEmissario();
+            animaPlayer.jogadorAnima = skinStatus.skin[((int)status.skin)].GetComponent<Animator>();
+        }
+        else if (skin == (int)Skin.Pesadelo)
+        {
+            status.skin = Skin.Pesadelo;
+            skinStatus.AtivaPesadelo();
+            animaPlayer.jogadorAnima = skinStatus.skin[((int)status.skin)].GetComponent<Animator>();
+        }
+        else if (skin == (int)Skin.Abobora)
+        {
+            status.skin = Skin.Abobora;
+            skinStatus.AtivaAbobora();
+            animaPlayer.jogadorAnima = skinStatus.skin[((int)status.skin)].GetComponent<Animator>();
+        }
     }
 
    
