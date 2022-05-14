@@ -21752,7 +21752,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884188654}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: 30fb5151593c61a4da17d3d89da6c794, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -68449,7 +68449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1275367636142783471, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1293147561643713303, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
@@ -70354,7 +70354,7 @@ PrefabInstance:
     - target: {fileID: 5415744866972104659, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: skin.Array.data[2]
       value: 
-      objectReference: {fileID: 2493139183562820240}
+      objectReference: {fileID: 0}
     - target: {fileID: 5415744866972104659, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: skin.Array.data[3]
       value: 
@@ -72369,11 +72369,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5506916197357881133, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
   m_PrefabInstance: {fileID: 2493139183562820229}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2493139183562820240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6407857005954536948, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
-  m_PrefabInstance: {fileID: 2493139183562820229}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &2493139183562820241
 Animator:
   serializedVersion: 3
@@ -72404,25 +72399,6 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 531c739d780104946a2285c0c5495809, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!95 &2493139183562820243
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2493139183562820240}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5aa41b66a2b36d04582400037e200126, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -75599,6 +75575,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
+      propertyPath: timeVideo
+      value: 1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: scriptable
       value: 
       objectReference: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
@@ -75614,6 +75594,14 @@ PrefabInstance:
       propertyPath: typingSpeed
       value: 0.06
       objectReference: {fileID: 0}
+    - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
+      propertyPath: videoCanvas
+      value: 
+      objectReference: {fileID: 131097698}
+    - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
+      propertyPath: videoPlayer
+      value: 
+      objectReference: {fileID: 884188654}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: imagemDialog
       value: 

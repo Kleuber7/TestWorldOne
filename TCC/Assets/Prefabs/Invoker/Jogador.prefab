@@ -595,6 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempoStun: 1
   forcaStun: 1
+  forcaDesloca: 0
   tagColisor: Inimigo
   direcaoDeslocar: {x: 0, y: 0, z: 0}
   desloca: 0
@@ -1274,7 +1275,6 @@ Transform:
   m_Children:
   - {fileID: 2553422673327613327}
   - {fileID: 4503434507934379660}
-  - {fileID: 6027671537138224974}
   - {fileID: 5127259898579312023}
   - {fileID: 1275367636142783471}
   m_Father: {fileID: 2671709479718680612}
@@ -1730,7 +1730,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f7b6c2f95c1786943bf1589ea4be4b11, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f7b6c2f95c1786943bf1589ea4be4b11, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1932,7 +1932,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7e1ce3135f6074743913796477d6eb76, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7e1ce3135f6074743913796477d6eb76, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1992,74 +1992,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e1ce3135f6074743913796477d6eb76, type: 3}
   m_PrefabInstance: {fileID: 4660406251125062268}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6065273576609949861
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 8305149036189010277}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.33000183
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.6200001
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3693026795161851490, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 111e84494a852564d8d4526264068f38, type: 2}
-    - target: {fileID: 919132149155446097, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_Name
-      value: InvokerEmissarioEscuridao_06_05
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
---- !u!4 &6027671537138224974 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67d8cfadf6fb258479bde392562d4385, type: 3}
-  m_PrefabInstance: {fileID: 6065273576609949861}
   m_PrefabAsset: {fileID: 0}

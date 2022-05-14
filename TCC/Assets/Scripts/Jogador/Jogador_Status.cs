@@ -155,9 +155,9 @@ public class Jogador_Status : MonoBehaviour
     {
         skin[(int)Skin.Mahou].SetActive(false);
         skin[(int)Skin.Pesadelo].SetActive(false);
-        skin[(int)Skin.Emissario].SetActive(false);
         skin[(int)Skin.Abobora].SetActive(false);
         skin[((int)status.skin)].SetActive(true);
+        skin[(int)Skin.Emissario].SetActive(false);
     }
     public void AtivaMahou()
     {

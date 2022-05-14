@@ -18,6 +18,8 @@ public class Dialog : MonoBehaviour
     public GameObject imagemFundo;
     public GameObject continueButton;
     public ScriptablePlayer scriptable;
+    public GameObject videoCanvas;
+    public GameObject videoPlayer;
 
     public static bool dialogoB;
 
@@ -34,6 +36,8 @@ public class Dialog : MonoBehaviour
         if (Jogador_Status.mortes == 0 && !scriptable.FirstTime)
         {
 
+            videoCanvas.SetActive(false);
+            videoPlayer.SetActive(false);
             StartCoroutine(Type1());
         }
         else if(scriptable.FirstTime)
@@ -50,6 +54,17 @@ public class Dialog : MonoBehaviour
     {
         FirstDialog();
         DeathDialog();
+
+        if(scriptable.FirstTime)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                videoCanvas.SetActive(false);
+                videoPlayer.SetActive(false);
+                scriptable.FirstTime = false;
+                StartCoroutine(Type1());
+            }
+        }
     }
 
 
@@ -124,9 +139,13 @@ public class Dialog : MonoBehaviour
 
     IEnumerator VideoPlay()
     {
+        videoCanvas.SetActive(true);
+        videoPlayer.SetActive(true);
         yield return new WaitForSeconds(timeVideo);
         StartCoroutine(Type1());
         scriptable.FirstTime = false;
+        videoCanvas.SetActive(false);
+        videoPlayer.SetActive(false);
     }
     IEnumerator Type1()
     {

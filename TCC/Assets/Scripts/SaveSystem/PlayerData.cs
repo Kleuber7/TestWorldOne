@@ -16,6 +16,7 @@ public class PlayerData
     public float ExtraLife;
     public int levelVida, levelMana, levelAtaque, levelDefesa;
     public int skin;
+    public bool FirstTime;
 
     public PlayerData(SaveManager player)
     {
@@ -37,7 +38,8 @@ public class PlayerData
         levelDefesa = player.player.levelDefesa;
         initialMoney = player.player.initialMoney;
         skin = (int)player.player.skin;
-    }
+        FirstTime = player.player.FirstTime;
+}
 
 
 

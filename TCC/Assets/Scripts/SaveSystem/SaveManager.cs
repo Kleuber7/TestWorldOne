@@ -34,6 +34,7 @@ public class SaveManager : MonoBehaviour
         player.levelDefesa = data.levelDefesa;
         player.initialMoney = data.initialMoney;
         player.skin = (Skin)data.skin;
+        player.FirstTime = data.FirstTime;
     }
 
     #region
