@@ -149,7 +149,7 @@ public class Dialog : MonoBehaviour
         videoPlayer.SetActive(true);
         yield return new WaitForSeconds(timeVideo);
         StartCoroutine(Type1());
-        scriptable.FirstTime = false;
+        //scriptable.FirstTime = false;
         videoCanvas.SetActive(false);
         videoPlayer.SetActive(false);
     }
