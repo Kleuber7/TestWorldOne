@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4cf89cc27ea144cb466a2a44ad0a01, type: 3}
   m_Name: PlayerStatus
   m_EditorClassIdentifier: 
-  health: 150
-  maxHealth: 150
+  health: 100
+  maxHealth: 100
   money: 100
   qntdPotionVida: 1
   qntdPotionMana: 1
-  Mana: 200
-  maxMana: 200
-  defense: 50
-  maxDefense: 50
+  Mana: 100
+  maxMana: 100
+  defense: 40
+  maxDefense: 40
   attack: 40
   maxAttack: 40
   speed: 30
@@ -30,7 +30,7 @@ MonoBehaviour:
   levelMana: 1
   levelAtaque: 1
   levelDefesa: 1
-  initialMoney: 100
+  initialMoney: 0
   skin: 0
   moneyHUD: 0
   moneyEarn: 20
