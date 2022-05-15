@@ -8,7 +8,8 @@ public class Tela_De_Load : MonoBehaviour
     public GameObject Painel_De_Load;
     public Slider Barra_Carregamento;
     public Text Texto_Do_Carregamento;
-
+    public Sprite[] animatedImages;
+    public Image animateImageObj;
     
     public void Carregar_Scena(int IndexScena)
     {
@@ -32,13 +33,17 @@ public class Tela_De_Load : MonoBehaviour
     {
         AsyncOperation Carregamento = SceneManager.LoadSceneAsync(IndexScena);
         
+
+
         Painel_De_Load.SetActive(true);
         
         while (!Carregamento.isDone)
         {
-            float Atual_Progresao = Mathf.Clamp01(Carregamento.progress/0.9f);
-            Barra_Carregamento.value = Atual_Progresao;
-            Texto_Do_Carregamento.text = Atual_Progresao*100f+"%";
+            //float Atual_Progresao = Mathf.Clamp01(Carregamento.progress/0.9f);
+            animateImageObj.sprite = animatedImages[(int)(Time.time * 40) % animatedImages.Length];
+
+            //Barra_Carregamento.value = Atual_Progresao;
+            //Texto_Do_Carregamento.text = Atual_Progresao*100f+"%";
             DontDestroyOnLoad(GameManager.gameManager.gameObject);
             DontDestroyOnLoad(GameManager.gameManager.GetPlayer());
             DontDestroyOnLoad(GameManager.gameManager.info.gameObject);
@@ -61,9 +66,10 @@ public class Tela_De_Load : MonoBehaviour
 
         while (!Carregamento.isDone)
         {
-            float Atual_Progresao = Mathf.Clamp01(Carregamento.progress / 0.9f);
-            Barra_Carregamento.value = Atual_Progresao;
-            Texto_Do_Carregamento.text = Atual_Progresao * 100f + "%";
+            //float Atual_Progresao = Mathf.Clamp01(Carregamento.progress / 0.9f);
+            animateImageObj.sprite = animatedImages[(int)(Time.time * 40) % animatedImages.Length];
+            //Barra_Carregamento.value = Atual_Progresao;
+            //Texto_Do_Carregamento.text = Atual_Progresao * 100f + "%";
             DontDestroyOnLoad(GameManager.gameManager.gameObject);
             yield return null;
         }
@@ -83,9 +89,10 @@ public class Tela_De_Load : MonoBehaviour
 
         while (!Carregamento.isDone)
         {
-            float Atual_Progresao = Mathf.Clamp01(Carregamento.progress / 0.9f);
-            Barra_Carregamento.value = Atual_Progresao;
-            Texto_Do_Carregamento.text = Atual_Progresao * 100f + "%";
+            //float Atual_Progresao = Mathf.Clamp01(Carregamento.progress / 0.9f);
+            animateImageObj.sprite = animatedImages[(int)(Time.time * 40) % animatedImages.Length];
+            //Barra_Carregamento.value = Atual_Progresao;
+            //Texto_Do_Carregamento.text = Atual_Progresao * 100f + "%";
             
             yield return null;
         }
