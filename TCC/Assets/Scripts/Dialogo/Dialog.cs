@@ -35,16 +35,10 @@ public class Dialog : MonoBehaviour
 
         if (Jogador_Status.mortes == 0 && !scriptable.FirstTime)
         {
-            if (videoCanvas != null && videoPlayer != null)
-            {
-                videoCanvas.SetActive(false);
-                videoPlayer.SetActive(false);
-                StartCoroutine(Type1());
-            }
-            else
-            {
-                StartCoroutine(Type1());
-            }
+
+            videoCanvas.SetActive(false);
+            videoPlayer.SetActive(false);
+            StartCoroutine(Type1());
         }
         else if(scriptable.FirstTime)
         {

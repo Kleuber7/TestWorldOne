@@ -5,14 +5,13 @@ using DG.Tweening;
 
 public class OBJDesloca : MonoBehaviour
 {
-    [SerializeField] public float deslocamentoStun;
+    [SerializeField] public float tempoStun;
     [SerializeField] public float forcaStun;
     [SerializeField] public float forcaDesloca;
     [SerializeField] private string tagColisor;
     [SerializeField] public Vector3 direcaoDeslocar;
     [SerializeField] public bool desloca = false;
     [SerializeField] public GameObject objeto;
-    [SerializeField] private int numJumps = 1;
 
     private void OnTriggerStay(Collider other) 
     {
@@ -28,7 +27,7 @@ public class OBJDesloca : MonoBehaviour
        if(desloca)
        {
            direcaoDeslocar = (objeto.transform.position - new Vector3(this.gameObject.transform.position.x , objeto.transform.position.y, this.gameObject.transform.position.z ));
-           objeto.transform.DOJump(direcaoDeslocar * direcaoDeslocar.magnitude, forcaStun, numJumps, deslocamentoStun).SetEase(Ease.Flash);
+           objeto.transform.DOJump(direcaoDeslocar * direcaoDeslocar.magnitude, forcaStun, 1, tempoStun).SetEase(Ease.Flash);
            desloca = false;
        }
     }
