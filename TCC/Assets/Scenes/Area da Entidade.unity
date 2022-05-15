@@ -11999,7 +11999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f310d152d05f39f479cae8df1ac45f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deslocamentoStun: 0
+  deslocamentoStun: 5
   forcaStun: 2
   forcaDesloca: 0
   tagColisor: Inimigo
@@ -21748,7 +21748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f310d152d05f39f479cae8df1ac45f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deslocamentoStun: 0
+  deslocamentoStun: 3
   forcaStun: 2
   forcaDesloca: 0
   tagColisor: Inimigo
@@ -70798,6 +70798,10 @@ PrefabInstance:
       propertyPath: tempoStun
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5966083649529523810, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: deslocamentoStun
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5973126577283290368, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -72651,7 +72655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f310d152d05f39f479cae8df1ac45f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deslocamentoStun: 0
+  deslocamentoStun: 5
   forcaStun: 2
   forcaDesloca: 0
   tagColisor: Inimigo
