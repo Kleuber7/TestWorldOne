@@ -23,6 +23,7 @@ public class BOSSGerenciador : MonoBehaviour
     {
         alvo = GameManager.gameManager.GetPlayer();
         Camera.main.gameObject.SetActive(false);
+        cam.tag = "MainCamera";
         AtivaCombateBasico();
     }
 
