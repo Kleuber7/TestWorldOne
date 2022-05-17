@@ -68,6 +68,7 @@ public class ED_Mimic : MonoBehaviour
         {
             //Dash estilo Xadrez
             StartCoroutine(Bauzada());
+            Controlador_Animator.SetBool("Atacar",false);
         }
     }
     IEnumerator Bauzada()
@@ -75,8 +76,8 @@ public class ED_Mimic : MonoBehaviour
         Liberado = false;
         yield return new WaitForSeconds(Proximo_Dash);
         //movimento
-        this.gameObject.transform.LookAt(new Vector3 (Alvo.transform.position.x,transform.position.y,Alvo.transform.position.z));
         Controlador_Animator.SetBool("Atacar",true);
+        this.gameObject.transform.LookAt(new Vector3 (Alvo.transform.position.x,transform.position.y,Alvo.transform.position.z));
         this.gameObject.transform.DOMove(new Vector3 (Local_Final.position.x,transform.position.y,Local_Final.position.z),Velocidade_Dash).SetEase(Ease.InCirc).OnComplete(() =>Liberado = true);
     }
 }
