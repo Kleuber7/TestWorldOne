@@ -60,7 +60,12 @@ ModelImporter:
   - first:
       74: -5132724633130383432
     second: Armature|PoseLib.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boss.001
+    second: {fileID: 2100000, guid: 7d02e336ab1201946830f2544790fea0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
