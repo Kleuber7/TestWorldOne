@@ -1922,7 +1922,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7946880895148863572, guid: 2ecc19904808eeb49975a5dc82d705be, type: 3}
+  - {fileID: 2100000, guid: 7d02e336ab1201946830f2544790fea0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3017,12 +3017,14 @@ MonoBehaviour:
   combateBasico: 0
   atravessar: 0
   enfurecido: 0
+  morto: 0
   alvo: {fileID: 0}
   posicaoCombate: {fileID: 0}
   posicoesCombate: {fileID: 0}
   status: {fileID: 0}
   scriptPath: {fileID: 0}
   scriptTiros: {fileID: 0}
+  scriptCombateBasico: {fileID: 1505504653319556685}
   delayTrocaDeEstado: 2
   fsm: {fileID: 0}
   cam: {fileID: 0}
@@ -3043,6 +3045,7 @@ MonoBehaviour:
   velocidade: 300
   enfurecido: 0
   danoAtaqueBasico: 50
+  fsm: {fileID: 7245704214096008696}
 --- !u!114 &1505504653319556685
 MonoBehaviour:
   m_ObjectHideFlags: 0

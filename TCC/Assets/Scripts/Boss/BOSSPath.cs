@@ -20,20 +20,27 @@ public class BOSSPath : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(gerenciador.atravessar)
+        if(!gerenciador.morto)
         {
-            iniciarPath = true;
-            gerenciador.atravessar = false;
-        }
+            if(gerenciador.atravessar)
+            {
+                iniciarPath = true;
+                gerenciador.atravessar = false;
+            }
 
-        if(iniciarPath)
+            if(iniciarPath)
+            {
+                SetaPontos();
+                fsm.ChangeAnimationState(fsm.PreparandoPulo());
+                StartCoroutine(TempoPreparacaoPulo());
+                transform.LookAt(new Vector3(posicaoInicial.position.x, transform.position.y, posicaoInicial.position.z));
+                transform.DOJump(posicaoInicial.position, ((posicaoInicial.position - transform.position).magnitude / velocidade) * 2, 1, (posicaoInicial.position - transform.position).magnitude / velocidade, false).SetEase(Ease.Linear).OnComplete(() => {transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).SetLookAt(-1).OnPlay(() => {scriptDano.podeDarDano = true; StartCoroutine(Dash());}).OnComplete(() => {scriptDano.podeDarDano = false; StartCoroutine(gerenciador.DelayTrocaDeEstadoAtravessar()); fsm.ChangeAnimationState(fsm.Iddle());});});
+                iniciarPath = false;
+            }
+        }
+        else
         {
-            SetaPontos();
-            fsm.ChangeAnimationState(fsm.PreparandoPulo());
-            StartCoroutine(TempoPreparacaoPulo());
-            transform.LookAt(new Vector3(posicaoInicial.position.x, transform.position.y, posicaoInicial.position.z));
-            transform.DOJump(posicaoInicial.position, ((posicaoInicial.position - transform.position).magnitude / velocidade) * 2, 1, (posicaoInicial.position - transform.position).magnitude / velocidade, false).SetEase(Ease.Linear).OnComplete(() => {transform.DOPath(posicaoPontos, duracaoPath, PathType.Linear).SetEase(Ease.Linear).SetLookAt(-1).OnPlay(() => {scriptDano.podeDarDano = true; StartCoroutine(Dash());}).OnComplete(() => {scriptDano.podeDarDano = false; StartCoroutine(gerenciador.DelayTrocaDeEstadoAtravessar()); fsm.ChangeAnimationState(fsm.Iddle());});});
-            iniciarPath = false;
+            DOTween.KillAll();
         }
     }
 
