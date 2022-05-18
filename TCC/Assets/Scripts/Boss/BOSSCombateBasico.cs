@@ -15,27 +15,30 @@ public class BOSSCombateBasico : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(gerenciador.combateBasico)
+        if(!gerenciador.morto)
         {
-            StartCoroutine(TempoEstado());
-            gerenciador.combateBasico = false;
-        }
-
-        if(cdEstado)
-        {
-            if(podeAtirar)
+            if(gerenciador.combateBasico)
             {
-                if(gerenciador.alvo != null)
+                StartCoroutine(TempoEstado());
+                gerenciador.combateBasico = false;
+            }
+
+            if(cdEstado)
+            {
+                if(podeAtirar)
                 {
-                    transform.LookAt(new Vector3(gerenciador.alvo.transform.position.x - transform.position.x, transform.position.y, gerenciador.alvo.transform.position.z - transform.position.z));
-                    fsm.ChangeAnimationState("");
-                    fsm.ChangeAnimationState(fsm.Atirando());
-                    BOSSProjetil tiroDisparado;
-                    tiroDisparado = Instantiate(tiro.gameObject, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
-                    tiroDisparado.direcao = new Vector3(gerenciador.alvo.transform.position.x, gerenciador.alvo.transform.position.y + 5, gerenciador.alvo.transform.position.z) - pontoDisparo.position;
-                    tiroDisparado.atirou = true;
-                    tiroDisparado.transform.LookAt(gerenciador.alvo.transform.position);
-                    StartCoroutine(CDDisparo());
+                    if(gerenciador.alvo != null)
+                    {
+                        transform.LookAt(new Vector3(gerenciador.alvo.transform.position.x - transform.position.x, transform.position.y, gerenciador.alvo.transform.position.z - transform.position.z));
+                        fsm.ChangeAnimationState("");
+                        fsm.ChangeAnimationState(fsm.Atirando());
+                        BOSSProjetil tiroDisparado;
+                        tiroDisparado = Instantiate(tiro.gameObject, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
+                        tiroDisparado.direcao = new Vector3(gerenciador.alvo.transform.position.x, gerenciador.alvo.transform.position.y + 5, gerenciador.alvo.transform.position.z) - pontoDisparo.position;
+                        tiroDisparado.atirou = true;
+                        tiroDisparado.transform.LookAt(gerenciador.alvo.transform.position);
+                        StartCoroutine(CDDisparo());
+                    }
                 }
             }
         }
