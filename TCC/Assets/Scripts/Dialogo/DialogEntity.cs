@@ -20,16 +20,15 @@ public class DialogEntity : MonoBehaviour
     public GameObject imagemDialog;
     public GameObject continueButton;
     public bool podePassar;
-
-
+    public bool cenaBoss;
+    public GameObject canvasVidaBoss;
+    public ScriptablePlayer scriptablePlayer;
 
     void Start()
     {
         typingSpeedReal = typingSpeed;
         andar = GameObject.FindGameObjectWithTag("Player").GetComponent<Andar>();
         ataque = GameObject.FindGameObjectWithTag("Player").GetComponent<AtaqueBasico>();
-
-
     }
     void Update()
     {
@@ -98,6 +97,10 @@ public class DialogEntity : MonoBehaviour
 
     IEnumerator NpcDialogs()
     {
+        if(cenaBoss)
+        {
+            canvasVidaBoss.SetActive(false);
+        }
         imagemFundo.SetActive(true);
         canTalk = false;
         npcDialog = true;
@@ -139,6 +142,11 @@ public class DialogEntity : MonoBehaviour
                 npcDialog = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
+                if(cenaBoss)
+                {
+                    scriptablePlayer.FirstTime = false;
+                    GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
+                }
             }
         }
 

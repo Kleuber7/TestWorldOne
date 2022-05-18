@@ -7,6 +7,8 @@ public class BOSSStatus : BASEStatus
     public float velocidade;
     public bool enfurecido;
     public float danoAtaqueBasico;
+    public FSMBoss fsm;
+    public GameObject entidade;
 
     private void FixedUpdate() 
     {
@@ -18,14 +20,14 @@ public class BOSSStatus : BASEStatus
 
     public IEnumerator DelayMorte()
     {
-        yield return new WaitForSeconds(3);
+        fsm.ChangeAnimationState(fsm.Morte());
+        yield return new WaitForSeconds(6);
         Morrer();
     }
 
     public override void Morrer()
     {
-        GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
-
+        entidade.gameObject.SetActive(true);
         Destroy(this.gameObject);
     }
 }
