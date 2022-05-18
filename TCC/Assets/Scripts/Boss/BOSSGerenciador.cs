@@ -9,12 +9,14 @@ public class BOSSGerenciador : MonoBehaviour
     public bool combateBasico;
     public bool atravessar;
     public bool enfurecido;
+    public bool morto;
     public GameObject alvo;
     public Transform posicaoCombate;
     public Transform posicoesCombate;
     public BOSSStatus status;
     public BOSSPath scriptPath;
     public BOSSTiros scriptTiros;
+    public BOSSCombateBasico scriptCombateBasico;
     public float delayTrocaDeEstado;
     public FSMBoss fsm;
     public Camera cam;
@@ -23,6 +25,7 @@ public class BOSSGerenciador : MonoBehaviour
     {
         alvo = GameManager.gameManager.GetPlayer();
         Camera.main.gameObject.SetActive(false);
+        cam.tag = "MainCamera";
         AtivaCombateBasico();
     }
 
@@ -31,6 +34,14 @@ public class BOSSGerenciador : MonoBehaviour
         if(status.vida <= (status.vidaMax * .3f))
         {
             enfurecido = true;
+        }
+
+        if(status.vida <= 0)
+        {
+            scriptPath.enabled = false;
+            scriptTiros.enabled = false;
+            scriptCombateBasico.enabled = false;
+            morto = true;
         }
     }
 

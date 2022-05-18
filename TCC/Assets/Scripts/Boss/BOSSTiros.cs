@@ -21,18 +21,25 @@ public class BOSSTiros : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(gerenciador.atirar)
+        if(!gerenciador.morto)
         {
-            iniciarTiros = true;
-            gerenciador.atirar = false;
-        }
+            if(gerenciador.atirar)
+            {
+                iniciarTiros = true;
+                gerenciador.atirar = false;
+            }
 
-        if(iniciarTiros)
+            if(iniciarTiros)
+            {
+                EscolhePontoDeDisparo();
+                transform.LookAt(new Vector3(posicaoInicial.position.x, transform.position.y, posicaoInicial.position.z));
+                transform.DOJump(posicaoInicial.position, (posicaoInicial.position - transform.position).magnitude / velocidade, 1, (posicaoInicial.position - transform.position).magnitude / velocidade, false).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(PreparacaoPulo())).OnComplete(() => transform.DORotate(new Vector3(posicaoInicial.rotation.x, posicaoInicial.rotation.y, posicaoInicial.rotation.z), 1/velocidadeRotacao).OnComplete(() => transform.DORotate(rotacaoInicial, 1/velocidadeRotacao).SetEase(Ease.InCirc).OnComplete(() => transform.DORotate(rotacaoFinal, 1/(velocidadeRotacao / 2)).SetDelay(1f).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(Disparos())).OnComplete(() => {StartCoroutine(gerenciador.DelayTrocaDeEstadoAtirar()); fsm.ChangeAnimationState(fsm.Iddle());}))));
+                iniciarTiros = false;
+            }
+        }
+        else
         {
-            EscolhePontoDeDisparo();
-            transform.LookAt(new Vector3(posicaoInicial.position.x, transform.position.y, posicaoInicial.position.z));
-            transform.DOJump(posicaoInicial.position, (posicaoInicial.position - transform.position).magnitude / velocidade, 1, (posicaoInicial.position - transform.position).magnitude / velocidade, false).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(PreparacaoPulo())).OnComplete(() => transform.DORotate(new Vector3(posicaoInicial.rotation.x, posicaoInicial.rotation.y, posicaoInicial.rotation.z), 1/velocidadeRotacao).OnComplete(() => transform.DORotate(rotacaoInicial, 1/velocidadeRotacao).SetEase(Ease.InCirc).OnComplete(() => transform.DORotate(rotacaoFinal, 1/(velocidadeRotacao / 2)).SetDelay(1f).SetEase(Ease.Linear).OnPlay(() => StartCoroutine(Disparos())).OnComplete(() => {StartCoroutine(gerenciador.DelayTrocaDeEstadoAtirar()); fsm.ChangeAnimationState(fsm.Iddle());}))));
-            iniciarTiros = false;
+            DOTween.KillAll();
         }
     }
 
@@ -45,21 +52,24 @@ public class BOSSTiros : MonoBehaviour
 
     IEnumerator Disparos()
     {
-        fsm.ChangeAnimationState("");
-        fsm.ChangeAnimationState(fsm.Atirando());
-        BOSSProjetil tiro = Instantiate(prefabTiro, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
-        tiro.gameObject.transform.localScale = new Vector3(9, 9, 9);
-        tiro.direcao = tiro.gameObject.transform.forward;
-        tiro.atirou = true;
-        contadorDisparos++;
-        yield return new WaitForSeconds((1/(velocidadeRotacao / 2))/numeroDeDisparos);
-        if(contadorDisparos < numeroDeDisparos)
+        if(!gerenciador.morto)
         {
-            StartCoroutine(Disparos());
-        }
-        else
-        {
-            contadorDisparos = 0;
+            fsm.ChangeAnimationState("");
+            fsm.ChangeAnimationState(fsm.Atirando());
+            BOSSProjetil tiro = Instantiate(prefabTiro, pontoDisparo.position, pontoDisparo.rotation).GetComponent<BOSSProjetil>();
+            tiro.gameObject.transform.localScale = new Vector3(9, 9, 9);
+            tiro.direcao = tiro.gameObject.transform.forward;
+            tiro.atirou = true;
+            contadorDisparos++;
+            yield return new WaitForSeconds((1/(velocidadeRotacao / 2))/numeroDeDisparos);
+            if(contadorDisparos < numeroDeDisparos)
+            {
+                StartCoroutine(Disparos());
+            }
+            else
+            {
+                contadorDisparos = 0;
+            }
         }
     }
 
