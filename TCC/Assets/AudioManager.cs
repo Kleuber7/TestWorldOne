@@ -22,11 +22,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    
+
 
     private void Start()
     {
-        sliderSounds.value = valueSound;
         GeneralVolume();
         Play(EntityTheme());
     }
@@ -34,14 +33,30 @@ public class AudioManager : MonoBehaviour
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-       
+
         if (s == null) return;
 
         s.source.Play();
     }
 
+
+    public void Mute()
+    {
+        sliderSounds.value = 0;
+        valueSound = 0;
+    }
+
+    public void UnMute()
+    {
+        if (valueSound != 0)
+            sliderSounds.value = valueSound;
+        else
+            sliderSounds.value = 0.3f;
+    }
+
     public void GeneralVolume()
     {
+
         valueSound = sliderSounds.value;
         foreach (Sound s in sounds)
         {

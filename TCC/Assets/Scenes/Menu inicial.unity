@@ -155,7 +155,7 @@ MonoBehaviour:
   sounds:
   - name: EntityTheme
     clip: {fileID: 8300000, guid: 1f4ebc7cb69eddd4ab7c5dab3958a6c6, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -501,6 +501,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1641169109481594020, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5561923466903274987, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -603,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8836380196725673786, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8836380196725673786, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -611,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8836380196819617149, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8836380196819617149, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -619,11 +623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8836380196819617149, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8836380197407157689, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_Value
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8836380197407157689, guid: 51ff3a8fd7e6b84418a1479477b3b9d5, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
