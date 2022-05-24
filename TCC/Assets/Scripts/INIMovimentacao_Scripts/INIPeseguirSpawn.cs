@@ -75,7 +75,8 @@ public class INIPeseguirSpawn : MonoBehaviour
        
         if(alvo.gameObject.tag == "Player" && !Jogador_Status.morreu)
         {
-            alvo.GetComponent<FSMJogador>().ChangeAnimationState(alvo.GetComponent<FSMJogador>().TomarDano());
+            if (!PLASkills.castingSkill)
+                alvo.GetComponent<FSMJogador>().ChangeAnimationState(alvo.GetComponent<FSMJogador>().TomarDano());
             alvo.GetComponent<AtaqueBasico>().ManageDamage();
             alvo.GetComponent<Jogador_Status>().TomarDano(status.dano);
         }

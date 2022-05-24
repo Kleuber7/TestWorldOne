@@ -31,7 +31,8 @@ public class BOSSProjetil : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && !Jogador_Status.morreu)
         {
-            other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
+            if (!PLASkills.castingSkill)
+                other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
             other.GetComponent<AtaqueBasico>().ManageDamage();
             other.GetComponent<Jogador_Status>().TomarDano(danoDisparo);
             Destroy(this.gameObject);

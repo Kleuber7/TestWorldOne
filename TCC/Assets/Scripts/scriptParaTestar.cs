@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class scriptParaTestar : MonoBehaviour
 {
+    public ScriptablePlayer scriptable;
 
     void Update()
     {
@@ -16,6 +17,11 @@ public class scriptParaTestar : MonoBehaviour
                     Destroy(inimigos);
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            scriptable.money += 10000;
         }
     }
 }
