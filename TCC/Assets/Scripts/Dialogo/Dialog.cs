@@ -32,6 +32,7 @@ public class Dialog : MonoBehaviour
         typingSpeedReal = typingSpeed;
         andar = GameObject.FindGameObjectWithTag("Player").GetComponent<Andar>();
         ataque = GameObject.FindGameObjectWithTag("Player").GetComponent<AtaqueBasico>();
+        AudioManager.canChange = true;
 
         if (Jogador_Status.mortes == 0 && !scriptable.FirstTime)
         {
