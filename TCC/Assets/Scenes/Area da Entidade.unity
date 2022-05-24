@@ -12879,7 +12879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13697,7 +13697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deslocamentoStun: 5
-  forcaStun: 2
+  forcaStun: 70
   forcaDesloca: 0
   tagColisor: Inimigo
   direcaoDeslocar: {x: 0, y: 0, z: 0}
@@ -17583,7 +17583,7 @@ Animator:
   m_GameObject: {fileID: 775901331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5aa41b66a2b36d04582400037e200126, type: 2}
+  m_Controller: {fileID: 9100000, guid: 21acb22ab60bceb459e90c16baeb121a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -23887,7 +23887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deslocamentoStun: 3
-  forcaStun: 2
+  forcaStun: 70
   forcaDesloca: 0
   tagColisor: Inimigo
   direcaoDeslocar: {x: 0, y: 0, z: 0}
@@ -42836,7 +42836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -49356,15 +49356,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 850433109277379441, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -49382,6 +49382,14 @@ PrefabInstance:
       propertyPath: status
       value: 
       objectReference: {fileID: 919132147892234268}
+    - target: {fileID: 970252418589652193, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 212.6165
+      objectReference: {fileID: 0}
+    - target: {fileID: 970252418589652193, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 77.51247
+      objectReference: {fileID: 0}
     - target: {fileID: 1204320650666008416, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -49550,6 +49558,10 @@ PrefabInstance:
       propertyPath: m_MaxValue
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4522619704422175948, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6509804
+      objectReference: {fileID: 0}
     - target: {fileID: 4527915181814185024, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5950321
@@ -49588,7 +49600,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 216.6008
+      value: 294.5867
       objectReference: {fileID: 0}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_SizeDelta.y
@@ -49608,7 +49620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 83.2
+      value: 104.4147
       objectReference: {fileID: 0}
     - target: {fileID: 6565511987734197862, guid: c5dec1c02536a9a438d341112eb86e65, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -70783,6 +70795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0ed45cd7959c245ae454875161c40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptable: {fileID: 11400000, guid: cba96e73bd10c4046b4c3fba6c31e867, type: 2}
 --- !u!114 &919132147892234284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75213,7 +75226,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966083649529523810, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: forcaStun
-      value: 2
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966083649529523810, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5966083649529523810, guid: c664685db48204c4a93d1ac2ae2e231d, type: 3}
       propertyPath: tempoStun
@@ -77077,7 +77094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deslocamentoStun: 5
-  forcaStun: 2
+  forcaStun: 70
   forcaDesloca: 0
   tagColisor: Inimigo
   direcaoDeslocar: {x: 0, y: 0, z: 0}
@@ -80328,7 +80345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: timeVideo
-      value: 114
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: scriptable

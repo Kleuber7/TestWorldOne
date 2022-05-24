@@ -88,8 +88,8 @@ public class Jogador_Status : MonoBehaviour
    
     public void Morrer()
     {
-
-        GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
+        Time.timeScale = 1;
+        GameManager.gameManager.load.Carregar_CenaInicio(1);
 
         status.health = status.maxHealth;
         morreu = false;
