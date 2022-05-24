@@ -14,7 +14,10 @@ public class BOSSDano : MonoBehaviour
         {
             if(podeDarDano)
             {
-                other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
+                if (!PLASkills.castingSkill)
+                {
+                    other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
+                }
                 other.GetComponent<AtaqueBasico>().ManageDamage();
                 other.GetComponent<Jogador_Status>().TomarDano(dano);
             }
