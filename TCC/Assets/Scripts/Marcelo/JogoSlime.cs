@@ -7,6 +7,8 @@ public class JogoSlime : MonoBehaviour
 {
     public Image MenuInicial;
     public GameObject CanvasFase;
+    public GameObject Player;
+    public bool jogando;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +21,24 @@ public class JogoSlime : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                Player = other.gameObject;
                 MenuInicial.gameObject.SetActive(true);
                 CanvasFase.gameObject.SetActive(true);
+                
             }
         }
     }
     // Update is called once per frame
     void Update()
     {
+        if (CanvasFase.active)
+        {
+            jogando = true;
+        }
+        else
+        {
+            jogando = false;
+        }
         
     }
 }

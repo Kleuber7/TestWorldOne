@@ -13,6 +13,7 @@ public class Andar : MonoBehaviour
     private float distanciaAnterior;
     [SerializeField] private AtaqueADistancia scriptDeAtaqueADistancia;
     [SerializeField] private AtaqueBasico scriptAttack;
+    public JogoSlime Fliperama;
 
     public void Start()
     {
@@ -23,7 +24,7 @@ public class Andar : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (!GameManager.gameManager.teleportando && !GameManager.gameManager.atacando && !Dialog.dialogoB && !Teleporting.teleportando && !Jogador_Status.morreu)
+        if (!GameManager.gameManager.teleportando && !GameManager.gameManager.atacando && !Dialog.dialogoB && !Teleporting.teleportando && !Jogador_Status.morreu && !Fliperama.jogando)
         {
             ControladorMov.enabled = true;
             Mover();
