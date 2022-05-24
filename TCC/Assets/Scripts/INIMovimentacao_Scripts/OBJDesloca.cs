@@ -27,14 +27,16 @@ public class OBJDesloca : MonoBehaviour
         }
     }
 
-    private void Update() 
+    private void Update()
     {
-       if(desloca)
-       {
+        if (desloca)
+        {
+            objeto.GetComponentInChildren<INIPerseguir>().takingDamage = true;
             direcaoDeslocar = (objeto.transform.position - new Vector3(this.gameObject.transform.position.x, objeto.transform.position.y, this.gameObject.transform.position.z));
             objeto.transform.DOJump(direcaoDeslocar * direcaoDeslocar.magnitude, forcaStun, numJumps, deslocamentoStun).SetEase(Ease.Linear);
 
             desloca = false;
-       }
+            objeto.GetComponentInChildren<INIPerseguir>().takingDamage = false;
+        }
     }
 }
