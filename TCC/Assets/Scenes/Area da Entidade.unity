@@ -1361,49 +1361,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &51648141
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 51648143}
-  - component: {fileID: 51648142}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &51648142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51648141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 166b984aff746fa4dbbd7899414c5351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &51648143
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51648141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55888474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7975,7 +7932,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 51648142}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
@@ -17268,7 +17225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f310d152d05f39f479cae8df1ac45f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deslocamentoStun: 5
+  deslocamentoStun: 3
   forcaStun: 70
   tagColisor: Inimigo
   direcaoDeslocar: {x: 0, y: 0, z: 0}
@@ -17606,7 +17563,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 51648142}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ResetScene
         m_Mode: 1
@@ -28775,7 +28732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f310d152d05f39f479cae8df1ac45f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deslocamentoStun: 3
+  deslocamentoStun: 2
   forcaStun: 70
   tagColisor: Inimigo
   direcaoDeslocar: {x: 0, y: 0, z: 0}
@@ -40161,6 +40118,7 @@ MonoBehaviour:
   Jogador: {fileID: 0}
   Load: {fileID: 250146418}
   Codigo_Load: {fileID: 1680557265}
+  audiomanager: {fileID: 1715522154}
   entrou: 0
 --- !u!54 &1169047220
 Rigidbody:
@@ -45380,7 +45338,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 51648142}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: UnPauseGame
         m_Mode: 1
@@ -57952,6 +57910,7 @@ MonoBehaviour:
   Jogador: {fileID: 0}
   Load: {fileID: 250146418}
   Codigo_Load: {fileID: 1680557265}
+  audiomanager: {fileID: 0}
   entrou: 0
 --- !u!54 &1478865158
 Rigidbody:
@@ -68769,6 +68728,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Ferreiro
     clip: {fileID: 8300000, guid: eaa3c1556c332014c83b7733951dd898, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Forest
+    clip: {fileID: 8300000, guid: b0d47c2bb47577d40bf5bdac65ec4478, type: 3}
     volume: 0.5
     pitch: 1
     loop: 1
@@ -90362,7 +90327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f310d152d05f39f479cae8df1ac45f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deslocamentoStun: 5
+  deslocamentoStun: 3
   forcaStun: 70
   tagColisor: Inimigo
   direcaoDeslocar: {x: 0, y: 0, z: 0}

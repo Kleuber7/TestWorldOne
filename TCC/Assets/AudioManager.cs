@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public Slider sliderSounds;
     public static float valueSound;
 
+    public static bool canChange = false;
     private void Awake()
     {
         foreach (Sound s in sounds)
@@ -27,7 +29,27 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         GeneralVolume();
-        Play(EntityTheme());
+    }
+
+    private void Update()
+    {
+        if (canChange)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                Debug.Log(SceneManager.GetActiveScene().buildIndex);
+                Play(EntityTheme());
+                Stop(Forest());
+                canChange = false;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                Debug.Log(SceneManager.GetActiveScene().buildIndex);
+                Play(Forest());
+                Stop(EntityTheme());
+                canChange = false;
+            }
+        }
     }
 
     public void Play(string name)
@@ -39,6 +61,14 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s == null) return;
+
+        s.source.Stop();
+    }
 
     public void Mute()
     {
@@ -84,5 +114,12 @@ public class AudioManager : MonoBehaviour
         const string FerreiroS = "Ferreiro";
 
         return FerreiroS;
+    }
+
+    public string Forest()
+    {
+        const string ForestS = "Forest";
+
+        return ForestS;
     }
 }
