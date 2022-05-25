@@ -24,20 +24,25 @@ public class DanoAtaqueBasico : MonoBehaviour
 
         if (other.gameObject.tag == "Inimigo")
         {
+            Debug.Log("Entrei inimigo");
             critico.DoAttack();
             DamagePopup.Create(other.transform.position, dano, critico.critou, damagePop.pfDamagePopUp);
-            if (!other.GetComponentInChildren<INIPerseguir>().superArmor)
+            if(other.GetComponentInChildren<INIPerseguir>())
             {
-                other.GetComponentInChildren<INIPerseguir>().ManageDamage();
-                other.GetComponent<FSMInimigos>().ChangeAnimationState("");
-                other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
+                if (!other.GetComponentInChildren<INIPerseguir>().superArmor)
+                {
+                    other.GetComponentInChildren<INIPerseguir>().ManageDamage();
+                    other.GetComponent<FSMInimigos>().ChangeAnimationState("");
+                    other.GetComponent<FSMInimigos>().ChangeAnimationState(other.GetComponent<FSMInimigos>().TomarDano());
+                }
             }
-            other.GetComponent<INIStatus>().TakeDamageEffect();
-            attackSound.Play(attackSound.PlayerAttack());
+            //other.GetComponent<INIStatus>().TakeDamageEffect();
+            //attackSound.Play(attackSound.PlayerAttack());
             if (ataqueBasico.contadorCombo < 3)
             {
                 fireAttack.AttackFire(other.GetComponent<INIStatus>());
-                other.GetComponent<INIStatus>().TomarDano(dano);
+                other.GetComponent<INIStatus>().TomarDano(dano); 
+                Debug.Log("Dano");
             }
             else if (ataqueBasico.contadorCombo == 3)
             {
@@ -64,10 +69,11 @@ public class DanoAtaqueBasico : MonoBehaviour
             critico.ResetAttack();
         }
 
-        //if(ataqueBasico.contadorCombo == 3)
-        //{
-        //    congelar.CongelarINI(other.gameObject);
-        //}
+        /*if(ataqueBasico.contadorCombo == 3)
+         {
+            congelar.CongelarINI(other.gameObject);
+         }
+        */
     }
 
 

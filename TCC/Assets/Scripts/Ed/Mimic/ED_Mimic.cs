@@ -23,12 +23,17 @@ public class ED_Mimic : MonoBehaviour
     [Tooltip("Controla as animaçoes do MIMIC")]
     public Animator Controlador_Animator;
 
+    public bool Stun;
+    public Transform Mimic_Origem;
+    public Obj_Dano_Mimic Dano;
     public INIStatus RefVida;
+    float Y_Inicial; 
     void Start()
     {
+        Y_Inicial = Mimic_Origem.transform.position.y;
         Vida_AntDano = Vida_Atual;
-        Controlador_Animator = this.gameObject.GetComponent<Animator>();
-        Barra_Vida.SetActive(false);
+        //Controlador_Animator = this.gameObject.GetComponent<Animator>();
+        //Barra_Vida.SetActive(false);
         Liberado = true;
     }
     void Update()
@@ -43,12 +48,18 @@ public class ED_Mimic : MonoBehaviour
         {
             Seguir();
         }
+
+        if(Mimic_Origem.transform.position.y < Y_Inicial)
+        {
+            Vector3 posicao =  new Vector3(Mimic_Origem.transform.position.x,Y_Inicial,Mimic_Origem.transform.position.z);
+            Mimic_Origem.transform.position = posicao;
+        }
     }
     private void OnTriggerEnter( Collider Outro)
     {
         if(Outro.gameObject.tag =="Player")
         {
-            Controlador_Animator.SetBool("Alvo", true);
+            Controlador_Animator.SetBool("Alvo",true);
             Barra_Vida.SetActive(true);
             Alvo = Outro.gameObject;
         }
@@ -59,12 +70,13 @@ public class ED_Mimic : MonoBehaviour
         {
             Vida_AntDano=Vida_Atual;
             Controlador_Animator.SetBool("Receber Dano", true);
+            // aplicar ano que o mimic ira receber aqui !!!!
             Controlador_Animator.SetBool("Receber Dano", false);
         }
     }
     void Seguir()
     {
-        if(Alvo!=null && Liberado==true)
+        if(Alvo!=null && Liberado==true && !Stun)
         {
             //Dash estilo Xadrez
             StartCoroutine(Bauzada());
@@ -76,8 +88,11 @@ public class ED_Mimic : MonoBehaviour
         Liberado = false;
         yield return new WaitForSeconds(Proximo_Dash);
         //movimento
-        Controlador_Animator.SetBool("Atacar",true);
-        this.gameObject.transform.LookAt(new Vector3 (Alvo.transform.position.x,transform.position.y,Alvo.transform.position.z));
-        this.gameObject.transform.DOMove(new Vector3 (Local_Final.position.x,transform.position.y,Local_Final.position.z),Velocidade_Dash).SetEase(Ease.InCirc).OnComplete(() =>Liberado = true);
+        if(!Stun)
+        {
+            Controlador_Animator.SetBool("Atacar",true);
+            Mimic_Origem.gameObject.transform.LookAt(new Vector3 (Alvo.transform.position.x,Mimic_Origem.transform.position.y,Alvo.transform.position.z));
+            Mimic_Origem.gameObject.transform.DOMove(new Vector3 (Local_Final.position.x,Mimic_Origem.transform.position.y,Local_Final.position.z),Velocidade_Dash).SetEase(Ease.OutCirc).OnPlay(()=>Dano.Pode_Dar_Dano=true).OnComplete(() =>{Liberado = true;Dano.Pode_Dar_Dano=false;});
+        }
     }
 }

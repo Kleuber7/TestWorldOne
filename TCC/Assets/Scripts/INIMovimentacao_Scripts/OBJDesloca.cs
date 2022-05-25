@@ -18,7 +18,7 @@ public class OBJDesloca : MonoBehaviour
 
 
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == tagColisor && tagColisor == "Inimigo")
         {
@@ -31,12 +31,23 @@ public class OBJDesloca : MonoBehaviour
     {
         if (desloca)
         {
-            objeto.GetComponentInChildren<INIPerseguir>().takingDamage = true;
+            if(objeto.GetComponentInChildren<ED_Mimic>())
+            {
+                objeto.GetComponentInChildren<ED_Mimic>().Stun = true;
+            }
+            if(objeto.GetComponentInChildren<INIPerseguir>())
+            {
+                objeto.GetComponentInChildren<INIPerseguir>().takingDamage = true;
+            }
             direcaoDeslocar = (objeto.transform.position - new Vector3(this.gameObject.transform.position.x, objeto.transform.position.y, this.gameObject.transform.position.z));
-            objeto.transform.DOJump(direcaoDeslocar * direcaoDeslocar.magnitude, forcaStun, numJumps, deslocamentoStun).SetEase(Ease.Linear);
+            objeto.transform.DOJump((direcaoDeslocar + objeto.transform.position), forcaStun, numJumps, deslocamentoStun).SetEase(Ease.Linear).OnComplete(()=>{if(objeto.GetComponentInChildren<ED_Mimic>()){objeto.GetComponentInChildren<ED_Mimic>().Stun = false;objeto.GetComponentInChildren<ED_Mimic>().Liberado = true;}});
 
             desloca = false;
-            objeto.GetComponentInChildren<INIPerseguir>().takingDamage = false;
+
+            if(objeto.GetComponentInChildren<INIPerseguir>())
+            {
+                objeto.GetComponentInChildren<INIPerseguir>().takingDamage = false;
+            }
         }
     }
 }
