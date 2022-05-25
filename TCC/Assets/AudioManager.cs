@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Play(EntityTheme());
+        }
         GeneralVolume();
     }
 
@@ -37,16 +41,14 @@ public class AudioManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
-                Debug.Log(SceneManager.GetActiveScene().buildIndex);
-                Play(EntityTheme());
+                Play(Ferreiro());
                 Stop(Forest());
                 canChange = false;
             }
             else if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                Debug.Log(SceneManager.GetActiveScene().buildIndex);
                 Play(Forest());
-                Stop(EntityTheme());
+                Stop(Ferreiro());
                 canChange = false;
             }
         }
