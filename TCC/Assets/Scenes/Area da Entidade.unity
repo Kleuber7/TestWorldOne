@@ -16106,7 +16106,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &476183222 stripped
 ParticleSystem:
@@ -18404,7 +18404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &564718410
 GameObject:
@@ -23903,7 +23903,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &789335360
 GameObject:
@@ -34574,7 +34574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1032837646
 GameObject:
@@ -35993,7 +35993,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095016681
 GameObject:
@@ -36453,7 +36453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117671088
 GameObject:
@@ -49659,7 +49659,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1394118908
 PrefabInstance:
@@ -74060,7 +74060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1787018466
 Animator:
@@ -81535,7 +81535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1872534252
 Animator:
@@ -82440,7 +82440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891760819
 GameObject:
@@ -99371,7 +99371,7 @@ PrefabInstance:
       objectReference: {fileID: 1164824302}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: typingSpeedAcelerado
@@ -99379,35 +99379,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences2.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "????: Ol\xE1, sou a entidade"
+      value: "Sauda\xE7\xF5es, prezada cobaia! Como lhe disse anteriormente, esse
+        \xE9 o meu mundo."
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: " no meu mundo. testar voc\xEA no meu mundo."
+      value: "Tudo que voc\xEA encontrar foi preparado para te receber."
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Entidade: Aperte R para interagir com os NPC''S e passar o dialogo.'
+      value: Quando passar pelo portal, contarei sua tarefa.
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: 'Entidade: Boa sorte!'
+      value: "Espero grandes coisas de voc\xEA."
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences2.Array.data[0]
-      value: 'Entidade: Parece que nos encontramos novamente.'
+      value: "Sauda\xE7\xF5es, prezada cobaia!"
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences2.Array.data[1]
-      value: "Entidade: O que foi? N\xE3o \xE9 capaz de derrotar meu inimigos?"
+      value: "Espere um instante, n\xE3o \xE9 sua primeira vez aqui..."
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: sentences2.Array.data[2]
-      value: 'Entidade: HAHAHA!'
+      value: "E CERTAMENTE N\xC3O SER\xC1 A \xDALTIMA!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
+      propertyPath: sentences2.Array.data[3]
+      value: HOHOHOHO!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
+      propertyPath: sentences2.Array.data[4]
+      value: "Vamos l\xE1! Explore meu mundo outra vez, \xE9 certo que vai conseguir
+        dessa vez!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
+      propertyPath: sentences2.Array.data[5]
+      value: "E CERTAMENTE N\xC3O SER\xC1 A \xDALTIMA!"
       objectReference: {fileID: 0}
     - target: {fileID: 5210947744446723802, guid: 6069a84916e78cf4da95293b6d1e556b, type: 3}
       propertyPath: tutorialInvoker.Array.size
