@@ -64,7 +64,7 @@ public class Dialog : MonoBehaviour
 
         if(scriptable.FirstTime)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 videoCanvas.SetActive(false);
                 videoPlayer.SetActive(false);
