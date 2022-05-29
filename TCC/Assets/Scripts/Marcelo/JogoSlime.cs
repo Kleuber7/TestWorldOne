@@ -8,29 +8,42 @@ public class JogoSlime : MonoBehaviour
     public Image MenuInicial;
     public GameObject CanvasFase;
     public GameObject Player;
-    public bool jogando;
+    public static bool jogando;
+    public bool inRange = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
-    
-    private void OnTriggerStay(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Player = other.gameObject;
-                MenuInicial.gameObject.SetActive(true);
-                CanvasFase.gameObject.SetActive(true);
-                
-            }
+
+            Player = other.gameObject;
+            inRange = true;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inRange = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            MenuInicial.gameObject.SetActive(true);
+            CanvasFase.gameObject.SetActive(true);
+        }
+
         if (CanvasFase.active)
         {
             jogando = true;
@@ -39,6 +52,6 @@ public class JogoSlime : MonoBehaviour
         {
             jogando = false;
         }
-        
+
     }
 }

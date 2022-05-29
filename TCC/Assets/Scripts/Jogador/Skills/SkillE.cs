@@ -17,7 +17,9 @@ public class SkillE : MonoBehaviour
     [Header("Time in miliseconds")]
     [SerializeField] private int animTime = 3000;
     [SerializeField] private int manaCost;
-   
+
+    public JogoSlime Fliperama;
+
     private void Update()
     {
         Ativacao();
@@ -28,7 +30,7 @@ public class SkillE : MonoBehaviour
     {
         if (cdSkill && status.Mana >= manaCost)
         {
-            if (Input.GetKeyDown(key) && !PLASkills.castingSkill && !GameManager.gameManager.atacando && !Jogador_Status.morreu)
+            if (Input.GetKeyDown(key) && !PLASkills.castingSkill && !GameManager.gameManager.atacando && !Jogador_Status.morreu && !JogoSlime.jogando)
             {
                 status.Mana -= manaCost;
                 StartCoroutine(TimeTentacles());

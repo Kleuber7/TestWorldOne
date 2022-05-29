@@ -148,4 +148,5 @@ public class GameManager : MonoBehaviour
         contI = GameObject.FindGameObjectsWithTag("Inimigo");
         numeroI = contI.Length;
     }
+
 }

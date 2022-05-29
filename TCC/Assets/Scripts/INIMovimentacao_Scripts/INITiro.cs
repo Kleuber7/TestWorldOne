@@ -31,7 +31,8 @@ public class INITiro : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && !Jogador_Status.morreu)
         {
-            other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
+            if (!PLASkills.castingSkill)
+                other.GetComponent<FSMJogador>().ChangeAnimationState(other.GetComponent<FSMJogador>().TomarDano());
             other.GetComponent<AtaqueBasico>().ManageDamage();
             other.GetComponent<ParticleManagerDamageInPlayer>().PlayParticleEffect();
             other.GetComponent<Jogador_Status>().TomarDano(danoDisparo);

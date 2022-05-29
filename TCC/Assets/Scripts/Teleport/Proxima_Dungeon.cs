@@ -7,7 +7,7 @@ public class Proxima_Dungeon : MonoBehaviour
     public GameObject   Jogador,
                         Load;
     public Tela_De_Load Codigo_Load;
-
+    public AudioManager audiomanager;
     public bool entrou;
     
     void Start()
@@ -36,6 +36,7 @@ public class Proxima_Dungeon : MonoBehaviour
             {
                 Load.SetActive(true);
                 Codigo_Load.Carregar_Scena(2);
+                
             }
             entrou = false;
         }
