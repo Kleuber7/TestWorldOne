@@ -6,7 +6,7 @@ using TMPro;
 public class DialogFerreiro : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] dialogNpc;
+    public string[] dialogNpc, dialogNpc2, dialogNpc3, dialogNpc4, dialogNpc5, dialogNpc6, dialogNpc7;
 
     public bool npcDialog, canTalk;
 
@@ -18,7 +18,7 @@ public class DialogFerreiro : MonoBehaviour
 
     public GameObject imagemFundo;
     public GameObject imagemDialog;
-    public GameObject continueButton;
+    //public GameObject continueButton;
     public bool podePassar;
     public FerreiroAtributos atributos;
 
@@ -36,8 +36,41 @@ public class DialogFerreiro : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && canTalk)
         {
-            index = 0;
-            StartCoroutine(NpcDialogs());
+            if (Jogador_Status.mortes == 0)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs());
+            }
+            else if (Jogador_Status.mortes == 1)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs2());
+            }
+            else if (Jogador_Status.mortes == 2)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs3());
+            }
+            else if (Jogador_Status.mortes == 3)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs4());
+            }
+            else if (Jogador_Status.mortes == 4)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs5());
+            }
+            else if (Jogador_Status.mortes == 5)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs6());
+            }
+            else if (Jogador_Status.mortes >= 6)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs7());
+            }
         }
 
         FerreiroDialog();
@@ -63,12 +96,75 @@ public class DialogFerreiro : MonoBehaviour
         {
             if (npcDialog)
             {
-                if (index < dialogNpc.Length)
+                if (Jogador_Status.mortes == 0)
                 {
-                    if (textDisplay.text == dialogNpc[index])
+                    if (index < dialogNpc.Length)
                     {
-                        podePassar = true;
-                        continueButton.SetActive(true);
+                        if (textDisplay.text == dialogNpc[index])
+                        {
+                            podePassar = true;
+                            //continueButton.SetActive(true);
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 1)
+                {
+                    if (index < dialogNpc2.Length)
+                    {
+                        if (textDisplay.text == dialogNpc2[index])
+                        {
+                            podePassar = true;
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 2)
+                {
+                    if (index < dialogNpc3.Length)
+                    {
+                        if (textDisplay.text == dialogNpc3[index])
+                        {
+                            podePassar = true;
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 3)
+                {
+                    if (index < dialogNpc4.Length)
+                    {
+                        if (textDisplay.text == dialogNpc4[index])
+                        {
+                            podePassar = true;
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 4)
+                {
+                    if (index < dialogNpc5.Length)
+                    {
+                        if (textDisplay.text == dialogNpc5[index])
+                        {
+                            podePassar = true;
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 5)
+                {
+                    if (index < dialogNpc6.Length)
+                    {
+                        if (textDisplay.text == dialogNpc6[index])
+                        {
+                            podePassar = true;
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes >= 6)
+                {
+                    if (index < dialogNpc7.Length)
+                    {
+                        if (textDisplay.text == dialogNpc7[index])
+                        {
+                            podePassar = true;
+                        }
                     }
                 }
             }
@@ -117,29 +213,295 @@ public class DialogFerreiro : MonoBehaviour
         typingSpeed = typingSpeedReal;
     }
 
+    IEnumerator NpcDialogs2()
+    {
+        imagemFundo.SetActive(true);
+        canTalk = false;
+        npcDialog = true;
+
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+
+        foreach (char letter in dialogNpc2[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+
+        index++;
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator NpcDialogs3()
+    {
+        imagemFundo.SetActive(true);
+        canTalk = false;
+        npcDialog = true;
+
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+
+        foreach (char letter in dialogNpc3[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+
+        index++;
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator NpcDialogs4()
+    {
+        imagemFundo.SetActive(true);
+        canTalk = false;
+        npcDialog = true;
+
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+
+        foreach (char letter in dialogNpc4[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+
+        index++;
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator NpcDialogs5()
+    {
+        imagemFundo.SetActive(true);
+        canTalk = false;
+        npcDialog = true;
+
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+
+        foreach (char letter in dialogNpc5[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+
+        index++;
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator NpcDialogs6()
+    {
+        imagemFundo.SetActive(true);
+        canTalk = false;
+        npcDialog = true;
+
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+
+        foreach (char letter in dialogNpc6[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+
+        index++;
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator NpcDialogs7()
+    {
+        imagemFundo.SetActive(true);
+        canTalk = false;
+        npcDialog = true;
+
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+
+        foreach (char letter in dialogNpc7[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+
+        index++;
+        typingSpeed = typingSpeedReal;
+    }
     public void NextSentence()
     {
         typingSpeed = typingSpeedReal;
-        
 
-        if (npcDialog)
+        if (Jogador_Status.mortes == 0)
         {
-            if (index < dialogNpc.Length)
+            if (npcDialog)
             {
-                textDisplay.text = "";
-                StartCoroutine(NpcDialogs());
-            }
-            else
-            {
-                textDisplay.text = "";
-                ataque.AtivarAtaque();
-                Dialog.dialogoB = false;
-                npcDialog = false;
-                atributos.HUDFerreiro.SetActive(true);
-                imagemDialog.SetActive(false);
-                imagemFundo.SetActive(false);
+                if (index < dialogNpc.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    atributos.HUDFerreiro.SetActive(true);
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
             }
         }
-        continueButton.SetActive(false);
+        else if (Jogador_Status.mortes == 1)
+        {
+            if (npcDialog)
+            {
+                if (index < dialogNpc2.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs2());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    atributos.HUDFerreiro.SetActive(true);
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
+            }
+        }
+        else if (Jogador_Status.mortes == 2)
+        {
+            if (npcDialog)
+            {
+                if (index < dialogNpc3.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs3());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    atributos.HUDFerreiro.SetActive(true);
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
+            }
+        }
+        else if (Jogador_Status.mortes == 3)
+        {
+            if (npcDialog)
+            {
+                if (index < dialogNpc4.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs4());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    atributos.HUDFerreiro.SetActive(true);
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
+            }
+        }
+        else if (Jogador_Status.mortes == 4)
+        {
+            if (npcDialog)
+            {
+                if (index < dialogNpc5.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs5());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    atributos.HUDFerreiro.SetActive(true);
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
+            }
+        }
+        else if (Jogador_Status.mortes == 5)
+        {
+            if (npcDialog)
+            {
+                if (index < dialogNpc6.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs6());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    atributos.HUDFerreiro.SetActive(true);
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
+            }
+        }
+        else if (Jogador_Status.mortes >= 6)
+        {
+            if (npcDialog)
+            {
+                if (index < dialogNpc7.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs7());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    atributos.HUDFerreiro.SetActive(true);
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
+            }
+        }
+
     }
 }

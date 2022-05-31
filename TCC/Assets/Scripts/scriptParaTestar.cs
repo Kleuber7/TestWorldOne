@@ -8,17 +8,6 @@ public class scriptParaTestar : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F7))
-        {
-            if (GameManager.gameManager.contI != null)
-            {
-                foreach (GameObject inimigos in GameManager.gameManager.contI)
-                {
-                    Destroy(inimigos);
-                }
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.F5))
         {
             scriptable.money += 10000;
