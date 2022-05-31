@@ -6,6 +6,7 @@ public class BloquearSala : MonoBehaviour
 {
     
     private GameManager qInimigos;
+    public GameObject portalDungeon;
 
     void Start()
     {
@@ -23,7 +24,13 @@ public class BloquearSala : MonoBehaviour
         //Tirar comentario depois
         if (qInimigos.numeroI <= 0 && GenerateEnemys.liberadoE)
         {
+            portalDungeon.SetActive(true);
            gameObject.SetActive(false);
+        }
+        else if(qInimigos.numeroI > 0)
+        {
+            portalDungeon.SetActive(false);
+            gameObject.SetActive(true);
         }
        
 

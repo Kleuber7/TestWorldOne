@@ -7,7 +7,7 @@ using TMPro;
 public class Dialog : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] sentences, sentences2;
+    public string[] sentences, sentences2, sentences3, sentences4, sentences5, sentences6, sentences7;
     public int index;
     public float typingSpeed, typingSpeedReal, typingSpeedAcelerado = -6;
 
@@ -16,7 +16,6 @@ public class Dialog : MonoBehaviour
 
     public GameObject imagemDialog;
     public GameObject imagemFundo;
-    public GameObject continueButton;
     public ScriptablePlayer scriptable;
     public GameObject videoCanvas;
     public GameObject videoPlayer;
@@ -47,24 +46,44 @@ public class Dialog : MonoBehaviour
                 StartCoroutine(Type1());
             }
         }
-        else if(scriptable.FirstTime)
+        else if (scriptable.FirstTime)
         {
             StartCoroutine(VideoPlay());
         }
-        else if (Jogador_Status.mortes >= 1)
+        else if (Jogador_Status.mortes == 1)
         {
             StartCoroutine(Type2());
+        }
+        else if (Jogador_Status.mortes == 2)
+        {
+            StartCoroutine(Type3());
+        }
+        else if (Jogador_Status.mortes == 3)
+        {
+            StartCoroutine(Type4());
+        }
+        else if (Jogador_Status.mortes == 4)
+        {
+            StartCoroutine(Type5());
+        }
+        else if (Jogador_Status.mortes == 5)
+        {
+            StartCoroutine(Type6());
+        }
+        else if (Jogador_Status.mortes == 6)
+        {
+            StartCoroutine(Type7());
         }
     }
 
     void Update()
     {
         FirstDialog();
-        DeathDialog();
+        
 
-        if(scriptable.FirstTime)
+        if (scriptable.FirstTime)
         {
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 videoCanvas.SetActive(false);
                 videoPlayer.SetActive(false);
@@ -77,72 +96,116 @@ public class Dialog : MonoBehaviour
 
     void FirstDialog()
     {
-        if (Jogador_Status.mortes == 0)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
         {
+            typingSpeed = typingSpeedAcelerado;
 
+        }
+
+        if (podePassar)
+        {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
-                typingSpeed = typingSpeedAcelerado;
-
+                NextSentence();
             }
+        }
 
-            if (podePassar)
+        if (dialogoB)
+        {
+            if (sentenca)
             {
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
+                if (Jogador_Status.mortes == 0)
                 {
-                    NextSentence();
-                }
-            }
-
-            if (dialogoB)
-            {
-                if (sentenca)
-                {
-                    if(index < sentences.Length)
+                    if (index < sentences.Length)
                     {
                         if (textDisplay.text == sentences[index])
                         {
                             podePassar = true;
-                            continueButton.SetActive(true);
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 1)
+                {
+                    if (dialogoB)
+                    {
+                        if (index < sentences2.Length)
+                        {
+                            if (textDisplay.text == sentences2[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 2)
+                {
+                    if (dialogoB)
+                    {
+                        if (index < sentences3.Length)
+                        {
+                            if (textDisplay.text == sentences3[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 3)
+                {
+                    if (dialogoB)
+                    {
+                        if (index < sentences4.Length)
+                        {
+                            if (textDisplay.text == sentences4[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 4)
+                {
+                    if (dialogoB)
+                    {
+                        if (index < sentences5.Length)
+                        {
+                            if (textDisplay.text == sentences5[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 5)
+                {
+                    if (dialogoB)
+                    {
+                        if (index < sentences6.Length)
+                        {
+                            if (textDisplay.text == sentences6[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 6)
+                {
+                    if (dialogoB)
+                    {
+                        if (index < sentences7.Length)
+                        {
+                            if (textDisplay.text == sentences7[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
                         }
                     }
                 }
             }
-            
         }
     }
-    void DeathDialog()
-    {
-        if (Jogador_Status.mortes >= 1)
-        {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
-            {
-                typingSpeed = typingSpeedAcelerado;
-
-            }
-
-            if (podePassar)
-            {
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
-                {
-                    NextSentence();
-                }
-            }
-
-            if (dialogoB)
-            {
-                if(index < sentences2.Length)
-                {
-                    if (textDisplay.text == sentences2[index] && sentenca)
-                    {
-                        continueButton.SetActive(true);
-                        podePassar = true;
-                    }
-                }
-            }
-            
-        }
-    }
+    
 
     IEnumerator VideoPlay()
     {
@@ -194,12 +257,111 @@ public class Dialog : MonoBehaviour
 
         typingSpeed = typingSpeedReal;
     }
+    IEnumerator Type3()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
+
+        dialogoB = true;
+        ataque.DesativarAtaque();
+
+        foreach (char letter in sentences3[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator Type4()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
+
+        dialogoB = true;
+        ataque.DesativarAtaque();
+
+        foreach (char letter in sentences4[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator Type5()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
+
+        dialogoB = true;
+        ataque.DesativarAtaque();
+
+        foreach (char letter in sentences5[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator Type6()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
+
+        dialogoB = true;
+        ataque.DesativarAtaque();
+
+        foreach (char letter in sentences6[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator Type7()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
+
+        dialogoB = true;
+        ataque.DesativarAtaque();
+
+        foreach (char letter in sentences7[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
 
 
     public void NextSentence()
     {
         typingSpeed = typingSpeedReal;
-        continueButton.SetActive(false);
 
         if (Jogador_Status.mortes == 0 && sentenca)
         {
@@ -220,7 +382,7 @@ public class Dialog : MonoBehaviour
                 imagemFundo.SetActive(false);
             }
         }
-        if (Jogador_Status.mortes >= 1 && sentenca)
+        else if (Jogador_Status.mortes == 1 && sentenca)
         {
             if (index < sentences2.Length)
             {
@@ -237,61 +399,93 @@ public class Dialog : MonoBehaviour
                 imagemFundo.SetActive(false);
             }
         }
+        else if (Jogador_Status.mortes == 2 && sentenca)
+        {
+            if (index < sentences3.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type3());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
+        else if (Jogador_Status.mortes == 3 && sentenca)
+        {
+            if (index < sentences4.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type4());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
+        else if (Jogador_Status.mortes == 4 && sentenca)
+        {
+            if (index < sentences5.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type5());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
+        else if (Jogador_Status.mortes == 5 && sentenca)
+        {
+            if (index < sentences6.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type6());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
+        else if (Jogador_Status.mortes == 6 && sentenca)
+        {
+            if (index < sentences7.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type7());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
     }
 
-    #region TutorialInvoker
-    //if (textDisplay.text == tutorialInvoker[index] && tutorialIn)
-    //{
-
-    //    podePassar = true;
-    //    continueButton.SetActive(true);
-
-    //    if (index == tutorialInvoker.Length - 1)
-    //    {
-    //        ataque.AtivarAtaque();
-    //        dialogoB = false;
-    //    }
-
-    //}
-
-    //public void TutorialInvoker()
-    //{
-    //    index = 0;
-    //    StartCoroutine(TutorialInvok());
-    //}
-    //IEnumerator TutorialInvok()
-    //{
-    //    tutorialIn = true;
-    //    sentenca = false;
-    //    podePassar = false;
-
-    //    dialogoB = true;
-    //    ataque.DesativarAtaque();
-
-
-    //    foreach (char letter in tutorialInvoker[index].ToCharArray())
-    //    {
-    //        textDisplay.text += letter;
-    //        // imagemDialog.SetActive(true);
-    //        yield return new WaitForSeconds(typingSpeed);
-    //    }
-
-    //    index++;
-    //    typingSpeed = typingSpeedReal;
-    //}
-
-    //    if (tutorialIn && Jogador_Status.mortes == 0)
-    //        {
-    //            if (index<tutorialInvoker.Length)
-    //            {
-    //                textDisplay.text = "";
-    //                StartCoroutine(TutorialInvok());
-    //}
-    //            else
-    //{
-    //    textDisplay.text = "";
-    //}
-    //        }
-
-    #endregion
+    
+  
 }

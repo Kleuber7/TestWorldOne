@@ -6,7 +6,7 @@ using TMPro;
 public class DialogEntity : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] dialogNpc;
+    public string[] dialogNpc, dialogNpc2;
 
     public bool npcDialog, canTalk;
 
@@ -18,7 +18,6 @@ public class DialogEntity : MonoBehaviour
 
     public GameObject imagemFundo;
     public GameObject imagemDialog;
-    public GameObject continueButton;
     public bool podePassar;
     public bool cenaBoss;
     public GameObject canvasVidaBoss;
@@ -32,8 +31,7 @@ public class DialogEntity : MonoBehaviour
     }
     void Update()
     {
-        //if (Jogador_Status.mortes == 0)
-        //{
+
         if (Input.GetKeyDown(KeyCode.R) && canTalk)
         {
             index = 0;
@@ -41,7 +39,7 @@ public class DialogEntity : MonoBehaviour
         }
 
         EntityDialog();
-        //}
+
     }
     public void EntityDialog()
     {
@@ -59,6 +57,7 @@ public class DialogEntity : MonoBehaviour
             }
         }
 
+
         if (Dialog.dialogoB)
         {
             if (npcDialog)
@@ -68,11 +67,11 @@ public class DialogEntity : MonoBehaviour
                     if (textDisplay.text == dialogNpc[index])
                     {
                         podePassar = true;
-                        continueButton.SetActive(true);
                     }
                 }
             }
         }
+
     }
 
 
@@ -97,7 +96,7 @@ public class DialogEntity : MonoBehaviour
 
     IEnumerator NpcDialogs()
     {
-        if(cenaBoss)
+        if (cenaBoss)
         {
             canvasVidaBoss.SetActive(false);
         }
@@ -123,6 +122,8 @@ public class DialogEntity : MonoBehaviour
         typingSpeed = typingSpeedReal;
     }
 
+
+
     public void NextSentence()
     {
         typingSpeed = typingSpeedReal;
@@ -142,7 +143,7 @@ public class DialogEntity : MonoBehaviour
                 npcDialog = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
-                if(cenaBoss)
+                if (cenaBoss)
                 {
                     scriptablePlayer.FirstTime = false;
                     GameObject.Find("Controlador").GetComponent<GameManager>().load.Carregar_CenaInicio(1);
@@ -150,7 +151,6 @@ public class DialogEntity : MonoBehaviour
             }
         }
 
-        continueButton.SetActive(false);
     }
 
 
