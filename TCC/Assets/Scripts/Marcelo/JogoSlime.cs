@@ -37,13 +37,14 @@ public class JogoSlime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.R))
+        if (inRange)
         {
-            MenuInicial.gameObject.SetActive(true);
-            CanvasFase.gameObject.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                MenuInicial.gameObject.SetActive(true);
+                CanvasFase.gameObject.SetActive(true);
+            }
         }
-
         if (CanvasFase.active)
         {
             jogando = true;
