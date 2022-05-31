@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-public class DialogFerreiro : MonoBehaviour
+public class DialogEntityBegin : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] dialogNpc, dialogNpc2, dialogNpc3, dialogNpc4, dialogNpc5, dialogNpc6, dialogNpc7;
+    public string[] dialogNpc, dialogNpc2, dialogNpc3, dialogNpc4, dialogNpc5, dialogNpc6, dialogNpc7, dialogNpc8;
 
     public bool npcDialog, canTalk;
 
@@ -18,9 +17,7 @@ public class DialogFerreiro : MonoBehaviour
 
     public GameObject imagemFundo;
     public GameObject imagemDialog;
-    //public GameObject continueButton;
     public bool podePassar;
-    public FerreiroAtributos atributos;
 
 
 
@@ -66,10 +63,15 @@ public class DialogFerreiro : MonoBehaviour
                 index = 0;
                 StartCoroutine(NpcDialogs6());
             }
-            else if (Jogador_Status.mortes >= 6)
+            else if (Jogador_Status.mortes == 6)
             {
                 index = 0;
                 StartCoroutine(NpcDialogs7());
+            }
+            else if (Jogador_Status.mortes >= 7)
+            {
+                index = 0;
+                StartCoroutine(NpcDialogs8());
             }
         }
 
@@ -157,7 +159,17 @@ public class DialogFerreiro : MonoBehaviour
                         }
                     }
                 }
-                else if (Jogador_Status.mortes >= 6)
+                else if (Jogador_Status.mortes == 6)
+                {
+                    if (index < dialogNpc7.Length)
+                    {
+                        if (textDisplay.text == dialogNpc7[index])
+                        {
+                            podePassar = true;
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes >= 7)
                 {
                     if (index < dialogNpc7.Length)
                     {
@@ -351,6 +363,29 @@ public class DialogFerreiro : MonoBehaviour
         index++;
         typingSpeed = typingSpeedReal;
     }
+    IEnumerator NpcDialogs8()
+    {
+        imagemFundo.SetActive(true);
+        canTalk = false;
+        npcDialog = true;
+
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+
+        foreach (char letter in dialogNpc8[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+
+        index++;
+        typingSpeed = typingSpeedReal;
+    }
     public void NextSentence()
     {
         typingSpeed = typingSpeedReal;
@@ -370,7 +405,6 @@ public class DialogFerreiro : MonoBehaviour
                     ataque.AtivarAtaque();
                     Dialog.dialogoB = false;
                     npcDialog = false;
-                    atributos.HUDFerreiro.SetActive(true);
                     imagemDialog.SetActive(false);
                     imagemFundo.SetActive(false);
                 }
@@ -391,7 +425,6 @@ public class DialogFerreiro : MonoBehaviour
                     ataque.AtivarAtaque();
                     Dialog.dialogoB = false;
                     npcDialog = false;
-                    atributos.HUDFerreiro.SetActive(true);
                     imagemDialog.SetActive(false);
                     imagemFundo.SetActive(false);
                 }
@@ -412,7 +445,6 @@ public class DialogFerreiro : MonoBehaviour
                     ataque.AtivarAtaque();
                     Dialog.dialogoB = false;
                     npcDialog = false;
-                    atributos.HUDFerreiro.SetActive(true);
                     imagemDialog.SetActive(false);
                     imagemFundo.SetActive(false);
                 }
@@ -433,7 +465,6 @@ public class DialogFerreiro : MonoBehaviour
                     ataque.AtivarAtaque();
                     Dialog.dialogoB = false;
                     npcDialog = false;
-                    atributos.HUDFerreiro.SetActive(true);
                     imagemDialog.SetActive(false);
                     imagemFundo.SetActive(false);
                 }
@@ -454,7 +485,6 @@ public class DialogFerreiro : MonoBehaviour
                     ataque.AtivarAtaque();
                     Dialog.dialogoB = false;
                     npcDialog = false;
-                    atributos.HUDFerreiro.SetActive(true);
                     imagemDialog.SetActive(false);
                     imagemFundo.SetActive(false);
                 }
@@ -475,13 +505,12 @@ public class DialogFerreiro : MonoBehaviour
                     ataque.AtivarAtaque();
                     Dialog.dialogoB = false;
                     npcDialog = false;
-                    atributos.HUDFerreiro.SetActive(true);
                     imagemDialog.SetActive(false);
                     imagemFundo.SetActive(false);
                 }
             }
         }
-        else if (Jogador_Status.mortes >= 6)
+        else if (Jogador_Status.mortes == 6)
         {
             if (npcDialog)
             {
@@ -496,12 +525,30 @@ public class DialogFerreiro : MonoBehaviour
                     ataque.AtivarAtaque();
                     Dialog.dialogoB = false;
                     npcDialog = false;
-                    atributos.HUDFerreiro.SetActive(true);
                     imagemDialog.SetActive(false);
                     imagemFundo.SetActive(false);
                 }
             }
         }
-
+        else if (Jogador_Status.mortes >= 7)
+        {
+            if (npcDialog)
+            {
+                if (index < dialogNpc7.Length)
+                {
+                    textDisplay.text = "";
+                    StartCoroutine(NpcDialogs8());
+                }
+                else
+                {
+                    textDisplay.text = "";
+                    ataque.AtivarAtaque();
+                    Dialog.dialogoB = false;
+                    npcDialog = false;
+                    imagemDialog.SetActive(false);
+                    imagemFundo.SetActive(false);
+                }
+            }
+        }
     }
 }

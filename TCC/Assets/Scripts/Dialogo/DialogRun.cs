@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-public class Dialog : MonoBehaviour
+public class DialogRun : MonoBehaviour
 {
+
     public TextMeshProUGUI textDisplay;
-    public string[] sentences, sentences2, sentences3, sentences4, sentences5, sentences6, sentences7;
+    public string[] sentences, sentences2, sentences3, sentences4, sentences5, sentences6, sentences7, sentences8, sentences9, sentences10;
     public int index;
     public float typingSpeed, typingSpeedReal, typingSpeedAcelerado = -6;
 
@@ -16,11 +16,7 @@ public class Dialog : MonoBehaviour
 
     public GameObject imagemDialog;
     public GameObject imagemFundo;
-    public ScriptablePlayer scriptable;
-    public GameObject videoCanvas;
-    public GameObject videoPlayer;
 
-    public static bool dialogoB;
 
     public bool podePassar, sentenca;
 
@@ -33,22 +29,9 @@ public class Dialog : MonoBehaviour
         ataque = GameObject.FindGameObjectWithTag("Player").GetComponent<AtaqueBasico>();
         AudioManager.canChange = true;
 
-        if (Jogador_Status.mortes == 0 && !scriptable.FirstTime)
+        if (Jogador_Status.mortes == 0)
         {
-            if (videoCanvas != null && videoPlayer != null)
-            {
-                videoCanvas.SetActive(false);
-                videoPlayer.SetActive(false);
-                StartCoroutine(Type1());
-            }
-            else
-            {
-                StartCoroutine(Type1());
-            }
-        }
-        else if (scriptable.FirstTime)
-        {
-            StartCoroutine(VideoPlay());
+            StartCoroutine(Type1());
         }
         else if (Jogador_Status.mortes == 1)
         {
@@ -74,23 +57,23 @@ public class Dialog : MonoBehaviour
         {
             StartCoroutine(Type7());
         }
+        else if (Jogador_Status.mortes == 7)
+        {
+            StartCoroutine(Type8());
+        }
+        else if (Jogador_Status.mortes == 8)
+        {
+            StartCoroutine(Type9());
+        }
+        else if (Jogador_Status.mortes >= 9)
+        {
+            StartCoroutine(Type10());
+        }
     }
 
     void Update()
     {
-        FirstDialog();
-        
-
-        if (scriptable.FirstTime)
-        {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
-            {
-                videoCanvas.SetActive(false);
-                videoPlayer.SetActive(false);
-                scriptable.FirstTime = false;
-                StartCoroutine(Type1());
-            }
-        }
+        FirstDialog();        
     }
 
 
@@ -110,7 +93,7 @@ public class Dialog : MonoBehaviour
             }
         }
 
-        if (dialogoB)
+        if (Dialog.dialogoB)
         {
             if (sentenca)
             {
@@ -126,7 +109,7 @@ public class Dialog : MonoBehaviour
                 }
                 else if (Jogador_Status.mortes == 1)
                 {
-                    if (dialogoB)
+                    if (Dialog.dialogoB)
                     {
                         if (index < sentences2.Length)
                         {
@@ -139,7 +122,7 @@ public class Dialog : MonoBehaviour
                 }
                 else if (Jogador_Status.mortes == 2)
                 {
-                    if (dialogoB)
+                    if (Dialog.dialogoB)
                     {
                         if (index < sentences3.Length)
                         {
@@ -152,7 +135,7 @@ public class Dialog : MonoBehaviour
                 }
                 else if (Jogador_Status.mortes == 3)
                 {
-                    if (dialogoB)
+                    if (Dialog.dialogoB)
                     {
                         if (index < sentences4.Length)
                         {
@@ -165,7 +148,7 @@ public class Dialog : MonoBehaviour
                 }
                 else if (Jogador_Status.mortes == 4)
                 {
-                    if (dialogoB)
+                    if (Dialog.dialogoB)
                     {
                         if (index < sentences5.Length)
                         {
@@ -178,7 +161,7 @@ public class Dialog : MonoBehaviour
                 }
                 else if (Jogador_Status.mortes == 5)
                 {
-                    if (dialogoB)
+                    if (Dialog.dialogoB)
                     {
                         if (index < sentences6.Length)
                         {
@@ -191,7 +174,7 @@ public class Dialog : MonoBehaviour
                 }
                 else if (Jogador_Status.mortes == 6)
                 {
-                    if (dialogoB)
+                    if (Dialog.dialogoB)
                     {
                         if (index < sentences7.Length)
                         {
@@ -202,28 +185,57 @@ public class Dialog : MonoBehaviour
                         }
                     }
                 }
+                else if (Jogador_Status.mortes == 7)
+                {
+                    if (Dialog.dialogoB)
+                    {
+                        if (index < sentences8.Length)
+                        {
+                            if (textDisplay.text == sentences8[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes == 8)
+                {
+                    if (Dialog.dialogoB)
+                    {
+                        if (index < sentences9.Length)
+                        {
+                            if (textDisplay.text == sentences9[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+                else if (Jogador_Status.mortes >= 9)
+                {
+                    if (Dialog.dialogoB)
+                    {
+                        if (index < sentences10.Length)
+                        {
+                            if (textDisplay.text == sentences10[index] && sentenca)
+                            {
+                                podePassar = true;
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }
-    
 
-    IEnumerator VideoPlay()
-    {
-        videoCanvas.SetActive(true);
-        videoPlayer.SetActive(true);
-        yield return new WaitForSeconds(timeVideo);
-        StartCoroutine(Type1());
-        scriptable.FirstTime = false;
-        videoCanvas.SetActive(false);
-        videoPlayer.SetActive(false);
-    }
     IEnumerator Type1()
     {
         imagemFundo.SetActive(true);
         sentenca = true;
         podePassar = false;
 
-        dialogoB = true;
+        Dialog.dialogoB = true;
         ataque.DesativarAtaque();
 
 
@@ -243,7 +255,7 @@ public class Dialog : MonoBehaviour
         sentenca = true;
         podePassar = false;
 
-        dialogoB = true;
+        Dialog.dialogoB = true;
         ataque.DesativarAtaque();
 
         foreach (char letter in sentences2[index].ToCharArray())
@@ -263,7 +275,7 @@ public class Dialog : MonoBehaviour
         sentenca = true;
         podePassar = false;
 
-        dialogoB = true;
+        Dialog.dialogoB = true;
         ataque.DesativarAtaque();
 
         foreach (char letter in sentences3[index].ToCharArray())
@@ -283,7 +295,7 @@ public class Dialog : MonoBehaviour
         sentenca = true;
         podePassar = false;
 
-        dialogoB = true;
+        Dialog.dialogoB = true;
         ataque.DesativarAtaque();
 
         foreach (char letter in sentences4[index].ToCharArray())
@@ -303,7 +315,7 @@ public class Dialog : MonoBehaviour
         sentenca = true;
         podePassar = false;
 
-        dialogoB = true;
+        Dialog.dialogoB = true;
         ataque.DesativarAtaque();
 
         foreach (char letter in sentences5[index].ToCharArray())
@@ -323,7 +335,7 @@ public class Dialog : MonoBehaviour
         sentenca = true;
         podePassar = false;
 
-        dialogoB = true;
+        Dialog.dialogoB = true;
         ataque.DesativarAtaque();
 
         foreach (char letter in sentences6[index].ToCharArray())
@@ -343,7 +355,7 @@ public class Dialog : MonoBehaviour
         sentenca = true;
         podePassar = false;
 
-        dialogoB = true;
+        Dialog.dialogoB = true;
         ataque.DesativarAtaque();
 
         foreach (char letter in sentences7[index].ToCharArray())
@@ -357,8 +369,66 @@ public class Dialog : MonoBehaviour
 
         typingSpeed = typingSpeedReal;
     }
+    IEnumerator Type8()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
 
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
 
+        foreach (char letter in sentences8[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator Type9()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+        foreach (char letter in sentences9[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
+    IEnumerator Type10()
+    {
+        imagemFundo.SetActive(true);
+        sentenca = true;
+        podePassar = false;
+
+        Dialog.dialogoB = true;
+        ataque.DesativarAtaque();
+
+        foreach (char letter in sentences10[index].ToCharArray())
+        {
+            textDisplay.text += letter;
+            imagemDialog.SetActive(true);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        index++;
+
+        typingSpeed = typingSpeedReal;
+    }
     public void NextSentence()
     {
         typingSpeed = typingSpeedReal;
@@ -377,7 +447,7 @@ public class Dialog : MonoBehaviour
                 textDisplay.text = "";
                 sentenca = false;
                 ataque.AtivarAtaque();
-                dialogoB = false;
+                Dialog.dialogoB = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
             }
@@ -394,7 +464,7 @@ public class Dialog : MonoBehaviour
                 textDisplay.text = "";
                 sentenca = false;
                 ataque.AtivarAtaque();
-                dialogoB = false;
+                Dialog.dialogoB = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
             }
@@ -411,7 +481,7 @@ public class Dialog : MonoBehaviour
                 textDisplay.text = "";
                 sentenca = false;
                 ataque.AtivarAtaque();
-                dialogoB = false;
+                Dialog.dialogoB = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
             }
@@ -428,7 +498,7 @@ public class Dialog : MonoBehaviour
                 textDisplay.text = "";
                 sentenca = false;
                 ataque.AtivarAtaque();
-                dialogoB = false;
+                Dialog.dialogoB = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
             }
@@ -445,7 +515,7 @@ public class Dialog : MonoBehaviour
                 textDisplay.text = "";
                 sentenca = false;
                 ataque.AtivarAtaque();
-                dialogoB = false;
+                Dialog.dialogoB = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
             }
@@ -462,7 +532,7 @@ public class Dialog : MonoBehaviour
                 textDisplay.text = "";
                 sentenca = false;
                 ataque.AtivarAtaque();
-                dialogoB = false;
+                Dialog.dialogoB = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
             }
@@ -479,13 +549,64 @@ public class Dialog : MonoBehaviour
                 textDisplay.text = "";
                 sentenca = false;
                 ataque.AtivarAtaque();
-                dialogoB = false;
+                Dialog.dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
+        else if (Jogador_Status.mortes == 7 && sentenca)
+        {
+            if (index < sentences8.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type8());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                Dialog.dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
+        else if (Jogador_Status.mortes == 8 && sentenca)
+        {
+            if (index < sentences9.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type9());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                Dialog.dialogoB = false;
+                imagemDialog.SetActive(false);
+                imagemFundo.SetActive(false);
+            }
+        }
+        else if (Jogador_Status.mortes >= 9 && sentenca)
+        {
+            if (index < sentences10.Length)
+            {
+                textDisplay.text = "";
+                StartCoroutine(Type10());
+            }
+            else
+            {
+                textDisplay.text = "";
+                sentenca = false;
+                ataque.AtivarAtaque();
+                Dialog.dialogoB = false;
                 imagemDialog.SetActive(false);
                 imagemFundo.SetActive(false);
             }
         }
     }
 
-    
-  
+
 }
+

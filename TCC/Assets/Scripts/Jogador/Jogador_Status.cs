@@ -54,7 +54,6 @@ public class Jogador_Status : MonoBehaviour
     { 
         if (status.health <= 0 && status.ExtraLife <= 0)
         {
-                mortes++;
                 StartCoroutine(MorrerContagem());
            
         }
@@ -88,6 +87,8 @@ public class Jogador_Status : MonoBehaviour
    
     public void Morrer()
     {
+        mortes++;
+        Debug.Log(mortes);
         Time.timeScale = 1;
         GameManager.gameManager.load.Carregar_CenaInicio(1);
 
